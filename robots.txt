@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://menuzia.com.br/sitemap.xml
