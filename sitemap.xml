@@ -1,45 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://menuzia.com.br/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/foto01.webp</image:loc></image:image>
   </url>
   <url>
-    <loc>https://menuzia.com.br/blog/index.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <loc>https://menuzia.com.br/cardapio-digital-barato.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/blog/</loc>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-hero.webp</image:loc></image:image>
   </url>
   <url>
-    <loc>https://menuzia.com.br/blog/como-criar-cardapio-digital-para-hamburgueria.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <loc>https://menuzia.com.br/blog/guias/como-criar-cardapio-digital-para-hamburgueria.html</loc>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-hamburgueria.webp</image:loc></image:image>
   </url>
   <url>
-    <loc>https://menuzia.com.br/blog/como-sair-do-ifood-e-vender-direto.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <loc>https://menuzia.com.br/blog/estrategia/como-sair-do-ifood-e-vender-direto.html</loc>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-delivery-ifood.webp</image:loc></image:image>
   </url>
   <url>
-    <loc>https://menuzia.com.br/blog/cardapio-digital-sem-comissao-vale-a-pena.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <loc>https://menuzia.com.br/blog/comparativos/cardapio-digital-sem-comissao-vale-a-pena.html</loc>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-sem-comissao.webp</image:loc></image:image>
   </url>
   <url>
-    <loc>https://menuzia.com.br/blog/campanha-whatsapp-para-delivery.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <loc>https://menuzia.com.br/blog/marketing/campanha-whatsapp-para-delivery.html</loc>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-whatsapp.webp</image:loc></image:image>
   </url>
   <url>
-    <loc>https://menuzia.com.br/blog/quanto-custa-cardapio-digital-proprio.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <loc>https://menuzia.com.br/blog/precos/quanto-custa-cardapio-digital-proprio.html</loc>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-precos.webp</image:loc></image:image>
   </url>
 </urlset>
