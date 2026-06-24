@@ -14,6 +14,8 @@ fs.mkdirSync(OUT_DIR, { recursive: true });
 const wants = [
   { out: 'local-vila-velha.webp', query: 'brazilian street food delivery restaurant' },
   { out: 'local-vila-velha-2.webp', query: 'food delivery motorcycle courier city' },
+  { out: 'local-serra.webp', query: 'hamburger restaurant kitchen delivery' },
+  { out: 'local-vitoria.webp', query: 'pizza restaurant counter delivery brazil' },
 ];
 
 function getJSON(url) {

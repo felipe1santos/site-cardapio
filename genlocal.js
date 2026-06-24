@@ -34,6 +34,7 @@ const cities = [
     city: 'Vila Velha',
     region: 'ES',
     gentilico: 'Vila Velha',
+    physicalAddress: true,   // sede real em VV (Jardim Marilândia)
     heroImg: 'local-vila-velha.webp',
     heroAlt: 'Cardápio digital para restaurantes e delivery em Vila Velha, ES',
     title: 'Cardápio Digital em Vila Velha (ES) sem Comissão | Menuzia',
@@ -89,6 +90,124 @@ const cities = [
   <li><strong>Os pedidos caem direto no seu caixa</strong> — e cada cliente vira base sua pra disparar <a href="/blog/marketing/campanha-whatsapp-para-delivery.html">campanhas de WhatsApp</a>.</li>
 </ol>`,
   },
+
+  {
+    slug: 'cardapio-digital-serra.html',
+    city: 'Serra',
+    region: 'ES',
+    gentilico: 'Serra',
+    physicalAddress: false,
+    heroImg: 'local-serra.webp',
+    heroAlt: 'Cardápio digital para restaurantes e delivery na Serra, ES',
+    title: 'Cardápio Digital na Serra (ES) sem Comissão | Menuzia',
+    h1: 'Cardápio digital na Serra (ES): venda direto, sem pagar comissão',
+    desc: 'Cardápio digital próprio para restaurantes, hamburguerias e delivery na Serra (ES). Sem comissão por pedido, com WhatsApp e base de clientes sua. Atendemos Laranjeiras, Serra Sede, Jardim Limoeiro, Carapina e toda a Serra.',
+    keywords: 'cardápio digital na serra, cardápio digital serra es, sistema de delivery serra, cardápio digital para restaurante serra, cardápio online serra, delivery sem comissão serra, alternativa ao ifood serra, cardápio digital laranjeiras, cardápio digital carapina, cardápio digital jardim limoeiro, qr code cardápio serra, cardápio digital para hamburgueria serra',
+    bairrosTop: ['Laranjeiras', 'Serra Sede', 'Jardim Limoeiro', 'Carapina', 'Manguinhos', 'Jacaraípe', 'Nova Almeida', 'Feu Rosa', 'Civit', 'Colina de Laranjeiras', 'Cidade Continental', 'Barcelona'],
+    bairrosTodos: ['Laranjeiras', 'Serra Sede', 'Jardim Limoeiro', 'Jardim Tropical', 'Parque Residencial Laranjeiras', 'Carapina', 'Carapina Grande', 'Eurico Salles', 'Civit', 'Manguinhos', 'Nova Almeida', 'Jacaraípe', 'Feu Rosa', 'Vila Nova de Colares', 'Cidade Continental', 'Barcelona', 'Porto Canoa', 'André Carloni', 'Bairro de Fátima', 'Castelândia', 'Colina de Laranjeiras', 'Planalto Serrano', 'Novo Horizonte', 'Maringá', 'Parque das Gaivotas', 'José de Anchieta'],
+    chips: ['cardápio digital Serra', 'delivery sem comissão Serra', 'sair do iFood Serra', 'cardápio Laranjeiras', 'cardápio digital Carapina', 'QR Code cardápio Serra', 'cardápio Jacaraípe', 'sistema delivery Serra Sede'],
+    faq: [
+      ['O Menuzia atende restaurantes na Serra?', 'Sim. O Menuzia atende restaurantes, hamburguerias, pizzarias, açaíterias e qualquer delivery em <strong>toda a Serra</strong> — de Laranjeiras e Carapina a Jacaraípe, Nova Almeida e Feu Rosa. Tudo é online: nossa equipe configura o seu cardápio digital remotamente e dá suporte.'],
+      ['Quanto custa um cardápio digital na Serra?', 'O Menuzia custa <strong>R$67 por mês, valor fixo, sem comissão por pedido</strong>. Você paga o mesmo vendendo 10 ou 10 mil pedidos — diferente do iFood, que cobra uma porcentagem de cada venda feita na Serra.'],
+      ['Preciso de loja física para ter o cardápio digital?', 'Não. Funciona com o seu delivery em qualquer bairro da Serra. O cliente abre o link do cardápio no celular, escolhe e o pedido cai direto no seu WhatsApp e no seu caixa, sem aplicativo.'],
+      ['Dá para configurar entrega por bairro da Serra?', 'Sim. Você define a <strong>taxa de entrega por bairro</strong> — Laranjeiras, Serra Sede, Jardim Limoeiro, Carapina, Cidade Continental e os demais — além de raio de entrega, pagamento (Pix, cartão, dinheiro) e horários.'],
+    ],
+    body: `<p>Se você tem um restaurante, hamburgueria ou delivery na <strong>Serra</strong>, já sabe quanto a comissão das plataformas pesa no fim do mês. Um <strong>cardápio digital próprio</strong> resolve isso: o cliente pede pelo seu link, o pedido cai direto no seu WhatsApp e <strong>todo o lucro fica com você</strong>. Sem taxa por pedido, sem perder a sua base de clientes.</p>
+
+<p>O Menuzia é a plataforma de cardápio digital sem comissão que atende delivery em toda a Grande Vitória — e este guia é focado em quem vende na <strong>Serra (ES)</strong>, de Laranjeiras a Jacaraípe.</p>
+
+<h2>Por que restaurantes da Serra estão trocando o iFood pelo cardápio próprio</h2>
+<p>A comissão do iFood vai de 12% a mais de 30% por pedido. Para um delivery que fatura bem em Laranjeiras ou na Cidade Continental, isso vira milhares de reais por mês indo embora — e a lista de clientes continua sendo da plataforma, não sua.</p>
+<ul>
+  <li><strong>Sem comissão:</strong> R$67/mês fixo, venda quanto vender.</li>
+  <li><strong>Base de clientes sua:</strong> quem pede em Carapina, Jardim Limoeiro ou Feu Rosa entra na <em>sua</em> lista pra sempre.</li>
+  <li><strong>Pedido direto no caixa:</strong> sem intermediário entre você e o cliente da Serra.</li>
+</ul>
+<p>Veja o passo a passo completo de <a href="/blog/estrategia/como-sair-do-ifood-e-vender-direto.html">como sair do iFood e vender direto</a> sem perder clientes.</p>
+
+<h2>Cardápio digital para delivery em qualquer bairro da Serra</h2>
+<p>O cardápio do Menuzia funciona 100% online — não importa se o seu delivery fica em <strong>Laranjeiras</strong>, <strong>Carapina</strong>, na <strong>Serra Sede</strong>, em <strong>Jacaraípe</strong> ou em <strong>Nova Almeida</strong>. Você define a taxa de entrega por bairro, conecta o WhatsApp e começa a receber pedidos no mesmo dia.</p>
+<p>É ideal para hamburguerias, pizzarias, açaíterias, restaurantes e lanchonetes que querem profissionalizar o delivery sem depender do iFood. Veja <a href="/blog/guias/como-criar-cardapio-digital-para-hamburgueria.html">como criar um cardápio digital para hamburgueria</a> passo a passo.</p>
+
+<div class="bairros-block">
+  <h2>Atendemos todo o delivery da Serra</h2>
+  <p>O Menuzia configura o cardápio digital de restaurantes e deliverys nestes e em todos os bairros da Serra:</p>
+  <ul class="bairros-grid">
+{{BAIRROS_GRID}}
+  </ul>
+</div>
+
+<h2>Quanto custa um cardápio digital na Serra</h2>
+<p>No Menuzia é <strong>R$67/mês fixo, sem comissão por pedido</strong> — com configuração feita pela nossa equipe e suporte incluso. Compare: um delivery na Serra que fatura R$25 mil/mês pagando 18% de comissão joga fora R$4.500 todo mês. Com um plano fixo, esse dinheiro volta pro seu caixa. Entenda em <a href="/blog/precos/quanto-custa-cardapio-digital-proprio.html">quanto custa um cardápio digital próprio</a> e se <a href="/blog/comparativos/cardapio-digital-sem-comissao-vale-a-pena.html">cardápio digital sem comissão vale a pena</a>.</p>
+
+<h2>Como começar na Serra (passo a passo)</h2>
+<ol>
+  <li><strong>Você assina o Menuzia</strong> por R$67/mês.</li>
+  <li><strong>Nossa equipe monta o seu cardápio digital</strong> com fotos, categorias e taxa de entrega por bairro da Serra.</li>
+  <li><strong>Conectamos o WhatsApp</strong> e o robô de atendimento 24h.</li>
+  <li><strong>Você divulga o link</strong> na bio do Instagram, no status do WhatsApp e em panfletos com QR Code pela cidade.</li>
+  <li><strong>Os pedidos caem direto no seu caixa</strong> — e cada cliente vira base sua pra disparar <a href="/blog/marketing/campanha-whatsapp-para-delivery.html">campanhas de WhatsApp</a>.</li>
+</ol>`,
+  },
+
+  {
+    slug: 'cardapio-digital-vitoria.html',
+    city: 'Vitória',
+    region: 'ES',
+    gentilico: 'Vitória',
+    physicalAddress: false,
+    heroImg: 'local-vitoria.webp',
+    heroAlt: 'Cardápio digital para restaurantes e delivery em Vitória, ES',
+    title: 'Cardápio Digital em Vitória (ES) sem Comissão | Menuzia',
+    h1: 'Cardápio digital em Vitória (ES): venda direto, sem pagar comissão',
+    desc: 'Cardápio digital próprio para restaurantes, hamburguerias e delivery em Vitória (ES). Sem comissão por pedido, com WhatsApp e base de clientes sua. Atendemos Praia do Canto, Jardim Camburi, Jardim da Penha, Centro e toda Vitória.',
+    keywords: 'cardápio digital em vitória, cardápio digital vitória es, sistema de delivery vitória, cardápio digital para restaurante vitória, cardápio online vitória, delivery sem comissão vitória, alternativa ao ifood vitória, cardápio digital praia do canto, cardápio digital jardim camburi, cardápio digital jardim da penha, qr code cardápio vitória, cardápio digital para hamburgueria vitória',
+    bairrosTop: ['Praia do Canto', 'Jardim Camburi', 'Jardim da Penha', 'Mata da Praia', 'Bento Ferreira', 'Centro', 'Santa Lúcia', 'Praia do Suá', 'Enseada do Suá', 'Barro Vermelho', 'Maruípe', 'Goiabeiras'],
+    bairrosTodos: ['Praia do Canto', 'Jardim Camburi', 'Jardim da Penha', 'Mata da Praia', 'Bento Ferreira', 'Centro de Vitória', 'Santa Lúcia', 'Praia do Suá', 'Enseada do Suá', 'Barro Vermelho', 'Jucutuquara', 'Maruípe', 'Itararé', 'São Pedro', 'Goiabeiras', 'República', 'Ilha do Boi', 'Ilha do Frade', 'Consolação', 'Fradinhos', 'Santa Helena', 'Santo Antônio', 'Tabuazeiro', 'Jabour', 'Bairro de Lourdes'],
+    chips: ['cardápio digital Vitória', 'delivery sem comissão Vitória', 'sair do iFood Vitória', 'cardápio Praia do Canto', 'cardápio digital Jardim Camburi', 'QR Code cardápio Vitória', 'cardápio Jardim da Penha', 'sistema delivery Centro Vitória'],
+    faq: [
+      ['O Menuzia atende restaurantes em Vitória?', 'Sim. O Menuzia atende restaurantes, hamburguerias, pizzarias, açaíterias e qualquer delivery em <strong>toda Vitória</strong> — da Praia do Canto e Jardim Camburi ao Centro, Maruípe e São Pedro. Tudo é online: nossa equipe configura o seu cardápio digital remotamente e dá suporte.'],
+      ['Quanto custa um cardápio digital em Vitória?', 'O Menuzia custa <strong>R$67 por mês, valor fixo, sem comissão por pedido</strong>. Você paga o mesmo vendendo 10 ou 10 mil pedidos — diferente do iFood, que cobra uma porcentagem de cada venda feita em Vitória.'],
+      ['Preciso de loja física para ter o cardápio digital?', 'Não. Funciona com o seu delivery em qualquer bairro de Vitória. O cliente abre o link do cardápio no celular, escolhe e o pedido cai direto no seu WhatsApp e no seu caixa, sem aplicativo.'],
+      ['Dá para configurar entrega por bairro de Vitória?', 'Sim. Você define a <strong>taxa de entrega por bairro</strong> — Praia do Canto, Jardim da Penha, Jardim Camburi, Centro, Maruípe e os demais — além de raio de entrega, pagamento (Pix, cartão, dinheiro) e horários.'],
+    ],
+    body: `<p>Se você tem um restaurante, hamburgueria ou delivery em <strong>Vitória</strong>, já sabe quanto a comissão das plataformas pesa no fim do mês. Um <strong>cardápio digital próprio</strong> resolve isso: o cliente pede pelo seu link, o pedido cai direto no seu WhatsApp e <strong>todo o lucro fica com você</strong>. Sem taxa por pedido, sem perder a sua base de clientes.</p>
+
+<p>O Menuzia é a plataforma de cardápio digital sem comissão que atende delivery em toda a Grande Vitória — e este guia é focado em quem vende na capital <strong>Vitória (ES)</strong>, da Praia do Canto a Jardim Camburi.</p>
+
+<h2>Por que restaurantes de Vitória estão trocando o iFood pelo cardápio próprio</h2>
+<p>A comissão do iFood vai de 12% a mais de 30% por pedido. Para um delivery que fatura bem na Praia do Canto ou em Jardim Camburi, isso vira milhares de reais por mês indo embora — e a lista de clientes continua sendo da plataforma, não sua.</p>
+<ul>
+  <li><strong>Sem comissão:</strong> R$67/mês fixo, venda quanto vender.</li>
+  <li><strong>Base de clientes sua:</strong> quem pede em Jardim da Penha, Mata da Praia ou Bento Ferreira entra na <em>sua</em> lista pra sempre.</li>
+  <li><strong>Pedido direto no caixa:</strong> sem intermediário entre você e o cliente de Vitória.</li>
+</ul>
+<p>Veja o passo a passo completo de <a href="/blog/estrategia/como-sair-do-ifood-e-vender-direto.html">como sair do iFood e vender direto</a> sem perder clientes.</p>
+
+<h2>Cardápio digital para delivery em qualquer bairro de Vitória</h2>
+<p>O cardápio do Menuzia funciona 100% online — não importa se o seu delivery fica na <strong>Praia do Canto</strong>, em <strong>Jardim Camburi</strong>, em <strong>Jardim da Penha</strong>, no <strong>Centro</strong> ou em <strong>Maruípe</strong>. Você define a taxa de entrega por bairro, conecta o WhatsApp e começa a receber pedidos no mesmo dia.</p>
+<p>É ideal para hamburguerias, pizzarias, açaíterias, restaurantes e lanchonetes que querem profissionalizar o delivery sem depender do iFood. Veja <a href="/blog/guias/como-criar-cardapio-digital-para-hamburgueria.html">como criar um cardápio digital para hamburgueria</a> passo a passo.</p>
+
+<div class="bairros-block">
+  <h2>Atendemos todo o delivery de Vitória</h2>
+  <p>O Menuzia configura o cardápio digital de restaurantes e deliverys nestes e em todos os bairros de Vitória:</p>
+  <ul class="bairros-grid">
+{{BAIRROS_GRID}}
+  </ul>
+</div>
+
+<h2>Quanto custa um cardápio digital em Vitória</h2>
+<p>No Menuzia é <strong>R$67/mês fixo, sem comissão por pedido</strong> — com configuração feita pela nossa equipe e suporte incluso. Compare: um delivery em Vitória que fatura R$25 mil/mês pagando 18% de comissão joga fora R$4.500 todo mês. Com um plano fixo, esse dinheiro volta pro seu caixa. Entenda em <a href="/blog/precos/quanto-custa-cardapio-digital-proprio.html">quanto custa um cardápio digital próprio</a> e se <a href="/blog/comparativos/cardapio-digital-sem-comissao-vale-a-pena.html">cardápio digital sem comissão vale a pena</a>.</p>
+
+<h2>Como começar em Vitória (passo a passo)</h2>
+<ol>
+  <li><strong>Você assina o Menuzia</strong> por R$67/mês.</li>
+  <li><strong>Nossa equipe monta o seu cardápio digital</strong> com fotos, categorias e taxa de entrega por bairro de Vitória.</li>
+  <li><strong>Conectamos o WhatsApp</strong> e o robô de atendimento 24h.</li>
+  <li><strong>Você divulga o link</strong> na bio do Instagram, no status do WhatsApp e em panfletos com QR Code pela cidade.</li>
+  <li><strong>Os pedidos caem direto no seu caixa</strong> — e cada cliente vira base sua pra disparar <a href="/blog/marketing/campanha-whatsapp-para-delivery.html">campanhas de WhatsApp</a>.</li>
+</ol>`,
+  },
 ];
 
 // ------------------------------------------------------------
@@ -128,7 +247,7 @@ const head = (c, url) => `<!DOCTYPE html>
 <link rel="stylesheet" href="${B}blog.css">`;
 
 const localBusinessLd = (c, url) => {
-  const addr = NAP.hasPhysicalAddress
+  const addr = c.physicalAddress
     ? `,
   "address": {
     "@type": "PostalAddress",
@@ -227,13 +346,22 @@ ${c.faq.map(([q, a]) => `  <div class="faq-item">
   </div>`).join('\n')}
 </div>`;
 
-const sidebar = (c) => `<aside class="sidebar">
+const sidebar = (c) => {
+  const outras = cities.filter(o => o.slug !== c.slug)
+    .map(o => `      <li><a href="${o.slug}"><span class="side-cat">${o.region}</span>Cardápio digital em ${o.city}</a></li>`).join('\n');
+  return `<aside class="sidebar">
   <div class="sidebar-box">
     <h3>Busca rápida</h3>
     <div class="side-chips">
 ${c.chips.map(t => `      <a href="${SITE}/#precos">${t}</a>`).join('\n')}
     </div>
   </div>
+  ${outras ? `<div class="sidebar-box">
+    <h3>Outras cidades</h3>
+    <ul>
+${outras}
+    </ul>
+  </div>` : ''}
   <div class="sidebar-box">
     <h3>Mais no blog</h3>
     <ul>
@@ -248,9 +376,10 @@ ${c.chips.map(t => `      <a href="${SITE}/#precos">${t}</a>`).join('\n')}
     <a href="${SITE}/#precos" class="btn-site">Criar Cardápio →</a>
   </div>
 </aside>`;
+};
 
 const localFooter = (c) => {
-  const enderecoLinha = NAP.hasPhysicalAddress
+  const enderecoLinha = c.physicalAddress
     ? `<li>📍 ${NAP.street} — ${NAP.district}, ${NAP.city}/${NAP.region}${NAP.postalCode ? ', ' + NAP.postalCode : ''}</li>`
     : `<li>📍 Atendimento online em toda ${c.city} e Grande Vitória/${c.region}</li>`;
   return `<footer class="local-footer">
