@@ -8,18 +8,20 @@ Site **estático** (HTML/CSS puro, sem framework). Imagens em `.webp`. Deploy = 
 
 Prioridade do projeto agora é **ranquear na busca local do Google** ("cardápio digital em <cidade>"), uma página por cidade da Grande Vitória/ES, com densidade de keyword por **bairro**.
 
-- ✅ **Vila Velha** — `cardapio-digital-vila-velha.html` (feito)
-- ⏳ **Serra** — `cardapio-digital-serra.html` (próximo)
-- ⏳ **Vitória** — `cardapio-digital-vitoria.html`
+Grande Vitória/ES (todas feitas): **Vila Velha, Serra, Vitória, Cariacica, Viana, Guarapari** → `cardapio-digital-<cidade>.html`. Hub: **`cidades.html`** (índice linkando todas). Próximo passo de escala: capitais nacionais (SP, RJ, BH…).
 
 ### Como criar/editar uma página de cidade
 Geradas por **`genlocal.js`** → `node genlocal.js`. **Não editar o HTML da página direto** (é sobrescrito).
 
-1. Edite o array `cities` em `genlocal.js` (copie o bloco de Vila Velha).
-2. Preencha: `slug`, `city`, `bairrosTop` (12 principais → entram no schema `areaServed`), `bairrosTodos` (grid no corpo + footer), `chips` (busca rápida na sidebar), `faq` (vira `FAQPage` schema), `body`.
-3. Pegue imagem de capa: adicione item em `getimg.js` (`wants[]`) e rode `node getimg.js` (API Pexels → webp 1200w em `assets/img/blog/`).
-4. `node genlocal.js`
-5. Adicione a URL em `sitemap.xml` (priority 0.9).
+1. Adicione um objeto no array `cities` em `genlocal.js`. **Cidade nova = só dados** (não precisa escrever o corpo): preencha `slug`, `city`, `region`, `prep` (`'em'`/`'na'`), `toda` (ex: `'toda a Serra'`), `physicalAddress: false`, `heroImg`, `heroAlt`, `title`, `h1`, `desc`, `keywords`, `bairrosTop` (≥6, vira schema `areaServed`), `bairrosTodos` (grid+footer), `chips` (sidebar), `faq` (vira `FAQPage`). O corpo é gerado por `genBody(c)` a partir desses campos. Pra texto custom, defina `body` (sobrescreve o genBody) — VV/Serra/Vitória usam body próprio.
+2. Imagem de capa: adicione item em `getimg.js` (`wants[]`) e rode `PEXELS_KEY=xxxx node getimg.js`.
+3. `node genlocal.js` (gera as páginas + `cidades.html`).
+4. Adicione a URL em `sitemap.xml` (priority 0.9) e no footer do `index.html`.
+
+Cidades com endereço físico real: `physicalAddress: true` (usa o objeto `NAP`). Sem endereço (área de atendimento): `physicalAddress: false` → footer/schema viram "atendimento online em toda a cidade" (NAP consistente, sem fingir loja física — evita penalidade de NAP inconsistente).
+
+### Footer de cidades no index.html
+Bloco visível "Cardápio digital por cidade" no footer do `index.html` linka as 6 cidades + `cidades.html`. **Nunca usar texto oculto/transparente** pra empilhar cidades — é black-hat (hidden text), Google pune. Escala via páginas reais + hub, não keyword stuffing.
 
 Cada página de cidade tem: `LocalBusiness` + `Service` + `FAQPage` + `BreadcrumbList` schema, footer profissional com **NAP** e lista de **todos os bairros**, sidebar com chips de busca rápida. Reaproveita `blog/blog.css` (estilos locais foram anexados lá: `.local-footer`, `.bairros-grid`, `.side-chips`, `.faq`).
 

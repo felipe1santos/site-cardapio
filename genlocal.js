@@ -208,6 +208,78 @@ const cities = [
   <li><strong>Os pedidos caem direto no seu caixa</strong> — e cada cliente vira base sua pra disparar <a href="/blog/marketing/campanha-whatsapp-para-delivery.html">campanhas de WhatsApp</a>.</li>
 </ol>`,
   },
+
+  {
+    slug: 'cardapio-digital-cariacica.html',
+    city: 'Cariacica',
+    region: 'ES',
+    prep: 'em',
+    toda: 'toda Cariacica',
+    physicalAddress: false,
+    heroImg: 'local-cariacica.webp',
+    heroAlt: 'Cardápio digital para restaurantes e delivery em Cariacica, ES',
+    title: 'Cardápio Digital em Cariacica (ES) sem Comissão | Menuzia',
+    h1: 'Cardápio digital em Cariacica (ES): venda direto, sem pagar comissão',
+    desc: 'Cardápio digital próprio para restaurantes, hamburguerias e delivery em Cariacica (ES). Sem comissão por pedido, com WhatsApp e base de clientes sua. Atendemos Campo Grande, Jardim América, Alto Lage, Itacibá e toda Cariacica.',
+    keywords: 'cardápio digital em cariacica, cardápio digital cariacica es, sistema de delivery cariacica, cardápio digital para restaurante cariacica, cardápio online cariacica, delivery sem comissão cariacica, alternativa ao ifood cariacica, cardápio digital campo grande cariacica, cardápio digital jardim américa, qr code cardápio cariacica, cardápio digital para hamburgueria cariacica',
+    bairrosTop: ['Campo Grande', 'Jardim América', 'Alto Lage', 'Itacibá', 'Porto de Santana', 'Cariacica Sede', 'Itanguá', 'Nova Rosa da Penha', 'Vila Capixaba', 'Santana', 'Castelo Branco', 'Jardim de Alah'],
+    bairrosTodos: ['Campo Grande', 'Jardim América', 'Alto Lage', 'Itacibá', 'Porto de Santana', 'Cariacica Sede', 'Itanguá', 'Nova Rosa da Penha', 'Vila Capixaba', 'Santana', 'Castelo Branco', 'Jardim de Alah', 'Flexal', 'Bela Aurora', 'Padre Gabriel', 'São Geraldo', 'Nova Brasília', 'Vasco da Gama', 'Mocambo', 'Bandeirantes', 'Rio Marinho', 'Sotema', 'Bubu', 'Tucum', 'Cocal', 'Operário'],
+    chips: ['cardápio digital Cariacica', 'delivery sem comissão Cariacica', 'sair do iFood Cariacica', 'cardápio Campo Grande', 'cardápio digital Itacibá', 'QR Code cardápio Cariacica', 'cardápio Alto Lage', 'sistema delivery Cariacica Sede'],
+    faq: [
+      ['O Menuzia atende restaurantes em Cariacica?', 'Sim. O Menuzia atende restaurantes, hamburguerias, pizzarias, açaíterias e qualquer delivery em <strong>toda Cariacica</strong> — de Campo Grande e Jardim América a Itacibá, Alto Lage e Porto de Santana. Tudo é online: nossa equipe configura o seu cardápio digital remotamente e dá suporte.'],
+      ['Quanto custa um cardápio digital em Cariacica?', 'O Menuzia custa <strong>R$67 por mês, valor fixo, sem comissão por pedido</strong>. Você paga o mesmo vendendo 10 ou 10 mil pedidos — diferente do iFood, que cobra uma porcentagem de cada venda feita em Cariacica.'],
+      ['Preciso de loja física para ter o cardápio digital?', 'Não. Funciona com o seu delivery em qualquer bairro de Cariacica. O cliente abre o link do cardápio no celular, escolhe e o pedido cai direto no seu WhatsApp e no seu caixa, sem aplicativo.'],
+      ['Dá para configurar entrega por bairro de Cariacica?', 'Sim. Você define a <strong>taxa de entrega por bairro</strong> — Campo Grande, Jardim América, Alto Lage, Itacibá e os demais — além de raio de entrega, pagamento (Pix, cartão, dinheiro) e horários.'],
+    ],
+  },
+
+  {
+    slug: 'cardapio-digital-viana.html',
+    city: 'Viana',
+    region: 'ES',
+    prep: 'em',
+    toda: 'toda Viana',
+    physicalAddress: false,
+    heroImg: 'local-viana.webp',
+    heroAlt: 'Cardápio digital para restaurantes e delivery em Viana, ES',
+    title: 'Cardápio Digital em Viana (ES) sem Comissão | Menuzia',
+    h1: 'Cardápio digital em Viana (ES): venda direto, sem pagar comissão',
+    desc: 'Cardápio digital próprio para restaurantes, hamburguerias e delivery em Viana (ES). Sem comissão por pedido, com WhatsApp e base de clientes sua. Atendemos Marcílio de Noronha, Vila Bethânia, Universal, Industrial e toda Viana.',
+    keywords: 'cardápio digital em viana, cardápio digital viana es, sistema de delivery viana, cardápio digital para restaurante viana, cardápio online viana, delivery sem comissão viana, alternativa ao ifood viana, cardápio digital marcílio de noronha, cardápio digital vila bethânia, qr code cardápio viana, cardápio digital para hamburgueria viana',
+    bairrosTop: ['Marcílio de Noronha', 'Vila Bethânia', 'Universal', 'Industrial', 'Areinha', 'Canaã', 'Nova Bethânia', 'Vale do Sol', 'Bom Pastor', 'Ipanema', 'Centro de Viana', 'Jucu'],
+    bairrosTodos: ['Marcílio de Noronha', 'Vila Bethânia', 'Universal', 'Industrial', 'Areinha', 'Canaã', 'Nova Bethânia', 'Vale do Sol', 'Bom Pastor', 'Ipanema', 'Centro de Viana', 'Jucu', 'Morada de Bethânia', 'Vila Nova', 'Primavera', 'Conjunto Vila Nova', 'Nova Esperança', 'Santa Clara', 'Bananeiras', 'Soteco de Viana', 'Vinhático', 'Caçaroca'],
+    chips: ['cardápio digital Viana', 'delivery sem comissão Viana', 'sair do iFood Viana', 'cardápio Marcílio de Noronha', 'cardápio digital Vila Bethânia', 'QR Code cardápio Viana', 'cardápio Universal', 'sistema delivery Centro Viana'],
+    faq: [
+      ['O Menuzia atende restaurantes em Viana?', 'Sim. O Menuzia atende restaurantes, hamburguerias, pizzarias, açaíterias e qualquer delivery em <strong>toda Viana</strong> — de Marcílio de Noronha e Vila Bethânia a Universal, Industrial e Areinha. Tudo é online: nossa equipe configura o seu cardápio digital remotamente e dá suporte.'],
+      ['Quanto custa um cardápio digital em Viana?', 'O Menuzia custa <strong>R$67 por mês, valor fixo, sem comissão por pedido</strong>. Você paga o mesmo vendendo 10 ou 10 mil pedidos — diferente do iFood, que cobra uma porcentagem de cada venda feita em Viana.'],
+      ['Preciso de loja física para ter o cardápio digital?', 'Não. Funciona com o seu delivery em qualquer bairro de Viana. O cliente abre o link do cardápio no celular, escolhe e o pedido cai direto no seu WhatsApp e no seu caixa, sem aplicativo.'],
+      ['Dá para configurar entrega por bairro de Viana?', 'Sim. Você define a <strong>taxa de entrega por bairro</strong> — Marcílio de Noronha, Vila Bethânia, Universal, Industrial e os demais — além de raio de entrega, pagamento (Pix, cartão, dinheiro) e horários.'],
+    ],
+  },
+
+  {
+    slug: 'cardapio-digital-guarapari.html',
+    city: 'Guarapari',
+    region: 'ES',
+    prep: 'em',
+    toda: 'toda Guarapari',
+    physicalAddress: false,
+    heroImg: 'local-guarapari.webp',
+    heroAlt: 'Cardápio digital para restaurantes e delivery em Guarapari, ES',
+    title: 'Cardápio Digital em Guarapari (ES) sem Comissão | Menuzia',
+    h1: 'Cardápio digital em Guarapari (ES): venda direto, sem pagar comissão',
+    desc: 'Cardápio digital próprio para restaurantes, hamburguerias e delivery em Guarapari (ES). Sem comissão por pedido, com WhatsApp e base de clientes sua. Atendemos Centro, Praia do Morro, Muquiçaba, Meaípe e toda Guarapari.',
+    keywords: 'cardápio digital em guarapari, cardápio digital guarapari es, sistema de delivery guarapari, cardápio digital para restaurante guarapari, cardápio online guarapari, delivery sem comissão guarapari, alternativa ao ifood guarapari, cardápio digital praia do morro, cardápio digital meaípe, qr code cardápio guarapari, cardápio digital para hamburgueria guarapari',
+    bairrosTop: ['Centro', 'Praia do Morro', 'Muquiçaba', 'Kubitschek', 'Meaípe', 'Itapebussu', 'Setiba', 'Nova Guarapari', 'Ipiranga', 'Santa Mônica', 'Perocão', 'Bela Vista'],
+    bairrosTodos: ['Centro de Guarapari', 'Praia do Morro', 'Muquiçaba', 'Kubitschek', 'Meaípe', 'Itapebussu', 'Setiba', 'Nova Guarapari', 'Ipiranga', 'Santa Mônica', 'Perocão', 'Bela Vista', 'Olaria', 'Jabaraí', 'Adalberto Simão Nader', 'Lameirão', 'Sol Nascente', 'Camurugi', 'Village do Sol', 'Enseada Azul', 'Praia do Riacho', 'Elival'],
+    chips: ['cardápio digital Guarapari', 'delivery sem comissão Guarapari', 'sair do iFood Guarapari', 'cardápio Praia do Morro', 'cardápio digital Meaípe', 'QR Code cardápio Guarapari', 'cardápio Muquiçaba', 'sistema delivery Centro Guarapari'],
+    faq: [
+      ['O Menuzia atende restaurantes em Guarapari?', 'Sim. O Menuzia atende restaurantes, hamburguerias, pizzarias, açaíterias e qualquer delivery em <strong>toda Guarapari</strong> — do Centro e Praia do Morro a Meaípe, Muquiçaba e Setiba. Tudo é online: nossa equipe configura o seu cardápio digital remotamente e dá suporte.'],
+      ['Quanto custa um cardápio digital em Guarapari?', 'O Menuzia custa <strong>R$67 por mês, valor fixo, sem comissão por pedido</strong>. Você paga o mesmo vendendo 10 ou 10 mil pedidos — diferente do iFood, que cobra uma porcentagem de cada venda feita em Guarapari. Ideal também para o pico de verão na Praia do Morro.'],
+      ['Preciso de loja física para ter o cardápio digital?', 'Não. Funciona com o seu delivery em qualquer bairro de Guarapari. O cliente abre o link do cardápio no celular, escolhe e o pedido cai direto no seu WhatsApp e no seu caixa, sem aplicativo.'],
+      ['Dá para configurar entrega por bairro de Guarapari?', 'Sim. Você define a <strong>taxa de entrega por bairro</strong> — Centro, Praia do Morro, Muquiçaba, Meaípe e os demais — além de raio de entrega, pagamento (Pix, cartão, dinheiro) e horários.'],
+    ],
+  },
 ];
 
 // ------------------------------------------------------------
@@ -411,10 +483,53 @@ const localFooter = (c) => {
 </footer>`;
 };
 
+// Corpo padrão gerado a partir dos dados da cidade (pra escalar: cidade nova = só dados).
+// Requer: c.prep ('em'/'na'), c.toda (ex: 'toda a Serra'), c.bairrosTop (>=6).
+// Cidades com body próprio (c.body) ignoram isto.
+function genBody(c) {
+  const b = c.bairrosTop, p = c.prep, toda = c.toda;
+  return `<p>Se você tem um restaurante, hamburgueria ou delivery ${p} <strong>${c.city}</strong>, já sabe quanto a comissão das plataformas pesa no fim do mês. Um <strong>cardápio digital próprio</strong> resolve isso: o cliente pede pelo seu link, o pedido cai direto no seu WhatsApp e <strong>todo o lucro fica com você</strong>. Sem taxa por pedido, sem perder a sua base de clientes.</p>
+
+<p>O Menuzia é a plataforma de cardápio digital sem comissão que atende delivery em toda a Grande Vitória — e este guia é focado em quem vende ${p} <strong>${c.city} (${c.region})</strong>, de ${b[0]} a ${b[5]}.</p>
+
+<h2>Por que restaurantes de ${c.city} estão trocando o iFood pelo cardápio próprio</h2>
+<p>A comissão do iFood vai de 12% a mais de 30% por pedido. Para um delivery que fatura bem em ${b[0]} ou ${b[1]}, isso vira milhares de reais por mês indo embora — e a lista de clientes continua sendo da plataforma, não sua.</p>
+<ul>
+  <li><strong>Sem comissão:</strong> R$67/mês fixo, venda quanto vender.</li>
+  <li><strong>Base de clientes sua:</strong> quem pede em ${b[2]}, ${b[3]} ou ${b[4]} entra na <em>sua</em> lista pra sempre.</li>
+  <li><strong>Pedido direto no caixa:</strong> sem intermediário entre você e o cliente de ${c.city}.</li>
+</ul>
+<p>Veja o passo a passo completo de <a href="/blog/estrategia/como-sair-do-ifood-e-vender-direto.html">como sair do iFood e vender direto</a> sem perder clientes.</p>
+
+<h2>Cardápio digital para delivery em qualquer bairro de ${c.city}</h2>
+<p>O cardápio do Menuzia funciona 100% online — não importa se o seu delivery fica em <strong>${b[0]}</strong>, <strong>${b[1]}</strong>, em <strong>${b[2]}</strong>, em <strong>${b[3]}</strong> ou em <strong>${b[5]}</strong>. Você define a taxa de entrega por bairro, conecta o WhatsApp e começa a receber pedidos no mesmo dia.</p>
+<p>É ideal para hamburguerias, pizzarias, açaíterias, restaurantes e lanchonetes que querem profissionalizar o delivery sem depender do iFood. Veja <a href="/blog/guias/como-criar-cardapio-digital-para-hamburgueria.html">como criar um cardápio digital para hamburgueria</a> passo a passo.</p>
+
+<div class="bairros-block">
+  <h2>Atendemos todo o delivery de ${c.city}</h2>
+  <p>O Menuzia configura o cardápio digital de restaurantes e deliverys nestes e em todos os bairros de ${c.city}:</p>
+  <ul class="bairros-grid">
+{{BAIRROS_GRID}}
+  </ul>
+</div>
+
+<h2>Quanto custa um cardápio digital ${p} ${c.city}</h2>
+<p>No Menuzia é <strong>R$67/mês fixo, sem comissão por pedido</strong> — com configuração feita pela nossa equipe e suporte incluso. Compare: um delivery ${p} ${c.city} que fatura R$25 mil/mês pagando 18% de comissão joga fora R$4.500 todo mês. Com um plano fixo, esse dinheiro volta pro seu caixa. Entenda em <a href="/blog/precos/quanto-custa-cardapio-digital-proprio.html">quanto custa um cardápio digital próprio</a> e se <a href="/blog/comparativos/cardapio-digital-sem-comissao-vale-a-pena.html">cardápio digital sem comissão vale a pena</a>.</p>
+
+<h2>Como começar ${p} ${c.city} (passo a passo)</h2>
+<ol>
+  <li><strong>Você assina o Menuzia</strong> por R$67/mês.</li>
+  <li><strong>Nossa equipe monta o seu cardápio digital</strong> com fotos, categorias e taxa de entrega por bairro de ${c.city}.</li>
+  <li><strong>Conectamos o WhatsApp</strong> e o robô de atendimento 24h.</li>
+  <li><strong>Você divulga o link</strong> na bio do Instagram, no status do WhatsApp e em panfletos com QR Code pela cidade.</li>
+  <li><strong>Os pedidos caem direto no seu caixa</strong> — e cada cliente vira base sua pra disparar <a href="/blog/marketing/campanha-whatsapp-para-delivery.html">campanhas de WhatsApp</a>.</li>
+</ol>`;
+}
+
 function page(c) {
   const url = '/' + c.slug;
   const bairrosGrid = c.bairrosTodos.map(b => `    <li>${b}</li>`).join('\n');
-  const body = c.body
+  const body = (c.body || genBody(c))
     .replace('{{BAIRROS_GRID}}', bairrosGrid)
     .replace(/href="\/blog\//g, `href="${B}`)
     .replace(/href="\/#/g, `href="${SITE}/#`)
@@ -451,3 +566,97 @@ cities.forEach(c => {
   fs.writeFileSync(c.slug, page(c));
   console.log('wrote ' + c.slug);
 });
+
+// ------------------------------------------------------------
+//  HUB /cidades.html — índice de todas as cidades (link interno + escala)
+// ------------------------------------------------------------
+function hub() {
+  const url = '/cidades.html';
+  const title = 'Cardápio Digital por Cidade no Espírito Santo | Menuzia';
+  const desc = 'Cardápio digital sem comissão por cidade: Vila Velha, Serra, Vitória, Cariacica, Viana e Guarapari. Escolha a sua cidade e venda direto, sem pagar comissão por pedido.';
+  const keywords = 'cardápio digital por cidade, cardápio digital espírito santo, cardápio digital grande vitória, delivery sem comissão es';
+  const head_ = `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="${desc}">
+<meta name="keywords" content="${keywords}">
+<meta name="author" content="Menuzia">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#1d3e73">
+<meta name="geo.region" content="BR-ES">
+<link rel="canonical" href="${SITE}${url}">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>${title}</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="${title}">
+<meta property="og:description" content="${desc}">
+<meta property="og:url" content="${SITE}${url}">
+<meta property="og:image" content="${SITE}/assets/img/blog/${cities[0].heroImg}">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Menuzia">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="${B}blog.css">`;
+  const itemList = `<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+${cities.map((c, i) => `    { "@type": "ListItem", "position": ${i + 1}, "url": "${SITE}/${c.slug}", "name": "Cardápio digital em ${c.city}" }`).join(',\n')}
+  ]
+}
+</script>`;
+  const cards = cities.map(c => `    <a class="post-card" href="${c.slug}">
+      <img class="post-card-img" src="assets/img/blog/${c.heroImg}" alt="${c.heroAlt}" width="600" height="338" loading="lazy" decoding="async">
+      <div class="post-card-body">
+        <span class="cat">${c.city} · ${c.region}</span>
+        <h2>Cardápio digital em ${c.city}</h2>
+        <p>Cardápio digital sem comissão para delivery em ${c.city}. Pedidos no WhatsApp, base de clientes sua, R$67/mês fixo.</p>
+        <span class="ler">Ver ${c.city} →</span>
+      </div>
+    </a>`).join('\n');
+  const bairrosFooter = cities.map(c => `<span><strong style="color:#fff">${c.city}</strong>: ${c.bairrosTodos.slice(0, 10).join(' · ')}</span>`).join('<br>');
+  return `${head_}
+${itemList}
+</head>
+<body>
+${header()}
+<section class="blog-hero">
+  <h1>Cardápio digital por cidade</h1>
+  <p>Atendemos delivery em toda a Grande Vitória e estamos chegando em mais cidades. Escolha a sua e venda direto, sem comissão.</p>
+</section>
+<div class="blog-grid">
+${cards}
+</div>
+<footer class="local-footer">
+  <div class="lf-grid">
+    <div class="lf-col">
+      <div class="footer-logo">menuzia</div>
+      <p>Cardápio digital sem comissão para restaurantes, hamburguerias e delivery. Atendimento online em toda a Grande Vitória/ES.</p>
+    </div>
+    <div class="lf-col">
+      <h4>Contato</h4>
+      <ul class="lf-nap">
+        <li>📱 <a href="https://wa.me/${NAP.phoneRaw}">${NAP.phoneDisplay}</a> (WhatsApp)</li>
+        <li>✉️ <a href="mailto:${NAP.email}">${NAP.email}</a></li>
+        <li>🕐 ${NAP.hours}</li>
+      </ul>
+    </div>
+    <div class="lf-col">
+      <h4>Cidades atendidas</h4>
+      <div class="lf-bairros">${cities.map(c => `<a href="${c.slug}">${c.city}</a>`).join(' · ')}</div>
+    </div>
+  </div>
+  <div class="lf-bottom">
+    <a href="${SITE}/">Início</a> · <a href="${B}index.html">Blog</a> · <a href="${SITE}/#precos">Preços</a><br>
+    © 2026 Menuzia. Cardápio digital sem comissão na Grande Vitória (ES).
+  </div>
+</footer>
+</body>
+</html>`;
+}
+fs.writeFileSync('cidades.html', hub());
+console.log('wrote cidades.html');

@@ -36,6 +36,33 @@
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/local-vitoria.webp</image:loc></image:image>
   </url>
   <url>
+    <loc>https://menuzia.com.br/cardapio-digital-cariacica.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/local-cariacica.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/cardapio-digital-viana.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/local-viana.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/cardapio-digital-guarapari.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/local-guarapari.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/cidades.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://menuzia.com.br/blog/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>

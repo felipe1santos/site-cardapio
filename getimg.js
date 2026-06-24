@@ -16,6 +16,9 @@ const wants = [
   { out: 'local-vila-velha-2.webp', query: 'food delivery motorcycle courier city' },
   { out: 'local-serra.webp', query: 'hamburger restaurant kitchen delivery' },
   { out: 'local-vitoria.webp', query: 'pizza restaurant counter delivery brazil' },
+  { out: 'local-cariacica.webp', query: 'fast food kitchen cook delivery' },
+  { out: 'local-viana.webp', query: 'food delivery bag scooter city' },
+  { out: 'local-guarapari.webp', query: 'acai bowl smoothie shop counter' },
 ];
 
 function getJSON(url) {
