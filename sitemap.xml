@@ -133,6 +133,62 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://menuzia.com.br/cardapio-digital-para-delivery.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/local-vila-velha-2.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/cardapio-digital-para-restaurante.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-sem-comissao.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/cardapio-digital-para-whatsapp.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-whatsapp.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/cardapio-digital-para-pizzaria.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/local-vitoria.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/cardapio-digital-para-confeitaria.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/local-guarapari.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/cardapio-digital-gratis.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-precos.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/cardapio-digital-pdf.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-hero.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/cardapio-digital-99food.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-delivery-ifood.webp</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://menuzia.com.br/blog/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>

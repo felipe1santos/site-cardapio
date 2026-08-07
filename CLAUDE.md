@@ -32,6 +32,11 @@ Cada página de cidade tem: `LocalBusiness` + `Service` + `FAQPage` + `Breadcrum
 ### NAP (Nome/Endereço/Telefone)
 Editar o objeto `NAP` no topo de `genlocal.js`. Consistência de NAP entre páginas = sinal de ranking local. Se não houver endereço físico, deixar `hasPhysicalAddress: false` (footer mostra "atendimento online em toda a cidade").
 
+## Landings por palavra-chave / segmento (`gennicho.js`)
+Páginas na raiz para intenções de busca não-geográficas ("cardápio digital para delivery", "para whatsapp", "para pizzaria", "pdf", "grátis", "x 99food"…). Geradas por **`node gennicho.js`** — **não editar o HTML direto**. Keyword nova = mais um objeto no array `niches` (`slug`, `cat`, `heroImg`, `heroAlt`, `title`, `h1`, `desc`, `keywords`, `body`, `faq`). Schema: `Service` + `Offer` R$67 + `FAQPage` + `BreadcrumbList`. Depois: adicionar no `sitemap.xml` e no bloco "Cardápio digital por segmento" do footer do `index.html`.
+
+Cuidado com **canibalização**: quando existir post de blog do mesmo tema (pizzaria, grátis), a landing raiz fica com a intenção comercial e o post com a informacional, e os dois se linkam.
+
 ## Blog (`blog/`)
 Gerado por **`genblog.js`** → `node genblog.js`. **Não editar HTML do blog direto.** Artigos em `blog/<categoria>/*.html` + `blog/index.html`. Schemas (Article, BreadcrumbList, ItemList), og tags, hero images e links internos vêm do array `posts` em `genblog.js`.
 
@@ -51,6 +56,7 @@ Gerado por **`genblog.js`** → `node genblog.js`. **Não editar HTML do blog di
 | `cardapio-digital-barato.html` | Landing de captura (à mão) |
 | `cardapio-digital-<cidade>.html` | Páginas locais → `genlocal.js` |
 | `genlocal.js` | Gerador de páginas de cidade (SEO local) |
+| `gennicho.js` | Gerador de landings por palavra-chave/segmento |
 | `genblog.js` | Gerador do blog |
 | `getimg.js` | Baixa imagens da Pexels → webp |
 | `conv.js` | Converte PNG → webp |
