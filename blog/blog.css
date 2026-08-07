@@ -177,3 +177,20 @@ a { text-decoration: none; color: var(--azul); }
     .artigo-wrap { padding: 32px 5% 56px; }
     .cta-box { padding: 32px 22px; }
 }
+
+/* Tabelas dentro do artigo (comparativos de preço) */
+.artigo table {
+    width: 100%; border-collapse: collapse; margin: 26px 0;
+    font-size: 0.98rem; overflow: hidden; border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.artigo table th {
+    background: #1d3e73; color: #fff; text-align: left;
+    padding: 12px 14px; font-weight: 700; font-size: 0.92rem;
+}
+.artigo table td { padding: 12px 14px; border-bottom: 1px solid #E2E8F0; }
+.artigo table tr:nth-child(even) td { background: #F8FAFC; }
+.artigo table tr:last-child td { border-bottom: none; }
+@media (max-width: 560px) {
+    .artigo table { display: block; overflow-x: auto; white-space: nowrap; }
+}

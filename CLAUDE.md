@@ -8,13 +8,17 @@ Site **estático** (HTML/CSS puro, sem framework). Imagens em `.webp`. Deploy = 
 
 Prioridade do projeto agora é **ranquear na busca local do Google** ("cardápio digital em <cidade>"), uma página por cidade da Grande Vitória/ES, com densidade de keyword por **bairro**.
 
-Grande Vitória/ES (todas feitas): **Vila Velha, Serra, Vitória, Cariacica, Viana, Guarapari** → `cardapio-digital-<cidade>.html`. Hub: **`cidades.html`** (índice linkando todas). Próximo passo de escala: capitais nacionais (SP, RJ, BH…).
+Grande Vitória/ES (todas feitas): **Vila Velha, Serra, Vitória, Cariacica, Viana, Guarapari**.
+Capitais nacionais (feitas, foco em "cardápio digital barato em <cidade>"): **São Paulo, Rio de Janeiro, Belo Horizonte, Brasília, Curitiba, Porto Alegre, Salvador, Fortaleza, Recife, Goiânia**.
+Slug: `cardapio-digital-<cidade>.html`. Hub: **`cidades.html`** (agrupado por UF, ES primeiro).
 
 ### Como criar/editar uma página de cidade
 Geradas por **`genlocal.js`** → `node genlocal.js`. **Não editar o HTML da página direto** (é sobrescrito).
 
-1. Adicione um objeto no array `cities` em `genlocal.js`. **Cidade nova = só dados** (não precisa escrever o corpo): preencha `slug`, `city`, `region`, `prep` (`'em'`/`'na'`), `toda` (ex: `'toda a Serra'`), `physicalAddress: false`, `heroImg`, `heroAlt`, `title`, `h1`, `desc`, `keywords`, `bairrosTop` (≥6, vira schema `areaServed`), `bairrosTodos` (grid+footer), `chips` (sidebar), `faq` (vira `FAQPage`). O corpo é gerado por `genBody(c)` a partir desses campos. Pra texto custom, defina `body` (sobrescreve o genBody) — VV/Serra/Vitória usam body próprio.
-2. Imagem de capa: adicione item em `getimg.js` (`wants[]`) e rode `PEXELS_KEY=xxxx node getimg.js`.
+1. Adicione um objeto no array `cities` em `genlocal.js`. **Cidade nova = só dados** (não precisa escrever corpo nem FAQ): preencha `slug`, `city`, `region`, `physicalAddress: false`, `heroImg`, `heroAlt`, `title`, `h1`, `desc`, `keywords`, `bairrosTop` (≥9, vira schema `areaServed`), `bairrosTodos` (grid+footer), `chips` (sidebar).
+   Fora do ES, preencha também: `prep` (`'em'`/`'na'`/`'no'`), `de` (`'do Rio de Janeiro'`), `toda`, `geo` (`'BR-SP'`), `stateName`, `metro`, `regiaoFrase` (`'todo o Brasil'`) e, se a cidade não usa "bairro", `bairroWord` (`'setor'` em Goiânia, `'região'` em Brasília). `nota` = 1–2 frases únicas da praça (evita conteúdo duplicado entre cidades).
+   O corpo vem de `genBody(c)` e o FAQ de `genFaq(c)`; defina `body`/`faq` só para sobrescrever (VV/Serra/Vitória/Cariacica/Viana/Guarapari têm FAQ próprio, VV/Serra/Vitória têm body próprio).
+2. Imagem de capa: adicione item em `getimg.js` (`wants[]`) e rode `PEXELS_KEY=xxxx node getimg.js`. As capitais nacionais hoje **reaproveitam as imagens `local-*.webp` existentes** — trocar por imagens próprias quando houver chave da Pexels.
 3. `node genlocal.js` (gera as páginas + `cidades.html`).
 4. Adicione a URL em `sitemap.xml` (priority 0.9) e no footer do `index.html`.
 
