@@ -194,3 +194,14 @@ a { text-decoration: none; color: var(--azul); }
 @media (max-width: 560px) {
     .artigo table { display: block; overflow-x: auto; white-space: nowrap; }
 }
+
+/* Buscas relacionadas (cauda longa) — páginas locais e landings */
+.lt-block { margin: 34px 0 8px; padding: 22px 24px; background: #F1F5F9; border: 1px solid #E2E8F0; border-radius: 14px; }
+.lt-block h2 { margin-top: 0 !important; font-size: 1.25rem !important; }
+.lt-block p { font-size: 0.96rem !important; color: #64748B; margin-bottom: 14px; }
+.lt-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.lt-chips a {
+    display: inline-block; padding: 7px 13px; background: #fff; border: 1px solid #CBD5E1;
+    border-radius: 999px; font-size: 0.86rem; color: #475569 !important; text-decoration: none; line-height: 1.2;
+}
+.lt-chips a:hover { background: #1d3e73; color: #fff !important; border-color: #1d3e73; }

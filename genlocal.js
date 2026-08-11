@@ -533,7 +533,299 @@ const cities = [
     bairrosTodos: ['Setor Bueno', 'Setor Marista', 'Jardim Goiás', 'Setor Oeste', 'Setor Sul', 'Setor Central', 'Setor Aeroporto', 'Alto da Glória', 'Setor Coimbra', 'Setor Pedro Ludovico', 'Parque Amazônia', 'Setor Campinas', 'Vila Nova', 'Jardim América', 'Setor Universitário', 'Cidade Jardim', 'Setor Nova Suíça', 'Faiçalville', 'Jardim Guanabara', 'Setor Leste Vila Nova', 'Negrão de Lima', 'Vera Cruz', 'Setor Criméia', 'Goiânia 2'],
     chips: ['cardápio digital barato Goiânia', 'delivery sem comissão GO', 'sair do iFood Goiânia', 'cardápio Setor Bueno', 'cardápio Setor Marista', 'QR Code cardápio GO', 'cardápio Jardim Goiás', 'sistema delivery Setor Oeste'],
   },
+
+  // ============================================================
+  //  GRANDE SÃO PAULO — maior praça de delivery do país.
+  //  Todas sem endereço físico (atendimento 100% online).
+  // ============================================================
+  ...mkSP({
+    slug: 'cardapio-digital-guarulhos.html', city: 'Guarulhos', toda: 'toda a cidade de Guarulhos',
+    heroImg: 'local-vila-velha.webp',
+    nota: 'Guarulhos tem um dos maiores volumes de delivery da Grande São Paulo e um dos tickets médios mais apertados — é onde cada ponto de comissão pesa mais rápido no caixa.',
+    bairrosTop: ['Centro', 'Vila Galvão', 'Picanço', 'Macedo', 'Gopoúva', 'Vila Augusta', 'Bom Clima', 'Jardim Presidente Dutra', 'Cumbica', 'Vila Rosália', 'Taboão', 'Ponte Grande'],
+    bairrosTodos: ['Centro de Guarulhos', 'Vila Galvão', 'Picanço', 'Macedo', 'Gopoúva', 'Vila Augusta', 'Bom Clima', 'Jardim Presidente Dutra', 'Cumbica', 'Vila Rosália', 'Taboão', 'Ponte Grande', 'Jardim Bela Vista', 'Bonsucesso', 'Cocaia', 'Água Chata', 'Parque Cecap', 'Jardim São João', 'Vila Progresso', 'Jardim Santa Mena', 'Continental', 'Jardim Fortaleza', 'Cidade Soberana', 'Pimentas'],
+  }),
+  ...mkSP({
+    slug: 'cardapio-digital-osasco.html', city: 'Osasco',
+    heroImg: 'local-serra.webp',
+    nota: 'Osasco concentra delivery de escritório no almoço e de bairro à noite — dois picos que rendem muito mais com pedido pelo seu link do que rateado com aplicativo.',
+    bairrosTop: ['Centro', 'Vila Yara', 'Bela Vista', 'Presidente Altino', 'Km 18', 'Jardim das Flores', 'Vila Campesina', 'City Bussocaba', 'Jaguaribe', 'Munhoz Júnior', 'Rochdale', 'Helena Maria'],
+    bairrosTodos: ['Centro de Osasco', 'Vila Yara', 'Bela Vista', 'Presidente Altino', 'Km 18', 'Jardim das Flores', 'Vila Campesina', 'City Bussocaba', 'Jaguaribe', 'Munhoz Júnior', 'Rochdale', 'Helena Maria', 'Quitaúna', 'Vila Osasco', 'Jardim Piratininga', 'Baronesa', 'Jardim Roberto', 'Novo Osasco', 'Vila Menck', 'Bonança', 'Padroeira', 'Portal D\'Oeste', 'Jardim Veloso', 'Santo Antônio'],
+  }),
+  ...mkSP({
+    slug: 'cardapio-digital-sao-bernardo-do-campo.html', city: 'São Bernardo do Campo', toda: 'toda a cidade de São Bernardo do Campo',
+    heroImg: 'local-vitoria.webp',
+    nota: 'No ABC, São Bernardo tem hamburgueria e pizzaria de bairro com clientela fiel — exatamente o perfil que mais lucra tirando o intermediário do meio.',
+    bairrosTop: ['Centro', 'Rudge Ramos', 'Jardim do Mar', 'Nova Petrópolis', 'Baeta Neves', 'Assunção', 'Anchieta', 'Ferrazópolis', 'Planalto', 'Demarchi', 'Vila Euclides', 'Taboão'],
+    bairrosTodos: ['Centro de São Bernardo', 'Rudge Ramos', 'Jardim do Mar', 'Nova Petrópolis', 'Baeta Neves', 'Assunção', 'Anchieta', 'Ferrazópolis', 'Planalto', 'Demarchi', 'Vila Euclides', 'Taboão', 'Alves Dias', 'Santa Terezinha', 'Riacho Grande', 'Jardim Chácara Inglesa', 'Independência', 'Batistini', 'Vila Vivaldi', 'Paulicéia', 'Jordanópolis', 'Cooperativa', 'Nova Baeta', 'Silvina'],
+  }),
+  ...mkSP({
+    slug: 'cardapio-digital-santo-andre.html', city: 'Santo André', toda: 'toda a cidade de Santo André',
+    heroImg: 'local-cariacica.webp',
+    nota: 'Santo André tem uma das maiores densidades de restaurante por quilômetro quadrado do ABC — quem mantém base própria de clientes recompra sem depender de vitrine de app.',
+    bairrosTop: ['Centro', 'Jardim', 'Vila Assunção', 'Casa Branca', 'Campestre', 'Santa Terezinha', 'Vila Homero Thon', 'Utinga', 'Parque das Nações', 'Vila Pires', 'Bangu', 'Vila Guiomar'],
+    bairrosTodos: ['Centro de Santo André', 'Jardim', 'Vila Assunção', 'Casa Branca', 'Campestre', 'Santa Terezinha', 'Vila Homero Thon', 'Utinga', 'Parque das Nações', 'Vila Pires', 'Bangu', 'Vila Guiomar', 'Jardim Bela Vista', 'Paraíso', 'Vila Alpina', 'Parque Erasmo Assunção', 'Vila Curuçá', 'Jardim Santo André', 'Cidade São Jorge', 'Vila Linda', 'Vila Palmares', 'Parque João Ramalho', 'Vila Metalúrgica', 'Camilópolis'],
+  }),
+  ...mkSP({
+    slug: 'cardapio-digital-sao-caetano-do-sul.html', city: 'São Caetano do Sul', toda: 'toda a cidade de São Caetano do Sul', metro: 'Grande São Paulo',
+    heroImg: 'local-viana.webp',
+    nota: 'São Caetano tem o maior poder de compra por habitante do ABC: ticket médio alto significa que cada pedido pago por comissão custa ainda mais caro.',
+    bairrosTop: ['Centro', 'Santa Paula', 'Santo Antônio', 'Barcelona', 'Olímpico', 'Fundação', 'Cerâmica', 'Nova Gerti', 'Prosperidade', 'Boa Vista', 'Mauá', 'Osvaldo Cruz'],
+    bairrosTodos: ['Centro de São Caetano', 'Santa Paula', 'Santo Antônio', 'Barcelona', 'Olímpico', 'Fundação', 'Cerâmica', 'Nova Gerti', 'Prosperidade', 'Boa Vista', 'Mauá', 'Osvaldo Cruz', 'Jardim São Caetano', 'Nova Gerty', 'Santa Maria', 'São José', 'Oswaldo Cruz', 'Vila Paula'],
+  }),
+  ...mkSP({
+    slug: 'cardapio-digital-diadema.html', city: 'Diadema',
+    heroImg: 'local-guarapari.webp',
+    nota: 'Diadema é cidade de delivery de bairro e ticket popular: aqui o plano fixo é o que separa a margem que sobra da margem que evapora em comissão.',
+    bairrosTop: ['Centro', 'Serraria', 'Piraporinha', 'Eldorado', 'Taboão', 'Vila Nogueira', 'Canhema', 'Casa Grande', 'Conceição', 'Campanário', 'Inamar', 'Jardim Ruyce'],
+    bairrosTodos: ['Centro de Diadema', 'Serraria', 'Piraporinha', 'Eldorado', 'Taboão', 'Vila Nogueira', 'Canhema', 'Casa Grande', 'Conceição', 'Campanário', 'Inamar', 'Jardim Ruyce', 'Vila São José', 'Jardim das Nações', 'Nova Conquista', 'Vila Paulina', 'Jardim Marilene', 'Parque Reid', 'Vila Nova Conquista', 'Sítio Joaninha'],
+  }),
+  ...mkSP({
+    slug: 'cardapio-digital-maua.html', city: 'Mauá', toda: 'toda a cidade de Mauá',
+    heroImg: 'local-vila-velha-2.webp',
+    nota: 'Em Mauá o delivery cresce puxado por lanche e marmita — categorias de ticket baixo em que a comissão do app come uma fatia enorme de cada pedido.',
+    bairrosTop: ['Centro', 'Vila Noemia', 'Matriz', 'Jardim Zaíra', 'Parque São Vicente', 'Vila Assis Brasil', 'Jardim Pilar', 'Sônia Maria', 'Capuava', 'Jardim Itapark', 'Vila Bocaina', 'Jardim Guapituba'],
+    bairrosTodos: ['Centro de Mauá', 'Vila Noemia', 'Matriz', 'Jardim Zaíra', 'Parque São Vicente', 'Vila Assis Brasil', 'Jardim Pilar', 'Sônia Maria', 'Capuava', 'Jardim Itapark', 'Vila Bocaina', 'Jardim Guapituba', 'Jardim Primavera', 'Vila Magini', 'Parque das Américas', 'Jardim Éden', 'Vila Vitória', 'Jardim Sônia Maria', 'Jardim Miranda D\'Aviz', 'Vila Falchi'],
+  }),
+  ...mkSP({
+    slug: 'cardapio-digital-barueri.html', city: 'Barueri', toda: 'toda a cidade de Barueri',
+    heroImg: 'local-serra.webp',
+    nota: 'Alphaville puxa o almoço corporativo de Barueri: pedido recorrente, mesmo cliente toda semana — base que só vira ativo seu se o pedido não passar por aplicativo.',
+    bairrosTop: ['Alphaville', 'Centro', 'Jardim Belval', 'Jardim Silveira', 'Engenho Novo', 'Vila Boa Vista', 'Jardim Tupanci', 'Parque Imperial', 'Aldeia', 'Jardim dos Camargos', 'Jardim Maria Helena', 'Vale do Sol'],
+    bairrosTodos: ['Alphaville', 'Centro de Barueri', 'Jardim Belval', 'Jardim Silveira', 'Engenho Novo', 'Vila Boa Vista', 'Jardim Tupanci', 'Parque Imperial', 'Aldeia', 'Jardim dos Camargos', 'Jardim Maria Helena', 'Vale do Sol', 'Jardim Mutinga', 'Jardim Regina Alice', 'Vila São João', 'Parque Viana', 'Jardim Paulista', 'Jardim Julio', 'Vila Porto', 'Chácara Marco'],
+  }),
+  ...mkSP({
+    slug: 'cardapio-digital-carapicuiba.html', city: 'Carapicuíba', toda: 'toda a cidade de Carapicuíba',
+    heroImg: 'local-vitoria.webp',
+    nota: 'Carapicuíba tem delivery de alta frequência e distância curta — cenário em que a taxa de entrega bem configurada por bairro decide o lucro do pedido.',
+    bairrosTop: ['Centro', 'Vila Dirce', 'Cidade Ariston', 'Jardim Ana Estela', 'Vila Menck', 'Cohab 2', 'Parque Santa Teresa', 'Jardim Silvia', 'Vila Gustavo Correia', 'Jardim Marilu', 'Vila Lourdes', 'Jardim Tonato'],
+    bairrosTodos: ['Centro de Carapicuíba', 'Vila Dirce', 'Cidade Ariston', 'Jardim Ana Estela', 'Vila Menck', 'Cohab 2', 'Parque Santa Teresa', 'Jardim Silvia', 'Vila Gustavo Correia', 'Jardim Marilu', 'Vila Lourdes', 'Jardim Tonato', 'Jardim das Belezas', 'Vila Caldas', 'Jardim Angélica', 'Parque José Alexandre', 'Vila Helena', 'Jardim Rosalina', 'Cohab 5', 'Vila Sul Americana'],
+  }),
+  ...mkSP({
+    slug: 'cardapio-digital-taboao-da-serra.html', city: 'Taboão da Serra', toda: 'toda a cidade de Taboão da Serra',
+    heroImg: 'local-cariacica.webp',
+    nota: 'Taboão é corredor de passagem entre a capital e a região oeste: delivery noturno forte e clientela que volta se você tiver o contato dela no WhatsApp.',
+    bairrosTop: ['Centro', 'Jardim Maria Rosa', 'Parque Assunção', 'Jardim Trindade', 'Pirajuçara', 'Jardim Wanda', 'Jardim Salete', 'Parque Pinheiros', 'Jardim Bandeirantes', 'Cidade Intercap', 'Jardim Helena', 'Jardim Monte Alegre'],
+    bairrosTodos: ['Centro de Taboão da Serra', 'Jardim Maria Rosa', 'Parque Assunção', 'Jardim Trindade', 'Pirajuçara', 'Jardim Wanda', 'Jardim Salete', 'Parque Pinheiros', 'Jardim Bandeirantes', 'Cidade Intercap', 'Jardim Helena', 'Jardim Monte Alegre', 'Vila Iasi', 'Jardim Record', 'Parque Laguna', 'Jardim Mituzi', 'Vila Sonia', 'Jardim Roseira', 'Chácara Agrindus', 'Jardim Suriam'],
+  }),
+  ...mkSP({
+    slug: 'cardapio-digital-mogi-das-cruzes.html', city: 'Mogi das Cruzes', toda: 'toda a cidade de Mogi das Cruzes', metro: 'Alto Tietê', metroFrase: 'todo o Alto Tietê',
+    heroImg: 'local-viana.webp',
+    nota: 'Mogi tem cidade grande com cara de interior: a indicação boca a boca funciona muito, e ela só vira recompra quando o cliente tem o seu link salvo.',
+    bairrosTop: ['Centro', 'Vila Oliveira', 'Mogilar', 'Braz Cubas', 'César de Souza', 'Jundiapeba', 'Vila Suissa', 'Alto Ipiranga', 'Jardim Armênia', 'Vila Industrial', 'Socorro', 'Vila Bela'],
+    bairrosTodos: ['Centro de Mogi das Cruzes', 'Vila Oliveira', 'Mogilar', 'Braz Cubas', 'César de Souza', 'Jundiapeba', 'Vila Suissa', 'Alto Ipiranga', 'Jardim Armênia', 'Vila Industrial', 'Socorro', 'Vila Bela', 'Jardim Camila', 'Vila Natal', 'Parque Monte Líbano', 'Jardim Universo', 'Vila Lavínia', 'Botujuru', 'Jardim Aeroporto', 'Vila Mogilar'],
+  }),
+  ...mkSP({
+    slug: 'cardapio-digital-cotia.html', city: 'Cotia',
+    heroImg: 'local-guarapari.webp',
+    nota: 'Na região da Granja Viana o delivery é de ticket alto e entrega mais longa — configurar taxa por bairro é o que impede a corrida de comer a margem.',
+    bairrosTop: ['Centro', 'Granja Viana', 'Jardim Nomura', 'Parque Rincão', 'Atalaia', 'Jardim Sandra', 'Caucaia do Alto', 'Portão', 'Jardim Isis', 'Vila São Francisco', 'Chácara Roselândia', 'Jardim Barbacena'],
+    bairrosTodos: ['Centro de Cotia', 'Granja Viana', 'Jardim Nomura', 'Parque Rincão', 'Atalaia', 'Jardim Sandra', 'Caucaia do Alto', 'Portão', 'Jardim Isis', 'Vila São Francisco', 'Chácara Roselândia', 'Jardim Barbacena', 'Jardim Petrópolis', 'Vila Santo Antônio', 'Parque Turiguara', 'Jardim Passargada', 'Sítio da Moenda', 'Nakamura Park', 'Jardim Torres', 'Lageadinho'],
+  }),
+
+  // ============================================================
+  //  Interior e litoral de São Paulo
+  // ============================================================
+  ...mkSP({
+    slug: 'cardapio-digital-campinas.html', city: 'Campinas', metro: 'Região Metropolitana de Campinas',
+    heroImg: 'local-vila-velha.webp',
+    nota: 'Campinas tem público universitário e corporativo pedindo todo dia — volume alto é justamente onde a comissão percentual mais destrói o lucro.',
+    bairrosTop: ['Cambuí', 'Centro', 'Barão Geraldo', 'Taquaral', 'Mansões Santo Antônio', 'Jardim Chapadão', 'Nova Campinas', 'Sousas', 'Vila Industrial', 'Bosque', 'Swift', 'Ouro Verde'],
+    bairrosTodos: ['Cambuí', 'Centro de Campinas', 'Barão Geraldo', 'Taquaral', 'Mansões Santo Antônio', 'Jardim Chapadão', 'Nova Campinas', 'Sousas', 'Vila Industrial', 'Bosque', 'Swift', 'Ouro Verde', 'Guanabara', 'Botafogo', 'Jardim Proença', 'Vila Nova', 'Ponte Preta', 'Jardim Aurélia', 'Parque Prado', 'Alphaville Campinas', 'Jardim Nova Europa', 'Vila Teixeira', 'Castelo', 'Jardim das Paineiras'],
+  }),
+  ...mkSP({
+    slug: 'cardapio-digital-santos.html', city: 'Santos', toda: 'toda a cidade de Santos', metro: 'Baixada Santista',
+    heroImg: 'local-serra.webp',
+    nota: 'Santos vive de temporada: no verão o volume explode e, com cardápio próprio, o turista de janeiro vira contato na sua base para o ano inteiro.',
+    bairrosTop: ['Gonzaga', 'Boqueirão', 'Ponta da Praia', 'Aparecida', 'Embaré', 'Campo Grande', 'Centro', 'José Menino', 'Vila Belmiro', 'Marapé', 'Encruzilhada', 'Macuco'],
+    bairrosTodos: ['Gonzaga', 'Boqueirão', 'Ponta da Praia', 'Aparecida', 'Embaré', 'Campo Grande', 'Centro de Santos', 'José Menino', 'Vila Belmiro', 'Marapé', 'Encruzilhada', 'Macuco', 'Vila Mathias', 'Estuário', 'Pompéia', 'Vila Nova', 'Jabaquara', 'Areia Branca', 'Rádio Clube', 'Castelo', 'Saboó', 'Bom Retiro', 'Morro Santa Maria', 'Chico de Paula'],
+  }),
+  ...mkSP({
+    slug: 'cardapio-digital-sao-jose-dos-campos.html', city: 'São José dos Campos', toda: 'toda a cidade de São José dos Campos', metro: 'Vale do Paraíba', metroFrase: 'todo o Vale do Paraíba',
+    heroImg: 'local-vitoria.webp',
+    nota: 'São José tem almoço corporativo pesado e delivery noturno de bairro — dois públicos diferentes que cabem no mesmo cardápio, com preço e horário próprios.',
+    bairrosTop: ['Jardim Aquarius', 'Centro', 'Vila Ema', 'Jardim Satélite', 'Urbanova', 'Bosque dos Eucaliptos', 'Vila Adyana', 'Jardim das Indústrias', 'Parque Industrial', 'Jardim Oswaldo Cruz', 'Monte Castelo', 'Campo dos Alemães'],
+    bairrosTodos: ['Jardim Aquarius', 'Centro de São José dos Campos', 'Vila Ema', 'Jardim Satélite', 'Urbanova', 'Bosque dos Eucaliptos', 'Vila Adyana', 'Jardim das Indústrias', 'Parque Industrial', 'Jardim Oswaldo Cruz', 'Monte Castelo', 'Campo dos Alemães', 'Jardim Apolo', 'Vila Industrial', 'Jardim Colinas', 'Parque Residencial Aquarius', 'Vila Tatetuba', 'Jardim Paulista', 'Santana', 'Putim', 'Eugênio de Melo', 'Jardim Motorama'],
+  }),
+  ...mkSP({
+    slug: 'cardapio-digital-sorocaba.html', city: 'Sorocaba', metro: 'região de Sorocaba',
+    heroImg: 'local-cariacica.webp',
+    nota: 'Sorocaba é praça de hamburgueria artesanal e pizzaria de bairro: negócios que vivem de cliente fiel e perdem margem toda vez que o pedido passa por app.',
+    bairrosTop: ['Centro', 'Campolim', 'Vila Hortência', 'Jardim Vergueiro', 'Além Ponte', 'Éden', 'Vila Haro', 'Santa Rosália', 'Jardim Simus', 'Wanel Ville', 'Jardim Europa', 'Vila Barcelona'],
+    bairrosTodos: ['Centro de Sorocaba', 'Campolim', 'Vila Hortência', 'Jardim Vergueiro', 'Além Ponte', 'Éden', 'Vila Haro', 'Santa Rosália', 'Jardim Simus', 'Wanel Ville', 'Jardim Europa', 'Vila Barcelona', 'Jardim Piratininga', 'Parque Campolim', 'Vila Trujillo', 'Jardim Gonçalves', 'Ipanema das Pedras', 'Jardim Maria Eugênia', 'Vila Santana', 'Cajuru do Sul', 'Jardim Novo Mundo', 'Vila Progresso'],
+  }),
+  ...mkSP({
+    slug: 'cardapio-digital-ribeirao-preto.html', city: 'Ribeirão Preto', toda: 'toda a cidade de Ribeirão Preto', metro: 'região de Ribeirão Preto',
+    heroImg: 'local-viana.webp',
+    nota: 'Ribeirão tem uma das maiores concentrações de bar e restaurante por habitante do interior paulista — concorrência assim exige base de clientes própria, não vitrine alugada.',
+    bairrosTop: ['Jardim Irajá', 'Centro', 'Jardim Botânico', 'Ribeirânia', 'Alto da Boa Vista', 'Jardim Paulista', 'Nova Aliança', 'Campos Elíseos', 'Vila Tibério', 'City Ribeirão', 'Jardim Canadá', 'Sumarezinho'],
+    bairrosTodos: ['Jardim Irajá', 'Centro de Ribeirão Preto', 'Jardim Botânico', 'Ribeirânia', 'Alto da Boa Vista', 'Jardim Paulista', 'Nova Aliança', 'Campos Elíseos', 'Vila Tibério', 'City Ribeirão', 'Jardim Canadá', 'Sumarezinho', 'Jardim América', 'Bosque das Juritis', 'Vila Virgínia', 'Jardim Palma Travassos', 'Quintino Facci', 'Ipiranga', 'Vila Seixas', 'Jardim Sumaré', 'Presidente Dutra', 'Parque dos Bandeirantes'],
+  }),
+
+  // ============================================================
+  //  Demais capitais e grandes cidades do Brasil
+  // ============================================================
+  ...mkBR({
+    slug: 'cardapio-digital-manaus.html', city: 'Manaus', region: 'AM', geo: 'BR-AM', stateName: 'Amazonas', metro: 'Grande Manaus',
+    heroImg: 'local-guarapari.webp',
+    nota: 'Manaus tem delivery forte o ano todo e distâncias longas entre zonas — taxa de entrega por bairro bem configurada é o que mantém o pedido lucrativo.',
+    bairrosTop: ['Adrianópolis', 'Centro', 'Ponta Negra', 'Aleixo', 'Parque 10 de Novembro', 'Cidade Nova', 'Flores', 'Dom Pedro', 'Chapada', 'Vieiralves', 'Compensa', 'São José Operário'],
+    bairrosTodos: ['Adrianópolis', 'Centro de Manaus', 'Ponta Negra', 'Aleixo', 'Parque 10 de Novembro', 'Cidade Nova', 'Flores', 'Dom Pedro', 'Chapada', 'Vieiralves', 'Compensa', 'São José Operário', 'Nossa Senhora das Graças', 'Coroado', 'Japiim', 'Alvorada', 'Petrópolis', 'Cachoeirinha', 'Tarumã', 'Novo Aleixo', 'Planalto', 'São Jorge', 'Educandos', 'Colônia Terra Nova'],
+  }),
+  ...mkBR({
+    slug: 'cardapio-digital-belem.html', city: 'Belém', region: 'PA', geo: 'BR-PA', stateName: 'Pará', metro: 'Grande Belém',
+    heroImg: 'local-vila-velha-2.webp',
+    nota: 'Belém tem gastronomia própria e forte cultura de pedido por WhatsApp — o canal em que o seu cardápio já entra pronto, sem intermediário cobrando percentual.',
+    bairrosTop: ['Nazaré', 'Umarizal', 'Batista Campos', 'Marco', 'Pedreira', 'Cremação', 'São Brás', 'Guamá', 'Icoaraci', 'Campina', 'Telégrafo', 'Souza'],
+    bairrosTodos: ['Nazaré', 'Umarizal', 'Batista Campos', 'Marco', 'Pedreira', 'Cremação', 'São Brás', 'Guamá', 'Icoaraci', 'Campina', 'Telégrafo', 'Souza', 'Reduto', 'Fátima', 'Canudos', 'Terra Firme', 'Sacramenta', 'Val-de-Cães', 'Curió-Utinga', 'Marambaia', 'Bengui', 'Mangueirão', 'Cidade Velha', 'Coqueiro'],
+  }),
+  ...mkBR({
+    slug: 'cardapio-digital-sao-luis.html', city: 'São Luís', region: 'MA', geo: 'BR-MA', stateName: 'Maranhão', metro: 'Grande São Luís',
+    heroImg: 'local-vila-velha.webp',
+    nota: 'Em São Luís o delivery se concentra no eixo Renascença–Calhau–Cohama, com clientela recorrente que vale muito mais na sua lista do que na base de um aplicativo.',
+    bairrosTop: ['Renascença', 'Calhau', 'Ponta d\'Areia', 'Cohama', 'Cohafuma', 'Centro', 'Turu', 'Olho d\'Água', 'Jardim Renascença', 'Angelim', 'Bequimão', 'Vinhais'],
+    bairrosTodos: ['Renascença', 'Calhau', 'Ponta d\'Areia', 'Cohama', 'Cohafuma', 'Centro de São Luís', 'Turu', 'Olho d\'Água', 'Jardim Renascença', 'Angelim', 'Bequimão', 'Vinhais', 'São Francisco', 'Monte Castelo', 'Cohab', 'Anil', 'Tirirical', 'Araçagi', 'Maiobão', 'Cidade Operária', 'Alemanha', 'Ipase', 'Cohatrac', 'Jardim São Cristóvão'],
+  }),
+  ...mkBR({
+    slug: 'cardapio-digital-natal.html', city: 'Natal', region: 'RN', geo: 'BR-RN', stateName: 'Rio Grande do Norte', metro: 'Grande Natal',
+    heroImg: 'local-serra.webp',
+    nota: 'Natal junta público local e turista: quem captura o contato do cliente da alta temporada continua vendendo para ele o ano inteiro por WhatsApp.',
+    bairrosTop: ['Ponta Negra', 'Tirol', 'Petrópolis', 'Capim Macio', 'Lagoa Nova', 'Candelária', 'Alecrim', 'Neópolis', 'Pitimbu', 'Cidade Alta', 'Nova Descoberta', 'Barro Vermelho'],
+    bairrosTodos: ['Ponta Negra', 'Tirol', 'Petrópolis', 'Capim Macio', 'Lagoa Nova', 'Candelária', 'Alecrim', 'Neópolis', 'Pitimbu', 'Cidade Alta', 'Nova Descoberta', 'Barro Vermelho', 'Ribeira', 'Areia Preta', 'Nossa Senhora de Nazaré', 'Dix-Sept Rosado', 'Bom Pastor', 'Igapó', 'Potengi', 'Lagoa Azul', 'Redinha', 'Felipe Camarão', 'Cidade da Esperança', 'Planalto'],
+  }),
+  ...mkBR({
+    slug: 'cardapio-digital-joao-pessoa.html', city: 'João Pessoa', region: 'PB', geo: 'BR-PB', stateName: 'Paraíba', metro: 'Grande João Pessoa',
+    heroImg: 'local-vitoria.webp',
+    nota: 'A orla de João Pessoa concentra hamburgueria e açaí de alto giro — categorias de ticket médio em que a comissão por pedido aparece rápido no fechamento do mês.',
+    bairrosTop: ['Manaíra', 'Tambaú', 'Bessa', 'Cabo Branco', 'Bancários', 'Jardim Oceania', 'Miramar', 'Altiplano', 'Mangabeira', 'Centro', 'Torre', 'Aeroclube'],
+    bairrosTodos: ['Manaíra', 'Tambaú', 'Bessa', 'Cabo Branco', 'Bancários', 'Jardim Oceania', 'Miramar', 'Altiplano', 'Mangabeira', 'Centro de João Pessoa', 'Torre', 'Aeroclube', 'Jaguaribe', 'Expedicionários', 'Cristo Redentor', 'José Américo', 'Água Fria', 'Castelo Branco', 'Tambauzinho', 'Brisamar', 'Valentina', 'Cruz das Armas', 'Bairro dos Estados', 'Ernesto Geisel'],
+  }),
+  ...mkBR({
+    slug: 'cardapio-digital-maceio.html', city: 'Maceió', region: 'AL', geo: 'BR-AL', stateName: 'Alagoas', metro: 'Grande Maceió',
+    heroImg: 'local-cariacica.webp',
+    nota: 'Maceió tem delivery de praia no verão e de bairro o ano todo: com link próprio, o mesmo cardápio atende os dois sem pagar percentual sobre nenhum pedido.',
+    bairrosTop: ['Ponta Verde', 'Jatiúca', 'Pajuçara', 'Farol', 'Mangabeiras', 'Gruta de Lourdes', 'Benedito Bentes', 'Cruz das Almas', 'Jacarecica', 'Poço', 'Centro', 'Serraria'],
+    bairrosTodos: ['Ponta Verde', 'Jatiúca', 'Pajuçara', 'Farol', 'Mangabeiras', 'Gruta de Lourdes', 'Benedito Bentes', 'Cruz das Almas', 'Jacarecica', 'Poço', 'Centro de Maceió', 'Serraria', 'Antares', 'Barro Duro', 'Tabuleiro do Martins', 'Jaraguá', 'Levada', 'Trapiche da Barra', 'Ouro Preto', 'Santa Lúcia', 'Cidade Universitária', 'Riacho Doce', 'Garça Torta', 'Pinheiro'],
+  }),
+  ...mkBR({
+    slug: 'cardapio-digital-teresina.html', city: 'Teresina', region: 'PI', geo: 'BR-PI', stateName: 'Piauí', metro: 'Grande Teresina',
+    heroImg: 'local-viana.webp',
+    nota: 'Teresina tem calor o ano inteiro e delivery noturno constante — operação em que reduzir custo fixo por pedido muda o resultado de forma direta.',
+    bairrosTop: ['Jóquei', 'Fátima', 'Ininga', 'Horto', 'São Cristóvão', 'Centro', 'Dirceu Arcoverde', 'Piçarra', 'Morada do Sol', 'Santa Isabel', 'Cabral', 'Bela Vista'],
+    bairrosTodos: ['Jóquei', 'Fátima', 'Ininga', 'Horto', 'São Cristóvão', 'Centro de Teresina', 'Dirceu Arcoverde', 'Piçarra', 'Morada do Sol', 'Santa Isabel', 'Cabral', 'Bela Vista', 'Ilhotas', 'Noivos', 'Vermelha', 'Monte Castelo', 'Parque Piauí', 'Angelim', 'Satélite', 'Água Mineral', 'Planalto Uruguai', 'Redenção', 'Buenos Aires', 'Primavera'],
+  }),
+  ...mkBR({
+    slug: 'cardapio-digital-campo-grande-ms.html', city: 'Campo Grande', region: 'MS', geo: 'BR-MS', stateName: 'Mato Grosso do Sul', metro: 'região de Campo Grande',
+    heroImg: 'local-guarapari.webp',
+    nota: 'Campo Grande é cidade espalhada, com trajetos longos: definir taxa por bairro e raio máximo evita entrega que sai mais cara do que o próprio pedido.',
+    bairrosTop: ['Centro', 'Jardim dos Estados', 'Chácara Cachoeira', 'Tiradentes', 'Monte Castelo', 'Carandá Bosque', 'Santa Fé', 'Vilas Boas', 'Jardim Autonomista', 'Mata do Jacinto', 'Coophavila', 'Amambaí'],
+    bairrosTodos: ['Centro de Campo Grande', 'Jardim dos Estados', 'Chácara Cachoeira', 'Tiradentes', 'Monte Castelo', 'Carandá Bosque', 'Santa Fé', 'Vilas Boas', 'Jardim Autonomista', 'Mata do Jacinto', 'Coophavila', 'Amambaí', 'Jardim Leblon', 'Vila Sobrinho', 'Aero Rancho', 'Moreninhas', 'Guanandi', 'Jardim Seminário', 'Cabreúva', 'Universitário', 'Jardim Paulista', 'Nova Lima', 'Itanhangá', 'Jardim Veraneio'],
+  }),
+  ...mkBR({
+    slug: 'cardapio-digital-cuiaba.html', city: 'Cuiabá', region: 'MT', geo: 'BR-MT', stateName: 'Mato Grosso', metro: 'Grande Cuiabá',
+    heroImg: 'local-vila-velha-2.webp',
+    nota: 'Cuiabá pede muito delivery justamente nas horas de calor mais forte — quem dispara promoção no WhatsApp nesse horário enche a cozinha sem pagar comissão.',
+    bairrosTop: ['Centro', 'Jardim Aclimação', 'Goiabeiras', 'Duque de Caxias', 'Santa Rosa', 'Bosque da Saúde', 'Jardim das Américas', 'Coxipó', 'Morada do Ouro', 'Popular', 'Araés', 'Jardim Itália'],
+    bairrosTodos: ['Centro de Cuiabá', 'Jardim Aclimação', 'Goiabeiras', 'Duque de Caxias', 'Santa Rosa', 'Bosque da Saúde', 'Jardim das Américas', 'Coxipó', 'Morada do Ouro', 'Popular', 'Araés', 'Jardim Itália', 'Consil', 'Quilombo', 'Jardim Cuiabá', 'Boa Esperança', 'Grande Terceiro', 'Porto', 'Ribeirão do Lipa', 'Jardim Vitória', 'Novo Terceiro', 'Alvorada', 'Pedra 90', 'Despraiado'],
+  }),
+  ...mkBR({
+    slug: 'cardapio-digital-florianopolis.html', city: 'Florianópolis', region: 'SC', geo: 'BR-SC', stateName: 'Santa Catarina', metro: 'Grande Florianópolis',
+    heroImg: 'local-serra.webp',
+    nota: 'Floripa dobra de população no verão: com cardápio próprio, o cliente da temporada entra na sua base e continua pedindo fora da alta.',
+    bairrosTop: ['Centro', 'Trindade', 'Lagoa da Conceição', 'Campeche', 'Itacorubi', 'Ingleses', 'Canasvieiras', 'Coqueiros', 'Estreito', 'Jurerê', 'Santa Mônica', 'Córrego Grande'],
+    bairrosTodos: ['Centro de Florianópolis', 'Trindade', 'Lagoa da Conceição', 'Campeche', 'Itacorubi', 'Ingleses', 'Canasvieiras', 'Coqueiros', 'Estreito', 'Jurerê', 'Santa Mônica', 'Córrego Grande', 'Rio Tavares', 'Barra da Lagoa', 'João Paulo', 'Agronômica', 'Balneário', 'Capoeiras', 'Saco Grande', 'Pantanal', 'Cacupé', 'Santo Antônio de Lisboa', 'Carianos', 'Monte Verde'],
+  }),
+  ...mkBR({
+    slug: 'cardapio-digital-uberlandia.html', city: 'Uberlândia', region: 'MG', geo: 'BR-MG', stateName: 'Minas Gerais', metro: 'Triângulo Mineiro', metroFrase: 'todo o Triângulo Mineiro',
+    heroImg: 'local-vitoria.webp',
+    nota: 'Uberlândia é polo do Triângulo Mineiro, com público universitário grande e delivery madrugada adentro — volume que só compensa sem percentual sobre a venda.',
+    bairrosTop: ['Santa Mônica', 'Centro', 'Tibery', 'Jardim Karaíba', 'Morada da Colina', 'Umuarama', 'Segismundo Pereira', 'Saraiva', 'Osvaldo Rezende', 'Tabajaras', 'Granja Marileusa', 'Luizote de Freitas'],
+    bairrosTodos: ['Santa Mônica', 'Centro de Uberlândia', 'Tibery', 'Jardim Karaíba', 'Morada da Colina', 'Umuarama', 'Segismundo Pereira', 'Saraiva', 'Osvaldo Rezende', 'Tabajaras', 'Granja Marileusa', 'Luizote de Freitas', 'Martins', 'Fundinho', 'Jardim Patrícia', 'Planalto', 'Shopping Park', 'Jardim Brasília', 'Cidade Jardim', 'Pampulha', 'Roosevelt', 'Presidente Roosevelt', 'Nova Uberlândia', 'Alto Umuarama'],
+  }),
+  ...mkBR({
+    slug: 'cardapio-digital-contagem.html', city: 'Contagem', region: 'MG', geo: 'BR-MG', stateName: 'Minas Gerais', metro: 'Grande BH',
+    heroImg: 'local-cariacica.webp',
+    nota: 'Contagem tem almoço industrial de segunda a sexta e lanche à noite — dois cardápios no mesmo link, com horários e preços separados.',
+    bairrosTop: ['Eldorado', 'Cidade Industrial', 'Centro', 'Riacho das Pedras', 'Nova Contagem', 'Água Branca', 'Ressaca', 'Amazonas', 'Bernardo Monteiro', 'Fonte Grande', 'Jardim Riacho', 'Tropical'],
+    bairrosTodos: ['Eldorado', 'Cidade Industrial', 'Centro de Contagem', 'Riacho das Pedras', 'Nova Contagem', 'Água Branca', 'Ressaca', 'Amazonas', 'Bernardo Monteiro', 'Fonte Grande', 'Jardim Riacho', 'Tropical', 'Industrial São Luiz', 'Novo Progresso', 'Vila Pérola', 'Jardim Laguna', 'Retiro', 'Nacional', 'Sapucaias', 'Petrolândia', 'Milionários', 'Icaivera', 'Vila Barraginha', 'Praia'],
+  }),
+  ...mkBR({
+    slug: 'cardapio-digital-niteroi.html', city: 'Niterói', region: 'RJ', geo: 'BR-RJ', stateName: 'Rio de Janeiro', metro: 'Grande Rio',
+    heroImg: 'local-viana.webp',
+    nota: 'Niterói tem ticket médio alto em Icaraí e região oceânica: pedido caro pagando percentual é onde mais dinheiro escapa do caixa todo mês.',
+    bairrosTop: ['Icaraí', 'Centro', 'Santa Rosa', 'Ingá', 'São Francisco', 'Charitas', 'Piratininga', 'Itaipu', 'Fonseca', 'Barreto', 'Camboinhas', 'Pendotiba'],
+    bairrosTodos: ['Icaraí', 'Centro de Niterói', 'Santa Rosa', 'Ingá', 'São Francisco', 'Charitas', 'Piratininga', 'Itaipu', 'Fonseca', 'Barreto', 'Camboinhas', 'Pendotiba', 'Vital Brazil', 'Maria Paula', 'Badu', 'Cubango', 'Engenhoca', 'Largo da Batalha', 'Jurujuba', 'Cachoeiras', 'Sapê', 'Boa Viagem', 'Gragoatá', 'Itacoatiara'],
+  }),
+  ...mkBR({
+    slug: 'cardapio-digital-joinville.html', city: 'Joinville', region: 'SC', geo: 'BR-SC', stateName: 'Santa Catarina', metro: 'Norte de Santa Catarina', metroFrase: 'todo o Norte de Santa Catarina',
+    heroImg: 'local-guarapari.webp',
+    nota: 'Joinville é a maior cidade de Santa Catarina e tem delivery de operário e de escritório no mesmo dia — recorrência alta, margem apertada, comissão insustentável.',
+    bairrosTop: ['Centro', 'América', 'Costa e Silva', 'Glória', 'Bucarein', 'Atiradores', 'Anita Garibaldi', 'Iririú', 'Boa Vista', 'Floresta', 'Saguaçu', 'Santo Antônio'],
+    bairrosTodos: ['Centro de Joinville', 'América', 'Costa e Silva', 'Glória', 'Bucarein', 'Atiradores', 'Anita Garibaldi', 'Iririú', 'Boa Vista', 'Floresta', 'Saguaçu', 'Santo Antônio', 'Jardim Iririú', 'Aventureiro', 'Vila Nova', 'Guanabara', 'Petrópolis', 'Jarivatuba', 'Fátima', 'Paranaguamirim', 'Espinheiros', 'Bom Retiro', 'Pirabeiraba', 'Comasa'],
+  }),
+  ...mkBR({
+    slug: 'cardapio-digital-londrina.html', city: 'Londrina', region: 'PR', geo: 'BR-PR', stateName: 'Paraná', metro: 'Norte do Paraná', metroFrase: 'todo o Norte do Paraná',
+    heroImg: 'local-vila-velha.webp',
+    nota: 'Londrina tem público universitário grande e cena de hamburgueria em expansão — mercado em que quem tem base própria de clientes cresce sem depender de vitrine paga.',
+    bairrosTop: ['Gleba Palhano', 'Centro', 'Jardim Higienópolis', 'Aurora', 'Vila Ipiranga', 'Antares', 'Shangri-lá', 'Cinco Conjuntos', 'Bela Suíça', 'Jardim Bandeirantes', 'Judith', 'Guanabara'],
+    bairrosTodos: ['Gleba Palhano', 'Centro de Londrina', 'Jardim Higienópolis', 'Aurora', 'Vila Ipiranga', 'Antares', 'Shangri-lá', 'Cinco Conjuntos', 'Bela Suíça', 'Jardim Bandeirantes', 'Judith', 'Guanabara', 'Vila Nova', 'Jardim Novo Sabará', 'Columbia', 'Interlagos', 'Parque das Indústrias', 'Jardim Leonor', 'Jardim Presidente', 'Jardim Bancários', 'Vila Casoni', 'Igapó', 'Jardim Alvorada', 'Heimtal'],
+  }),
 ];
+
+// ------------------------------------------------------------
+//  Builders — cidade nova fora do ES = só bairros + nota.
+//  Título, h1, descrição, keywords de cauda longa e chips saem daqui.
+// ------------------------------------------------------------
+function mkBR(c) {
+  const prep = c.prep || 'em';
+  const { city, region } = c;
+  const b = c.bairrosTop;
+  const low = city.toLowerCase();
+  const o = Object.assign({
+    prep,
+    physicalAddress: false,
+    regiaoFrase: 'todo o Brasil',
+    heroAlt: `Cardápio digital barato para restaurantes e delivery ${prep} ${city}, ${region}`,
+    title: `Cardápio Digital Barato ${prep} ${city} (${region}) sem Comissão | Menuzia`,
+    h1: `Cardápio digital barato ${prep} ${city} (${region}): venda direto, sem comissão`,
+    desc: `Cardápio digital barato para restaurantes, hamburguerias e delivery ${prep} ${city} (${region}): R$67/mês fixo, sem comissão por pedido, pedidos no WhatsApp. Atendemos ${b[0]}, ${b[1]}, ${b[2]}, ${b[3]} e toda a cidade.`,
+    keywords: [
+      `cardápio digital barato ${low}`,
+      `cardápio digital mais barato ${low}`,
+      `cardápio digital ${prep} ${low}`,
+      `cardápio digital sem comissão ${low}`,
+      `cardápio digital grátis ${low}`,
+      `quanto custa cardápio digital ${low}`,
+      `sistema de delivery ${low}`,
+      `cardápio digital para restaurante ${low}`,
+      `cardápio digital para hamburgueria ${low}`,
+      `cardápio digital para pizzaria ${low}`,
+      `cardápio online ${low}`,
+      `delivery sem comissão ${low}`,
+      `alternativa ao ifood ${low}`,
+      `cardápio digital ${b[0].toLowerCase()}`,
+      `cardápio digital ${b[1].toLowerCase()}`,
+      `cardápio digital ${b[2].toLowerCase()}`,
+      `qr code cardápio ${low}`,
+      `cardápio digital para quem está começando ${low}`,
+    ].join(', '),
+    chips: [
+      `cardápio digital barato ${city}`,
+      `delivery sem comissão ${region}`,
+      `sair do iFood ${city}`,
+      `cardápio digital ${b[0]}`,
+      `cardápio digital ${b[1]}`,
+      `QR Code cardápio ${region}`,
+      `cardápio ${b[2]}`,
+      `sistema delivery ${b[3]}`,
+    ],
+  }, c);
+  return [o];
+}
+// Atalho para cidades de SP (Grande SP, interior e litoral)
+function mkSP(c) {
+  return mkBR(Object.assign({ region: 'SP', geo: 'BR-SP', stateName: 'São Paulo', metro: 'Grande São Paulo' }, c));
+}
 
 // Defaults (cidade nova = só dados). ES continua com os valores antigos.
 cities.forEach(c => {
@@ -811,6 +1103,43 @@ function genFaq(c) {
   ];
 }
 
+// Bloco VISÍVEL de cauda longa — cada termo é um link interno real.
+// Nunca usar texto oculto/transparente pra empilhar keyword (black-hat).
+function ltBlock(c) {
+  const p = c.prep, city = c.city, b = c.bairrosTop;
+  const items = [
+    [`cardápio digital barato ${p} ${city}`, 'cardapio-digital-barato.html'],
+    ['cardápio digital mais barato do mercado', 'cardapio-digital-mais-barato.html'],
+    [`cardápio digital sem comissão ${p} ${city}`, 'cardapio-digital-sem-comissao.html'],
+    [`cardápio digital grátis ${p} ${city}`, 'cardapio-digital-gratis.html'],
+    [`quanto custa um cardápio digital ${p} ${city}`, 'cardapio-digital-preco.html'],
+    ['melhor cardápio digital custo-benefício', 'melhor-cardapio-digital.html'],
+    ['cardápio digital com mensalidade fixa', 'cardapio-digital-mensalidade-fixa.html'],
+    [`cardápio digital para delivery ${p} ${city}`, 'cardapio-digital-para-delivery.html'],
+    [`cardápio digital para restaurante ${p} ${city}`, 'cardapio-digital-para-restaurante.html'],
+    [`cardápio digital para pizzaria ${p} ${city}`, 'cardapio-digital-para-pizzaria.html'],
+    [`cardápio digital para lanchonete ${p} ${city}`, 'cardapio-digital-para-lanchonete.html'],
+    [`cardápio digital para marmitaria ${p} ${city}`, 'cardapio-digital-para-marmitaria.html'],
+    [`cardápio digital para confeitaria ${p} ${city}`, 'cardapio-digital-para-confeitaria.html'],
+    [`cardápio digital no WhatsApp ${p} ${city}`, 'cardapio-digital-para-whatsapp.html'],
+    [`cardápio digital para quem está começando ${p} ${city}`, 'cardapio-digital-para-restaurante-iniciante.html'],
+    [`cardápio digital para hamburgueria ${p} ${city}`, `${B}guias/como-criar-cardapio-digital-para-hamburgueria.html`],
+    [`alternativa ao iFood ${p} ${city}`, `${B}estrategia/como-sair-do-ifood-e-vender-direto.html`],
+    [`QR Code de cardápio ${p} ${city}`, `${B}guias/qr-code-para-cardapio-digital.html`],
+    [`cardápio digital ${b[0]}`, `${SITE}/#precos`],
+    [`cardápio digital ${b[1]}`, `${SITE}/#precos`],
+    [`cardápio digital ${b[2]}`, `${SITE}/#precos`],
+    [`cardápio digital ${b[3]}`, `${SITE}/#precos`],
+  ];
+  return `<div class="lt-block">
+  <h2>Buscas relacionadas: cardápio digital ${p} ${city}</h2>
+  <p>O que donos de restaurante e delivery ${c.de} costumam pesquisar antes de contratar — cada busca leva para a página que responde a ela:</p>
+  <div class="lt-chips">
+${items.map(([t, href]) => `    <a href="${href}">${t}</a>`).join('\n')}
+  </div>
+</div>`;
+}
+
 function page(c) {
   const url = '/' + c.slug;
   const bairrosGrid = c.bairrosTodos.map(b => `    <li>${b}</li>`).join('\n');
@@ -838,6 +1167,7 @@ ${header()}
     <img src="assets/img/blog/${c.heroImg}" alt="${c.heroAlt}" width="1200" height="675" loading="eager" fetchpriority="high" decoding="async">
   </figure>
   ${body}
+  ${ltBlock(c)}
   ${faqSection(c)}
   ${ctaBox(c)}
 </article>
@@ -859,8 +1189,8 @@ cities.forEach(c => {
 function hub() {
   const url = '/cidades.html';
   const title = 'Cardápio Digital Barato por Cidade no Brasil | Menuzia';
-  const desc = 'Cardápio digital barato e sem comissão por cidade: São Paulo, Rio de Janeiro, Belo Horizonte, Brasília, Curitiba, Porto Alegre, Salvador, Fortaleza, Recife, Goiânia e toda a Grande Vitória/ES. R$67/mês fixo.';
-  const keywords = 'cardápio digital por cidade, cardápio digital barato, cardápio digital brasil, cardápio digital são paulo, cardápio digital rio de janeiro, cardápio digital belo horizonte, delivery sem comissão, cardápio digital espírito santo';
+  const desc = 'Cardápio digital barato e sem comissão em mais de 45 cidades: São Paulo e Grande SP (Guarulhos, Osasco, Santo André, São Bernardo), Rio, BH, Brasília, Curitiba, Salvador, Fortaleza, Recife, Manaus, Belém e toda a Grande Vitória/ES. R$67/mês fixo.';
+  const keywords = 'cardápio digital por cidade, cardápio digital barato, cardápio digital mais barato do mercado, cardápio digital brasil, cardápio digital são paulo, cardápio digital grande são paulo, cardápio digital guarulhos, cardápio digital osasco, cardápio digital campinas, cardápio digital rio de janeiro, cardápio digital belo horizonte, delivery sem comissão, cardápio digital espírito santo';
   const head_ = `<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -906,7 +1236,13 @@ ${cities.map((c, i) => `    { "@type": "ListItem", "position": ${i + 1}, "url": 
     </a>`;
   // agrupado por UF (ES primeiro — praça de origem), depois capitais
   const ufOrder = [...new Set(cities.map(c => c.region))];
-  const ufNome = { ES: 'Espírito Santo — Grande Vitória', SP: 'São Paulo', RJ: 'Rio de Janeiro', MG: 'Minas Gerais', DF: 'Distrito Federal', PR: 'Paraná', RS: 'Rio Grande do Sul', BA: 'Bahia', CE: 'Ceará', PE: 'Pernambuco', GO: 'Goiás' };
+  const ufNome = {
+    ES: 'Espírito Santo — Grande Vitória', SP: 'São Paulo — capital, Grande SP e interior',
+    RJ: 'Rio de Janeiro', MG: 'Minas Gerais', DF: 'Distrito Federal', PR: 'Paraná',
+    RS: 'Rio Grande do Sul', SC: 'Santa Catarina', BA: 'Bahia', CE: 'Ceará', PE: 'Pernambuco',
+    GO: 'Goiás', AM: 'Amazonas', PA: 'Pará', MA: 'Maranhão', RN: 'Rio Grande do Norte',
+    PB: 'Paraíba', AL: 'Alagoas', PI: 'Piauí', MS: 'Mato Grosso do Sul', MT: 'Mato Grosso',
+  };
   const cards = ufOrder.map(uf => `<h2 style="max-width:1180px;margin:36px auto 0;padding:0 24px;font-size:22px;color:#1d3e73;">${ufNome[uf] || uf}</h2>
 <div class="blog-grid">
 ${cities.filter(c => c.region === uf).map(card).join('\n')}
