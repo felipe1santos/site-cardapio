@@ -43,7 +43,9 @@ Divisão de intenção no cluster de preço (evita canibalização): `cardapio-d
 Cuidado com **canibalização**: quando existir post de blog do mesmo tema (pizzaria, grátis), a landing raiz fica com a intenção comercial e o post com a informacional, e os dois se linkam.
 
 ## Blog (`blog/`)
-Gerado por **`genblog.js`** → `node genblog.js`. **Não editar HTML do blog direto.** Artigos em `blog/<categoria>/*.html` + `blog/index.html`. Schemas (Article, BreadcrumbList, ItemList), og tags, hero images e links internos vêm do array `posts` em `genblog.js`.
+Gerado por **`genblog.js`** → `node genblog.js`. **Não editar HTML do blog direto.** Artigos em `blog/<categoria>/*.html` + `blog/index.html`. Schemas (Article, BreadcrumbList, ItemList), og tags, hero images e links internos vêm do array `posts` em `genblog.js`. Campos opcionais por post: `published`/`modified` (ISO, senão usa o padrão de jun/2026) e `faq: [{q,a}]` (FAQ visível + `FAQPage` schema).
+
+Categoria **`tutoriais/`** (cat `Tutorial`): guias de operação que ajudam o lead — impressora térmica (configurar, qual comprar, não imprime), KDS, organizar cozinha, taxa de entrega por bairro, WhatsApp Business, complementos/adicionais, Pix. Heroes `tut-*.webp` são screenshots reais do painel (cortados 1200x675). Ao citar o produto, só descrever telas que existem (Ajustes › Impressão/Entrega/Integrações, Painel de Pedidos Kanban, Logística, Cardápio › Complementos/Tamanhos/Order Bump).
 
 ## Imagens
 - **Blog/locais:** API Pexels via `getimg.js` (sharp → webp 1200w em `assets/img/blog/`). Token Pexels no script (`PEXELS_KEY` ou hardcoded).

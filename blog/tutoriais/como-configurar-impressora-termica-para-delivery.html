@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Tutorial completo para configurar impressora térmica no delivery: driver, papel 58mm ou 80mm, impressora padrão do Windows, teste de impressão e impressão automática de pedidos.">
+<meta name="keywords" content="como configurar impressora térmica, configurar impressora térmica delivery, impressora térmica pedidos, impressão automática de pedidos, imprimir pedido delivery, configurar impressora cupom não fiscal">
+<meta name="author" content="Menuzia">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#1d3e73">
+<link rel="canonical" href="https://menuzia.com.br/blog/tutoriais/como-configurar-impressora-termica-para-delivery.html">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<title>Como Configurar Impressora Térmica para Delivery (Passo a Passo) | Menuzia</title>
+<meta property="og:type" content="article">
+<meta property="og:title" content="Como Configurar Impressora Térmica para Delivery (Passo a Passo) | Menuzia">
+<meta property="og:description" content="Tutorial completo para configurar impressora térmica no delivery: driver, papel 58mm ou 80mm, impressora padrão do Windows, teste de impressão e impressão automática de pedidos.">
+<meta property="og:url" content="https://menuzia.com.br/blog/tutoriais/como-configurar-impressora-termica-para-delivery.html">
+<meta property="og:image" content="https://menuzia.com.br/assets/img/blog/tut-impressora.webp">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Menuzia">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Como Configurar Impressora Térmica para Delivery (Passo a Passo) | Menuzia">
+<meta name="twitter:description" content="Tutorial completo para configurar impressora térmica no delivery: driver, papel 58mm ou 80mm, impressora padrão do Windows, teste de impressão e impressão automática de pedidos.">
+<meta name="twitter:image" content="https://menuzia.com.br/assets/img/blog/tut-impressora.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Como Configurar Impressora Térmica para Delivery (Passo a Passo) | Menuzia",
+  "description": "Tutorial completo para configurar impressora térmica no delivery: driver, papel 58mm ou 80mm, impressora padrão do Windows, teste de impressão e impressão automática de pedidos.",
+  "image": "https://menuzia.com.br/assets/img/blog/tut-impressora.webp",
+  "author": { "@type": "Organization", "name": "Menuzia", "url": "https://menuzia.com.br/" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Menuzia",
+    "logo": { "@type": "ImageObject", "url": "https://menuzia.com.br/assets/img/foto01.webp" }
+  },
+  "datePublished": "2026-10-04",
+  "dateModified": "2026-10-04",
+  "mainEntityOfPage": "https://menuzia.com.br/blog/tutoriais/como-configurar-impressora-termica-para-delivery.html",
+  "keywords": "como configurar impressora térmica, configurar impressora térmica delivery, impressora térmica pedidos, impressão automática de pedidos, imprimir pedido delivery, configurar impressora cupom não fiscal"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://menuzia.com.br/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://menuzia.com.br/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Tutorial", "item": "https://menuzia.com.br/blog/tutoriais/como-configurar-impressora-termica-para-delivery.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Qualquer impressora térmica funciona com o Menuzia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. O Assistente de Impressão usa a impressora instalada no Windows, então qualquer impressora térmica não fiscal com driver para Windows funciona (USB ou rede)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Preciso deixar o navegador aberto para imprimir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. Com o Assistente de Impressão instalado e a impressão automática ativada, os pedidos imprimem sozinhos assim que chegam, sem abrir o navegador."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dá para imprimir pedido de delivery pelo celular?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dá com impressoras Bluetooth e apps específicos, mas é instável na hora do pico. Para operação diária, um computador simples com impressora USB é bem mais confiável."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Impressora térmica precisa de tinta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. Ela imprime por calor em papel térmico. O único insumo é a bobina."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="header">
+  <a href="https://menuzia.com.br/" class="logo">menuzia</a>
+  <nav class="nav">
+    <a href="https://menuzia.com.br/#funcionalidades">Funcionalidades</a>
+    <a href="https://menuzia.com.br/#precos">Preços</a>
+    <a href="https://menuzia.com.br/#duvidas">Dúvidas</a>
+    <a href="../index.html">Blog</a>
+  </nav>
+  <a href="https://menuzia.com.br/#precos" class="btn-header-cta">Criar Cardápio</a>
+</header>
+<div class="artigo-wrap">
+<article class="artigo">
+  <div class="breadcrumb"><a href="https://menuzia.com.br/">Início</a> › <a href="../index.html">Blog</a> › Tutorial</div>
+  <span class="cat">Tutorial</span>
+  <h1>Como configurar impressora térmica para delivery: passo a passo</h1>
+  <div class="meta">Publicado em 4 de outubro de 2026 · Atualizado em 4 de outubro de 2026 · Equipe Menuzia</div>
+  <figure class="artigo-hero">
+    <img src="../../assets/img/blog/tut-impressora.webp" alt="Tela de configuração da impressão automática de pedidos no painel do Menuzia" width="1200" height="675" loading="eager" fetchpriority="high" decoding="async">
+  </figure>
+  <p>Imprimir o pedido assim que ele chega é o que separa uma cozinha organizada de uma cozinha que vive perguntando "esse aqui já saiu?". Neste tutorial você vai <strong>configurar a impressora térmica do delivery</strong> do zero: ligar no computador, instalar o driver, acertar o papel e deixar a impressão de pedidos automática.</p>
+
+<h2>Antes de começar: o que você precisa</h2>
+<ul>
+  <li><strong>Impressora térmica não fiscal</strong> (Elgin i9, Bematech MP-4200, Epson TM-T20, Knup, Tanca e similares). Se ainda não comprou, veja <a href="../tutoriais/melhor-impressora-termica-para-delivery.html">qual impressora térmica comprar para delivery</a>.</li>
+  <li><strong>Um computador com Windows</strong> no balcão ou na cozinha — pode ser um notebook simples.</li>
+  <li><strong>Bobina térmica</strong> na largura certa da sua impressora (58mm ou 80mm).</li>
+  <li><strong>Cabo USB ou rede</strong> (o que veio na caixa).</li>
+</ul>
+
+<h2>Passo 1 — Instale o driver da impressora</h2>
+<ol>
+  <li>Entre no site do fabricante e baixe o driver para Windows do seu modelo exato (está escrito na etiqueta embaixo da impressora).</li>
+  <li><strong>Instale o driver antes de ligar o cabo USB.</strong> Esse detalhe evita metade dos problemas: se o Windows reconhecer a impressora primeiro, ele instala um driver genérico que imprime caractere estranho ou não corta o papel.</li>
+  <li>Ligue a impressora na tomada, conecte o cabo e aguarde o Windows terminar a instalação.</li>
+</ol>
+
+<h2>Passo 2 — Confira se o Windows enxergou a impressora</h2>
+<ol>
+  <li>Abra <strong>Configurações › Bluetooth e dispositivos › Impressoras e scanners</strong>.</li>
+  <li>A impressora tem que aparecer com o nome do modelo. Clique nela e em <strong>Imprimir página de teste</strong>.</li>
+  <li>Se sair a página de teste, o hardware está ok. Se não sair, pule para o guia <a href="../tutoriais/impressora-termica-nao-imprime-como-resolver.html">impressora térmica não imprime: como resolver</a>.</li>
+</ol>
+
+<h2>Passo 3 — Acerte o papel (58mm ou 80mm)</h2>
+<p>Nas <strong>Preferências de impressão</strong> da impressora, escolha o tamanho do papel igual à bobina (ex.: <em>80mm x 297mm</em> ou <em>Roll Paper 80</em>). Papel configurado errado é o motivo número um de pedido saindo cortado pela metade ou com letra minúscula.</p>
+<p>Aproveite e marque a impressora térmica como <strong>impressora padrão</strong> do Windows se esse computador for usado só para pedidos.</p>
+
+<h2>Passo 4 — Ligue a impressão automática no sistema de pedidos</h2>
+<p>Imprimir pelo navegador (Ctrl+P) funciona, mas obriga alguém a clicar em todo pedido — e na hora do pico ninguém clica. O ideal é um programa que imprime sozinho.</p>
+<p>No Menuzia é assim:</p>
+<ol>
+  <li>No painel, vá em <strong>Ajustes › Impressão</strong>.</li>
+  <li>Clique em <strong>Baixar Assistente de Impressão (Windows)</strong>, extraia o .zip e abra o <em>Assistente de Impressão Menuzia</em>.</li>
+  <li>Copie o <strong>token de pareamento</strong> que aparece no painel e cole no Assistente na primeira abertura.</li>
+  <li>Ative <strong>Impressão automática de pedidos</strong>. Se quiser, ative também <strong>Aceitar pedidos automaticamente</strong> — o pedido já vai para "Preparando" no painel assim que chega.</li>
+  <li>A prévia do recibo ao lado mostra como vai sair o cupom (itens, adicionais, endereço, taxa de entrega, forma de pagamento e QR Code de avaliação).</li>
+</ol>
+<p>Pronto: pedido entrou, cupom imprime na cozinha, sem ninguém abrir o navegador.</p>
+
+<h2>Passo 5 — Faça um pedido de teste</h2>
+<p>Abra o seu cardápio no celular, faça um pedido real (pode cancelar depois) e confira três coisas no papel: os <strong>adicionais aparecem embaixo do item</strong>, o <strong>endereço está completo</strong> e a <strong>forma de pagamento</strong> (troco para quanto, Pix, cartão) está visível. Se o entregador vai levar a via, ela precisa ter tudo isso.</p>
+
+<h2>Dicas que evitam dor de cabeça</h2>
+<ul>
+  <li>Desative a suspensão do computador da loja (Configurações › Energia): computador dormindo não imprime.</li>
+  <li>Deixe uma bobina reserva do lado da impressora. Ela sempre acaba no sábado à noite.</li>
+  <li>Guarde bobina longe de calor e sol — papel térmico escurece e fica ilegível.</li>
+  <li>Se a cozinha for longe do balcão, considere uma segunda impressora ou uma <a href="../tutoriais/o-que-e-kds-tela-de-cozinha.html">tela de cozinha (KDS)</a>.</li>
+</ul>
+  <section class="faq">
+  <h2>Perguntas frequentes</h2>
+  <div class="faq-item"><h3>Qualquer impressora térmica funciona com o Menuzia?</h3><p>Sim. O Assistente de Impressão usa a impressora instalada no Windows, então qualquer impressora térmica não fiscal com driver para Windows funciona (USB ou rede).</p></div>
+  <div class="faq-item"><h3>Preciso deixar o navegador aberto para imprimir?</h3><p>Não. Com o Assistente de Impressão instalado e a impressão automática ativada, os pedidos imprimem sozinhos assim que chegam, sem abrir o navegador.</p></div>
+  <div class="faq-item"><h3>Dá para imprimir pedido de delivery pelo celular?</h3><p>Dá com impressoras Bluetooth e apps específicos, mas é instável na hora do pico. Para operação diária, um computador simples com impressora USB é bem mais confiável.</p></div>
+  <div class="faq-item"><h3>Impressora térmica precisa de tinta?</h3><p>Não. Ela imprime por calor em papel térmico. O único insumo é a bobina.</p></div>
+</section>
+  <div class="cta-box">
+  <h3>Pare de pagar comissão por pedido</h3>
+  <p>Tenha seu cardápio digital próprio por R$67/mês fixo. Nós configuramos pra você e damos todo o suporte técnico.</p>
+  <a href="https://menuzia.com.br/#precos" class="btn-vermelho">Criar Meu Cardápio Agora →</a>
+</div>
+</article>
+<aside class="sidebar">
+  <div class="sidebar-box">
+    <h3>Mais no blog</h3>
+    <ul>
+      <li><a href="../guias/como-criar-cardapio-digital-para-hamburgueria.html"><span class="side-cat">Guia</span>Como criar um cardápio digital para hamburgueria (passo a passo 2026)</a></li>
+      <li><a href="../estrategia/como-sair-do-ifood-e-vender-direto.html"><span class="side-cat">Estratégia</span>Como sair do iFood e vender direto sem perder seus clientes</a></li>
+      <li><a href="../comparativos/cardapio-digital-sem-comissao-vale-a-pena.html"><span class="side-cat">Comparativo</span>Cardápio digital sem comissão vale a pena? Veja a conta real</a></li>
+      <li><a href="../marketing/campanha-whatsapp-para-delivery.html"><span class="side-cat">Marketing</span>Como fazer campanha de WhatsApp para delivery e vender mais</a></li>
+      <li><a href="../precos/quanto-custa-cardapio-digital-proprio.html"><span class="side-cat">Preços</span>Quanto custa um cardápio digital próprio em 2026?</a></li>
+      <li><a href="../precos/cardapio-digital-barato-quanto-custa.html"><span class="side-cat">Preços</span>Cardápio digital barato: quanto custa e como escolher em 2026</a></li>
+      <li><a href="../comparativos/cardapio-digital-gratis-vale-a-pena.html"><span class="side-cat">Comparativo</span>Cardápio digital grátis vale a pena? O que ninguém te conta</a></li>
+      <li><a href="../guias/cardapio-digital-para-pizzaria.html"><span class="side-cat">Guia</span>Cardápio digital para pizzaria: como montar sabores, meio a meio e borda</a></li>
+      <li><a href="../guias/qr-code-para-cardapio-digital.html"><span class="side-cat">Guia</span>QR Code para cardápio digital: como criar, imprimir e usar</a></li>
+      <li><a href="../estrategia/montar-delivery-proprio-gastando-pouco.html"><span class="side-cat">Estratégia</span>Como montar um delivery próprio gastando pouco (2026)</a></li>
+      <li><a href="../tutoriais/melhor-impressora-termica-para-delivery.html"><span class="side-cat">Tutorial</span>Melhor impressora térmica para delivery: como escolher em 2026</a></li>
+      <li><a href="../tutoriais/impressora-termica-nao-imprime-como-resolver.html"><span class="side-cat">Tutorial</span>Impressora térmica não imprime: 10 soluções rápidas</a></li>
+      <li><a href="../tutoriais/o-que-e-kds-tela-de-cozinha.html"><span class="side-cat">Tutorial</span>O que é KDS e como usar a tela de cozinha no delivery</a></li>
+      <li><a href="../tutoriais/como-organizar-cozinha-de-delivery.html"><span class="side-cat">Tutorial</span>Como organizar a cozinha do delivery para não atrasar pedido</a></li>
+      <li><a href="../tutoriais/como-configurar-taxa-de-entrega-por-bairro.html"><span class="side-cat">Tutorial</span>Como calcular e configurar a taxa de entrega por bairro</a></li>
+      <li><a href="../tutoriais/como-configurar-whatsapp-business-para-delivery.html"><span class="side-cat">Tutorial</span>Como configurar o WhatsApp Business para delivery</a></li>
+      <li><a href="../tutoriais/como-cadastrar-complementos-e-adicionais-no-cardapio.html"><span class="side-cat">Tutorial</span>Como cadastrar adicionais, complementos e tamanhos no cardápio digital</a></li>
+      <li><a href="../tutoriais/como-receber-pix-no-delivery.html"><span class="side-cat">Tutorial</span>Como receber Pix no delivery com segurança (e evitar golpe)</a></li>
+    </ul>
+  </div>
+  <div class="sidebar-cta">
+    <h3>Menuzia</h3>
+    <p>Conheça a plataforma de cardápio digital sem comissão para o seu delivery.</p>
+    <a href="https://menuzia.com.br/" class="btn-site">Ir para o site →</a>
+  </div>
+</aside>
+</div>
+<footer class="footer">
+  <div class="footer-logo">menuzia</div>
+  <div><a href="https://menuzia.com.br/">Início</a> · <a href="../index.html">Blog</a> · <a href="https://menuzia.com.br/cidades.html">Cidades</a> · <a href="https://menuzia.com.br/cardapio-digital-barato.html">Cardápio digital barato</a> · <a href="https://menuzia.com.br/#precos">Preços</a> · <a href="https://menuzia.com.br/#duvidas">Dúvidas Frequentes</a></div>
+  <div class="footer-copy">© 2026 Menuzia. Cardápio digital sem comissão para hamburguerias e delivery.</div>
+</footer>
+</body>
+</html>

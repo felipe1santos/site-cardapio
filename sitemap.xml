@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://menuzia.com.br/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/foto01.webp</image:loc></image:image>
@@ -472,80 +472,143 @@
   </url>
   <url>
     <loc>https://menuzia.com.br/blog/index.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-hero.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/blog/comparativos/cardapio-digital-gratis-vale-a-pena.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-sem-comissao.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/blog/comparativos/cardapio-digital-sem-comissao-vale-a-pena.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-sem-comissao.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/blog/estrategia/como-sair-do-ifood-e-vender-direto.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-delivery-ifood.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/blog/estrategia/montar-delivery-proprio-gastando-pouco.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-whatsapp.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/blog/guias/cardapio-digital-para-pizzaria.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-hamburgueria.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/blog/guias/como-criar-cardapio-digital-para-hamburgueria.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-hamburgueria.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/blog/guias/qr-code-para-cardapio-digital.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-hero.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/blog/marketing/campanha-whatsapp-para-delivery.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-whatsapp.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/blog/precos/cardapio-digital-barato-quanto-custa.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-precos.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/blog/precos/quanto-custa-cardapio-digital-proprio.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-precos.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/blog/tutoriais/como-cadastrar-complementos-e-adicionais-no-cardapio.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/tut-cardapio.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/blog/tutoriais/como-configurar-impressora-termica-para-delivery.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/tut-impressora.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/blog/tutoriais/como-configurar-taxa-de-entrega-por-bairro.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/tut-logistica.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/blog/tutoriais/como-configurar-whatsapp-business-para-delivery.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/tut-integracoes.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/blog/tutoriais/como-organizar-cozinha-de-delivery.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/tut-logistica.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/blog/tutoriais/como-receber-pix-no-delivery.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/tut-painel.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/blog/tutoriais/impressora-termica-nao-imprime-como-resolver.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/tut-impressora.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/blog/tutoriais/melhor-impressora-termica-para-delivery.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/tut-impressora.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/blog/tutoriais/o-que-e-kds-tela-de-cozinha.html</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/tut-painel.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/politica-de-privacidade.html</loc>
