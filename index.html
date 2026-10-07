@@ -31,7 +31,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Nunito:wght@600;800&family=Poppins:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&family=Nunito:wght@600;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 
     <!-- JSON-LD: Organização -->
     <script type="application/ld+json">
@@ -142,542 +142,319 @@
 
     <style>
         /* =========================================
-           VARIÁVEIS — cores do painel Menuzia
+           MENUZIA — design system
         ========================================= */
         :root {
-            --azul: #0688D4;          /* primary do painel */
-            --azul-escuro: #0570AE;
+            --tinta: #111318;
+            --texto: #4A4F5A;
+            --suave: #7A808C;
+            --linha: #E8E9EC;
+            --painel: #F4F4F6;
+            --branco: #FFFFFF;
+            --vermelho: #E3262F;
+            --vermelho-2: #C81E26;
+            --azul: #0688D4;
             --navy: #1d3e73;
-            --navy-2: #0F2D56;
-            --vermelho: #C62828;
-            --vermelho-hover: #A31E1E;
+            --escuro: #10131A;
+            --escuro-2: #181C25;
+            --verde: #17A34A;
             --amarelo: #FBBF24;
-            --roxo: #A855F7;          /* funil do dashboard */
-            --verde: #10B981;         /* mesa livre */
-            --laranja: #F97316;       /* pedido recebido */
-            --fundo-branco: #FFFFFF;
-            --fundo-cinza: #F4F5F8;
-            --fundo-painel: #EDEEF1;
-            --titulo: #0F172A;
-            --corpo: #475569;
-            --borda: #E2E8F0;
-            --raio: 18px;
-            --sombra: 0 24px 60px rgba(15,23,42,.12);
+            --titulo: 'Poppins', 'Inter', sans-serif;
+            --corpo: 'Inter', sans-serif;
         }
-
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--fundo-branco);
-            color: var(--corpo);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        body { font-family: var(--corpo); color: var(--texto); background: var(--branco); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
         img { max-width: 100%; height: auto; display: block; }
-        a { text-decoration: none; color: inherit; }
-        .container { max-width: 1240px; margin: 0 auto; }
-        .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
+        a { color: inherit; text-decoration: none; }
+        h1, h2, h3, h4 { font-family: var(--titulo); color: var(--tinta); font-weight: 600; letter-spacing: -.02em; }
+        section { scroll-margin-top: 80px; }
+        .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
         /* ===== BOTÕES ===== */
-        .btn-vermelho, .btn-amarelo, .btn-ghost, .btn-azul {
-            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-            padding: 16px 34px; border-radius: 12px; font-weight: 800; font-size: 16px;
-            transition: transform .25s ease, box-shadow .25s ease, background .25s; cursor: pointer;
-            white-space: nowrap; position: relative; overflow: hidden;
-        }
-        .btn-vermelho { background: var(--vermelho); color: #fff !important; box-shadow: 0 8px 26px rgba(198,40,40,.35); }
-        .btn-vermelho:hover { background: var(--vermelho-hover); transform: translateY(-2px); box-shadow: 0 12px 34px rgba(198,40,40,.45); }
-        .btn-amarelo { background: var(--amarelo); color: #000 !important; box-shadow: 0 8px 26px rgba(251,191,36,.4); }
-        .btn-amarelo:hover { background: #F59E0B; transform: translateY(-2px); }
-        .btn-azul { background: var(--azul); color: #fff !important; box-shadow: 0 8px 26px rgba(6,136,212,.35); }
-        .btn-azul:hover { background: var(--azul-escuro); transform: translateY(-2px); }
-        .btn-ghost { border: 2px solid var(--borda); color: var(--titulo); padding: 14px 30px; background: #fff; }
-        .btn-ghost:hover { border-color: var(--azul); color: var(--azul); }
-        /* brilho passando no CTA */
-        .btn-brilho::after {
-            content: ''; position: absolute; top: 0; left: -60%; width: 40%; height: 100%;
-            background: linear-gradient(120deg, transparent, rgba(255,255,255,.45), transparent);
-            transform: skewX(-20deg); animation: brilho 3.6s ease-in-out infinite;
-        }
-        @keyframes brilho { 0%,60% { left: -60%; } 100% { left: 130%; } }
+        .btn { white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: var(--titulo); font-weight: 600; font-size: 15px; padding: 14px 30px; border-radius: 8px; transition: background .2s, transform .2s, box-shadow .2s; cursor: pointer; border: 0; }
+        .btn-primario { background: var(--vermelho); color: #fff; box-shadow: 0 8px 20px -8px rgba(227,38,47,.6); }
+        .btn-primario:hover { background: var(--vermelho-2); transform: translateY(-1px); }
+        .btn-contorno { border: 1.5px solid var(--tinta); color: var(--tinta); background: #fff; border-radius: 50px; padding: 9px 20px; font-size: 14px; }
+        .btn-contorno:hover { background: var(--tinta); color: #fff; }
+        .btn-pilula { border-radius: 50px; padding: 10px 22px; font-size: 14px; }
+        .btn-branco { background: #fff; color: var(--tinta); }
+        .btn-branco:hover { transform: translateY(-1px); }
+        .btn-lg { padding: 17px 38px; font-size: 16px; }
 
         /* ===== HEADER ===== */
-        .header {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 16px 6%; background: rgba(29,62,115,.92);
-            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-            position: sticky; top: 0; z-index: 100; transition: padding .25s, box-shadow .25s;
-        }
-        .header.rolou { padding: 10px 6%; box-shadow: 0 8px 30px rgba(0,0,0,.18); }
-        .logo { display: flex; align-items: center; gap: 10px; font-size: 25px; font-weight: 900; color: #fff; letter-spacing: -1px; }
-        .logo-icone {
-            width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, var(--azul), #38BDF8);
-            display: grid; place-items: center; box-shadow: 0 4px 14px rgba(6,136,212,.45);
-        }
-        .logo-icone svg { width: 20px; height: 20px; }
-        .nav { display: flex; gap: 28px; }
-        .nav a { font-size: 14.5px; font-weight: 600; color: #BFDBFE; transition: color .2s; position: relative; }
-        .nav a::after { content:''; position:absolute; left:0; bottom:-6px; height:2px; width:0; background: var(--amarelo); transition: width .25s; }
-        .nav a:hover { color: #fff; }
-        .nav a:hover::after { width: 100%; }
-        .header-btns { display: flex; align-items: center; gap: 18px; }
-        .btn-login { font-size: 15px; font-weight: 700; color: #fff; }
+        .header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.92); backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px); border-bottom: 1px solid transparent; transition: border-color .2s; }
+        .header.rolou { border-bottom-color: var(--linha); }
+        .header .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 24px; }
+        .logo { display: flex; align-items: center; gap: 9px; font-family: var(--titulo); font-weight: 700; font-size: 23px; color: #0C0C8B; letter-spacing: -.03em; }
+        .logo img { width: 38px; height: 38px; }
+        .nav { display: flex; gap: 22px; white-space: nowrap; }
+        .nav a { font-size: 14px; font-weight: 500; color: var(--tinta); transition: color .2s; }
+        .nav a:hover { color: var(--vermelho); }
+        .header-acoes { display: flex; align-items: center; gap: 10px; }
+        .btn-contorno svg { width: 16px; height: 16px; }
 
         /* ===== HERO ===== */
-        .hero {
-            position: relative; overflow: hidden;
-            display: grid; grid-template-columns: 1.02fr 1fr; gap: 40px; align-items: center;
-            padding: 80px 6% 90px; min-height: 86vh;
-            background: radial-gradient(1200px 600px at 85% 10%, rgba(6,136,212,.14), transparent 60%),
-                        radial-gradient(800px 500px at 0% 100%, rgba(168,85,247,.10), transparent 60%),
-                        linear-gradient(180deg, #F3F8FF 0%, #fff 100%);
-        }
-        .hero::before {
-            content:''; position:absolute; inset:0; pointer-events:none;
-            background-image: radial-gradient(rgba(15,23,42,.07) 1px, transparent 1px);
-            background-size: 22px 22px; mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
-            -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
-        }
-        .hero-texto { position: relative; z-index: 2; min-width: 0; }
-        .hero-eyebrow {
-            display: inline-flex; align-items: center; gap: 8px; background: #fff;
-            border: 1px solid var(--borda); padding: 7px 16px 7px 8px; border-radius: 30px;
-            font-size: 13px; font-weight: 700; color: var(--titulo); margin-bottom: 26px;
-            box-shadow: 0 6px 18px rgba(15,23,42,.06);
-        }
-        .hero-eyebrow .pill { background: var(--amarelo); color:#000; border-radius: 20px; padding: 3px 10px; font-size: 11px; font-weight: 900; text-transform: uppercase; }
-        .hero-titulo { font-size: 3.35rem; line-height: 1.08; font-weight: 900; color: var(--titulo); letter-spacing: -1.8px; margin-bottom: 22px; }
-        .grad { background: linear-gradient(90deg, var(--azul), var(--roxo)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .palavra-destaque { background: var(--amarelo); color: #000; padding: 0 12px; border-radius: 10px; display: inline-block; transform: rotate(-2deg); white-space: nowrap; }
-        .hero-subtitulo { font-size: 1.12rem; color: var(--corpo); margin-bottom: 34px; line-height: 1.75; max-width: 600px; }
-        .hero-ctas { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 22px; }
-        .hero-nota { font-size: 13.5px; color: #64748B; display: flex; gap: 6px 16px; flex-wrap: wrap; }
-        .hero-nota span::before { content: '✓ '; color: var(--verde); font-weight: 900; }
-        .hero-pagamentos { display:flex; align-items:center; gap:12px; margin-top: 26px; font-size: 12.5px; color:#64748B; font-weight: 600; flex-wrap: wrap; }
-        .hero-pagamentos img { height: 22px; width: auto; }
+        .hero { padding: 64px 0 40px; overflow: hidden; }
+        .hero .wrap { display: grid; grid-template-columns: 1fr 1.15fr; gap: 40px; align-items: center; }
+        .hero h1 { font-size: 46px; line-height: 1.12; margin-bottom: 20px; }
+        .hero h1 em { font-style: normal; color: var(--vermelho); }
+        .hero-sub { font-size: 17px; line-height: 1.7; margin-bottom: 24px; max-width: 540px; }
+        .checks { list-style: none; display: grid; gap: 10px; margin-bottom: 32px; }
+        .checks li { display: flex; gap: 10px; align-items: flex-start; font-size: 15.5px; color: var(--tinta); }
+        .checks li::before { content: ''; flex-shrink: 0; width: 18px; height: 18px; margin-top: 3px; border-radius: 50%; background: var(--vermelho) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/12px no-repeat; }
+        .hero-ctas { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+        .link-seta { font-family: var(--titulo); font-weight: 600; font-size: 15px; color: var(--tinta); border-bottom: 1.5px solid var(--tinta); padding-bottom: 2px; }
+        .link-seta:hover { color: var(--vermelho); border-color: var(--vermelho); }
+        .integra-mini { display: flex; align-items: center; gap: 14px; margin-top: 34px; font-size: 13px; color: var(--suave); flex-wrap: wrap; }
+        .integra-mini img { width: 26px; height: 26px; border-radius: 7px; }
+        .hero-visual { position: relative; padding: 20px 0 30px; }
 
-        /* Composição de mockups do hero */
-        .hero-visual { position: relative; height: 560px; min-width: 0; z-index: 1; }
-        .tablet {
-            position: absolute; left: 0; top: 70px; width: 88%; aspect-ratio: 4/3;
-            background: #111827; border-radius: 30px; padding: 16px; box-shadow: 0 40px 80px rgba(15,23,42,.28);
-            transform: perspective(1400px) rotateY(-14deg) rotateX(4deg) rotateZ(-2deg);
-        }
-        .tablet::before { content:''; position:absolute; left:6px; top:50%; width:5px; height:5px; border-radius:50%; background:#374151; transform: translateY(-50%); }
-        .tablet .tela { width: 100%; height: 100%; border-radius: 16px; overflow: hidden; background: #fff; }
-        .tablet img { width: 100%; height: 100%; object-fit: cover; object-position: top left; }
-        .phone {
-            position: absolute; width: 220px; aspect-ratio: 402/875; background: #0B1220;
-            border-radius: 36px; padding: 9px; box-shadow: 0 40px 70px rgba(15,23,42,.35);
-        }
-        .phone::before { content:''; position:absolute; top: 15px; left: 50%; transform: translateX(-50%); width: 70px; height: 18px; border-radius: 12px; background: #0B1220; z-index: 3; }
-        .phone .tela { width: 100%; height: 100%; border-radius: 28px; overflow: hidden; background: #fff; }
-        .phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-        .hero-visual .phone { right: 0; top: 0; z-index: 3; }
-        .comanda {
-            position: absolute; left: 44%; bottom: 0; z-index: 4; width: 150px; background: #FFF7ED;
-            border: 3px solid #FED7AA; border-radius: 18px; padding: 14px 14px 12px; text-align: center;
-            box-shadow: 0 24px 50px rgba(15,23,42,.25); transform: rotate(-6deg);
-        }
-        .comanda b { display:block; font-size: 30px; line-height: 1; color: var(--titulo); font-weight: 900; }
-        .comanda small { display:block; font-size: 12px; letter-spacing: 3px; font-weight: 800; color: #9A3412; margin: 2px 0 8px; }
-        .comanda .qr { width: 96px; height: 96px; margin: 0 auto; background:#fff; padding: 6px; border-radius: 8px; }
-        .card-flutuante {
-            position: absolute; z-index: 6; background: rgba(255,255,255,.96); backdrop-filter: blur(8px);
-            padding: 12px 16px; border-radius: 14px; box-shadow: 0 18px 40px rgba(15,23,42,.16);
-            border: 1px solid var(--borda); display: flex; align-items: center; gap: 12px;
-            animation: flutuar 6s ease-in-out infinite;
-        }
-        .card-flutuante .ic { width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center; font-size: 18px; flex-shrink: 0; }
-        .card-flutuante .cf-titulo { font-size: 13.5px; font-weight: 800; color: var(--titulo); line-height: 1.2; }
-        .card-flutuante .cf-sub { font-size: 12px; color: var(--corpo); }
-        .cf-pedido { left: -10px; top: 18px; }
-        .cf-pix { right: 150px; bottom: 70px; animation-delay: 2.5s; }
-        .cf-pix img { width: 22px; }
-        @keyframes flutuar { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+        /* ===== MOCKUPS ===== */
+        .mock-phone { width: 300px; max-width: 100%; filter: drop-shadow(0 40px 50px rgba(17,19,24,.28)) drop-shadow(0 10px 18px rgba(17,19,24,.18)); }
+        .mock-mac { width: 100%; filter: drop-shadow(0 40px 46px rgba(17,19,24,.22)); }
+        .combo { position: relative; width: 100%; padding-bottom: 6%; }
+        .combo .mock-mac { width: 88%; }
+        .combo .mock-phone { position: absolute; right: 0; bottom: 0; width: 30%; }
+        .dupla { display: flex; align-items: flex-end; justify-content: center; }
+        .dupla .mock-phone { width: 46%; max-width: 270px; }
+        .dupla .mock-phone + .mock-phone { margin-left: -6%; transform: translateY(-44px); }
+        .icone-card { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; font-size: 22px; margin-bottom: 14px; }
+        .fluxo-pg { position: absolute; left: 4%; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 14px; z-index: 4; }
+        .fluxo-pg div { width: 64px; height: 64px; border-radius: 16px; background: #fff; display: grid; place-items: center; box-shadow: 0 12px 30px -12px rgba(17,19,24,.3); font-size: 11px; font-weight: 700; color: var(--tinta); text-align: center; line-height: 1.1; animation: flutuar 6s ease-in-out infinite; }
+        .fluxo-pg div:nth-child(2) { animation-delay: .8s; } .fluxo-pg div:nth-child(3) { animation-delay: 1.6s; } .fluxo-pg div:nth-child(4) { animation-delay: 2.4s; }
+        .fluxo-pg img { width: 30px; height: 30px; }
 
-        /* ===== LOGOS (CARROSSEL) ===== */
-        .clientes { padding: 46px 0 40px; background: #fff; border-bottom: 1px solid var(--borda); }
-        .clientes p { text-align: center; font-size: 13px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #94A3B8; margin-bottom: 26px; padding: 0 6%; }
-        .marquee { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
-        .marquee-trilho { display: flex; gap: 64px; width: max-content; animation: rolar 38s linear infinite; }
+        /* ===== LOGOS CLIENTES ===== */
+        .clientes { padding: 40px 0 70px; }
+        .marquee { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+        .marquee-trilho { display: flex; align-items: center; gap: 72px; width: max-content; animation: rolar 40s linear infinite; }
         .marquee:hover .marquee-trilho { animation-play-state: paused; }
-        .marquee-trilho img { height: 52px; width: auto; filter: grayscale(1) opacity(.6); transition: filter .3s, transform .3s; }
-        .marquee-trilho img:hover { filter: none; transform: scale(1.06); }
+        .marquee-trilho img { height: 46px; width: auto; filter: grayscale(1); opacity: .55; transition: .3s; }
+        .marquee-trilho img:hover { filter: none; opacity: 1; }
+        .clientes-titulo { text-align: center; font-size: 13px; color: var(--suave); margin-bottom: 28px; font-weight: 500; }
         @keyframes rolar { to { transform: translateX(-50%); } }
 
-        /* ===== BARRA DE NÚMEROS ===== */
-        .barra-prova {
-            background: linear-gradient(135deg, var(--navy) 0%, #0A1628 100%); padding: 40px 6%;
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
-        }
-        .item-prova { text-align: center; }
-        .item-prova .numero { font-size: 2.3rem; font-weight: 900; color: var(--amarelo); display: block; line-height: 1; }
-        .item-prova .label { font-size: 13.5px; color: #94A3B8; font-weight: 500; margin-top: 8px; display: block; }
+        /* ===== FEATURE (ZIGUE-ZAGUE) ===== */
+        .feature { padding: 70px 0; }
+        .feature .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+        .feature.inv .f-visual { order: -1; }
+        .f-texto h2 { font-size: 32px; line-height: 1.2; margin-bottom: 18px; }
+        .f-texto p { font-size: 16px; line-height: 1.7; margin-bottom: 14px; }
+        .f-texto p a, .faq-resp a, .sub-centro a { color: var(--vermelho); font-weight: 500; }
+        .f-texto p a:hover { text-decoration: underline; }
+        .f-texto .checks { margin: 22px 0 30px; }
+        .f-texto .checks li { font-size: 15px; }
+        .rotulo { display: inline-block; font-family: var(--titulo); font-size: 13px; font-weight: 600; color: var(--vermelho); margin-bottom: 10px; letter-spacing: .02em; }
+        .f-visual { position: relative; display: flex; justify-content: center; align-items: center; min-width: 0; }
+        .painel { background: var(--painel); border-radius: 28px; width: 100%; padding: 50px 30px; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden; }
 
-        /* ===== SEÇÕES / CABEÇALHO ===== */
-        section { scroll-margin-top: 70px; }
-        .secao { padding: 110px 6%; }
-        .secao-cinza { background: var(--fundo-cinza); }
-        .cabecalho-secao { text-align: center; margin: 0 auto 70px; max-width: 760px; }
-        .kicker { display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--azul); background: rgba(6,136,212,.08); padding: 6px 14px; border-radius: 30px; margin-bottom: 18px; }
-        .cabecalho-secao h2 { font-size: 2.7rem; font-weight: 900; color: var(--titulo); margin-bottom: 16px; letter-spacing: -1.2px; line-height: 1.12; }
-        .cabecalho-secao p { font-size: 1.1rem; color: var(--corpo); }
-        .cabecalho-secao p a, .desc-feature a, .faq-resposta a { color: var(--azul); font-weight: 600; border-bottom: 1px solid rgba(6,136,212,.3); }
+        .chip { position: absolute; z-index: 5; background: #fff; border-radius: 14px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; box-shadow: 0 18px 40px -12px rgba(17,19,24,.25); font-size: 13px; color: var(--tinta); font-weight: 600; line-height: 1.3; animation: flutuar 6s ease-in-out infinite; }
+        .chip small { display: block; font-weight: 500; color: var(--suave); font-size: 11.5px; }
+        .chip .ic { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; flex-shrink: 0; font-size: 17px; }
+        .chip img { width: 22px; height: 22px; }
+        @keyframes flutuar { 0%,100% { translate: 0 0; } 50% { translate: 0 -10px; } }
 
-        /* ===== ONBOARDING (ILUSTRAÇÕES) ===== */
-        .passos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; position: relative; }
-        .passo { background: #fff; border: 1px solid var(--borda); border-radius: 22px; padding: 22px 22px 28px; position: relative; transition: transform .3s, box-shadow .3s; }
-        .passo:hover { transform: translateY(-6px); box-shadow: var(--sombra); }
-        .passo .ilustra { height: 170px; border-radius: 16px; margin-bottom: 20px; display: grid; place-items: center; overflow: hidden; }
-        .passo .ilustra svg { width: 100%; height: 100%; }
-        .passo .num { position: absolute; top: 14px; left: 14px; width: 30px; height: 30px; border-radius: 50%; background: var(--titulo); color: #fff; font-size: 13px; font-weight: 900; display: grid; place-items: center; z-index: 2; }
-        .passo h3 { font-size: 1.12rem; font-weight: 800; color: var(--titulo); margin-bottom: 8px; line-height: 1.3; }
-        .passo p { font-size: .95rem; line-height: 1.6; }
+        /* Órbita de integrações */
+        .orbita { position: relative; width: 460px; max-width: 84%; aspect-ratio: 1; margin: 0 auto; }
+        .orbita .anel { position: absolute; border-radius: 50%; border: 1.5px dashed #D4D6DB; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .orbita .a1 { width: 40%; height: 40%; } .orbita .a2 { width: 70%; height: 70%; } .orbita .a3 { width: 100%; height: 100%; }
+        .orbita .giro { position: absolute; inset: 0; animation: girar 70s linear infinite; }
+        .orbita .bolha { position: absolute; width: 15%; aspect-ratio: 1; margin: -7.5% 0 0 -7.5%; background: #fff; border-radius: 22%; display: grid; place-items: center; box-shadow: 0 12px 26px -10px rgba(17,19,24,.25); animation: girar 70s linear infinite reverse; }
+        .orbita .bolha img { width: 62%; height: 62%; }
+        .orbita .centro { position: absolute; top: 50%; left: 50%; width: 22%; aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; background: #fff; display: grid; place-items: center; box-shadow: 0 16px 40px -12px rgba(12,12,139,.45); z-index: 2; }
+        .orbita .centro img { width: 86%; height: 86%; }
+        @keyframes girar { to { transform: rotate(360deg); } }
 
-        /* ===== FEATURES (ZIGZAG) ===== */
-        .linha-feature { display: grid; grid-template-columns: 1.35fr 1fr; gap: 70px; align-items: center; margin-bottom: 120px; }
-        .linha-feature:last-child { margin-bottom: 0; }
-        .linha-feature.invertida { grid-template-columns: 1fr 1.35fr; }
-        .linha-feature.invertida .feature-imagem { order: 2; }
-        .feature-imagem { min-width: 0; position: relative; }
-        .feature-imagem::before { content:''; position:absolute; inset: 8% -4% -6% 8%; border-radius: 30px; background: linear-gradient(135deg, rgba(6,136,212,.16), rgba(168,85,247,.14)); z-index: 0; }
-        .linha-feature.invertida .feature-imagem::before { inset: 8% 8% -6% -4%; }
-        .frame-desktop { position: relative; z-index: 1; border-radius: 14px; overflow: hidden; box-shadow: var(--sombra); border: 1px solid var(--borda); background: #fff; transition: transform .5s ease; }
-        .barra-browser { background: #F1F5F9; padding: 10px 14px; display: flex; align-items: center; gap: 7px; border-bottom: 1px solid var(--borda); }
-        .barra-browser .url { margin-left: 14px; flex: 1; max-width: 340px; background: #fff; border: 1px solid var(--borda); border-radius: 6px; font-size: 11.5px; color: #64748B; padding: 3px 10px; font-weight: 500; }
-        .dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
-        .dot.r { background: #EF4444; } .dot.y { background: #F59E0B; } .dot.g { background: #22C55E; }
-        .frame-desktop img { width: 100%; }
-        .feature-texto { min-width: 0; }
-        .eyebrow { font-size: 13px; font-weight: 800; color: var(--azul); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .tag-amarela { background: var(--amarelo); color: #000; font-size: 10.5px; font-weight: 900; padding: 3px 8px; border-radius: 5px; letter-spacing: .5px; }
-        .titulo-feature { font-size: 2rem; font-weight: 900; color: var(--titulo); margin-bottom: 18px; line-height: 1.18; letter-spacing: -.6px; }
-        .desc-feature { font-size: 1.05rem; line-height: 1.75; margin-bottom: 26px; }
-        .lista-feature { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-        .lista-feature li { display: flex; align-items: flex-start; gap: 12px; font-size: 1rem; color: var(--titulo); font-weight: 500; }
-        .check { width: 22px; height: 22px; min-width: 22px; background: var(--azul); border-radius: 50%; display: grid; place-items: center; margin-top: 1px; font-size: 12px; font-weight: 900; color: #fff; }
-
-        /* ===== PERSONALIZAÇÃO (DEMO INTERATIVA) ===== */
-        .personaliza { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .controles { background: #fff; border: 1px solid var(--borda); border-radius: 22px; padding: 28px; box-shadow: 0 10px 40px rgba(15,23,42,.06); }
-        .controle { margin-bottom: 24px; }
-        .controle:last-child { margin-bottom: 0; }
-        .controle-label { font-size: 13px; font-weight: 800; color: var(--titulo); margin-bottom: 10px; display: block; text-transform: uppercase; letter-spacing: .6px; }
-        .swatches { display: flex; gap: 10px; flex-wrap: wrap; }
-        .swatch { width: 36px; height: 36px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 1px var(--borda); cursor: pointer; transition: transform .2s, box-shadow .2s; }
-        .swatch:hover { transform: scale(1.12); }
-        .swatch[aria-pressed="true"] { box-shadow: 0 0 0 3px var(--titulo); }
-        .opcoes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-        .opcoes.duas { grid-template-columns: 1fr 1fr; }
-        .opcao { border: 1.5px solid var(--borda); background: #fff; border-radius: 12px; padding: 12px; text-align: left; cursor: pointer; font: inherit; color: var(--titulo); transition: border-color .2s, background .2s; }
-        .opcao strong { display: block; font-size: 14px; }
-        .opcao span { font-size: 12px; color: #64748B; }
-        .opcao[aria-pressed="true"] { border-color: var(--azul); background: #EFF8FF; }
-        .controles .nota { font-size: 12.5px; color: #64748B; margin-top: 18px; }
-        .demo-area { display: flex; justify-content: center; position: relative; }
-        .demo-area::before { content:''; position:absolute; width: 380px; height: 380px; border-radius: 50%; background: var(--brand, #F50018); opacity: .14; filter: blur(30px); top: 50%; left: 50%; transform: translate(-50%,-50%); transition: background .4s; }
-        .phone.demo { position: relative; width: 300px; }
-        .demo-loja { height: 100%; background: #F4F5F8; font-family: var(--fonte-demo, 'Inter'), sans-serif; display: flex; flex-direction: column; overflow: hidden; }
-        .demo-capa { height: 110px; background: linear-gradient(135deg, var(--brand, #F50018), #111); position: relative; transition: background .4s; }
-        .demo-capa::after { content:'🍔'; position:absolute; right: 18px; top: 18px; font-size: 52px; filter: drop-shadow(0 6px 10px rgba(0,0,0,.35)); }
-        .demo-info { background: #fff; margin: -26px 12px 10px; border-radius: 14px; padding: 12px; display: flex; gap: 10px; align-items: center; position: relative; z-index: 1; box-shadow: 0 6px 16px rgba(0,0,0,.08); }
-        .demo-logo { width: 42px; height: 42px; border-radius: 10px; background: var(--brand, #F50018); color: #fff; display: grid; place-items: center; font-weight: 900; font-size: 18px; transition: background .4s; }
-        .demo-info b { display:block; font-size: 15px; color: #111; }
-        .demo-info small { font-size: 11px; color: #16A34A; font-weight: 700; }
-        .demo-chips { display: flex; gap: 6px; padding: 0 12px 10px; }
-        .demo-chips span { font-size: 11px; padding: 5px 10px; border-radius: 20px; background: #fff; border: 1px solid #E5E7EB; color: #374151; font-weight: 600; }
-        .demo-chips span.on { background: var(--brand, #F50018); border-color: transparent; color: #fff; transition: background .4s; }
-        .demo-itens { padding: 0 12px; display: flex; flex-direction: column; gap: 8px; }
-        .demo-item { background: #fff; border-radius: 12px; padding: 10px; display: flex; gap: 10px; align-items: center; justify-content: space-between; }
-        .demo-item b { font-size: 13px; color: #111; display: block; }
-        .demo-item p { font-size: 10.5px; color: #6B7280; line-height: 1.35; }
-        .demo-item .preco { font-size: 13px; font-weight: 800; color: var(--brand, #F50018); margin-top: 3px; transition: color .4s; }
-        .demo-item .foto { width: var(--img, 58px); height: var(--img, 58px); border-radius: 10px; background: #FFEDD5; display: grid; place-items: center; font-size: 28px; flex-shrink: 0; transition: width .3s, height .3s; }
-        .demo-itens.cards { display: grid; grid-template-columns: 1fr 1fr; }
-        .demo-itens.cards .demo-item { flex-direction: column-reverse; align-items: stretch; text-align: left; }
-        .demo-itens.cards .demo-item .foto { width: 100%; height: 70px; }
-        .demo-itens.cards .demo-item p { display: none; }
-        .demo-btn { margin: auto 12px 12px; background: var(--brand, #F50018); color: #fff; text-align: center; padding: 11px; border-radius: 12px; font-weight: 800; font-size: 13px; transition: background .4s; }
-        .print-real { margin-top: 26px; border-radius: 14px; overflow: hidden; border: 1px solid var(--borda); box-shadow: 0 10px 30px rgba(15,23,42,.08); }
-
-        /* ===== MODOS DE VENDA (MOCKUPS) ===== */
-        .modos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .modo { background: #fff; border: 1px solid var(--borda); border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; transition: transform .3s, box-shadow .3s; }
-        .modo:hover { transform: translateY(-6px); box-shadow: var(--sombra); }
-        .modo-visual { height: 290px; position: relative; display: grid; place-items: center; overflow: hidden; }
-        .modo-visual.azul { background: linear-gradient(160deg, #E0F2FE, #F0F9FF); }
-        .modo-visual.verde { background: linear-gradient(160deg, #D1FAE5, #F0FDF4); }
-        .modo-visual.roxo { background: linear-gradient(160deg, #EDE9FE, #FAF5FF); }
-        .modo-visual.laranja { background: linear-gradient(160deg, #FFEDD5, #FFF7ED); }
-        .modo-visual.cinza { background: linear-gradient(160deg, #E2E8F0, #F8FAFC); }
-        .modo-visual.amarelo { background: linear-gradient(160deg, #FEF3C7, #FFFBEB); }
-        .modo-corpo { padding: 24px 26px 28px; }
-        .modo-corpo h3 { font-size: 1.2rem; font-weight: 800; color: var(--titulo); margin-bottom: 8px; }
-        .modo-corpo p { font-size: .96rem; line-height: 1.6; }
-        .modo .phone { position: relative; width: 140px; border-radius: 26px; padding: 6px; }
-        .modo .phone::before { width: 44px; height: 12px; top: 10px; }
-        .modo .phone .tela { border-radius: 21px; }
-        .mini-tablet { width: 300px; aspect-ratio: 4/3; background: #111827; border-radius: 20px; padding: 10px; box-shadow: 0 24px 50px rgba(15,23,42,.25); transform: rotate(-4deg); }
-        .mini-tablet .tela { width: 100%; height: 100%; border-radius: 11px; overflow: hidden; }
-        .mini-tablet img { width: 100%; height: 100%; object-fit: cover; object-position: top left; }
-        .qr-mesa { position: absolute; right: 22px; bottom: 18px; background: #fff; border-radius: 14px; padding: 8px 8px 6px; text-align: center; box-shadow: 0 14px 30px rgba(15,23,42,.2); transform: rotate(5deg); }
-        .qr-mesa .qr { width: 70px; height: 70px; }
-        .qr-mesa span { display: block; font-size: 10px; font-weight: 900; color: var(--titulo); letter-spacing: 1px; margin-top: 3px; }
-        /* Totem */
-        .totem { position: relative; width: 132px; display: flex; flex-direction: column; align-items: center; transform: translateY(14px); }
-        .totem-corpo { width: 132px; height: 236px; background: linear-gradient(180deg, #1F2937, #0B1220); border-radius: 16px 16px 8px 8px; padding: 10px 9px 30px; box-shadow: 0 24px 40px rgba(15,23,42,.3); position: relative; }
-        .totem-corpo .tela { width: 100%; height: 100%; border-radius: 8px; overflow: hidden; background: #fff; }
-        .totem-corpo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-        .totem-corpo::after { content: ''; position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); width: 46px; height: 7px; border-radius: 4px; background: #374151; box-shadow: inset 0 2px 2px rgba(0,0,0,.6); }
-        .totem-haste { width: 26px; height: 46px; background: linear-gradient(90deg, #111827, #374151, #111827); }
-        .totem-base { width: 104px; height: 12px; border-radius: 8px; background: #111827; }
-        .totem-marca { position: absolute; top: -26px; background: var(--azul); color: #fff; font-size: 10px; font-weight: 900; padding: 4px 10px; border-radius: 8px; letter-spacing: 1px; }
-        .print-mini { width: 92%; border-radius: 12px; overflow: hidden; box-shadow: 0 18px 40px rgba(15,23,42,.18); border: 1px solid var(--borda); transform: rotate(-2deg); }
-        .print-mini img { width: 100%; }
-
-        /* ===== IMPRESSÃO TÉRMICA ===== */
-        .secao-impressao { background: radial-gradient(900px 500px at 80% 40%, rgba(251,191,36,.18), transparent 60%), linear-gradient(180deg, #fff, var(--fundo-cinza)); }
-        .impressao-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: center; }
-        .cena-impressora { position: relative; height: 560px; display: flex; justify-content: center; align-items: flex-end; }
-        .impressora { position: relative; width: 340px; z-index: 2; }
-        .impressora-topo { position: relative; height: 70px; background: linear-gradient(180deg, #3A4150, #262B35); border-radius: 26px 26px 0 0; }
-        .impressora-topo::after { content:''; position:absolute; left: 50px; right: 50px; top: 22px; height: 8px; border-radius: 4px; background: #0B0E13; box-shadow: inset 0 2px 3px rgba(0,0,0,.8); }
-        .impressora-corpo { height: 170px; background: linear-gradient(180deg, #2D333F, #1A1E26); border-radius: 0 0 22px 22px; position: relative; box-shadow: 0 40px 60px rgba(15,23,42,.35); }
-        .impressora-corpo .led { position: absolute; right: 28px; top: 24px; width: 9px; height: 9px; border-radius: 50%; background: #22C55E; box-shadow: 0 0 10px #22C55E; animation: piscar 1.4s infinite; }
-        .impressora-corpo .botao { position: absolute; right: 22px; top: 48px; width: 22px; height: 22px; border-radius: 6px; background: #3A4150; }
-        .impressora-corpo .marca { position: absolute; left: 28px; bottom: 24px; font-weight: 900; font-size: 15px; color: #64748B; letter-spacing: -.5px; }
-        @keyframes piscar { 50% { opacity: .3; } }
-        .cupom-wrap { position: absolute; left: 50%; bottom: 210px; transform: translateX(-50%); width: 236px; height: 380px; overflow: hidden; z-index: 1; display: flex; align-items: flex-end; }
-        .cupom {
-            width: 100%; background: #FFFEFA; padding: 18px 18px 26px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: #1F2937; line-height: 1.55;
-            box-shadow: 0 10px 30px rgba(0,0,0,.15); transform: translateY(100%);
-            -webkit-mask: radial-gradient(6px at 6px 0, transparent 98%, #000) -6px 0 / 12px 100% repeat-x; mask: radial-gradient(6px at 6px 0, transparent 98%, #000) -6px 0 / 12px 100% repeat-x;
-        }
-        .cena-impressora.imprimindo .cupom { animation: imprimir 3.6s steps(28) forwards; }
+        /* Impressora */
+        .cena-impressora { position: relative; height: 470px; width: 100%; display: flex; justify-content: center; align-items: flex-end; }
+        .impressora { position: relative; width: 300px; z-index: 2; }
+        .imp-topo { height: 62px; background: linear-gradient(180deg, #3A4150, #262B35); border-radius: 24px 24px 0 0; position: relative; }
+        .imp-topo::after { content: ''; position: absolute; left: 44px; right: 44px; top: 20px; height: 7px; border-radius: 4px; background: #0B0E13; }
+        .imp-corpo { height: 150px; background: linear-gradient(180deg, #2D333F, #1A1E26); border-radius: 0 0 20px 20px; position: relative; box-shadow: 0 40px 50px -24px rgba(17,19,24,.5); }
+        .imp-corpo .led { position: absolute; right: 26px; top: 22px; width: 8px; height: 8px; border-radius: 50%; background: #22C55E; box-shadow: 0 0 10px #22C55E; animation: piscar 1.4s infinite; }
+        .imp-corpo .marca { position: absolute; left: 24px; bottom: 20px; font: 700 14px var(--titulo); color: #687082; }
+        .cupom-wrap { position: absolute; left: 50%; bottom: 186px; transform: translateX(-50%); width: 212px; height: 330px; overflow: hidden; z-index: 1; display: flex; align-items: flex-end; }
+        .cupom { width: 100%; background: #FFFEFA; padding: 16px 16px 22px; font-family: 'JetBrains Mono', monospace; font-size: 9.6px; color: #1F2937; line-height: 1.55; box-shadow: 0 10px 30px rgba(0,0,0,.12); transform: translateY(100%); -webkit-mask: radial-gradient(5px at 5px 0, transparent 98%, #000) -5px 0 / 10px 100% repeat-x; mask: radial-gradient(5px at 5px 0, transparent 98%, #000) -5px 0 / 10px 100% repeat-x; }
+        .cena-impressora.imprimindo .cupom { animation: imprimir 3.4s steps(26) forwards; }
         @keyframes imprimir { to { transform: translateY(0); } }
-        .cupom .c-logo { text-align: center; font-family: 'Inter', sans-serif; font-weight: 900; font-size: 22px; letter-spacing: -1px; color: #111; display: flex; align-items: center; justify-content: center; gap: 6px; }
-        .cupom .c-logo i { width: 22px; height: 22px; border-radius: 6px; background: #111; display: grid; place-items: center; }
-        .cupom .c-logo i svg { width: 13px; height: 13px; }
-        .cupom .c-centro { text-align: center; }
-        .cupom .c-linha { border-top: 1px dashed #9CA3AF; margin: 7px 0; }
-        .cupom .c-row { display: flex; justify-content: space-between; gap: 8px; }
-        .cupom .c-sub { padding-left: 10px; color: #4B5563; }
-        .cupom .c-total { font-weight: 700; font-size: 12px; }
-        .cupom .c-pago { margin-top: 6px; text-align: center; background: #111; color: #fff; font-weight: 700; padding: 3px; letter-spacing: 1px; }
-        .cupom .c-qr { display: flex; gap: 10px; align-items: center; margin-top: 8px; }
-        .cupom .c-qr .qr { width: 54px; height: 54px; flex-shrink: 0; }
-        .cupom .barcode { height: 26px; margin-top: 8px; background: repeating-linear-gradient(90deg, #111 0 2px, transparent 2px 4px, #111 4px 5px, transparent 5px 8px, #111 8px 11px, transparent 11px 12px); }
-        .sacola { position: absolute; width: 110px; height: 130px; border-radius: 10px 10px 14px 14px; background: linear-gradient(180deg, #C9A06A, #A97C46); box-shadow: 0 20px 40px rgba(15,23,42,.25); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 3; animation: flutuar 7s ease-in-out infinite; }
-        .sacola::before { content:''; position:absolute; top: 0; left: 0; right: 0; height: 18px; background: repeating-linear-gradient(90deg, #B98E57 0 6px, #A97C46 6px 12px); border-radius: 10px 10px 0 0; }
-        .sacola .faixa { width: 100%; background: var(--azul); color: #fff; text-align: center; font-weight: 900; font-size: 17px; letter-spacing: -.5px; padding: 8px 0; margin-top: 10px; }
-        .sacola .faixa small { display: block; font-size: 8px; font-weight: 700; letter-spacing: 1px; opacity: .85; }
-        .sacola.s1 { left: 0; top: 40px; rotate: -12deg; }
-        .sacola.s2 { right: 0; top: 180px; rotate: 10deg; animation-delay: 2s; width: 96px; height: 116px; }
-        .sacola.s3 { left: 30px; bottom: 30px; rotate: 8deg; animation-delay: 4s; width: 84px; height: 100px; }
-        .sacola.s3 .faixa { background: var(--vermelho); font-size: 14px; }
+        .cupom .c-logo { display: flex; align-items: center; justify-content: center; gap: 6px; font: 700 19px var(--titulo); color: #111; letter-spacing: -.04em; }
+        .cupom .c-logo img { width: 22px; height: 22px; filter: grayscale(1) contrast(1.4); }
+        .cupom .c-c { text-align: center; }
+        .cupom hr { border: 0; border-top: 1px dashed #9CA3AF; margin: 6px 0; }
+        .cupom .r { display: flex; justify-content: space-between; gap: 8px; }
+        .cupom .s { padding-left: 10px; color: #4B5563; }
+        .cupom .t { font-weight: 700; font-size: 11px; }
+        .cupom .pago { margin-top: 6px; text-align: center; background: #111; color: #fff; font-weight: 700; padding: 3px; letter-spacing: 1px; }
+        .cupom .cq { display: flex; gap: 8px; align-items: center; margin-top: 8px; }
+        .cupom .cq .qr { width: 48px; height: 48px; flex-shrink: 0; }
+        .cupom .bar { height: 22px; margin-top: 8px; background: repeating-linear-gradient(90deg, #111 0 2px, transparent 2px 4px, #111 4px 5px, transparent 5px 8px, #111 8px 11px, transparent 11px 12px); }
 
-        /* ===== PAGAMENTO ONLINE ===== */
-        .pagamento { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; background: linear-gradient(135deg, #00B1EA 0%, #0688D4 55%, #1d3e73 100%); border-radius: 32px; padding: 56px; color: #fff; position: relative; overflow: hidden; }
-        .pagamento::after { content:''; position:absolute; width: 420px; height: 420px; border-radius: 50%; border: 60px solid rgba(255,255,255,.07); right: -120px; top: -160px; }
-        .pagamento h2 { font-size: 2.4rem; font-weight: 900; letter-spacing: -1px; line-height: 1.12; margin: 14px 0 16px; }
-        .pagamento p { color: #E0F2FE; font-size: 1.05rem; line-height: 1.7; }
-        .mp-selo { display: inline-flex; align-items: center; gap: 10px; background: #fff; color: #0F172A; padding: 8px 16px 8px 10px; border-radius: 40px; font-weight: 800; font-size: 14px; }
-        .mp-selo img { width: 30px; }
-        .pg-lista { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
-        .pg-lista span { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.25); padding: 8px 14px; border-radius: 30px; font-size: 14px; font-weight: 700; }
-        .checkout { background: #fff; color: var(--titulo); border-radius: 22px; padding: 24px; max-width: 360px; margin-left: auto; box-shadow: 0 30px 60px rgba(0,0,0,.25); position: relative; z-index: 1; }
-        .checkout h4 { font-size: 15px; font-weight: 800; margin-bottom: 14px; }
-        .ck-op { display: flex; align-items: center; gap: 12px; border: 1.5px solid var(--borda); border-radius: 12px; padding: 12px; margin-bottom: 10px; font-size: 14px; font-weight: 700; }
-        .ck-op.on { border-color: #00B1EA; background: #F0FAFF; }
-        .ck-op .rd { width: 18px; height: 18px; border-radius: 50%; border: 2px solid #CBD5E1; }
-        .ck-op.on .rd { border: 5px solid #00B1EA; }
-        .ck-op small { margin-left: auto; font-size: 11px; color: #16A34A; font-weight: 800; }
-        .ck-total { display: flex; justify-content: space-between; font-weight: 900; font-size: 18px; margin: 16px 0 14px; }
-        .ck-btn { background: #16A34A; color: #fff; text-align: center; padding: 13px; border-radius: 12px; font-weight: 800; }
-        .ck-ok { display: flex; align-items: center; gap: 8px; justify-content: center; margin-top: 12px; font-size: 12px; color: #64748B; }
+        /* ===== PARA QUEM É ===== */
+        .para-quem { padding: 70px 0 90px; text-align: center; }
+        .para-quem h2 { font-size: 28px; margin-bottom: 36px; }
+        .carrossel { display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 24px 18px; scrollbar-width: none; max-width: 1200px; margin: 0 auto 30px; }
+        .carrossel::-webkit-scrollbar { display: none; }
+        .segmento-card { flex: 0 0 220px; height: 300px; border-radius: 16px; overflow: hidden; position: relative; scroll-snap-align: start; display: block; }
+        .segmento-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+        .segmento-card:hover img { transform: scale(1.06); }
+        .segmento-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(0,0,0,.75)); }
+        .segmento-card span { position: absolute; left: 16px; bottom: 16px; z-index: 1; color: #fff; font: 600 16px var(--titulo); text-align: left; }
 
-        /* ===== INTEGRAÇÕES ===== */
-        .integracoes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-        .integra { background: #fff; border: 1px solid var(--borda); border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 12px; transition: transform .3s, box-shadow .3s, border-color .3s; }
-        .integra:hover { transform: translateY(-5px); box-shadow: 0 18px 40px rgba(15,23,42,.10); border-color: #BAE6FD; }
-        .integra-topo { display: flex; align-items: center; justify-content: space-between; }
-        .integra img { width: 42px; height: 42px; }
-        .integra .ativa { font-size: 11px; font-weight: 800; color: #15803D; background: #DCFCE7; padding: 3px 9px; border-radius: 20px; }
-        .integra h3 { font-size: 1.02rem; font-weight: 800; color: var(--titulo); }
-        .integra p { font-size: .9rem; line-height: 1.55; }
-        .print-integra { max-width: 980px; margin: 50px auto 0; }
-
-        /* ===== KANBAN WHATSAPP ===== */
-        .secao-kanban { background: var(--titulo); color: #fff; padding: 110px 6%; text-align: center; position: relative; overflow: hidden; }
-        .secao-kanban::before { content:''; position:absolute; width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(6,136,212,.25), transparent 65%); left: 50%; top: -350px; transform: translateX(-50%); }
-        .secao-kanban h2 { font-size: 2.6rem; font-weight: 900; margin-bottom: 18px; letter-spacing: -1px; position: relative; }
-        .secao-kanban > p { font-size: 1.1rem; color: #94A3B8; max-width: 640px; margin: 0 auto 60px; position: relative; }
-        .etapas-kanban { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1040px; margin: 0 auto; position: relative; }
-        .etapa-item { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 18px; padding: 28px 18px; position: relative; border-top: 3px solid var(--c, var(--azul)); }
-        .etapa-item::after { content: '→'; position: absolute; right: -16px; top: 50%; transform: translateY(-50%); color: var(--amarelo); font-size: 22px; font-weight: 900; z-index: 1; }
-        .etapa-item:last-child::after { display: none; }
-        .etapa-icone { font-size: 2.4rem; margin-bottom: 14px; }
-        .etapa-nome { font-size: 15px; font-weight: 800; color: #fff; margin-bottom: 8px; }
-        .etapa-desc { font-size: 13px; color: #94A3B8; line-height: 1.5; }
-        .etapa-badge { background: var(--amarelo); color: #000; font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 20px; text-transform: uppercase; display: inline-block; margin-top: 12px; }
-
-        /* ===== MOTOBOY / CARDÁPIO ===== */
-        .duas-colunas { display: grid; grid-template-columns: 1.1fr 1fr; gap: 70px; align-items: center; }
-        .area-celulares { display: flex; gap: 26px; justify-content: center; align-items: flex-start; }
-        .area-celulares .phone { position: relative; width: 250px; }
-        .area-celulares .phone + .phone { margin-top: 70px; }
-        .moto-phone { position: relative; width: 260px; margin: 0 auto; }
+        /* ===== SEÇÃO ESCURA: SISTEMA COMPLETO ===== */
+        .escuro { background: var(--escuro); color: #C9CDD6; padding: 100px 0; }
+        .escuro h2 { color: #fff; }
+        .centro { text-align: center; max-width: 720px; margin: 0 auto 56px; }
+        .centro h2 { font-size: 38px; line-height: 1.15; margin-bottom: 14px; }
+        .centro p { font-size: 16.5px; }
+        .grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .card { background: #fff; color: var(--texto); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; border-bottom: 3px solid var(--vermelho); transition: transform .3s, box-shadow .3s; }
+        .card:hover { transform: translateY(-6px); box-shadow: 0 30px 50px -24px rgba(0,0,0,.6); }
+        .card-vis { height: 190px; background: var(--painel); display: grid; place-items: center; overflow: hidden; position: relative; padding: 18px; }
+        .card-vis > img.shot { width: 100%; border-radius: 8px; box-shadow: 0 14px 30px -14px rgba(0,0,0,.4); }
+        .card-corpo { padding: 20px 22px 24px; }
+        .card-corpo h3 { font-size: 16.5px; margin-bottom: 6px; }
+        .card-corpo p { font-size: 14px; line-height: 1.6; }
+        .card-corpo a { color: var(--vermelho); font-weight: 500; }
+        .mini-qr { background: #fff; border-radius: 12px; padding: 10px 10px 6px; text-align: center; box-shadow: 0 12px 26px -12px rgba(0,0,0,.35); }
+        .mini-qr .qr { width: 90px; height: 90px; }
+        .mini-qr span { display: block; font: 700 10px var(--titulo); letter-spacing: 1.5px; color: var(--tinta); margin-top: 2px; }
+        .totem { display: flex; flex-direction: column; align-items: center; transform: translateY(26px); }
+        .totem-corpo { width: 88px; height: 158px; background: linear-gradient(180deg, #23262E, #0B0D12); border-radius: 10px 10px 6px 6px; padding: 6px 6px 20px; box-shadow: 0 18px 30px -12px rgba(0,0,0,.4); position: relative; }
+        .totem-corpo .tela { width: 100%; height: 100%; border-radius: 5px; overflow: hidden; }
+        .totem-corpo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+        .totem-corpo::after { content: ''; position: absolute; bottom: 7px; left: 50%; transform: translateX(-50%); width: 30px; height: 5px; border-radius: 3px; background: #3A3D45; }
+        .totem-haste { width: 16px; height: 30px; background: linear-gradient(90deg, #15171C, #3A3D45, #15171C); }
+        .totem-base { width: 70px; height: 9px; border-radius: 6px; background: #15171C; }
+        .etapas { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 100%; }
+        .etapas div { background: #fff; border-radius: 10px; padding: 8px 10px; font-size: 11.5px; font-weight: 600; color: var(--tinta); display: flex; gap: 6px; align-items: center; box-shadow: 0 6px 14px -8px rgba(0,0,0,.25); border-left: 3px solid var(--c); }
+        .logos-grid { display: grid; grid-template-columns: repeat(4, 44px); gap: 10px; }
+        .logos-grid img { width: 44px; height: 44px; background: #fff; border-radius: 12px; padding: 7px; box-shadow: 0 6px 14px -8px rgba(0,0,0,.25); }
 
         /* ===== PREÇOS ===== */
-        .secao-precos { background: linear-gradient(135deg, #0A1628 0%, var(--navy-2) 100%); color: #fff; padding: 110px 6%; text-align: center; position: relative; overflow: hidden; }
-        .secao-precos h2 { font-size: 2.8rem; font-weight: 900; margin-bottom: 16px; letter-spacing: -1px; }
-        .secao-precos > .subtitulo-preco { font-size: 1.1rem; color: #94A3B8; max-width: 620px; margin: 0 auto 60px; line-height: 1.7; }
-        .grid-precos { display: grid; grid-template-columns: 1fr 1.35fr 1fr; gap: 24px; max-width: 1060px; margin: 0 auto 48px; align-items: center; }
-        .card-preco { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 22px; padding: 36px 28px; text-align: left; }
-        .card-preco.destaque { background: #fff; color: var(--titulo); border: 2px solid var(--amarelo); box-shadow: 0 30px 80px rgba(0,0,0,.4); transform: scale(1.04); position: relative; z-index: 1; }
-        .badge-destaque { background: var(--amarelo); color: #000; font-size: 11px; font-weight: 800; padding: 5px 14px; border-radius: 20px; text-transform: uppercase; display: inline-block; margin-bottom: 20px; }
-        .card-preco .nome-plano { font-size: 16px; font-weight: 700; color: #64748B; margin-bottom: 8px; }
-        .valor-riscado { font-size: 13px; color: #64748B; text-decoration: line-through; margin-bottom: 4px; }
-        .valor-principal { font-size: 2.8rem; font-weight: 900; color: #fff; line-height: 1; margin-bottom: 4px; }
-        .card-preco.destaque .valor-principal { color: var(--titulo); }
-        .valor-periodo { font-size: 13px; color: #64748B; margin-bottom: 28px; }
-        .lista-preco { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 28px; }
-        .lista-preco li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #94A3B8; line-height: 1.4; }
-        .card-preco.destaque .lista-preco li { color: var(--corpo); }
-        .lista-preco li.sim::before { content: '✓'; color: #22C55E; font-weight: 900; font-size: 15px; flex-shrink: 0; }
-        .lista-preco li.nao { text-decoration: line-through; opacity: .45; }
-        .lista-preco li.nao::before { content: '✗'; color: #EF4444; font-weight: 900; font-size: 15px; flex-shrink: 0; }
-        .nota-card { padding-top: 20px; border-top: 1px solid rgba(255,255,255,.08); font-size: 12px; color: #64748B; text-align: center; }
-        .card-preco.destaque .nota-card { border-color: var(--borda); color: #94A3B8; }
-        .rodape-preco { font-size: 14px; color: #64748B; max-width: 640px; margin: 0 auto; line-height: 1.7; }
+        .precos { padding: 100px 0; background: var(--painel); }
+        .centro.claro h2 { font-size: 38px; }
+        .grid-precos { display: grid; grid-template-columns: 1fr 1.25fr 1fr; gap: 20px; align-items: center; max-width: 1060px; margin: 0 auto 36px; }
+        .plano { background: #fff; border-radius: 18px; padding: 32px 28px; border: 1px solid var(--linha); }
+        .plano.destaque { border: 2px solid var(--vermelho); box-shadow: 0 40px 70px -40px rgba(227,38,47,.5); position: relative; padding: 40px 32px; }
+        .selo { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--vermelho); color: #fff; font: 600 12px var(--titulo); padding: 6px 16px; border-radius: 50px; white-space: nowrap; }
+        .plano .nome { font: 600 16px var(--titulo); color: var(--tinta); margin-bottom: 6px; }
+        .plano .riscado { font-size: 13px; color: var(--suave); text-decoration: line-through; }
+        .plano .valor { font: 700 46px/1.05 var(--titulo); color: var(--tinta); letter-spacing: -.03em; margin: 4px 0; }
+        .plano .valor small { font-size: 17px; font-weight: 500; color: var(--suave); }
+        .plano .valor.cinza { font-size: 26px; color: var(--suave); }
+        .plano .periodo { font-size: 13px; color: var(--suave); margin-bottom: 22px; }
+        .lista-preco { list-style: none; display: grid; gap: 9px; margin-bottom: 26px; }
+        .lista-preco li { display: flex; gap: 9px; font-size: 14px; line-height: 1.4; }
+        .lista-preco li.sim::before { content: '✓'; color: var(--verde); font-weight: 800; }
+        .lista-preco li.nao { color: var(--suave); text-decoration: line-through; opacity: .7; }
+        .lista-preco li.nao::before { content: '✕'; color: #D1D5DB; font-weight: 800; }
+        .plano .nota { font-size: 12.5px; color: var(--suave); text-align: center; border-top: 1px solid var(--linha); padding-top: 16px; }
+        .plano .btn { width: 100%; margin-bottom: 18px; }
+        .rodape-preco { max-width: 680px; margin: 0 auto; text-align: center; font-size: 14px; color: var(--suave); }
+        .rodape-preco a { color: var(--tinta); text-decoration: underline; }
 
         /* ===== FAQ ===== */
-        .faq-lista { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
-        .faq-item { background: #fff; border: 1px solid var(--borda); border-radius: 16px; padding: 4px 24px; box-shadow: 0 4px 16px rgba(0,0,0,.03); transition: border-color .2s; }
-        .faq-item[open] { border-color: #BAE6FD; }
-        .faq-item summary { list-style: none; cursor: pointer; font-size: 1.08rem; font-weight: 700; color: var(--titulo); padding: 20px 36px 20px 0; position: relative; }
+        .faq { background: var(--escuro); padding: 100px 0; color: #C9CDD6; }
+        .faq h2 { color: #fff; }
+        .faq-caixa { max-width: 820px; margin: 0 auto; background: #fff; border-radius: 16px; padding: 12px; }
+        .faq-item { border-radius: 10px; margin-bottom: 8px; background: var(--painel); }
+        .faq-item:last-child { margin-bottom: 0; }
+        .faq-item summary { list-style: none; cursor: pointer; padding: 18px 20px 18px 52px; font-weight: 500; font-size: 15.5px; color: var(--tinta); position: relative; }
         .faq-item summary::-webkit-details-marker { display: none; }
-        .faq-item summary::after { content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 26px; font-weight: 400; color: var(--azul); }
-        .faq-item[open] summary::after { content: '−'; }
-        .faq-resposta { font-size: 1rem; line-height: 1.75; padding: 0 0 22px; }
-        .faq-cta { text-align: center; margin-top: 56px; }
-        .meta-cta { margin-top: 18px; font-size: 14px; color: #94A3B8; }
+        .faq-item summary::before { content: '+'; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-size: 22px; font-weight: 400; color: var(--tinta); line-height: 1; }
+        .faq-item[open] { background: #fff; box-shadow: inset 0 0 0 1px var(--linha); }
+        .faq-item[open] summary::before { content: '−'; color: var(--vermelho); }
+        .faq-resp { padding: 0 24px 20px 52px; font-size: 15px; line-height: 1.7; }
+        .faq-cta { text-align: center; margin-top: 44px; }
+        .faq-cta p { color: #8A90A0; font-size: 14px; margin-top: 14px; }
 
         /* ===== CTA FINAL ===== */
-        .secao-final-cta { background: linear-gradient(135deg, var(--azul) 0%, var(--navy) 100%); padding: 100px 6%; text-align: center; position: relative; overflow: hidden; }
-        .secao-final-cta::before, .secao-final-cta::after { content:''; position:absolute; border-radius: 50%; border: 50px solid rgba(255,255,255,.06); }
-        .secao-final-cta::before { width: 400px; height: 400px; left: -140px; bottom: -200px; }
-        .secao-final-cta::after { width: 300px; height: 300px; right: -80px; top: -120px; }
-        .secao-final-cta h2 { font-size: 2.6rem; font-weight: 900; color: #fff; margin-bottom: 18px; letter-spacing: -1px; position: relative; }
-        .secao-final-cta p { font-size: 1.1rem; color: #BFDBFE; max-width: 560px; margin: 0 auto 36px; line-height: 1.7; position: relative; }
-        .secao-final-cta .meta-cta { color: #93C5FD; margin-bottom: 0; }
+        .cta-final { padding: 90px 0; }
+        .cta-box { background: linear-gradient(120deg, var(--vermelho) 0%, #B5121B 100%); border-radius: 28px; padding: 64px 56px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; color: #FFE4E5; position: relative; overflow: hidden; }
+        .cta-box::after { content: ''; position: absolute; width: 380px; height: 380px; border-radius: 50%; border: 56px solid rgba(255,255,255,.08); right: -110px; top: -150px; }
+        .cta-box h2 { color: #fff; font-size: 36px; line-height: 1.15; margin-bottom: 14px; }
+        .cta-box p { font-size: 16.5px; line-height: 1.7; }
+        .cta-acoes { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; position: relative; z-index: 1; }
+        .cta-acoes small { font-size: 14px; }
+        .cta-acoes small a { color: #fff; font-weight: 600; text-decoration: underline; }
 
         /* ===== FOOTER ===== */
-        .footer { background: #060E1A; color: #475569; padding: 48px 6%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
-        .footer-logo { font-size: 22px; font-weight: 800; color: #fff; }
-        .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
-        .footer-links a { font-size: 14px; color: #475569; transition: color .2s; }
-        .footer-links a:hover { color: #94A3B8; }
-        .footer-copy { font-size: 13px; }
+        .footer { background: #0B0E14; color: #8A90A0; padding: 70px 0 30px; font-size: 14px; }
+        .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 44px; }
+        .footer .logo { color: #fff; margin-bottom: 14px; }
+        .footer h4 { color: #fff; font-size: 14px; margin-bottom: 14px; }
+        .footer ul { list-style: none; display: grid; gap: 9px; }
+        .footer a:hover { color: #fff; }
+        .footer-cidades { border-top: 1px solid #1C212C; padding-top: 30px; }
+        .footer-cidades h4 { margin: 0 0 12px; }
+        .footer-cidades .lista { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-bottom: 22px; font-size: 13.5px; }
+        .footer-cidades .todas { color: var(--amarelo); font-weight: 600; }
+        .footer-atende { font-size: 12.5px; color: #5F6676; line-height: 1.7; margin-bottom: 26px; }
+        .footer-base { border-top: 1px solid #1C212C; padding-top: 22px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px; }
 
-        /* ===== REVEAL ON SCROLL ===== */
-        .js .revela { opacity: 0; transform: translateY(34px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0s); }
-        .js .revela.visivel { opacity: 1; transform: none; }
+        /* ===== WHATSAPP ===== */
+        .wpp-float { position: fixed; right: 20px; bottom: 20px; z-index: 60; display: flex; align-items: center; gap: 10px; background: #25D366; color: #fff; padding: 12px 18px 12px 14px; border-radius: 50px; font-weight: 600; font-size: 15px; line-height: 1; box-shadow: 0 10px 26px -6px rgba(37,211,102,.55); transition: transform .2s; }
+        .wpp-float:hover { transform: translateY(-3px); }
+        .wpp-float svg { width: 24px; height: 24px; fill: #fff; flex-shrink: 0; }
 
-        /* ===== WHATSAPP FLUTUANTE ===== */
-        .wpp-float { position: fixed; right: 20px; bottom: 20px; z-index: 9999; display: flex; align-items: center; gap: 10px; background: #25D366; color: #fff; padding: 12px 18px 12px 14px; border-radius: 50px; font-weight: 700; font-size: 15px; line-height: 1; box-shadow: 0 8px 24px rgba(37,211,102,.4); transition: transform .2s ease, box-shadow .2s ease; }
-        .wpp-float:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(37,211,102,.5); }
-        .wpp-float svg { width: 26px; height: 26px; flex-shrink: 0; fill: #fff; }
+        /* ===== REVELAR ===== */
+        .js .rv { opacity: 0; transform: translateY(28px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0s); }
+        .js .rv.on { opacity: 1; transform: none; }
 
         /* ===== RESPONSIVO ===== */
-        @media (max-width: 1100px) {
-            .grid-precos { grid-template-columns: 1fr; max-width: 480px; }
-            .card-preco.destaque { transform: none; }
-            .passos { grid-template-columns: 1fr 1fr; }
-            .integracoes-grid { grid-template-columns: repeat(2, 1fr); }
-            .modos { grid-template-columns: 1fr 1fr; }
-            .hero { grid-template-columns: 1fr; }
-            .hero-visual { max-width: 640px; width: 100%; margin: 0 auto; }
-        }
-        @media (max-width: 900px) {
-            .etapas-kanban { grid-template-columns: 1fr 1fr; }
-            .etapa-item::after { display: none; }
-            .personaliza, .impressao-grid, .pagamento, .duas-colunas { grid-template-columns: 1fr; }
-            .checkout { margin: 0 auto; }
-        }
-        @media (max-width: 768px) {
+        @media (max-width: 1180px) {
             .nav { display: none; }
-            .header, .header.rolou { padding: 12px 5%; }
-            .logo { font-size: 22px; }
-            .header-btns { gap: 12px; }
-            .header-btns .btn-amarelo { padding: 9px 14px !important; font-size: 13px !important; }
-            .hero { padding: 50px 5% 60px; text-align: center; min-height: auto; }
-            .hero-subtitulo { margin-left: auto; margin-right: auto; }
-            .hero-titulo { font-size: 2.3rem; letter-spacing: -1px; }
-            .hero-ctas, .hero-nota, .hero-pagamentos { justify-content: center; }
-            .hero-visual { height: 430px; }
-            .hero-visual .phone { width: 160px; }
-            .tablet { width: 92%; top: 60px; padding: 10px; border-radius: 20px; }
-            .comanda { width: 116px; left: 38%; padding: 10px; }
-            .comanda b { font-size: 22px; }
-            .comanda .qr { width: 70px; height: 70px; }
-            .cf-pix { display: none; }
-            .cf-pedido { left: 0; top: 0; }
-            .barra-prova { grid-template-columns: 1fr 1fr; gap: 28px; }
-            .item-prova .numero { font-size: 1.8rem; }
-            .secao, .secao-kanban, .secao-precos, .secao-final-cta { padding: 76px 5%; }
-            .cabecalho-secao { margin-bottom: 46px; }
-            .cabecalho-secao h2, .secao-precos h2, .secao-final-cta h2, .secao-kanban h2 { font-size: 2rem; }
-            .titulo-feature { font-size: 1.65rem; }
-            .linha-feature, .linha-feature.invertida { grid-template-columns: 1fr; gap: 40px; margin-bottom: 80px; }
-            .linha-feature.invertida .feature-imagem { order: 0; }
-            .passos, .modos { grid-template-columns: 1fr; }
-            .integracoes-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-            .integra { padding: 16px; }
-            .integra p { font-size: .82rem; }
-            .duas-colunas > *, .personaliza > *, .impressao-grid > *, .pagamento > * { min-width: 0; }
-            .area-celulares { gap: 14px; }
-            .area-celulares .phone { width: 46%; max-width: 190px; }
-            .area-celulares .phone + .phone { margin-top: 40px; }
-            .pagamento { padding: 36px 24px; border-radius: 24px; }
-            .pagamento h2 { font-size: 1.9rem; }
-            .cena-impressora { height: 520px; }
-            .impressora { width: 280px; }
-            .cupom-wrap { width: 210px; }
-            .sacola { scale: .75; }
-            .sacola.s1 { left: -10px; top: 0; }
-            .sacola.s2 { right: -10px; top: 60px; }
-            .sacola.s3 { display: none; }
-            .btn-vermelho, .btn-amarelo { white-space: normal; text-align: center; }
-            .faq-item summary { font-size: 1rem; }
-            .footer { flex-direction: column; text-align: center; gap: 16px; }
-            .footer-links { justify-content: center; }
         }
-        @media (max-width: 480px) {
-            .hero-titulo { font-size: 1.95rem; }
-            .btn-vermelho { padding: 14px 22px; font-size: 15px; }
-            .etapas-kanban { grid-template-columns: 1fr; }
-            .hero-visual { height: 360px; }
-            .hero-visual .phone { width: 130px; }
-            .card-flutuante { padding: 8px 10px; }
-            .card-flutuante .ic { width: 30px; height: 30px; }
-            .controles { padding: 20px; }
-            #fontes { grid-template-columns: 1fr; }
-            .opcao { padding: 10px; }
+        @media (max-width: 1080px) {
+            .hero .wrap, .feature .wrap { grid-template-columns: 1fr; gap: 44px; }
+            .feature.inv .f-visual { order: 0; }
+            .hero { text-align: left; }
+            .hero-visual { max-width: 640px; margin: 0 auto; width: 100%; }
+            .grade { grid-template-columns: 1fr 1fr; }
+            .grid-precos { grid-template-columns: 1fr; max-width: 460px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .cta-box { grid-template-columns: 1fr; }
         }
-        @media (max-width: 640px) {
-            .wpp-float { right: 16px; bottom: 16px; padding: 14px; border-radius: 50%; gap: 0; }
-            .wpp-float .wpp-float-txt { display: none; }
+        @media (max-width: 680px) {
+            .wrap { padding: 0 18px; }
+            .header .wrap { height: 62px; }
+            .header-acoes .btn-contorno span { display: none; }
+            .header-acoes .btn-contorno { padding: 9px 11px; }
+            .header-acoes .btn-pilula { padding: 9px 14px; font-size: 13px; }
+            .hero { padding: 36px 0 20px; }
+            .hero h1 { font-size: 32px; }
+            .hero-sub { font-size: 16px; }
+            .feature { padding: 48px 0; }
+            .f-texto h2, .centro h2, .centro.claro h2 { font-size: 26px; }
+            .painel { padding: 34px 14px; border-radius: 22px; }
+            .mock-phone { width: 240px; }
+            .orbita { max-width: 74%; }
+            #integracoes .f-visual { overflow: hidden; padding: 20px 0; }
+            .dupla .mock-phone + .mock-phone { transform: translateY(-24px); }
+            .fluxo-pg { left: 0; }
+            .chip { font-size: 12px; padding: 8px 10px; }
+            .chip .ic { width: 28px; height: 28px; }
+            .grade { grid-template-columns: 1fr; }
+            .escuro, .precos, .faq { padding: 70px 0; }
+            .fluxo-pg div { width: 50px; height: 50px; font-size: 9px; }
+            .fluxo-pg img { width: 24px; height: 24px; }
+            .cena-impressora { height: 440px; }
+            .cta-box { padding: 40px 24px; border-radius: 22px; }
+            .cta-box h2 { font-size: 27px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            .faq-item summary { padding-left: 46px; font-size: 15px; }
+            .faq-resp { padding-left: 46px; }
+            .btn-lg { padding: 15px 26px; font-size: 15px; }
+            .wpp-float { padding: 14px; border-radius: 50%; }
+            .wpp-float span { display: none; }
         }
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { animation: none !important; transition: none !important; }
-            .js .revela { opacity: 1; transform: none; }
+            .js .rv { opacity: 1; transform: none; }
             .cupom { transform: none; }
         }
     </style>
-
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -699,28 +476,23 @@
 </head>
 <body>
 
-<!-- Ícone da marca reutilizável -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="i-menuzia" viewBox="0 0 24 24"><path fill="#fff" d="M4 19V7.5a2.5 2.5 0 0 1 4.6-1.4L12 11l3.4-4.9A2.5 2.5 0 0 1 20 7.5V19h-3.2v-8.4l-3.5 5a1.6 1.6 0 0 1-2.6 0l-3.5-5V19z"/></symbol>
-</svg>
-
 <!-- ===== CABEÇALHO ===== -->
-<header class="header" id="topo">
-    <a href="https://menuzia.com.br/" class="logo" aria-label="Menuzia — página inicial">
-        <span class="logo-icone"><svg aria-hidden="true"><use href="#i-menuzia"/></svg></span>menuzia
-    </a>
-    <nav class="nav" aria-label="Principal">
-        <a href="#funcionalidades">Funcionalidades</a>
-        <a href="#cardapio">Cardápio Digital</a>
-        <a href="#modos">Mesas e Totem</a>
-        <a href="#integracoes">Integrações</a>
-        <a href="#precos">Preços</a>
-        <a href="#duvidas">Dúvidas</a>
-        <a href="blog/index.html">Blog</a>
-    </nav>
-    <div class="header-btns">
-        <a href="https://app.menuzia.com.br/login" class="btn-login">Login</a>
-        <a href="#precos" class="btn-amarelo" style="padding: 11px 22px; font-size: 14px;">Criar Cardápio</a>
+<header class="header">
+    <div class="wrap">
+        <a href="https://menuzia.com.br/" class="logo" aria-label="Menuzia — página inicial"><img src="assets/img/logo-menuzia.webp" alt="" width="38" height="38">Menuzia</a>
+        <nav class="nav" aria-label="Principal">
+            <a href="#cardapio">Cardápio Digital</a>
+            <a href="#robo">Robô WhatsApp</a>
+            <a href="#pdv">PDV e Mesas</a>
+            <a href="#integracoes">Integrações</a>
+            <a href="#precos">Preços</a>
+            <a href="#duvidas">Dúvidas</a>
+            <a href="blog/index.html">Blog</a>
+        </nav>
+        <div class="header-acoes">
+            <a href="https://app.menuzia.com.br/login" class="btn btn-contorno"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span>Entrar</span></a>
+            <a href="#precos" class="btn btn-primario btn-pilula">Criar Cardápio</a>
+        </div>
     </div>
 </header>
 
@@ -728,58 +500,42 @@
 
     <!-- ===== HERO ===== -->
     <section class="hero">
-        <div class="hero-texto">
-            <div class="hero-eyebrow"><span class="pill">Novo</span> Mesas com QR Code, totem e pagamento online</div>
-            <h1 class="hero-titulo">
-                Cardápio digital <span class="grad">sem comissão</span> para hamburgueria e <span class="palavra-destaque">delivery</span>
-            </h1>
-            <p class="hero-subtitulo">
-                Chega de pagar comissão e perder seus clientes pra plataforma. Com o Menuzia você tem <strong>seu próprio cardápio digital</strong> no celular, no tablet da mesa e no totem, recebe <strong>Pix e cartão online</strong>, imprime o pedido sozinho e fica com a lista de clientes <strong>pra sempre</strong> — por apenas <strong>R$67 fixos por mês</strong>.
-            </p>
-            <div class="hero-ctas">
-                <a href="#precos" class="btn-vermelho btn-brilho" style="font-size: 17px; padding: 18px 40px;">Criar Meu Cardápio Agora →</a>
-                <a href="#funcionalidades" class="btn-ghost">Ver o sistema por dentro</a>
+        <div class="wrap">
+            <div class="rv">
+                <h1>Cardápio digital <em>sem comissão</em> para hamburgueria e delivery</h1>
+                <p class="hero-sub">Chega de pagar comissão e perder seus clientes pra plataforma. Com o Menuzia você tem <strong>seu próprio cardápio digital</strong> no celular, no tablet da mesa e no totem, recebe <strong>Pix e cartão online</strong>, imprime o pedido sozinho e fica com a lista de clientes <strong>pra sempre</strong> — por apenas <strong>R$67 fixos por mês</strong>.</p>
+                <ul class="checks">
+                    <li>Sem taxa por pedido e preço fixo que não sobe</li>
+                    <li>Robô no WhatsApp que tira pedido e disparos de campanha</li>
+                    <li>PDV, mesas e comandas com QR Code e pagamento online</li>
+                </ul>
+                <div class="hero-ctas">
+                    <a href="#precos" class="btn btn-primario btn-lg">Criar Meu Cardápio Agora</a>
+                    <a href="#cardapio" class="link-seta">Ver o sistema por dentro →</a>
+                </div>
+                <div class="integra-mini">
+                    Integra com
+                    <img src="assets/img/logos/ifood.svg" alt="iFood" width="26" height="26">
+                    <img src="assets/img/logos/99food.svg" alt="99Food" width="26" height="26">
+                    <img src="assets/img/logos/aiqfome.svg" alt="aiqfome" width="26" height="26">
+                    <img src="assets/img/logos/mercadopago.svg" alt="Mercado Pago" width="26" height="26">
+                    <img src="assets/img/logos/meta.svg" alt="Meta" width="26" height="26">
+                    <img src="assets/img/logos/googleanalytics.svg" alt="Google Analytics" width="26" height="26">
+                </div>
             </div>
-            <p class="hero-nota">
-                <span>Sem taxa por pedido</span><span>Preço fixo que não sobe</span><span>Sem fidelidade</span><span>Nós configuramos pra você</span>
-            </p>
-            <div class="hero-pagamentos">
-                Integra com
-                <img src="assets/img/logos/ifood.svg" alt="iFood" width="22" height="22">
-                <img src="assets/img/logos/99food.svg" alt="99Food" width="22" height="22">
-                <img src="assets/img/logos/aiqfome.svg" alt="aiqfome" width="22" height="22">
-                <img src="assets/img/logos/mercadopago.svg" alt="Mercado Pago" width="22" height="22">
-                <img src="assets/img/logos/meta.svg" alt="Meta" width="22" height="22">
-                <img src="assets/img/logos/googleanalytics.svg" alt="Google Analytics" width="22" height="22">
-            </div>
-        </div>
-
-        <div class="hero-visual" aria-hidden="true">
-            <div class="tablet" data-parallax="0.04">
-                <div class="tela"><img src="assets/img/sistema/vitrine-desktop.webp" alt="" width="1290" height="735" fetchpriority="high"></div>
-            </div>
-            <div class="phone" data-parallax="0.08">
-                <div class="tela"><img src="assets/img/foto01.webp" alt="" width="402" height="875" fetchpriority="high"></div>
-            </div>
-            <div class="comanda" data-parallax="0.12">
-                <b>10</b><small>MESA</small>
-                <svg class="qr" data-seed="10"></svg>
-            </div>
-            <div class="card-flutuante cf-pedido">
-                <div class="ic" style="background:#FFEDD5;">🔔</div>
-                <div><div class="cf-titulo">Novo pedido · Mesa 10</div><div class="cf-sub">2x Smash Duplo · R$ 64,00</div></div>
-            </div>
-            <div class="card-flutuante cf-pix">
-                <div class="ic" style="background:#E0F7FF;"><img src="assets/img/logos/mercadopago.svg" alt=""></div>
-                <div><div class="cf-titulo">Pix aprovado ✓</div><div class="cf-sub">Pago online · R$ 42,90</div></div>
+            <div class="hero-visual rv" style="--d:.15s">
+                <div class="combo">
+                    <img class="mock-mac" src="assets/img/mockups/mac-vitrine.webp" alt="Cardápio digital Menuzia aberto no computador — vitrine da Estância Burger" width="1400" height="868" fetchpriority="high">
+                    <img class="mock-phone" src="assets/img/mockups/cel-home.webp" alt="Cardápio digital Menuzia no celular — vitrine da Estância Burger" width="640" height="1299" fetchpriority="high">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== LOGOS DE CLIENTES (CARROSSEL) ===== -->
+    <!-- ===== LOGOS DE CLIENTES ===== -->
     <!-- PLACEHOLDER: logos fictícios. Trocar pelos logos reais dos restaurantes clientes em assets/img/logos/cliente-*.svg -->
     <div class="clientes">
-        <p>Hamburguerias, pizzarias e deliveries que já vendem com o Menuzia</p>
+        <p class="clientes-titulo">Hamburguerias, pizzarias e deliveries que já vendem com o Menuzia</p>
         <div class="marquee">
             <div class="marquee-trilho">
                 <img src="assets/img/logos/cliente-brasa-burger.svg" alt="Brasa Burger" width="160" height="57">
@@ -796,778 +552,662 @@
         </div>
     </div>
 
-    <!-- ===== BARRA DE NÚMEROS ===== -->
-    <div class="barra-prova">
-        <div class="item-prova"><span class="numero" data-contar="500" data-prefixo="+">+500</span><span class="label">hamburguerias ativas</span></div>
-        <div class="item-prova"><span class="numero">R$0</span><span class="label">de comissão por pedido</span></div>
-        <div class="item-prova"><span class="numero" data-contar="100" data-sufixo="%">100%</span><span class="label">dos clientes ficam com você</span></div>
-        <div class="item-prova"><span class="numero" data-contar="67" data-prefixo="R$">R$67</span><span class="label">preço fixo, para sempre</span></div>
-    </div>
-
-    <!-- ===== COMO FUNCIONA (ONBOARDING) ===== -->
-    <section class="secao" id="como-funciona">
-        <div class="container">
-            <div class="cabecalho-secao revela">
-                <span class="kicker">Como funciona</span>
-                <h2>Do zero ao primeiro pedido em poucos dias</h2>
-                <p>Você não precisa entender de tecnologia. A gente monta o seu <strong>sistema de delivery próprio</strong> e você só precisa vender.</p>
-            </div>
-            <div class="passos">
-                <div class="passo revela" style="--d:.0s">
-                    <span class="num">1</span>
-                    <div class="ilustra" style="background:#EFF8FF;">
-                        <svg viewBox="0 0 260 170" aria-hidden="true"><circle cx="200" cy="40" r="36" fill="#BAE6FD"/><rect x="40" y="38" width="150" height="96" rx="10" fill="#1d3e73"/><rect x="48" y="46" width="134" height="80" rx="5" fill="#fff"/><rect x="56" y="54" width="42" height="64" rx="5" fill="#EDEEF1"/><rect x="106" y="56" width="66" height="8" rx="4" fill="#0688D4"/><rect x="106" y="72" width="52" height="6" rx="3" fill="#CBD5E1"/><rect x="106" y="86" width="60" height="6" rx="3" fill="#CBD5E1"/><rect x="106" y="100" width="40" height="10" rx="5" fill="#C62828"/><circle cx="77" cy="76" r="12" fill="#FBBF24"/><rect x="66" y="92" width="22" height="5" rx="2.5" fill="#94A3B8"/><rect x="26" y="134" width="178" height="8" rx="4" fill="#0F172A"/><circle cx="214" cy="118" r="18" fill="#A855F7"/><path d="M206 118l6 6 10-12" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <h3>A gente monta seu cardápio</h3>
-                    <p>Produtos, fotos, complementos, taxas por bairro e horários — configurados pela nossa equipe.</p>
-                </div>
-                <div class="passo revela" style="--d:.1s">
-                    <span class="num">2</span>
-                    <div class="ilustra" style="background:#F5F3FF;">
-                        <svg viewBox="0 0 260 170" aria-hidden="true"><circle cx="60" cy="50" r="34" fill="#DDD6FE"/><rect x="92" y="18" width="76" height="140" rx="14" fill="#0F172A"/><rect x="98" y="26" width="64" height="124" rx="9" fill="#fff"/><g fill="#0F172A"><rect x="108" y="46" width="18" height="18"/><rect x="134" y="46" width="18" height="18"/><rect x="108" y="72" width="18" height="18"/><rect x="134" y="78" width="6" height="6"/><rect x="146" y="72" width="6" height="12"/><rect x="140" y="88" width="12" height="6"/></g><g fill="#fff"><rect x="112" y="50" width="10" height="10"/><rect x="138" y="50" width="10" height="10"/><rect x="112" y="76" width="10" height="10"/></g><rect x="108" y="104" width="44" height="10" rx="5" fill="#A855F7"/><rect x="112" y="122" width="36" height="6" rx="3" fill="#CBD5E1"/><circle cx="196" cy="60" r="16" fill="#25D366"/><path d="M190 60l4 4 8-8" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round"/><circle cx="210" cy="112" r="14" fill="#0866FF"/><text x="210" y="118" text-anchor="middle" font-size="16" font-weight="900" fill="#fff" font-family="Arial">f</text><circle cx="52" cy="122" r="14" fill="#FBBF24"/><path d="M45 122h14M52 115v14" stroke="#0F172A" stroke-width="3" stroke-linecap="round"/></svg>
-                    </div>
-                    <h3>Divulgue link e QR Code</h3>
-                    <p>Link na bio, no WhatsApp e no Google. QR Code impresso em cada mesa e na embalagem.</p>
-                </div>
-                <div class="passo revela" style="--d:.2s">
-                    <span class="num">3</span>
-                    <div class="ilustra" style="background:#FFF7ED;">
-                        <svg viewBox="0 0 260 170" aria-hidden="true"><circle cx="196" cy="48" r="32" fill="#FED7AA"/><rect x="74" y="88" width="112" height="56" rx="12" fill="#262B35"/><rect x="66" y="70" width="128" height="26" rx="10" fill="#3A4150"/><rect x="94" y="22" width="72" height="62" fill="#FFFEFA" stroke="#E5E7EB"/><rect x="104" y="32" width="52" height="6" rx="3" fill="#0F172A"/><rect x="104" y="44" width="40" height="4" rx="2" fill="#94A3B8"/><rect x="104" y="54" width="48" height="4" rx="2" fill="#94A3B8"/><rect x="104" y="64" width="30" height="4" rx="2" fill="#94A3B8"/><circle cx="168" cy="106" r="4" fill="#22C55E"/><circle cx="52" cy="58" r="20" fill="#F97316"/><path d="M44 62a8 8 0 0 1 16 0zM52 50v4" stroke="#fff" stroke-width="3" fill="#fff" stroke-linecap="round"/><rect x="40" y="62" width="24" height="3" rx="1.5" fill="#fff"/></svg>
-                    </div>
-                    <h3>Pedido chega e imprime sozinho</h3>
-                    <p>Painel de pedidos em tempo real, tela da cozinha e cupom saindo na impressora térmica.</p>
-                </div>
-                <div class="passo revela" style="--d:.3s">
-                    <span class="num">4</span>
-                    <div class="ilustra" style="background:#ECFDF5;">
-                        <svg viewBox="0 0 260 170" aria-hidden="true"><circle cx="70" cy="44" r="30" fill="#A7F3D0"/><path d="M40 104l60-30v76l-60-30z" fill="#0688D4"/><rect x="30" y="102" width="16" height="26" rx="4" fill="#1d3e73"/><path d="M100 74c20 8 20 68 0 76" stroke="#1d3e73" stroke-width="6" fill="none" stroke-linecap="round"/><rect x="128" y="34" width="104" height="40" rx="14" fill="#fff" stroke="#D1FAE5" stroke-width="2"/><rect x="140" y="46" width="64" height="6" rx="3" fill="#10B981"/><rect x="140" y="58" width="44" height="5" rx="2.5" fill="#CBD5E1"/><rect x="140" y="90" width="96" height="40" rx="14" fill="#25D366"/><rect x="152" y="102" width="58" height="6" rx="3" fill="#fff"/><rect x="152" y="114" width="40" height="5" rx="2.5" fill="#D1FAE5"/><circle cx="226" cy="40" r="10" fill="#C62828"/><text x="226" y="45" text-anchor="middle" font-size="12" font-weight="900" fill="#fff" font-family="Arial">%</text></svg>
-                    </div>
-                    <h3>Venda de novo pelo WhatsApp</h3>
-                    <p>Cliente volta pra sua base. Dispare cupons e campanhas sem pagar nada por isso.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== FUNCIONALIDADES ===== -->
-    <section id="funcionalidades" class="secao secao-cinza">
-        <div class="container">
-            <div class="cabecalho-secao revela">
-                <span class="kicker">O sistema por dentro</span>
-                <h2>Tudo que seu delivery precisa em um lugar só</h2>
-                <p>Do pedido ao caixa, do cliente ao entregador — telas reais do painel do Menuzia, sem maquiagem.</p>
-            </div>
-
-            <!-- 1. DASHBOARD -->
-            <div class="linha-feature">
-                <div class="feature-imagem revela">
-                    <div class="frame-desktop" data-tilt>
-                        <div class="barra-browser"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div><span class="url">app.menuzia.com.br/admin/dashboard</span></div>
-                        <img src="assets/img/sistema/dashboard.webp" alt="Dashboard do cardápio digital Menuzia com funil de vendas: visitas, sacola, checkout e pedidos" loading="lazy" decoding="async" width="1523" height="784">
-                    </div>
-                </div>
-                <div class="feature-texto revela" style="--d:.1s">
-                    <div class="eyebrow">📊 Dashboard e funil de vendas</div>
-                    <h3 class="titulo-feature">Veja onde o cliente desiste — e onde está o dinheiro</h3>
-                    <p class="desc-feature">
-                        Funil completo do seu cardápio digital: quantos visitaram, abriram um item, colocaram na sacola, chegaram ao checkout e pediram. Faturamento por canal (vitrine, balcão e mesas), ticket médio, horário de pico e tempo médio de entrega. Chega de achismo.
-                    </p>
-                    <ul class="lista-feature">
-                        <li><div class="check">✓</div> Funil visita → sacola → checkout → pedido</li>
-                        <li><div class="check">✓</div> Faturamento separado por vitrine, PDV e mesas</li>
-                        <li><div class="check">✓</div> Ticket médio, itens por pedido e horário de pico</li>
-                        <li><div class="check">✓</div> Comparação com o período anterior</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- 2. GESTÃO DE CARDÁPIO -->
-            <div class="linha-feature invertida">
-                <div class="feature-imagem revela">
-                    <div class="frame-desktop" data-tilt>
-                        <div class="barra-browser"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div><span class="url">app.menuzia.com.br/admin/cardapio</span></div>
-                        <img src="assets/img/sistema/gestor-cardapio.webp" alt="Gestor de cardápio digital Menuzia com categorias, preços, promoções e disponibilidade por dia da semana" loading="lazy" decoding="async" width="1536" height="735">
-                    </div>
-                </div>
-                <div class="feature-texto revela" style="--d:.1s">
-                    <div class="eyebrow">📋 Gestão de Cardápio <span class="tag-amarela">Importante</span></div>
-                    <h3 class="titulo-feature">Seu cardápio, do seu jeito — atualizado em segundos</h3>
-                    <p class="desc-feature">
-                        Adicione produtos, crie categorias, defina disponibilidade por dia da semana e ative promoções com um clique. Grupos de <a href="blog/tutoriais/como-cadastrar-complementos-e-adicionais-no-cardapio.html">complementos e adicionais</a>, tamanhos e "peça também" (order bump) para subir o ticket médio. Sem programador, sem complicação.
-                    </p>
-                    <ul class="lista-feature">
-                        <li><div class="check">✓</div> Categorias com arrastar-e-soltar</li>
-                        <li><div class="check">✓</div> Disponibilidade por dia da semana</li>
-                        <li><div class="check">✓</div> Preço promocional e tags "Mais Vendido" / "Oferta limitada"</li>
-                        <li><div class="check">✓</div> Order Bump para aumentar o ticket médio</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- 3. CAMPANHAS WHATSAPP -->
-            <div class="linha-feature">
-                <div class="feature-imagem revela">
-                    <div class="frame-desktop" data-tilt>
-                        <div class="barra-browser"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div><span class="url">app.menuzia.com.br/admin/campanhas</span></div>
-                        <img src="assets/img/foto05.webp" alt="Campanhas no WhatsApp para delivery no Menuzia" loading="lazy" decoding="async" width="1400" height="866">
-                    </div>
-                </div>
-                <div class="feature-texto revela" style="--d:.1s">
-                    <div class="eyebrow">📣 Campanhas WhatsApp <span class="tag-amarela">Novidade</span></div>
-                    <h3 class="titulo-feature">Sua base de clientes é ouro. Comece a usar.</h3>
-                    <p class="desc-feature">
-                        Todo cliente que pediu no seu cardápio entra na sua lista — e essa lista é <strong>sua pra sempre</strong>. Com um clique você dispara promoções, lançamentos e mensagens de reengajamento direto no WhatsApp deles. Veja como montar uma <a href="blog/marketing/campanha-whatsapp-para-delivery.html">campanha de WhatsApp para delivery</a>.
-                    </p>
-                    <ul class="lista-feature">
-                        <li><div class="check">✓</div> Disparo em massa para toda a sua base</li>
-                        <li><div class="check">✓</div> Segmentação por frequência de compra</li>
-                        <li><div class="check">✓</div> Envio de imagem, texto e áudio PTT</li>
-                        <li><div class="check">✓</div> Programa de fidelidade e cupons</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- 4. ROBÔ -->
-            <div class="linha-feature invertida">
-                <div class="feature-imagem revela">
-                    <div class="frame-desktop" data-tilt>
-                        <div class="barra-browser"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div><span class="url">app.menuzia.com.br/admin/ajustes</span></div>
-                        <img src="assets/img/robo.webp" alt="Robô de atendimento no WhatsApp do Menuzia" loading="lazy" decoding="async" width="1400" height="1453" style="max-height:520px; object-fit:cover; object-position:top;">
-                    </div>
-                </div>
-                <div class="feature-texto revela" style="--d:.1s">
-                    <div class="eyebrow">🤖 Robô de Atendimento</div>
-                    <h3 class="titulo-feature">Atendimento automático 24h. Sem contratar ninguém.</h3>
-                    <p class="desc-feature">
-                        O robô do Menuzia atende seus clientes no WhatsApp, responde dúvidas, manda o link do cardápio e avisa cada etapa do pedido. Menos confusão, mais pedidos fechados — mesmo quando você está dormindo.
-                    </p>
-                    <ul class="lista-feature">
-                        <li><div class="check">✓</div> Responde automaticamente no WhatsApp</li>
-                        <li><div class="check">✓</div> Mensagens automáticas por etapa do pedido</li>
-                        <li><div class="check">✓</div> Nunca perde um pedido por falta de atendimento</li>
-                        <li><div class="check">✓</div> Funciona 24 horas, 7 dias por semana</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== CARDÁPIO DIGITAL / PERSONALIZAÇÃO ===== -->
-    <section id="cardapio" class="secao">
-        <div class="container">
-            <div class="cabecalho-secao revela">
-                <span class="kicker">🎨 Personalização</span>
-                <h2>Um cardápio digital com a cara da sua marca</h2>
-                <p>Escolha a <strong>cor da loja</strong>, a <strong>fonte</strong>, o <strong>modo de exibição</strong> e o tamanho das fotos. Teste aqui do lado — é exatamente o que você faz no painel.</p>
-            </div>
-            <div class="personaliza">
-                <div class="revela">
-                    <div class="controles">
-                        <div class="controle">
-                            <span class="controle-label">Cor da loja</span>
-                            <div class="swatches" id="swatches">
-                                <button class="swatch" style="background:#F50018" data-cor="#F50018" aria-pressed="true" aria-label="Vermelho"></button>
-                                <button class="swatch" style="background:#F97316" data-cor="#F97316" aria-pressed="false" aria-label="Laranja"></button>
-                                <button class="swatch" style="background:#0688D4" data-cor="#0688D4" aria-pressed="false" aria-label="Azul"></button>
-                                <button class="swatch" style="background:#10B981" data-cor="#10B981" aria-pressed="false" aria-label="Verde"></button>
-                                <button class="swatch" style="background:#A855F7" data-cor="#A855F7" aria-pressed="false" aria-label="Roxo"></button>
-                                <button class="swatch" style="background:#DB2777" data-cor="#DB2777" aria-pressed="false" aria-label="Rosa"></button>
-                                <button class="swatch" style="background:#CA8A04" data-cor="#CA8A04" aria-pressed="false" aria-label="Mostarda"></button>
-                                <button class="swatch" style="background:#111827" data-cor="#111827" aria-pressed="false" aria-label="Preto"></button>
-                            </div>
-                        </div>
-                        <div class="controle">
-                            <span class="controle-label">Fonte da vitrine</span>
-                            <div class="opcoes" id="fontes">
-                                <button class="opcao" data-fonte="Inter" aria-pressed="true" style="font-family:Inter"><strong>Moderna</strong><span>Inter</span></button>
-                                <button class="opcao" data-fonte="Nunito" aria-pressed="false" style="font-family:Nunito"><strong>Arredondada</strong><span>Estilo app</span></button>
-                                <button class="opcao" data-fonte="Poppins" aria-pressed="false" style="font-family:Poppins"><strong>Geométrica</strong><span>Poppins</span></button>
-                            </div>
-                        </div>
-                        <div class="controle">
-                            <span class="controle-label">Modo de exibição</span>
-                            <div class="opcoes duas" id="modos-exibicao">
-                                <button class="opcao" data-modo="lista" aria-pressed="true"><strong>Lista</strong><span>Itens em lista compacta</span></button>
-                                <button class="opcao" data-modo="cards" aria-pressed="false"><strong>Categorias</strong><span>Cards grandes, 2 por linha</span></button>
-                            </div>
-                        </div>
-                        <div class="controle">
-                            <span class="controle-label">Tamanho da foto</span>
-                            <div class="opcoes" id="tamanhos">
-                                <button class="opcao" data-img="48px" aria-pressed="false"><strong>90×90</strong></button>
-                                <button class="opcao" data-img="54px" aria-pressed="false"><strong>100×100</strong></button>
-                                <button class="opcao" data-img="58px" aria-pressed="true"><strong>110×110</strong></button>
-                            </div>
-                        </div>
-                        <p class="nota">Também dá pra trocar logo, banner de capa, aviso promocional com efeito pulsar e nota de avaliação como prova social.</p>
-                    </div>
-                    <div class="print-real">
-                        <img src="assets/img/sistema/aparencia-vitrine.webp" alt="Tela de aparência da vitrine no painel Menuzia: cor da loja, formato da lista, tamanho da imagem e fonte do cardápio" loading="lazy" decoding="async" width="990" height="585">
-                    </div>
-                </div>
-                <div class="demo-area revela" style="--d:.15s" id="demo" aria-label="Prévia do cardápio digital personalizado">
-                    <div class="phone demo">
-                        <div class="tela">
-                            <div class="demo-loja">
-                                <div class="demo-capa"></div>
-                                <div class="demo-info"><div class="demo-logo">B</div><div><b>Brasa Burger</b><small>● Aberto agora · 30–45 min</small></div></div>
-                                <div class="demo-chips"><span class="on">Burgers</span><span>Combos</span><span>Bebidas</span></div>
-                                <div class="demo-itens" id="demo-itens">
-                                    <div class="demo-item"><div><b>X-Burguer Duplo</b><p>Pão brioche, 2 carnes de 120 g, cheddar e molho da casa.</p><div class="preco">R$ 32,90</div></div><div class="foto">🍔</div></div>
-                                    <div class="demo-item"><div><b>Smash Bacon</b><p>Smash 90 g, bacon crocante e cebola caramelizada.</p><div class="preco">R$ 28,50</div></div><div class="foto">🥓</div></div>
-                                    <div class="demo-item"><div><b>Combo Família</b><p>4 burgers, 2 fritas grandes e refri 2L.</p><div class="preco">R$ 109,90</div></div><div class="foto">🍟</div></div>
-                                    <div class="demo-item"><div><b>Milk-shake</b><p>Ovomaltine, 400 ml.</p><div class="preco">R$ 18,00</div></div><div class="foto">🥤</div></div>
-                                </div>
-                                <div class="demo-btn">Ver sacola · R$ 61,40</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== MODOS DE VENDA ===== -->
-    <section id="modos" class="secao secao-cinza">
-        <div class="container">
-            <div class="cabecalho-secao revela">
-                <span class="kicker">Um sistema, vários canais</span>
-                <h2>Delivery, mesa com QR Code, tablet e totem</h2>
-                <p>O mesmo cardápio digital funciona em qualquer tela. Todos os pedidos caem num painel só — e a <a href="blog/guias/qr-code-para-cardapio-digital.html">QR Code para cardápio digital</a> já sai pronto pra imprimir.</p>
-            </div>
-            <div class="modos">
-                <article class="modo revela">
-                    <div class="modo-visual azul">
-                        <div class="phone"><div class="tela"><img src="assets/img/foto02.webp" alt="Cardápio digital no celular para delivery" loading="lazy" width="402" height="881"></div></div>
-                    </div>
-                    <div class="modo-corpo">
-                        <h3>📱 Delivery e retirada</h3>
-                        <p>Link próprio pro Instagram, Google e WhatsApp. Cliente pede sem baixar app, com frete calculado por bairro.</p>
-                    </div>
-                </article>
-                <article class="modo revela" style="--d:.1s">
-                    <div class="modo-visual verde">
-                        <div class="mini-tablet"><div class="tela"><img src="assets/img/sistema/vitrine-desktop.webp" alt="Cardápio digital no tablet da mesa" loading="lazy" width="1290" height="735"></div></div>
-                        <div class="qr-mesa"><svg class="qr" data-seed="7"></svg><span>MESA 07</span></div>
-                    </div>
-                    <div class="modo-corpo">
-                        <h3>🍽️ Mesas com QR Code e tablet</h3>
-                        <p>Cada mesa tem seu QR Code. O cliente pede da mesa, o pedido cai na comanda e o garçom só entrega.</p>
-                    </div>
-                </article>
-                <article class="modo revela" style="--d:.2s">
-                    <div class="modo-visual roxo">
-                        <div class="totem">
-                            <span class="totem-marca">PEÇA AQUI</span>
-                            <div class="totem-corpo"><div class="tela"><img src="assets/img/foto01.webp" alt="Totem de autoatendimento com cardápio digital" loading="lazy" width="402" height="875"></div></div>
-                            <div class="totem-haste"></div><div class="totem-base"></div>
-                        </div>
-                    </div>
-                    <div class="modo-corpo">
-                        <h3>🖥️ Totem de autoatendimento</h3>
-                        <p>Coloque o cardápio num totem ou tablet no balcão. Fila menor, ticket maior e zero erro de anotação.</p>
-                    </div>
-                </article>
-                <article class="modo revela">
-                    <div class="modo-visual laranja">
-                        <div class="print-mini"><img src="assets/img/sistema/mesas.webp" alt="Painel de mesas e comandas do Menuzia com status livre, ocupada e em limpeza" loading="lazy" width="1536" height="735"></div>
-                    </div>
-                    <div class="modo-corpo">
-                        <h3>🧾 Mesas e comandas</h3>
-                        <p>Mapa de mesas com status (livre, ocupada, em limpeza), conta, folha de QR e pagamentos por mesa.</p>
-                    </div>
-                </article>
-                <article class="modo revela" style="--d:.1s">
-                    <div class="modo-visual cinza">
-                        <div class="print-mini"><img src="assets/img/sistema/cozinha-kds.webp" alt="Tela de cozinha KDS do Menuzia com estações e QR Code de acesso" loading="lazy" width="1536" height="735"></div>
-                    </div>
-                    <div class="modo-corpo">
-                        <h3>👨‍🍳 Tela da cozinha (KDS)</h3>
-                        <p>Cada estação vira uma tela em tablet, monitor ou TV, sem login. <a href="blog/tutoriais/o-que-e-kds-tela-de-cozinha.html" style="color:var(--azul);font-weight:600;">O que é KDS?</a></p>
-                    </div>
-                </article>
-                <article class="modo revela" style="--d:.2s">
-                    <div class="modo-visual amarelo">
-                        <div class="mini-tablet" style="aspect-ratio:16/10; transform:rotate(3deg);"><div class="tela"><img src="assets/img/sistema/pdv-touch.webp" alt="PDV touch do Menuzia no tablet do garçom com balcão e mesas" loading="lazy" width="1520" height="565"></div></div>
-                    </div>
-                    <div class="modo-corpo">
-                        <h3>💻 PDV touch e balcão</h3>
-                        <p>PDV em tela cheia pro tablet do garçom e do caixa: lance pedidos de balcão, telefone e mesa. Tudo cai no mesmo Kanban.</p>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== IMPRESSÃO TÉRMICA ===== -->
-    <section id="impressao" class="secao secao-impressao">
-        <div class="container impressao-grid">
-            <div class="cena-impressora revela" id="cena-impressora" aria-hidden="true">
-                <div class="sacola s1"><div class="faixa">menuzia<small>DELIVERY</small></div></div>
-                <div class="sacola s2"><div class="faixa">menuzia<small>DELIVERY</small></div></div>
-                <div class="sacola s3"><div class="faixa">menuzia</div></div>
-                <div class="cupom-wrap">
-                    <div class="cupom">
-                        <div class="c-logo"><i><svg><use href="#i-menuzia"/></svg></i>menuzia</div>
-                        <div class="c-centro">DELIVERY · ENTREGA PRÓPRIA<br>Brasa Burger</div>
-                        <div class="c-linha"></div>
-                        <div class="c-row"><b>PEDIDO #1047</b><span>19:42</span></div>
-                        <div class="c-linha"></div>
-                        <div class="c-row"><span>2x X-Burguer Duplo</span><span>65,80</span></div>
-                        <div class="c-sub">+ Bacon extra (2x)</div>
-                        <div class="c-sub">+ Sem cebola</div>
-                        <div class="c-row"><span>1x Batata Rústica G</span><span>22,00</span></div>
-                        <div class="c-row"><span>1x Coca-Cola 2L</span><span>14,00</span></div>
-                        <div class="c-linha"></div>
-                        <div class="c-row"><span>Taxa de entrega</span><span>5,00</span></div>
-                        <div class="c-row c-total"><span>TOTAL</span><span>R$ 106,80</span></div>
-                        <div class="c-pago">PAGO ONLINE · PIX</div>
-                        <div class="c-qr"><svg class="qr" data-seed="3"></svg><span>Avalie seu pedido<br>e ganhe cupom na<br>próxima compra</span></div>
-                        <div class="barcode"></div>
-                    </div>
-                </div>
-                <div class="impressora">
-                    <div class="impressora-topo"></div>
-                    <div class="impressora-corpo"><span class="led"></span><span class="botao"></span><span class="marca">menuzia print</span></div>
-                </div>
-            </div>
-            <div class="feature-texto revela" style="--d:.1s">
-                <div class="eyebrow">🖨️ Impressão automática</div>
-                <h2 class="titulo-feature" style="font-size:2.4rem;">Pedido chegou. Imprimiu sozinho. Acabou.</h2>
-                <p class="desc-feature">
-                    O Assistente de Impressão liga o Menuzia direto à sua impressora térmica. Pedido novo entra, o cupom sai na hora com <strong>itens, adicionais, observações, endereço e forma de pagamento</strong> — sem abrir o computador, sem clicar em nada. Veja <a href="blog/tutoriais/como-configurar-impressora-termica-para-delivery.html">como configurar a impressora térmica</a> e <a href="blog/tutoriais/melhor-impressora-termica-para-delivery.html">qual impressora comprar</a>.
-                </p>
-                <ul class="lista-feature">
-                    <li><div class="check">✓</div> Impressão automática assim que o pedido chega</li>
-                    <li><div class="check">✓</div> Funciona com impressora térmica 58 mm e 80 mm</li>
-                    <li><div class="check">✓</div> Via da cozinha e via do entregador</li>
-                    <li><div class="check">✓</div> Cupom com QR Code de avaliação incluso</li>
+    <!-- ===== CARDÁPIO DIGITAL ===== -->
+    <section id="cardapio" class="feature">
+        <div class="wrap">
+            <div class="f-texto rv">
+                <span class="rotulo">Cardápio Digital</span>
+                <h2>Uma experiência de compra que converte clique em dinheiro</h2>
+                <p>Seu cliente não baixa app. Abre o link, escolhe e pede em segundos. Um cardápio rápido, bonito e otimizado para vender — a melhor <a href="blog/estrategia/como-sair-do-ifood-e-vender-direto.html">alternativa ao iFood</a> pra quem quer vender direto, sem intermediário e sem taxa por pedido.</p>
+                <ul class="checks">
+                    <li>Layout organizado por categorias e destaques</li>
+                    <li>Tags de "Mais Pedidos" e desconto visíveis</li>
+                    <li>Adicionais, molhos e complementos em cada lanche</li>
+                    <li>Cálculo automático de frete por bairro</li>
+                    <li>Cupons e promoções integrados ao cardápio</li>
                 </ul>
+                <a href="#precos" class="btn btn-primario">Criar meu cardápio</a>
+            </div>
+            <div class="f-visual rv" style="--d:.1s">
+                <div class="dupla">
+                    <img class="mock-phone" src="assets/img/mockups/cel-lista.webp" alt="Cardápio digital no celular com lista de hambúrgueres, fotos e preços" loading="lazy" width="640" height="1299">
+                    <img class="mock-phone" src="assets/img/mockups/cel-item.webp" alt="Produto aberto no cardápio digital com escolha de molhos e adicionais" loading="lazy" width="640" height="1299">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== PAGAMENTO ONLINE ===== -->
-    <section id="pagamento" class="secao" style="padding-top: 40px;">
-        <div class="container">
-            <div class="pagamento revela">
-                <div>
-                    <span class="mp-selo"><img src="assets/img/logos/mercadopago.svg" alt="" width="30" height="30"> Integração Mercado Pago</span>
-                    <h2>Receba Pix e cartão online direto no cardápio</h2>
-                    <p>O cliente paga na hora do pedido e o dinheiro cai na <strong>sua</strong> conta Mercado Pago. Pedido só vai pra cozinha depois de pago — fim do calote e do "manda o Pix depois". O Menuzia não cobra nada por transação. Veja <a href="blog/tutoriais/como-receber-pix-no-delivery.html" style="color:#fff;border-bottom:1px solid rgba(255,255,255,.5);font-weight:700;">como receber Pix no delivery</a>.</p>
-                    <div class="pg-lista"><span>⚡ Pix</span><span>💳 Crédito</span><span>💳 Débito</span><span>💵 Dinheiro na entrega</span></div>
+    <!-- ===== PERSONALIZAÇÃO ===== -->
+    <section id="personalizar" class="feature inv">
+        <div class="wrap">
+            <div class="f-texto rv">
+                <span class="rotulo">Personalização</span>
+                <h2>Um cardápio digital com a cara da sua marca</h2>
+                <p>Você escolhe a <strong>cor da loja</strong>, a <strong>fonte</strong>, o <strong>modo de exibição</strong> e o tamanho das fotos direto no painel — sem programador. O cardápio fica com a identidade do seu restaurante, não da plataforma.</p>
+                <ul class="checks">
+                    <li>Cor da loja em botões, categorias e destaques</li>
+                    <li>Fonte da vitrine para o cardápio inteiro</li>
+                    <li>Modo de exibição: lista compacta ou cards por categoria</li>
+                    <li>Tamanho da foto dos produtos</li>
+                    <li>Logo, banner de capa e aviso promocional com efeito pulsar</li>
+                    <li>Nota de avaliação como prova social</li>
+                </ul>
+                <a href="#precos" class="btn btn-primario">Criar meu cardápio</a>
+            </div>
+            <div class="f-visual rv" style="--d:.1s">
+                <div class="painel">
+                    <img class="mock-mac" src="assets/img/mockups/mac-aparencia.webp" alt="Tela de aparência da vitrine no painel Menuzia: cor da loja, formato da lista, tamanho da imagem e fonte do cardápio" loading="lazy" width="1400" height="828">
                 </div>
-                <div class="checkout" aria-hidden="true">
-                    <h4>Como você quer pagar?</h4>
-                    <div class="ck-op on"><span class="rd"></span>Pix<small>aprovação na hora</small></div>
-                    <div class="ck-op"><span class="rd"></span>Cartão de crédito</div>
-                    <div class="ck-op"><span class="rd"></span>Pagar na entrega</div>
-                    <div class="ck-total"><span>Total</span><span>R$ 106,80</span></div>
-                    <div class="ck-btn">Pagar com Pix</div>
-                    <div class="ck-ok"><img src="assets/img/logos/mercadopago.svg" alt="" width="18" height="18"> Pagamento processado pelo Mercado Pago</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ROBÔ QUE TIRA PEDIDO ===== -->
+    <section id="robo" class="feature">
+        <div class="wrap">
+            <div class="f-texto rv">
+                <span class="rotulo">Robô de Atendimento no WhatsApp</span>
+                <h2>Um robô que atende e tira o pedido no WhatsApp, 24h</h2>
+                <p>O robô do Menuzia atende seus clientes no WhatsApp, responde dúvidas, <strong>anota o pedido</strong>, confirma endereço e forma de pagamento e manda o link do cardápio. Menos confusão, mais pedidos fechados — mesmo quando você está dormindo.</p>
+                <p>Do momento que o pedido é feito até a entrega na porta, seu cliente recebe mensagens automáticas: <strong>pedido recebido, em preparo, saiu pra entrega e entregue</strong> — com pedido de avaliação no final.</p>
+                <ul class="checks">
+                    <li>Tira o pedido pelo WhatsApp, sem atendente</li>
+                    <li>Responde dúvidas e envia o link do cardápio</li>
+                    <li>Mensagens automáticas por etapa do pedido</li>
+                    <li>Funciona 24 horas, 7 dias por semana</li>
+                </ul>
+                <a href="#precos" class="btn btn-primario">Quero o robô no meu WhatsApp</a>
+            </div>
+            <div class="f-visual rv" style="--d:.1s">
+                <div class="painel">
+                    <img class="mock-phone" src="assets/img/mockups/cel-robo.webp" alt="Robô de atendimento do Menuzia tirando um pedido no WhatsApp" loading="lazy" width="640" height="1299">
+                    <div class="chip" style="right:5%;top:20%"><span class="ic" style="background:#DCFCE7"><img src="assets/img/logos/whatsapp.svg" alt=""></span><span>Pedido #2381<small>anotado pelo robô</small></span></div>
+                    <div class="chip" style="left:5%;bottom:20%;animation-delay:3s"><span class="ic" style="background:#E0F2FE">🤖</span><span>Atendimento 24h<small>sem contratar ninguém</small></span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DISPAROS / CAMPANHAS ===== -->
+    <section id="funcionalidades" class="feature inv">
+        <div class="wrap">
+            <div class="f-texto rv">
+                <span class="rotulo">Disparos em massa no WhatsApp</span>
+                <h2>Sua base de clientes é ouro. Dispare e venda de novo.</h2>
+                <p>Todo cliente que pediu no seu cardápio entra na sua lista — e essa lista é <strong>sua pra sempre</strong>. Com um clique você dispara promoções, lançamentos e mensagens de reengajamento direto no WhatsApp deles. Veja como montar uma <a href="blog/marketing/campanha-whatsapp-para-delivery.html">campanha de WhatsApp para delivery</a>.</p>
+                <ul class="checks">
+                    <li>Disparo em massa para toda a sua base</li>
+                    <li>Segmentação por frequência de compra</li>
+                    <li>Envio de imagem, texto e áudio PTT</li>
+                    <li>Agendamento de campanhas</li>
+                    <li>Programa de fidelidade e cupons</li>
+                </ul>
+                <a href="#precos" class="btn btn-primario">Criar meu cardápio</a>
+            </div>
+            <div class="f-visual rv" style="--d:.1s">
+                <div class="combo">
+                    <img class="mock-mac" src="assets/img/mockups/mac-campanhas.webp" alt="Tela de nova campanha de WhatsApp no Menuzia com imagem, texto, público-alvo e agendamento" loading="lazy" width="1400" height="861">
+                    <img class="mock-phone" src="assets/img/mockups/cel-disparo.webp" alt="Cliente recebendo campanha com cupom no WhatsApp" loading="lazy" width="640" height="1299">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PDV ===== -->
+    <section id="pdv" class="feature">
+        <div class="wrap">
+            <div class="f-texto rv">
+                <span class="rotulo">PDV · Balcão e Caixa</span>
+                <h2>PDV touch pra balcão, telefone e salão</h2>
+                <p>PDV em tela cheia pro tablet do garçom e do caixa: lance pedidos de balcão, telefone e mesa em poucos toques. Tudo cai no mesmo painel de pedidos (recebido, preparando, pronto) junto com os pedidos do cardápio digital e dos marketplaces.</p>
+                <ul class="checks">
+                    <li>Pedidos de balcão, telefone e mesa no mesmo lugar</li>
+                    <li>Tela cheia em tablet, computador ou celular</li>
+                    <li>Abertura e fechamento de caixa por operador</li>
+                    <li>Impressão automática na cozinha</li>
+                </ul>
+                <a href="#precos" class="btn btn-primario">Criar meu cardápio</a>
+            </div>
+            <div class="f-visual rv" style="--d:.1s">
+                <img class="mock-mac" src="assets/img/mockups/mac-pdv.webp" alt="PDV touch do Menuzia com balcão e mapa de mesas" loading="lazy" width="1400" height="697">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MESAS E COMANDAS ===== -->
+    <section id="mesas" class="feature inv">
+        <div class="wrap">
+            <div class="f-texto rv">
+                <span class="rotulo">Mesas e Comandas</span>
+                <h2>Mesas com QR Code e comandas sem papel</h2>
+                <p>Cada mesa ganha um QR Code próprio: o cliente aponta a câmera, pede pelo cardápio e o pedido cai direto na comanda da mesa. O garçom só entrega. No painel você vê o mapa de mesas em tempo real e fecha a conta em segundos. Veja como funciona o <a href="blog/guias/qr-code-para-cardapio-digital.html">QR Code para cardápio digital</a>.</p>
+                <ul class="checks">
+                    <li>QR Code por mesa, com folha pronta pra imprimir</li>
+                    <li>Status: livre, aguardando, ocupada e em limpeza</li>
+                    <li>Conta e pagamentos por mesa</li>
+                    <li>Comandas de balcão e totem de autoatendimento</li>
+                </ul>
+                <a href="#precos" class="btn btn-primario">Criar meu cardápio</a>
+            </div>
+            <div class="f-visual rv" style="--d:.1s">
+                <div class="painel" style="padding:56px 26px;">
+                    <img class="mock-mac" src="assets/img/mockups/mac-mesas.webp" alt="Painel de mesas e comandas do Menuzia com status livre, ocupada e em limpeza" loading="lazy" width="1400" height="697">
+                    <div class="chip" style="right:4%;top:8%"><span class="mini-qr" style="padding:4px;box-shadow:none"><svg class="qr" data-seed="7" style="width:44px;height:44px"></svg></span><span>Mesa 07<small>QR Code da mesa</small></span></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ===== INTEGRAÇÕES ===== -->
-    <section id="integracoes" class="secao secao-cinza">
-        <div class="container">
-            <div class="cabecalho-secao revela">
-                <span class="kicker">🔌 Integrações</span>
+    <section id="integracoes" class="feature">
+        <div class="wrap">
+            <div class="f-texto rv">
+                <span class="rotulo">Integrações</span>
                 <h2>Conecta com o que você já usa</h2>
                 <p>Marketplaces, pagamento e rastreamento de anúncios — tudo no mesmo painel. Use o iFood pra ser encontrado e o seu <a href="cardapio-digital-sem-comissao.html">cardápio digital sem comissão</a> pra fidelizar.</p>
+                <ul class="checks">
+                    <li><span><strong>iFood, 99Food e aiqfome:</strong> pedidos entram no mesmo painel e na mesma impressora</span></li>
+                    <li><span><strong>Mercado Pago:</strong> Pix e cartão online no checkout, direto na sua conta</span></li>
+                    <li><span><strong>Facebook Pixel e API de Conversões (Meta):</strong> saiba quais anúncios geram pedidos</span></li>
+                    <li><span><strong>Google Analytics / Tag Manager:</strong> métricas de acesso e conversão no GA4</span></li>
+                    <li><span><strong>WhatsApp:</strong> robô, notificações e disparos — veja o <a href="cardapio-digital-para-whatsapp.html" style="color:var(--vermelho)">cardápio para WhatsApp</a></span></li>
+                </ul>
+                <a href="#precos" class="btn btn-primario">Criar meu cardápio</a>
             </div>
-            <div class="integracoes-grid">
-                <div class="integra revela"><div class="integra-topo"><img src="assets/img/logos/ifood.svg" alt="iFood" width="42" height="42"></div><h3>iFood</h3><p>Pedidos do iFood entram no mesmo painel e na mesma impressora.</p></div>
-                <div class="integra revela" style="--d:.05s"><div class="integra-topo"><img src="assets/img/logos/99food.svg" alt="99Food" width="42" height="42"></div><h3>99Food</h3><p>Centralize os pedidos da 99 junto com o seu delivery próprio.</p></div>
-                <div class="integra revela" style="--d:.1s"><div class="integra-topo"><img src="assets/img/logos/aiqfome.svg" alt="aiqfome" width="42" height="42"></div><h3>aiqfome</h3><p>Pedidos do aiqfome sem precisar de outra tela no balcão.</p></div>
-                <div class="integra revela" style="--d:.15s"><div class="integra-topo"><img src="assets/img/logos/mercadopago.svg" alt="Mercado Pago" width="42" height="42"><span class="ativa">Pagamento</span></div><h3>Mercado Pago</h3><p>Pix e cartão online no checkout, direto na sua conta.</p></div>
-                <div class="integra revela"><div class="integra-topo"><img src="assets/img/logos/facebook.svg" alt="Facebook Pixel" width="42" height="42"></div><h3>Facebook Pixel</h3><p>Saiba quais anúncios do Instagram e Facebook geram pedidos.</p></div>
-                <div class="integra revela" style="--d:.05s"><div class="integra-topo"><img src="assets/img/logos/meta.svg" alt="API de Conversões da Meta" width="42" height="42"></div><h3>API de Conversões (Meta)</h3><p>Eventos enviados do servidor: rastreio que não se perde com bloqueador.</p></div>
-                <div class="integra revela" style="--d:.1s"><div class="integra-topo"><img src="assets/img/logos/googleanalytics.svg" alt="Google Analytics" width="42" height="42"></div><h3>Google Analytics / Tag Manager</h3><p>Métricas de acesso e conversão do cardápio no GA4.</p></div>
-                <div class="integra revela" style="--d:.15s"><div class="integra-topo"><img src="assets/img/logos/whatsapp.svg" alt="WhatsApp" width="42" height="42"></div><h3>WhatsApp</h3><p>Notificações automáticas, robô e campanhas. <a href="cardapio-digital-para-whatsapp.html" style="color:var(--azul);font-weight:600;">Cardápio para WhatsApp</a></p></div>
-            </div>
-            <div class="print-integra revela">
-                <div class="frame-desktop">
-                    <div class="barra-browser"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div><span class="url">app.menuzia.com.br/admin/integracoes</span></div>
-                    <img src="assets/img/sistema/integracoes.webp" alt="Tela de integrações do Menuzia: WhatsApp, Mercado Pago, Facebook Pixel, API de Conversões da Meta e Google Analytics" loading="lazy" decoding="async" width="1536" height="735">
+            <div class="f-visual rv" style="--d:.1s">
+                <div class="orbita" aria-hidden="true">
+                    <div class="anel a1"></div><div class="anel a2"></div><div class="anel a3"></div>
+                    <div class="giro">
+                        <div class="bolha" style="left:50%;top:15%"><img src="assets/img/logos/ifood.svg" alt=""></div>
+                        <div class="bolha" style="left:80.3%;top:67.5%"><img src="assets/img/logos/99food.svg" alt=""></div>
+                        <div class="bolha" style="left:19.7%;top:67.5%"><img src="assets/img/logos/aiqfome.svg" alt=""></div>
+                        <div class="bolha" style="left:100%;top:50%"><img src="assets/img/logos/mercadopago.svg" alt=""></div>
+                        <div class="bolha" style="left:0%;top:50%"><img src="assets/img/logos/whatsapp.svg" alt=""></div>
+                        <div class="bolha" style="left:25%;top:6.7%"><img src="assets/img/logos/facebook.svg" alt=""></div>
+                        <div class="bolha" style="left:75%;top:93.3%"><img src="assets/img/logos/meta.svg" alt=""></div>
+                        <div class="bolha" style="left:25%;top:93.3%"><img src="assets/img/logos/googleanalytics.svg" alt=""></div>
+                        <div class="bolha" style="left:75%;top:6.7%"><img src="assets/img/logos/googletagmanager.svg" alt=""></div>
+                    </div>
+                    <div class="centro"><img src="assets/img/logo-menuzia.webp" alt="" width="160" height="160"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== KANBAN / NOTIFICAÇÕES ===== -->
-    <section class="secao-kanban">
-        <h2 class="revela">Seu cliente informado.<br>Em cada etapa. No WhatsApp.</h2>
-        <p class="revela">
-            Do momento que o pedido é feito até a entrega na porta, seu cliente recebe mensagens automáticas no WhatsApp — sem você precisar fazer nada. Profissionalismo que gera confiança, elimina ligações desnecessárias e aumenta avaliações positivas.
-        </p>
-        <div class="etapas-kanban">
-            <div class="etapa-item revela" style="--c:#F97316;"><div class="etapa-icone">🛒</div><div class="etapa-nome">Pedido Recebido</div><div class="etapa-desc">Confirmação automática no WhatsApp do cliente</div><div class="etapa-badge">Automático</div></div>
-            <div class="etapa-item revela" style="--c:#0688D4; --d:.1s"><div class="etapa-icone">🍔</div><div class="etapa-nome">Em Preparo</div><div class="etapa-desc">Cliente sabe que o lanche está sendo feito</div><div class="etapa-badge">Automático</div></div>
-            <div class="etapa-item revela" style="--c:#A855F7; --d:.2s"><div class="etapa-icone">🛵</div><div class="etapa-nome">Saiu pra Entrega</div><div class="etapa-desc">Aviso com nome do motoboy e tempo estimado</div><div class="etapa-badge">Automático</div></div>
-            <div class="etapa-item revela" style="--c:#10B981; --d:.3s"><div class="etapa-icone">✅</div><div class="etapa-nome">Entregue</div><div class="etapa-desc">Confirmação de entrega + pedido de avaliação</div><div class="etapa-badge">Automático</div></div>
+    <!-- ===== PAGAMENTO ONLINE ===== -->
+    <section id="pagamento" class="feature inv">
+        <div class="wrap">
+            <div class="f-texto rv">
+                <span class="rotulo">Pagamento online · Mercado Pago</span>
+                <h2>Receba Pix e cartão online direto no cardápio</h2>
+                <p>O cliente paga na hora do pedido e o dinheiro cai na <strong>sua</strong> conta Mercado Pago. Pedido só vai pra cozinha depois de pago — fim do calote e do "manda o Pix depois". O Menuzia não cobra nada por transação.</p>
+                <p>Veja <a href="blog/tutoriais/como-receber-pix-no-delivery.html">como receber Pix no delivery</a>.</p>
+                <ul class="checks">
+                    <li>Pix com aprovação na hora</li>
+                    <li>Cartão de crédito e débito</li>
+                    <li>Dinheiro na entrega com controle de troco</li>
+                </ul>
+                <a href="#precos" class="btn btn-primario">Criar meu cardápio</a>
+            </div>
+            <div class="f-visual rv" style="--d:.1s">
+                <div class="painel">
+                    <div class="fluxo-pg" aria-hidden="true">
+                        <div><img src="assets/img/logos/mercadopago.svg" alt=""></div>
+                        <div>⚡<br>PIX</div>
+                        <div>💳<br>Cartão</div>
+                        <div style="background:#DCFCE7;color:#166534">✓<br>Pago</div>
+                    </div>
+                    <img class="mock-phone" src="assets/img/mockups/cel-pix.webp" alt="Tela de pagamento Pix pelo Mercado Pago no cardápio digital Menuzia" loading="lazy" width="640" height="1299">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== KDS / IMPRESSÃO ===== -->
+    <section id="impressao" class="feature">
+        <div class="wrap">
+            <div class="f-texto rv">
+                <span class="rotulo">KDS · Impressão de Cozinha</span>
+                <h2>Pedido chegou. Imprimiu sozinho. Acabou.</h2>
+                <p>O Assistente de Impressão liga o Menuzia direto à sua impressora térmica. Pedido novo entra, o cupom sai na hora com <strong>itens, adicionais, observações, endereço e forma de pagamento</strong> — sem abrir o computador, sem clicar em nada. E cada estação da cozinha pode virar uma tela (KDS) em tablet, monitor ou TV, sem login.</p>
+                <p>Veja <a href="blog/tutoriais/como-configurar-impressora-termica-para-delivery.html">como configurar a impressora térmica</a>, <a href="blog/tutoriais/melhor-impressora-termica-para-delivery.html">qual impressora comprar</a> e <a href="blog/tutoriais/o-que-e-kds-tela-de-cozinha.html">o que é KDS</a>.</p>
+                <ul class="checks">
+                    <li>Impressão automática assim que o pedido chega</li>
+                    <li>Funciona com impressora térmica 58 mm e 80 mm</li>
+                    <li>Tela da cozinha (KDS) por estação</li>
+                    <li>Cupom com QR Code de avaliação incluso</li>
+                </ul>
+                <a href="#precos" class="btn btn-primario">Criar meu cardápio</a>
+            </div>
+            <div class="f-visual rv" style="--d:.1s">
+                <div class="cena-impressora" id="cena-impressora" aria-hidden="true">
+                    <div class="cupom-wrap">
+                        <div class="cupom">
+                            <div class="c-logo"><img src="assets/img/logo-menuzia.webp" alt="">Menuzia</div>
+                            <div class="c-c">DELIVERY · ENTREGA PRÓPRIA<br>Estância Burger</div>
+                            <hr>
+                            <div class="r"><b>PEDIDO #2381</b><span>19:42</span></div>
+                            <hr>
+                            <div class="r"><span>2x Cheddar Bacon 2.0</span><span>71,80</span></div>
+                            <div class="s">+ Maionese verde</div>
+                            <div class="s">+ Bife bovino extra</div>
+                            <div class="r"><span>1x Coca-Cola lata</span><span>6,00</span></div>
+                            <hr>
+                            <div class="r"><span>Taxa de entrega</span><span>5,00</span></div>
+                            <div class="r t"><span>TOTAL</span><span>R$ 82,80</span></div>
+                            <div class="pago">PAGO ONLINE · PIX</div>
+                            <div class="cq"><svg class="qr" data-seed="3"></svg><span>Avalie seu pedido<br>e ganhe cupom na<br>próxima compra</span></div>
+                            <div class="bar"></div>
+                        </div>
+                    </div>
+                    <div class="impressora">
+                        <div class="imp-topo"></div>
+                        <div class="imp-corpo"><span class="led"></span><span class="marca">Menuzia print</span></div>
+                    </div>
+                    <div class="chip" style="left:0;top:46%"><span class="ic" style="background:#FFEDD5">🔔</span><span>Novo pedido #2381<small>Imprimindo na cozinha…</small></span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DASHBOARD ===== -->
+    <section class="feature inv">
+        <div class="wrap">
+            <div class="f-texto rv">
+                <span class="rotulo">Dashboard e funil de vendas</span>
+                <h2>Veja onde o cliente desiste — e onde está o dinheiro</h2>
+                <p>Funil completo do seu cardápio digital: quantos visitaram, abriram um item, colocaram na sacola, chegaram ao checkout e pediram. Faturamento por canal (vitrine, balcão e mesas), ticket médio, horário de pico e tempo médio de entrega. Chega de achismo.</p>
+                <ul class="checks">
+                    <li>Funil visita → sacola → checkout → pedido</li>
+                    <li>Faturamento separado por vitrine, PDV e mesas</li>
+                    <li>Ticket médio, itens por pedido e horário de pico</li>
+                    <li>Comparação com o período anterior</li>
+                </ul>
+                <a href="#precos" class="btn btn-primario">Criar meu cardápio</a>
+            </div>
+            <div class="f-visual rv" style="--d:.1s">
+                <img class="mock-mac" src="assets/img/mockups/mac-dashboard.webp" alt="Dashboard do cardápio digital Menuzia com funil de vendas: visitas, sacola, checkout e pedidos" loading="lazy" width="1400" height="740">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GESTÃO DE CARDÁPIO ===== -->
+    <section class="feature">
+        <div class="wrap">
+            <div class="f-texto rv">
+                <span class="rotulo">Gestão de Cardápio</span>
+                <h2>Seu cardápio, do seu jeito — atualizado em segundos</h2>
+                <p>Adicione produtos, crie categorias, defina disponibilidade por dia da semana e ative promoções com um clique. Grupos de <a href="blog/tutoriais/como-cadastrar-complementos-e-adicionais-no-cardapio.html">complementos e adicionais</a>, tamanhos e "peça também" (order bump) para subir o ticket médio. Sem programador, sem complicação.</p>
+                <ul class="checks">
+                    <li>Categorias com arrastar-e-soltar</li>
+                    <li>Disponibilidade por dia da semana</li>
+                    <li>Preço promocional e tags "Mais Vendido" / "Oferta limitada"</li>
+                    <li>Order Bump para aumentar o ticket médio</li>
+                </ul>
+                <a href="#precos" class="btn btn-primario">Criar meu cardápio</a>
+            </div>
+            <div class="f-visual rv" style="--d:.1s">
+                <img class="mock-mac" src="assets/img/mockups/mac-gestor.webp" alt="Gestor de cardápio digital Menuzia com categorias, preços, promoções e disponibilidade por dia da semana" loading="lazy" width="1400" height="697">
+            </div>
         </div>
     </section>
 
     <!-- ===== MOTOBOY ===== -->
-    <section id="motoboy" class="secao secao-cinza">
-        <div class="container duas-colunas">
-            <div class="feature-texto revela">
-                <div class="eyebrow">🛵 Logística Integrada</div>
-                <h2 class="titulo-feature">Seus motoboys com tudo na palma da mão</h2>
-                <p class="desc-feature">
-                    Eles acessam pedidos, rotas e valores de troco direto pelo celular. Acabou a papelada, acabou a confusão. Você monitora tudo em tempo real — quem está em rota, quantas entregas fizeram, quanto dinheiro está com cada um e onde cada entregador está no mapa.
-                </p>
-                <ul class="lista-feature">
-                    <li><div class="check">✓</div> <span><strong>Rota inteligente:</strong> abre direto no Google Maps</span></li>
-                    <li><div class="check">✓</div> <span><strong>Controle de caixa:</strong> troco, forma de pagamento e valor a receber</span></li>
-                    <li><div class="check">✓</div> <span><strong>Tempo real:</strong> clicou em "Entregue" e o painel atualiza na hora</span></li>
-                    <li><div class="check">✓</div> <span><strong>Taxa por bairro:</strong> <a href="blog/tutoriais/como-configurar-taxa-de-entrega-por-bairro.html" style="color:var(--azul);font-weight:600;">configure a taxa de entrega</a> em minutos</span></li>
+    <section id="motoboy" class="feature inv">
+        <div class="wrap">
+            <div class="f-texto rv">
+                <span class="rotulo">Aplicativo para Entregadores</span>
+                <h2>Seus motoboys com tudo na palma da mão</h2>
+                <p>Eles acessam pedidos, rotas e valores de troco direto pelo celular. Acabou a papelada, acabou a confusão. Você monitora tudo em tempo real — quem está em rota, quantas entregas fizeram, quanto dinheiro está com cada um e onde cada entregador está no mapa.</p>
+                <ul class="checks">
+                    <li><span><strong>Rota inteligente:</strong> abre direto no Google Maps</span></li>
+                    <li><span><strong>Controle de caixa:</strong> troco, forma de pagamento e valor a receber</span></li>
+                    <li><span><strong>Tempo real:</strong> clicou em "Entregue" e o painel atualiza na hora</span></li>
+                    <li><span><strong>Taxa por bairro:</strong> <a href="blog/tutoriais/como-configurar-taxa-de-entrega-por-bairro.html" style="color:var(--vermelho)">configure a taxa de entrega</a> em minutos</span></li>
                 </ul>
-                <a href="#precos" class="btn-vermelho" style="margin-top: 32px;">Quero isso no meu delivery →</a>
+                <a href="#precos" class="btn btn-primario">Quero isso no meu delivery</a>
             </div>
-            <div class="revela" style="--d:.1s">
-                <div class="phone moto-phone"><div class="tela"><img src="assets/img/foto06.webp" alt="Aplicativo do entregador Menuzia com rota e controle de troco" loading="lazy" decoding="async" width="1376" height="3058"></div></div>
+            <div class="f-visual rv" style="--d:.1s">
+                <div class="painel">
+                    <div class="chip" style="left:6%;top:22%"><span class="ic" style="background:#E0F2FE">📍</span><span>Carlos em rota<small>2 entregas · R$ 64,00 em mãos</small></span></div>
+                    <img class="mock-phone" src="assets/img/mockups/cel-motoboy.webp" alt="Aplicativo do entregador Menuzia com rota e controle de troco" loading="lazy" width="640" height="1299">
+                    <div class="chip" style="right:6%;bottom:18%;animation-delay:3s"><span class="ic" style="background:#DCFCE7">✅</span><span>Entregue<small>Painel atualizado</small></span></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== CARDÁPIO NO CELULAR ===== -->
-    <section class="secao">
-        <div class="container duas-colunas">
-            <div class="area-celulares revela">
-                <div class="phone"><div class="tela"><img src="assets/img/foto01.webp" alt="Cardápio digital Menuzia no celular — topo com banner e destaques" loading="lazy" decoding="async" width="402" height="875"></div></div>
-                <div class="phone"><div class="tela"><img src="assets/img/foto02.webp" alt="Cardápio digital Menuzia no celular — lista de produtos" loading="lazy" decoding="async" width="402" height="881"></div></div>
+    <!-- ===== PARA QUEM É ===== -->
+    <section class="para-quem">
+        <h2 class="rv">Para quem é o cardápio digital Menuzia</h2>
+        <div class="carrossel rv">
+            <a class="segmento-card" href="blog/guias/como-criar-cardapio-digital-para-hamburgueria.html"><img src="assets/img/blog/blog-hamburgueria.webp" alt="Hamburgueria" loading="lazy" width="440" height="600"><span>🍔 Hamburguerias</span></a>
+            <a class="segmento-card" href="cardapio-digital-para-pizzaria.html"><img src="assets/img/blog/local-vitoria.webp" alt="Pizzaria" loading="lazy" width="440" height="600"><span>🍕 Pizzarias</span></a>
+            <a class="segmento-card" href="cardapio-digital-para-lanchonete.html"><img src="assets/img/blog/local-serra.webp" alt="Lanchonete" loading="lazy" width="440" height="600"><span>🥪 Lanchonetes</span></a>
+            <a class="segmento-card" href="cardapio-digital-para-marmitaria.html"><img src="assets/img/blog/local-vila-velha.webp" alt="Marmitaria" loading="lazy" width="440" height="600"><span>🍱 Marmitarias</span></a>
+            <a class="segmento-card" href="cardapio-digital-para-restaurante.html"><img src="assets/img/blog/local-cariacica.webp" alt="Restaurante" loading="lazy" width="440" height="600"><span>🍽️ Restaurantes</span></a>
+            <a class="segmento-card" href="cardapio-digital-para-delivery.html"><img src="assets/img/blog/local-vila-velha-2.webp" alt="Delivery" loading="lazy" width="440" height="600"><span>🛵 Delivery</span></a>
+            <a class="segmento-card" href="cardapio-digital-para-confeitaria.html"><img src="assets/img/blog/local-guarapari.webp" alt="Açaí e doces" loading="lazy" width="440" height="600"><span>🍨 Açaí e confeitaria</span></a>
+        </div>
+        <a href="#precos" class="btn btn-primario">Criar meu cardápio</a>
+    </section>
+
+    <!-- ===== SISTEMA COMPLETO ===== -->
+    <section id="sistema" class="escuro">
+        <div class="wrap">
+            <div class="centro rv">
+                <h2>Um sistema completo pro seu restaurante</h2>
+                <p>Delivery, mesa com QR Code, tablet e totem. O mesmo cardápio digital funciona em qualquer tela e todos os pedidos caem num painel só.</p>
             </div>
-            <div class="feature-texto revela" style="--d:.1s">
-                <div class="eyebrow">📱 Cardápio Digital</div>
-                <h2 class="titulo-feature">Uma experiência de compra que converte clique em dinheiro</h2>
-                <p class="desc-feature">
-                    Seu cliente não baixa app. Abre o link, escolhe e pede em segundos. Um cardápio rápido, bonito e otimizado para vender — a melhor <a href="blog/estrategia/como-sair-do-ifood-e-vender-direto.html">alternativa ao iFood</a> pra quem quer vender direto, sem intermediário e sem taxa por pedido.
-                </p>
-                <ul class="lista-feature">
-                    <li><div class="check">✓</div> Layout organizado por categorias e destaques</li>
-                    <li><div class="check">✓</div> Tags de "Mais Vendido" e desconto visíveis</li>
-                    <li><div class="check">✓</div> Cálculo automático de frete por bairro</li>
-                    <li><div class="check">✓</div> Barra de "falta pouco pra entrega grátis"</li>
-                    <li><div class="check">✓</div> Cupons e promoções integrados ao cardápio</li>
-                </ul>
+            <div class="grade">
+                <article class="card rv"><div class="card-corpo"><div class="icone-card" style="background:#FEE2E2">📱</div><h3>Cardápio digital e QR Code</h3><p>Link próprio pro Instagram, Google e WhatsApp, QR Code nas mesas e na embalagem. Sem app, sem comissão.</p></div></article>
+                <article class="card rv" style="--d:.08s"><div class="card-corpo"><div class="icone-card" style="background:#DCFCE7">🤖</div><h3>Robô que tira pedido</h3><p>Atendimento automático no WhatsApp 24h: responde, anota o pedido e avisa cada etapa até a entrega.</p></div></article>
+                <article class="card rv" style="--d:.16s"><div class="card-corpo"><div class="icone-card" style="background:#FEF3C7">📣</div><h3>Disparos em massa</h3><p>Campanhas no WhatsApp pra toda a sua base, com imagem, texto ou áudio, segmentação e agendamento.</p></div></article>
+                <article class="card rv"><div class="card-corpo"><div class="icone-card" style="background:#E0F2FE">💻</div><h3>PDV e caixa</h3><p>PDV touch pra balcão, telefone e salão, com abertura e fechamento de caixa por operador.</p></div></article>
+                <article class="card rv" style="--d:.08s"><div class="card-corpo"><div class="icone-card" style="background:#D1FAE5">🍽️</div><h3>Mesas e comandas</h3><p>QR Code por mesa, mapa em tempo real (livre, ocupada, em limpeza), conta e pagamento por mesa.</p></div></article>
+                <article class="card rv" style="--d:.16s"><div class="card-corpo"><div class="icone-card" style="background:#EDE9FE">🖥️</div><h3>Totem e tablet</h3><p>Coloque o cardápio num totem ou tablet no balcão. Fila menor, ticket maior e zero erro de anotação.</p></div></article>
+                <article class="card rv"><div class="card-corpo"><div class="icone-card" style="background:#FFEDD5">👨‍🍳</div><h3>KDS e impressão</h3><p>Tela da cozinha por estação e impressão automática na térmica assim que o pedido chega. <a href="blog/tutoriais/o-que-e-kds-tela-de-cozinha.html">O que é KDS?</a></p></div></article>
+                <article class="card rv" style="--d:.08s"><div class="card-corpo"><div class="icone-card" style="background:#E0F7FF">💳</div><h3>Pagamento online</h3><p>Pix e cartão pelo Mercado Pago direto no cardápio. O dinheiro cai na sua conta, sem taxa do Menuzia.</p></div></article>
+                <article class="card rv" style="--d:.16s"><div class="card-corpo"><div class="icone-card" style="background:#FCE7F3">🔌</div><h3>Marketplaces e marketing</h3><p>iFood, 99Food e aiqfome no mesmo painel. Pixel, API de Conversões e GA4 pra medir cada anúncio. Compare: <a href="cardapio-digital-99food.html">cardápio digital x 99Food</a>.</p></div></article>
+                <article class="card rv"><div class="card-corpo"><div class="icone-card" style="background:#E0E7FF">🛵</div><h3>App do entregador</h3><p>Rotas no Google Maps, troco e valor a receber no celular do motoboy, com acompanhamento em tempo real.</p></div></article>
+                <article class="card rv" style="--d:.08s"><div class="card-corpo"><div class="icone-card" style="background:#F3E8FF">📊</div><h3>Dashboard e funil</h3><p>Visitas, sacola, checkout e pedidos. Faturamento por canal, ticket médio e horário de pico.</p></div></article>
+                <article class="card rv" style="--d:.16s"><div class="card-corpo"><div class="icone-card" style="background:#FEE2E2">🎟️</div><h3>Cupons e fidelidade</h3><p>Cupons, programa de fidelidade e order bump ("peça também") pra subir o ticket médio.</p></div></article>
             </div>
+            <div style="text-align:center;margin-top:44px;"><a href="#precos" class="btn btn-primario btn-lg">Criar Meu Cardápio Digital</a></div>
         </div>
     </section>
 
     <!-- ===== PREÇOS ===== -->
-    <section id="precos" class="secao-precos">
-        <h2 class="revela">Tudo isso por apenas <span style="color: var(--amarelo);">R$67</span> por mês.</h2>
-        <p class="subtitulo-preco revela">
-            Preço fixo que não aumenta. Sem taxa por pedido. Sem surpresa na fatura. Enquanto o iFood fica com a sua comissão e guarda a lista de clientes pra ele, você paga um valor único e fica com <strong style="color: #fff;">tudo</strong>.
-        </p>
-
-        <div class="grid-precos">
-            <div class="card-preco revela">
-                <div class="nome-plano">iFood / Plataformas</div>
-                <div class="valor-principal" style="font-size: 1.4rem; color: #475569;">% por pedido</div>
-                <div class="valor-periodo">+ mensalidade variável</div>
-                <ul class="lista-preco">
-                    <li class="nao">Lista de clientes é sua</li>
-                    <li class="nao">Campanhas de WhatsApp</li>
-                    <li class="nao">Preço fixo garantido</li>
-                    <li class="nao">Rastreamento de tráfego pago</li>
-                    <li class="nao">Robô de atendimento</li>
-                    <li class="nao">Dashboard próprio</li>
-                    <li class="nao">Independência total</li>
-                </ul>
-                <div class="nota-card">Você paga, vende, e não fica com nada.</div>
+    <section id="precos" class="precos">
+        <div class="wrap">
+            <div class="centro claro rv">
+                <h2>Tudo isso por apenas <span style="color:var(--vermelho)">R$67</span> por mês.</h2>
+                <p>Preço fixo que não aumenta. Sem taxa por pedido. Sem surpresa na fatura. Enquanto o iFood fica com a sua comissão e guarda a lista de clientes pra ele, você paga um valor único e fica com <strong>tudo</strong>.</p>
             </div>
-
-            <div class="card-preco destaque revela" style="--d:.1s">
-                <div class="badge-destaque">🏆 Melhor escolha</div>
-                <div class="nome-plano">Menuzia</div>
-                <div class="valor-riscado">Outros cobram R$150–300/mês</div>
-                <div class="valor-principal">R$67<span style="font-size: 1.2rem; font-weight: 600;">/mês</span></div>
-                <div class="valor-periodo">Preço fixo. Não aumenta. Nunca.</div>
-                <ul class="lista-preco">
-                    <li class="sim">Cardápio digital personalizável (cores, fonte, layout)</li>
-                    <li class="sim">Mesas com QR Code, tablet e totem</li>
-                    <li class="sim">Painel de pedidos, PDV e tela da cozinha</li>
-                    <li class="sim">Pagamento online Pix e cartão (Mercado Pago)</li>
-                    <li class="sim">Integração iFood, 99Food e aiqfome</li>
-                    <li class="sim">Dashboard com funil de vendas</li>
-                    <li class="sim">Campanhas WhatsApp ilimitadas</li>
-                    <li class="sim">Base de clientes sua para sempre</li>
-                    <li class="sim">Pixel, API de Conversões e Google Analytics</li>
-                    <li class="sim">Robô de atendimento 24h</li>
-                    <li class="sim">Gestão de motoboys com GPS</li>
-                    <li class="sim">Impressão automática de pedidos</li>
-                    <li class="sim">Cupons, fidelidade e Order Bump</li>
-                </ul>
-                <a href="https://pay.kiwify.com.br/vmfSCsa" class="btn-amarelo btn-brilho" style="width: 100%; font-size: 16px; margin-bottom: 20px;">Quero começar agora →</a>
-                <div class="nota-card">Sem taxa por pedido · Sem contrato · Cancele quando quiser</div>
+            <div class="grid-precos">
+                <div class="plano rv">
+                    <div class="nome">iFood / Plataformas</div>
+                    <div class="valor cinza">% por pedido</div>
+                    <div class="periodo">+ mensalidade variável</div>
+                    <ul class="lista-preco">
+                        <li class="nao">Lista de clientes é sua</li>
+                        <li class="nao">Campanhas de WhatsApp</li>
+                        <li class="nao">Preço fixo garantido</li>
+                        <li class="nao">Rastreamento de tráfego pago</li>
+                        <li class="nao">Robô de atendimento</li>
+                        <li class="nao">Dashboard próprio</li>
+                        <li class="nao">Independência total</li>
+                    </ul>
+                    <div class="nota">Você paga, vende, e não fica com nada.</div>
+                </div>
+                <div class="plano destaque rv" style="--d:.08s">
+                    <span class="selo">🏆 Melhor escolha</span>
+                    <div class="nome">Menuzia</div>
+                    <div class="riscado">Outros cobram R$150–300/mês</div>
+                    <div class="valor">R$67<small>/mês</small></div>
+                    <div class="periodo">Preço fixo. Não aumenta. Nunca.</div>
+                    <ul class="lista-preco">
+                        <li class="sim">Cardápio digital personalizável (cores, fonte, layout)</li>
+                        <li class="sim">Mesas com QR Code, tablet e totem</li>
+                        <li class="sim">Painel de pedidos, PDV e tela da cozinha</li>
+                        <li class="sim">Pagamento online Pix e cartão (Mercado Pago)</li>
+                        <li class="sim">Integração iFood, 99Food e aiqfome</li>
+                        <li class="sim">Dashboard com funil de vendas</li>
+                        <li class="sim">Campanhas WhatsApp ilimitadas</li>
+                        <li class="sim">Base de clientes sua para sempre</li>
+                        <li class="sim">Pixel, API de Conversões e Google Analytics</li>
+                        <li class="sim">Robô de atendimento 24h</li>
+                        <li class="sim">Gestão de motoboys com GPS</li>
+                        <li class="sim">Impressão automática de pedidos</li>
+                        <li class="sim">Cupons, fidelidade e Order Bump</li>
+                    </ul>
+                    <a href="https://pay.kiwify.com.br/vmfSCsa" class="btn btn-primario btn-lg">Quero começar agora →</a>
+                    <div class="nota">Sem taxa por pedido · Sem contrato · Cancele quando quiser</div>
+                </div>
+                <div class="plano rv" style="--d:.16s">
+                    <div class="nome">Outros cardápios digitais</div>
+                    <div class="valor cinza">R$150–300</div>
+                    <div class="periodo">por mês, e cobram mais por recurso</div>
+                    <ul class="lista-preco">
+                        <li class="nao">Campanhas de WhatsApp</li>
+                        <li class="nao">Rastreamento de vendas</li>
+                        <li class="nao">Robô de atendimento</li>
+                        <li class="nao">Base de clientes completa</li>
+                        <li class="sim">Cardápio básico</li>
+                        <li class="sim">Painel de pedidos simples</li>
+                        <li class="nao">Dashboard completo</li>
+                    </ul>
+                    <div class="nota">Cobram o dobro e entregam a metade.</div>
+                </div>
             </div>
-
-            <div class="card-preco revela" style="--d:.2s">
-                <div class="nome-plano">Outros cardápios digitais</div>
-                <div class="valor-principal" style="font-size: 1.4rem; color: #475569;">R$150–300</div>
-                <div class="valor-periodo">por mês, e cobram mais por recurso</div>
-                <ul class="lista-preco">
-                    <li class="nao">Campanhas de WhatsApp</li>
-                    <li class="nao">Rastreamento de vendas</li>
-                    <li class="nao">Robô de atendimento</li>
-                    <li class="nao">Base de clientes completa</li>
-                    <li class="sim">Cardápio básico</li>
-                    <li class="sim">Painel de pedidos simples</li>
-                    <li class="nao">Dashboard completo</li>
-                </ul>
-                <div class="nota-card">Cobram o dobro e entregam a metade.</div>
-            </div>
+            <p class="rodape-preco">* O Menuzia mantém o preço de R$67/mês como compromisso com quem escolhe crescer com a gente. Compare com o <a href="cardapio-digital-preco.html">preço de cardápio digital</a> no mercado e veja por que somos o <a href="cardapio-digital-mais-barato.html">cardápio digital mais barato</a> com tudo incluso.</p>
         </div>
-
-        <p class="rodape-preco">
-            * O Menuzia mantém o preço de R$67/mês como compromisso com quem escolhe crescer com a gente. Compare com o <a href="cardapio-digital-preco.html" style="color:#94A3B8;text-decoration:underline;">preço de cardápio digital</a> no mercado e veja por que somos o <a href="cardapio-digital-mais-barato.html" style="color:#94A3B8;text-decoration:underline;">cardápio digital mais barato</a> com tudo incluso.
-        </p>
     </section>
 
-    <!-- ===== DÚVIDAS FREQUENTES (FAQ) ===== -->
-    <section id="duvidas" class="secao secao-cinza">
-        <div class="cabecalho-secao revela">
-            <span class="kicker">FAQ</span>
-            <h2>Dúvidas Frequentes</h2>
-            <p>Tudo o que você precisa saber antes de criar o seu cardápio digital com o Menuzia.</p>
-        </div>
-
-        <div class="faq-lista">
-            <details class="faq-item" open>
-                <summary>Quem configura o meu cardápio digital?</summary>
-                <div class="faq-resposta"><strong>Nós configuramos o cardápio digital pra você.</strong> Depois da compra, nossa equipe monta seus produtos, categorias, fotos, preços e taxas de entrega para você já começar a vender — sem precisar de nenhum conhecimento técnico.</div>
-            </details>
-            <details class="faq-item">
-                <summary>Tem suporte técnico depois da compra?</summary>
-                <div class="faq-resposta">Sim. Você conta com <strong>todo o suporte técnico após a compra</strong>. Nossa equipe acompanha você na configuração inicial e no dia a dia da plataforma sempre que precisar de ajuda.</div>
-            </details>
-            <details class="faq-item">
-                <summary>O que acontece logo depois que eu compro?</summary>
-                <div class="faq-resposta">Assim que a compra é confirmada, você recebe <strong>no seu e-mail a confirmação do pedido e as instruções completas para logar na plataforma</strong> e começar a usar o Menuzia imediatamente.</div>
-            </details>
-            <details class="faq-item">
-                <summary>O Menuzia cobra comissão por pedido?</summary>
-                <div class="faq-resposta">Não. É <strong>preço fixo de R$67 por mês</strong>, sem taxa por pedido e sem contrato de fidelidade. Todo o dinheiro de cada venda fica com você.</div>
-            </details>
-            <details class="faq-item">
-                <summary>Dá pra personalizar as cores e a fonte do cardápio digital?</summary>
-                <div class="faq-resposta">Sim. No painel você escolhe a <strong>cor da sua loja</strong>, a <strong>fonte da vitrine</strong>, o <strong>formato de exibição</strong> (lista compacta ou cards por categoria), o tamanho das fotos, o banner de capa e o logo. O cardápio fica com a cara da sua marca.</div>
-            </details>
-            <details class="faq-item">
-                <summary>O cardápio digital funciona nas mesas com QR Code e em tablet?</summary>
-                <div class="faq-resposta">Sim. Cada mesa ganha um <strong>QR Code próprio</strong>: o cliente aponta a câmera, pede e o pedido cai na comanda da mesa. O mesmo cardápio roda em <strong>tablet na mesa</strong>, em <strong>totem de autoatendimento</strong> no balcão e no celular para delivery.</div>
-            </details>
-            <details class="faq-item">
-                <summary>Aceita pagamento online?</summary>
-                <div class="faq-resposta">Sim. O Menuzia integra com o <strong>Mercado Pago</strong> para receber Pix e cartão online direto no cardápio. O dinheiro cai na sua conta do Mercado Pago, sem comissão do Menuzia.</div>
-            </details>
-            <details class="faq-item">
-                <summary>O Menuzia integra com iFood, 99Food e aiqfome?</summary>
-                <div class="faq-resposta">Sim. Os pedidos dos marketplaces entram no mesmo painel de pedidos do Menuzia, junto com os do seu cardápio próprio. Também integramos com <strong>Facebook Pixel, API de Conversões da Meta e Google Analytics</strong>. Compare: <a href="cardapio-digital-99food.html">cardápio digital x 99Food</a>.</div>
-            </details>
-            <details class="faq-item">
-                <summary>A lista de clientes é minha mesmo?</summary>
-                <div class="faq-resposta">Sim. Todo cliente que pede no seu cardápio entra na <strong>sua base, que é sua pra sempre</strong>. Você usa essa lista para disparar campanhas no WhatsApp quando quiser, sem depender de plataforma de terceiro.</div>
-            </details>
-            <details class="faq-item">
-                <summary>Preciso instalar algum aplicativo?</summary>
-                <div class="faq-resposta">Não. O Menuzia funciona pelo navegador. Seu cliente abre o link, escolhe e pede em segundos — sem baixar app. Você gerencia tudo pelo painel online, de qualquer dispositivo.</div>
-            </details>
-        </div>
-
-        <div class="faq-cta">
-            <a href="#precos" class="btn-vermelho btn-brilho" style="font-size: 18px; padding: 20px 50px;">Criar Meu Cardápio Digital Agora</a>
-            <p class="meta-cta">R$67/mês · Nós configuramos pra você · Suporte técnico incluso</p>
+    <!-- ===== DÚVIDAS FREQUENTES ===== -->
+    <section id="duvidas" class="faq">
+        <div class="wrap">
+            <div class="centro rv">
+                <h2>Dúvidas Frequentes</h2>
+                <p>Tudo o que você precisa saber antes de criar o seu cardápio digital com o Menuzia.</p>
+            </div>
+            <div class="faq-caixa rv">
+                <details class="faq-item" open>
+                    <summary>Quem configura o meu cardápio digital?</summary>
+                    <div class="faq-resp"><strong>Nós configuramos o cardápio digital pra você.</strong> Depois da compra, nossa equipe monta seus produtos, categorias, fotos, preços e taxas de entrega para você já começar a vender — sem precisar de nenhum conhecimento técnico.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Tem suporte técnico depois da compra?</summary>
+                    <div class="faq-resp">Sim. Você conta com <strong>todo o suporte técnico após a compra</strong>. Nossa equipe acompanha você na configuração inicial e no dia a dia da plataforma sempre que precisar de ajuda.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>O que acontece logo depois que eu compro?</summary>
+                    <div class="faq-resp">Assim que a compra é confirmada, você recebe <strong>no seu e-mail a confirmação do pedido e as instruções completas para logar na plataforma</strong> e começar a usar o Menuzia imediatamente.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>O Menuzia cobra comissão por pedido?</summary>
+                    <div class="faq-resp">Não. É <strong>preço fixo de R$67 por mês</strong>, sem taxa por pedido e sem contrato de fidelidade. Todo o dinheiro de cada venda fica com você.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Dá pra personalizar as cores e a fonte do cardápio digital?</summary>
+                    <div class="faq-resp">Sim. No painel você escolhe a <strong>cor da sua loja</strong>, a <strong>fonte da vitrine</strong>, o <strong>formato de exibição</strong> (lista compacta ou cards por categoria), o tamanho das fotos, o banner de capa e o logo. O cardápio fica com a cara da sua marca.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>O cardápio digital funciona nas mesas com QR Code e em tablet?</summary>
+                    <div class="faq-resp">Sim. Cada mesa ganha um <strong>QR Code próprio</strong>: o cliente aponta a câmera, pede e o pedido cai na comanda da mesa. O mesmo cardápio roda em <strong>tablet na mesa</strong>, em <strong>totem de autoatendimento</strong> no balcão e no celular para delivery.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Aceita pagamento online?</summary>
+                    <div class="faq-resp">Sim. O Menuzia integra com o <strong>Mercado Pago</strong> para receber Pix e cartão online direto no cardápio. O dinheiro cai na sua conta do Mercado Pago, sem comissão do Menuzia.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>O Menuzia integra com iFood, 99Food e aiqfome?</summary>
+                    <div class="faq-resp">Sim. Os pedidos dos marketplaces entram no mesmo painel de pedidos do Menuzia, junto com os do seu cardápio próprio. Também integramos com <strong>Facebook Pixel, API de Conversões da Meta e Google Analytics</strong>. Compare: <a href="cardapio-digital-99food.html">cardápio digital x 99Food</a>.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>A lista de clientes é minha mesmo?</summary>
+                    <div class="faq-resp">Sim. Todo cliente que pede no seu cardápio entra na <strong>sua base, que é sua pra sempre</strong>. Você usa essa lista para disparar campanhas no WhatsApp quando quiser, sem depender de plataforma de terceiro.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Preciso instalar algum aplicativo?</summary>
+                    <div class="faq-resp">Não. O Menuzia funciona pelo navegador. Seu cliente abre o link, escolhe e pede em segundos — sem baixar app. Você gerencia tudo pelo painel online, de qualquer dispositivo.</div>
+                </details>
+            </div>
+            <div class="faq-cta">
+                <a href="#precos" class="btn btn-primario btn-lg">Criar Meu Cardápio Digital Agora</a>
+                <p>R$67/mês · Nós configuramos pra você · Suporte técnico incluso</p>
+            </div>
         </div>
     </section>
 
     <!-- ===== CTA FINAL ===== -->
-    <section class="secao-final-cta">
-        <h2 class="revela">Seu delivery, suas regras, seus clientes.</h2>
-        <p class="revela">Cardápio digital próprio, mesas com QR Code, pagamento online e impressão automática por R$67 fixos por mês. Sem comissão. Sem fidelidade.</p>
-        <a href="https://pay.kiwify.com.br/vmfSCsa" class="btn-amarelo btn-brilho" style="font-size: 17px; padding: 18px 44px;">Começar agora por R$67/mês →</a>
-        <p class="meta-cta">Já é cliente? <a href="https://app.menuzia.com.br/login" style="color:#fff;font-weight:700;">Entrar no painel</a></p>
+    <section class="cta-final">
+        <div class="wrap">
+            <div class="cta-box rv">
+                <div>
+                    <h2>Seu delivery, suas regras, seus clientes.</h2>
+                    <p>Cardápio digital próprio, mesas com QR Code, pagamento online e impressão automática por R$67 fixos por mês. Sem comissão. Sem fidelidade.</p>
+                </div>
+                <div class="cta-acoes">
+                    <a href="https://pay.kiwify.com.br/vmfSCsa" class="btn btn-branco btn-lg">Começar agora por R$67/mês →</a>
+                    <small>Já é cliente? <a href="https://app.menuzia.com.br/login">Entrar no painel</a></small>
+                </div>
+            </div>
+        </div>
     </section>
 
 </main>
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
-    <div class="footer-logo">menuzia</div>
-    <div class="footer-links">
-        <a href="#funcionalidades">Funcionalidades</a>
-        <a href="#precos">Preços</a>
-        <a href="#duvidas">Dúvidas Frequentes</a>
-        <a href="cardapio-digital-barato.html">Cardápio Digital Barato</a>
-        <a href="blog/index.html">Blog</a>
-        <a href="politica-de-privacidade.html">Política de Privacidade</a>
-        <a href="https://app.menuzia.com.br/login">Login</a>
+    <div class="wrap">
+        <div class="footer-grid">
+            <div>
+                <a href="https://menuzia.com.br/" class="logo" style="color:#fff"><img src="assets/img/logo-menuzia.webp" alt="" width="38" height="38">Menuzia</a>
+                <p style="margin-bottom:16px;">Cardápio digital sem comissão para hamburguerias e delivery. R$67/mês fixo, nós configuramos pra você.</p>
+                <ul>
+                    <li><a href="#funcionalidades">Funcionalidades</a></li>
+                    <li><a href="#precos">Preços</a></li>
+                    <li><a href="#duvidas">Dúvidas Frequentes</a></li>
+                    <li><a href="cardapio-digital-barato.html">Cardápio Digital Barato</a></li>
+                    <li><a href="blog/index.html">Blog</a></li>
+                    <li><a href="politica-de-privacidade.html">Política de Privacidade</a></li>
+                    <li><a href="https://app.menuzia.com.br/login">Login</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Cardápio digital por segmento</h4>
+                <ul>
+                    <li><a href="cardapio-digital-para-delivery.html">Cardápio digital para delivery</a></li>
+                    <li><a href="cardapio-digital-para-restaurante.html">Cardápio digital para restaurante</a></li>
+                    <li><a href="cardapio-digital-para-whatsapp.html">Cardápio digital para WhatsApp</a></li>
+                    <li><a href="cardapio-digital-para-pizzaria.html">Cardápio digital para pizzaria</a></li>
+                    <li><a href="cardapio-digital-para-confeitaria.html">Cardápio digital para confeitaria</a></li>
+                    <li><a href="cardapio-digital-para-lanchonete.html">Cardápio digital para lanchonete</a></li>
+                    <li><a href="cardapio-digital-para-marmitaria.html">Cardápio digital para marmitaria</a></li>
+                    <li><a href="cardapio-digital-gratis.html">Cardápio digital grátis</a></li>
+                    <li><a href="cardapio-digital-pdf.html">Cardápio digital em PDF</a></li>
+                    <li><a href="cardapio-digital-99food.html">Cardápio digital x 99Food</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Preço e comparativos</h4>
+                <ul>
+                    <li><a href="cardapio-digital-mais-barato.html">Cardápio digital mais barato do mercado</a></li>
+                    <li><a href="cardapio-digital-sem-comissao.html">Cardápio digital sem comissão</a></li>
+                    <li><a href="cardapio-digital-preco.html">Preço de cardápio digital</a></li>
+                    <li><a href="cardapio-digital-mensalidade-fixa.html">Cardápio digital com mensalidade fixa</a></li>
+                    <li><a href="melhor-cardapio-digital.html">Melhor cardápio digital</a></li>
+                    <li><a href="cardapio-digital-para-restaurante-iniciante.html">Cardápio digital para restaurante iniciante</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Atendimento</h4>
+                <ul>
+                    <li><a href="https://wa.me/5527992534407?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Menuzia." target="_blank" rel="noopener">WhatsApp (27) 99253-4407</a></li>
+                    <li><a href="https://app.menuzia.com.br/login">Acessar o sistema</a></li>
+                    <li><a href="cidades.html">Todas as cidades atendidas</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-cidades">
+            <h4>Cardápio digital por cidade</h4>
+            <div class="lista">
+                <a href="cardapio-digital-vila-velha.html">Cardápio digital em Vila Velha</a>
+                <a href="cardapio-digital-serra.html">Cardápio digital na Serra</a>
+                <a href="cardapio-digital-vitoria.html">Cardápio digital em Vitória</a>
+                <a href="cardapio-digital-cariacica.html">Cardápio digital em Cariacica</a>
+                <a href="cardapio-digital-viana.html">Cardápio digital em Viana</a>
+                <a href="cardapio-digital-guarapari.html">Cardápio digital em Guarapari</a>
+                <a href="cardapio-digital-sao-paulo.html">Cardápio digital em São Paulo</a>
+                <a href="cardapio-digital-rio-de-janeiro.html">Cardápio digital no Rio de Janeiro</a>
+                <a href="cardapio-digital-belo-horizonte.html">Cardápio digital em Belo Horizonte</a>
+                <a href="cardapio-digital-brasilia.html">Cardápio digital em Brasília</a>
+                <a href="cardapio-digital-curitiba.html">Cardápio digital em Curitiba</a>
+                <a href="cardapio-digital-porto-alegre.html">Cardápio digital em Porto Alegre</a>
+                <a href="cardapio-digital-salvador.html">Cardápio digital em Salvador</a>
+                <a href="cardapio-digital-fortaleza.html">Cardápio digital em Fortaleza</a>
+                <a href="cardapio-digital-recife.html">Cardápio digital no Recife</a>
+                <a href="cardapio-digital-goiania.html">Cardápio digital em Goiânia</a>
+                <a href="cardapio-digital-manaus.html">Cardápio digital em Manaus</a>
+                <a href="cardapio-digital-belem.html">Cardápio digital em Belém</a>
+                <a href="cardapio-digital-florianopolis.html">Cardápio digital em Florianópolis</a>
+                <a href="cardapio-digital-natal.html">Cardápio digital em Natal</a>
+            </div>
+            <h4>Cardápio digital na Grande São Paulo e interior</h4>
+            <div class="lista">
+                <a href="cardapio-digital-guarulhos.html">Cardápio digital em Guarulhos</a>
+                <a href="cardapio-digital-osasco.html">Cardápio digital em Osasco</a>
+                <a href="cardapio-digital-santo-andre.html">Cardápio digital em Santo André</a>
+                <a href="cardapio-digital-sao-bernardo-do-campo.html">Cardápio digital em São Bernardo do Campo</a>
+                <a href="cardapio-digital-sao-caetano-do-sul.html">Cardápio digital em São Caetano do Sul</a>
+                <a href="cardapio-digital-diadema.html">Cardápio digital em Diadema</a>
+                <a href="cardapio-digital-maua.html">Cardápio digital em Mauá</a>
+                <a href="cardapio-digital-barueri.html">Cardápio digital em Barueri</a>
+                <a href="cardapio-digital-carapicuiba.html">Cardápio digital em Carapicuíba</a>
+                <a href="cardapio-digital-taboao-da-serra.html">Cardápio digital em Taboão da Serra</a>
+                <a href="cardapio-digital-mogi-das-cruzes.html">Cardápio digital em Mogi das Cruzes</a>
+                <a href="cardapio-digital-cotia.html">Cardápio digital em Cotia</a>
+                <a href="cardapio-digital-campinas.html">Cardápio digital em Campinas</a>
+                <a href="cardapio-digital-santos.html">Cardápio digital em Santos</a>
+                <a href="cardapio-digital-sao-jose-dos-campos.html">Cardápio digital em São José dos Campos</a>
+                <a href="cardapio-digital-sorocaba.html">Cardápio digital em Sorocaba</a>
+                <a href="cardapio-digital-ribeirao-preto.html">Cardápio digital em Ribeirão Preto</a>
+                <a href="cidades.html" class="todas">Ver todas as 48 cidades →</a>
+            </div>
+            <p class="footer-atende">Atendemos delivery em todo o Brasil — Grande Vitória/ES (Vila Velha, Serra, Vitória, Cariacica, Viana e Guarapari), capital e Grande São Paulo (Guarulhos, Osasco, Santo André, São Bernardo, São Caetano, Diadema, Mauá, Barueri, Carapicuíba, Taboão da Serra, Mogi das Cruzes e Cotia), interior e litoral paulista (Campinas, Santos, São José dos Campos, Sorocaba e Ribeirão Preto), Rio de Janeiro, Niterói, Belo Horizonte, Contagem, Uberlândia, Brasília, Curitiba, Londrina, Porto Alegre, Florianópolis, Joinville, Salvador, Fortaleza, Recife, Natal, João Pessoa, Maceió, Teresina, São Luís, Belém, Manaus, Campo Grande, Cuiabá e Goiânia.</p>
+        </div>
+        <div class="footer-base">
+            <span>© 2026 Menuzia. Todos os direitos reservados.</span>
+            <a href="politica-de-privacidade.html">Política de Privacidade</a>
+        </div>
     </div>
-    <div style="width:100%; border-top:1px solid #1E293B; padding-top:22px;">
-        <div style="font-size:12px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; color:#64748B; margin-bottom:12px;">Cardápio digital por cidade</div>
-        <div style="display:flex; flex-wrap:wrap; gap:8px 16px; font-size:14px;">
-            <a href="cardapio-digital-vila-velha.html" style="color:#94A3B8;">Cardápio digital em Vila Velha</a>
-            <a href="cardapio-digital-serra.html" style="color:#94A3B8;">Cardápio digital na Serra</a>
-            <a href="cardapio-digital-vitoria.html" style="color:#94A3B8;">Cardápio digital em Vitória</a>
-            <a href="cardapio-digital-cariacica.html" style="color:#94A3B8;">Cardápio digital em Cariacica</a>
-            <a href="cardapio-digital-viana.html" style="color:#94A3B8;">Cardápio digital em Viana</a>
-            <a href="cardapio-digital-guarapari.html" style="color:#94A3B8;">Cardápio digital em Guarapari</a>
-            <a href="cardapio-digital-sao-paulo.html" style="color:#94A3B8;">Cardápio digital em São Paulo</a>
-            <a href="cardapio-digital-rio-de-janeiro.html" style="color:#94A3B8;">Cardápio digital no Rio de Janeiro</a>
-            <a href="cardapio-digital-belo-horizonte.html" style="color:#94A3B8;">Cardápio digital em Belo Horizonte</a>
-            <a href="cardapio-digital-brasilia.html" style="color:#94A3B8;">Cardápio digital em Brasília</a>
-            <a href="cardapio-digital-curitiba.html" style="color:#94A3B8;">Cardápio digital em Curitiba</a>
-            <a href="cardapio-digital-porto-alegre.html" style="color:#94A3B8;">Cardápio digital em Porto Alegre</a>
-            <a href="cardapio-digital-salvador.html" style="color:#94A3B8;">Cardápio digital em Salvador</a>
-            <a href="cardapio-digital-fortaleza.html" style="color:#94A3B8;">Cardápio digital em Fortaleza</a>
-            <a href="cardapio-digital-recife.html" style="color:#94A3B8;">Cardápio digital no Recife</a>
-            <a href="cardapio-digital-goiania.html" style="color:#94A3B8;">Cardápio digital em Goiânia</a>
-            <a href="cardapio-digital-manaus.html" style="color:#94A3B8;">Cardápio digital em Manaus</a>
-            <a href="cardapio-digital-belem.html" style="color:#94A3B8;">Cardápio digital em Belém</a>
-            <a href="cardapio-digital-florianopolis.html" style="color:#94A3B8;">Cardápio digital em Florianópolis</a>
-            <a href="cardapio-digital-natal.html" style="color:#94A3B8;">Cardápio digital em Natal</a>
-        </div>
-        <div style="font-size:12px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; color:#64748B; margin:22px 0 12px;">Cardápio digital na Grande São Paulo e interior</div>
-        <div style="display:flex; flex-wrap:wrap; gap:8px 16px; font-size:14px;">
-            <a href="cardapio-digital-guarulhos.html" style="color:#94A3B8;">Cardápio digital em Guarulhos</a>
-            <a href="cardapio-digital-osasco.html" style="color:#94A3B8;">Cardápio digital em Osasco</a>
-            <a href="cardapio-digital-santo-andre.html" style="color:#94A3B8;">Cardápio digital em Santo André</a>
-            <a href="cardapio-digital-sao-bernardo-do-campo.html" style="color:#94A3B8;">Cardápio digital em São Bernardo do Campo</a>
-            <a href="cardapio-digital-sao-caetano-do-sul.html" style="color:#94A3B8;">Cardápio digital em São Caetano do Sul</a>
-            <a href="cardapio-digital-diadema.html" style="color:#94A3B8;">Cardápio digital em Diadema</a>
-            <a href="cardapio-digital-maua.html" style="color:#94A3B8;">Cardápio digital em Mauá</a>
-            <a href="cardapio-digital-barueri.html" style="color:#94A3B8;">Cardápio digital em Barueri</a>
-            <a href="cardapio-digital-carapicuiba.html" style="color:#94A3B8;">Cardápio digital em Carapicuíba</a>
-            <a href="cardapio-digital-taboao-da-serra.html" style="color:#94A3B8;">Cardápio digital em Taboão da Serra</a>
-            <a href="cardapio-digital-mogi-das-cruzes.html" style="color:#94A3B8;">Cardápio digital em Mogi das Cruzes</a>
-            <a href="cardapio-digital-cotia.html" style="color:#94A3B8;">Cardápio digital em Cotia</a>
-            <a href="cardapio-digital-campinas.html" style="color:#94A3B8;">Cardápio digital em Campinas</a>
-            <a href="cardapio-digital-santos.html" style="color:#94A3B8;">Cardápio digital em Santos</a>
-            <a href="cardapio-digital-sao-jose-dos-campos.html" style="color:#94A3B8;">Cardápio digital em São José dos Campos</a>
-            <a href="cardapio-digital-sorocaba.html" style="color:#94A3B8;">Cardápio digital em Sorocaba</a>
-            <a href="cardapio-digital-ribeirao-preto.html" style="color:#94A3B8;">Cardápio digital em Ribeirão Preto</a>
-            <a href="cidades.html" style="color:#FBBF24; font-weight:700;">Ver todas as 48 cidades →</a>
-        </div>
-        <div style="font-size:12px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; color:#64748B; margin:22px 0 12px;">Cardápio digital por segmento</div>
-        <div style="display:flex; flex-wrap:wrap; gap:8px 16px; font-size:14px;">
-            <a href="cardapio-digital-para-delivery.html" style="color:#94A3B8;">Cardápio digital para delivery</a>
-            <a href="cardapio-digital-para-restaurante.html" style="color:#94A3B8;">Cardápio digital para restaurante</a>
-            <a href="cardapio-digital-para-whatsapp.html" style="color:#94A3B8;">Cardápio digital para WhatsApp</a>
-            <a href="cardapio-digital-para-pizzaria.html" style="color:#94A3B8;">Cardápio digital para pizzaria</a>
-            <a href="cardapio-digital-para-confeitaria.html" style="color:#94A3B8;">Cardápio digital para confeitaria</a>
-            <a href="cardapio-digital-gratis.html" style="color:#94A3B8;">Cardápio digital grátis</a>
-            <a href="cardapio-digital-pdf.html" style="color:#94A3B8;">Cardápio digital em PDF</a>
-            <a href="cardapio-digital-99food.html" style="color:#94A3B8;">Cardápio digital x 99Food</a>
-            <a href="cardapio-digital-para-lanchonete.html" style="color:#94A3B8;">Cardápio digital para lanchonete</a>
-            <a href="cardapio-digital-para-marmitaria.html" style="color:#94A3B8;">Cardápio digital para marmitaria</a>
-        </div>
-        <div style="font-size:12px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; color:#64748B; margin:22px 0 12px;">Preço e comparativos</div>
-        <div style="display:flex; flex-wrap:wrap; gap:8px 16px; font-size:14px;">
-            <a href="cardapio-digital-mais-barato.html" style="color:#94A3B8;">Cardápio digital mais barato do mercado</a>
-            <a href="cardapio-digital-sem-comissao.html" style="color:#94A3B8;">Cardápio digital sem comissão</a>
-            <a href="cardapio-digital-preco.html" style="color:#94A3B8;">Preço de cardápio digital</a>
-            <a href="cardapio-digital-mensalidade-fixa.html" style="color:#94A3B8;">Cardápio digital com mensalidade fixa</a>
-            <a href="melhor-cardapio-digital.html" style="color:#94A3B8;">Melhor cardápio digital</a>
-            <a href="cardapio-digital-para-restaurante-iniciante.html" style="color:#94A3B8;">Cardápio digital para restaurante iniciante</a>
-        </div>
-        <div style="font-size:13px; color:#475569; margin-top:14px;">Atendemos delivery em todo o Brasil — Grande Vitória/ES (Vila Velha, Serra, Vitória, Cariacica, Viana e Guarapari), capital e Grande São Paulo (Guarulhos, Osasco, Santo André, São Bernardo, São Caetano, Diadema, Mauá, Barueri, Carapicuíba, Taboão da Serra, Mogi das Cruzes e Cotia), interior e litoral paulista (Campinas, Santos, São José dos Campos, Sorocaba e Ribeirão Preto), Rio de Janeiro, Niterói, Belo Horizonte, Contagem, Uberlândia, Brasília, Curitiba, Londrina, Porto Alegre, Florianópolis, Joinville, Salvador, Fortaleza, Recife, Natal, João Pessoa, Maceió, Teresina, São Luís, Belém, Manaus, Campo Grande, Cuiabá e Goiânia.</div>
-    </div>
-    <div class="footer-copy">© 2026 Menuzia. Todos os direitos reservados.</div>
 </footer>
 
 <!-- Botao flutuante WhatsApp -->
 <a href="https://wa.me/5527992534407?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Menuzia."
    class="wpp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp (27) 99253-4407">
     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01c-1.52 0-3.02-.41-4.32-1.18l-.31-.18-3.21.84.86-3.13-.2-.32a8.21 8.21 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24z"/></svg>
-    <span class="wpp-float-txt">Fale no WhatsApp</span>
+    <span>Fale no WhatsApp</span>
 </a>
 
 <script>
 (function () {
     var reduz = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // QR Codes decorativos (padrão pseudo-aleatório com marcadores de canto)
+    // QR Codes decorativos
     document.querySelectorAll('svg.qr').forEach(function (svg) {
         var n = 21, s = parseInt(svg.getAttribute('data-seed') || '1', 10) * 9301 + 49297, r = '';
         function rnd() { s = (s * 9301 + 49297) % 233280; return s / 233280; }
-        function finder(x, y) { return '<rect x="' + x + '" y="' + y + '" width="7" height="7"/><rect x="' + (x + 1) + '" y="' + (y + 1) + '" width="5" height="5" fill="#fff"/><rect x="' + (x + 2) + '" y="' + (y + 2) + '" width="3" height="3"/>'; }
+        function f(x, y) { return '<rect x="' + x + '" y="' + y + '" width="7" height="7"/><rect x="' + (x + 1) + '" y="' + (y + 1) + '" width="5" height="5" fill="#fff"/><rect x="' + (x + 2) + '" y="' + (y + 2) + '" width="3" height="3"/>'; }
         for (var y = 0; y < n; y++) for (var x = 0; x < n; x++) {
-            var canto = (x < 8 && y < 8) || (x > 12 && y < 8) || (x < 8 && y > 12);
-            if (!canto && rnd() > 0.52) r += '<rect x="' + x + '" y="' + y + '" width="1" height="1"/>';
+            if (!((x < 8 && y < 8) || (x > 12 && y < 8) || (x < 8 && y > 12)) && rnd() > 0.52) r += '<rect x="' + x + '" y="' + y + '" width="1" height="1"/>';
         }
-        svg.setAttribute('viewBox', '0 0 21 21');
-        svg.setAttribute('shape-rendering', 'crispEdges');
-        svg.setAttribute('aria-hidden', 'true');
-        svg.innerHTML = '<g fill="#0F172A">' + r + finder(0, 0) + finder(14, 0) + finder(0, 14) + '</g>';
+        svg.setAttribute('viewBox', '0 0 21 21'); svg.setAttribute('shape-rendering', 'crispEdges'); svg.setAttribute('aria-hidden', 'true');
+        svg.innerHTML = '<g fill="#111318">' + r + f(0, 0) + f(14, 0) + f(0, 14) + '</g>';
     });
 
-    // Header encolhe ao rolar
     var header = document.querySelector('.header');
-    window.addEventListener('scroll', function () { header.classList.toggle('rolou', window.scrollY > 20); }, { passive: true });
+    window.addEventListener('scroll', function () { header.classList.toggle('rolou', window.scrollY > 10); }, { passive: true });
 
-    // Revelar ao rolar + contadores + impressora
-    function contar(el) {
-        var alvo = +el.getAttribute('data-contar'), pre = el.getAttribute('data-prefixo') || '', suf = el.getAttribute('data-sufixo') || '', t0 = null;
-        function passo(t) { if (!t0) t0 = t; var p = Math.min((t - t0) / 1400, 1), v = Math.round(alvo * (1 - Math.pow(1 - p, 3))); el.textContent = pre + v + suf; if (p < 1) requestAnimationFrame(passo); }
-        requestAnimationFrame(passo);
-    }
     if ('IntersectionObserver' in window && !reduz) {
-        var io = new IntersectionObserver(function (entradas) {
-            entradas.forEach(function (e) {
+        var io = new IntersectionObserver(function (es) {
+            es.forEach(function (e) {
                 if (!e.isIntersecting) return;
-                e.target.classList.add('visivel');
-                if (e.target.hasAttribute('data-contar')) contar(e.target);
-                if (e.target.id === 'cena-impressora') e.target.classList.add('imprimindo');
+                e.target.classList.add('on');
+                var cena = e.target.querySelector('#cena-impressora'); if (cena) cena.classList.add('imprimindo');
                 io.unobserve(e.target);
             });
         }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-        document.querySelectorAll('.revela, [data-contar]').forEach(function (el) { io.observe(el); });
+        document.querySelectorAll('.rv').forEach(function (el) { io.observe(el); });
     } else {
-        document.querySelectorAll('.revela').forEach(function (el) { el.classList.add('visivel'); });
-        var cena = document.getElementById('cena-impressora'); if (cena) cena.classList.add('imprimindo');
+        document.querySelectorAll('.rv').forEach(function (el) { el.classList.add('on'); });
+        var c = document.getElementById('cena-impressora'); if (c) c.classList.add('imprimindo');
     }
 
-    // Carrossel infinito: duplica os logos
     var trilho = document.querySelector('.marquee-trilho');
     if (trilho) trilho.innerHTML += trilho.innerHTML.replace(/alt="[^"]*"/g, 'alt="" aria-hidden="true"');
-
-    if (!reduz && window.matchMedia('(hover: hover)').matches) {
-        // Tilt 3D nos prints
-        document.querySelectorAll('[data-tilt]').forEach(function (el) {
-            el.addEventListener('mousemove', function (ev) {
-                var b = el.getBoundingClientRect(), x = (ev.clientX - b.left) / b.width - .5, y = (ev.clientY - b.top) / b.height - .5;
-                el.style.transform = 'perspective(1200px) rotateY(' + (x * 6) + 'deg) rotateX(' + (-y * 6) + 'deg)';
-            });
-            el.addEventListener('mouseleave', function () { el.style.transform = ''; });
-        });
-        // Parallax suave no hero
-        var camadas = document.querySelectorAll('[data-parallax]');
-        document.querySelector('.hero').addEventListener('mousemove', function (ev) {
-            var cx = ev.clientX - window.innerWidth / 2, cy = ev.clientY - window.innerHeight / 2;
-            camadas.forEach(function (c) { var k = +c.getAttribute('data-parallax'); c.style.translate = (cx * k) + 'px ' + (cy * k) + 'px'; });
-        });
-    }
-
-    // Demo de personalização
-    var demo = document.getElementById('demo'), itens = document.getElementById('demo-itens');
-    function grupo(id, fn) {
-        var bts = document.querySelectorAll('#' + id + ' button');
-        bts.forEach(function (b) {
-            b.addEventListener('click', function () {
-                bts.forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
-                b.setAttribute('aria-pressed', 'true'); fn(b);
-            });
-        });
-    }
-    grupo('swatches', function (b) { demo.style.setProperty('--brand', b.getAttribute('data-cor')); });
-    grupo('fontes', function (b) { demo.style.setProperty('--fonte-demo', b.getAttribute('data-fonte')); });
-    grupo('modos-exibicao', function (b) { itens.classList.toggle('cards', b.getAttribute('data-modo') === 'cards'); });
-    grupo('tamanhos', function (b) { demo.style.setProperty('--img', b.getAttribute('data-img')); });
 })();
 </script>
 
