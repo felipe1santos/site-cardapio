@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="facebook-domain-verification" content="qn1133phml4ww2tgnyrwlfk0z10430" />
     <meta name="description" content="Cardápio digital para hamburgueria e delivery sem comissão por pedido. Campanhas no WhatsApp, robô de atendimento 24h, rastreamento de vendas e base de clientes sua pra sempre. R$67/mês fixo, nós configuramos pra você.">
-    <meta name="keywords" content="cardápio digital sem comissão, cardápio digital mais barato do mercado, cardápio digital barato, cardápio digital para hamburgueria, sistema de delivery próprio, alternativa ao ifood, cardápio digital com whatsapp, plataforma de delivery sem taxa por pedido, cardápio digital com mensalidade fixa, cardápio digital para restaurante iniciante, cardápio digital para lanchonete, cardápio digital para marmitaria, melhor cardápio digital para delivery">
+    <meta name="keywords" content="cardápio digital sem comissão, cardápio digital mais barato do mercado, cardápio digital barato, cardápio digital para hamburgueria, sistema de delivery próprio, alternativa ao ifood, cardápio digital com whatsapp, plataforma de delivery sem taxa por pedido, cardápio digital com mensalidade fixa, cardápio digital para restaurante iniciante, cardápio digital para lanchonete, cardápio digital para marmitaria, melhor cardápio digital para delivery, cardápio digital com qr code para mesa, cardápio digital para tablet, totem de autoatendimento para restaurante, cardápio digital com pagamento online, cardápio digital integrado ao ifood, impressão automática de pedidos">
     <meta name="author" content="Menuzia">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <meta name="theme-color" content="#1d3e73">
@@ -31,7 +31,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Nunito:wght@600;800&family=Poppins:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 
     <!-- JSON-LD: Organização -->
     <script type="application/ld+json">
@@ -63,6 +63,20 @@
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web",
       "description": "Cardápio digital sem comissão para hamburguerias e delivery, com campanhas no WhatsApp, robô de atendimento 24h, rastreamento de vendas e base de clientes própria.",
+      "featureList": [
+        "Cardápio digital sem comissão por pedido",
+        "Cardápio com QR Code para mesas e comandas",
+        "Cardápio em tablet e totem de autoatendimento",
+        "Personalização de cores, fontes e modo de exibição do cardápio",
+        "Pagamento online com Pix e cartão via Mercado Pago",
+        "Integração com iFood, 99Food e aiqfome",
+        "Facebook Pixel, API de Conversões da Meta e Google Analytics",
+        "Impressão automática de pedidos em impressora térmica",
+        "Tela de cozinha (KDS)",
+        "Campanhas no WhatsApp e robô de atendimento 24h",
+        "Gestão de entregadores com GPS"
+      ],
+      "screenshot": "https://menuzia.com.br/assets/img/sistema/dashboard.webp",
       "offers": {
         "@type": "Offer",
         "price": "67.00",
@@ -101,6 +115,26 @@
           "@type": "Question",
           "name": "O Menuzia cobra comissão por pedido?",
           "acceptedAnswer": { "@type": "Answer", "text": "Não. O Menuzia é preço fixo de R$67 por mês, sem taxa por pedido e sem contrato de fidelidade. Todo o dinheiro da venda fica com você." }
+        },
+        {
+          "@type": "Question",
+          "name": "Dá pra personalizar as cores e a fonte do cardápio digital?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sim. No painel você escolhe a cor da sua loja, a fonte da vitrine, o formato de exibição (lista compacta ou cards por categoria), o tamanho das fotos, o banner de capa e o logo. O cardápio fica com a cara da sua marca." }
+        },
+        {
+          "@type": "Question",
+          "name": "O cardápio digital funciona nas mesas com QR Code e em tablet?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sim. Cada mesa ganha um QR Code próprio: o cliente aponta a câmera, pede e o pedido cai na comanda da mesa. O mesmo cardápio roda em tablet na mesa, em totem de autoatendimento no balcão e no celular para delivery." }
+        },
+        {
+          "@type": "Question",
+          "name": "Aceita pagamento online?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sim. O Menuzia integra com o Mercado Pago para receber Pix e cartão online direto no cardápio. O dinheiro cai na sua conta do Mercado Pago, sem comissão do Menuzia." }
+        },
+        {
+          "@type": "Question",
+          "name": "O Menuzia integra com iFood, 99Food e aiqfome?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sim. Os pedidos dos marketplaces entram no mesmo painel de pedidos do Menuzia, junto com os do seu cardápio próprio, e também integram com Facebook Pixel, API de Conversões da Meta e Google Analytics." }
         }
       ]
     }
@@ -108,945 +142,540 @@
 
     <style>
         /* =========================================
-           VARIÁVEIS
+           VARIÁVEIS — cores do painel Menuzia
         ========================================= */
         :root {
-            --azul: #0084D6;
-            --azul-escuro: #0061A4;
+            --azul: #0688D4;          /* primary do painel */
+            --azul-escuro: #0570AE;
+            --navy: #1d3e73;
+            --navy-2: #0F2D56;
             --vermelho: #C62828;
             --vermelho-hover: #A31E1E;
             --amarelo: #FBBF24;
+            --roxo: #A855F7;          /* funil do dashboard */
+            --verde: #10B981;         /* mesa livre */
+            --laranja: #F97316;       /* pedido recebido */
             --fundo-branco: #FFFFFF;
-            --fundo-cinza: #F8FAFC;
-            --fundo-cinza-medio: #F1F5F9;
+            --fundo-cinza: #F4F5F8;
+            --fundo-painel: #EDEEF1;
             --titulo: #0F172A;
             --corpo: #475569;
             --borda: #E2E8F0;
+            --raio: 18px;
+            --sombra: 0 24px 60px rgba(15,23,42,.12);
         }
 
-        /* =========================================
-           RESET
-        ========================================= */
-        *, *::before, *::after {
-            margin: 0; padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-
         body {
+            font-family: 'Inter', sans-serif;
             background: var(--fundo-branco);
             color: var(--corpo);
             line-height: 1.6;
             overflow-x: hidden;
         }
-
-        img { max-width: 100%; display: block; }
+        img { max-width: 100%; height: auto; display: block; }
         a { text-decoration: none; color: inherit; }
+        .container { max-width: 1240px; margin: 0 auto; }
+        .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
 
-        /* =========================================
-           TAGS
-        ========================================= */
-        .tag-amarela {
-            background: var(--amarelo);
-            color: #000;
-            font-size: 11px;
-            font-weight: 800;
-            padding: 4px 8px;
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            display: inline-block;
-            white-space: nowrap;
+        /* ===== BOTÕES ===== */
+        .btn-vermelho, .btn-amarelo, .btn-ghost, .btn-azul {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            padding: 16px 34px; border-radius: 12px; font-weight: 800; font-size: 16px;
+            transition: transform .25s ease, box-shadow .25s ease, background .25s; cursor: pointer;
+            white-space: nowrap; position: relative; overflow: hidden;
         }
+        .btn-vermelho { background: var(--vermelho); color: #fff !important; box-shadow: 0 8px 26px rgba(198,40,40,.35); }
+        .btn-vermelho:hover { background: var(--vermelho-hover); transform: translateY(-2px); box-shadow: 0 12px 34px rgba(198,40,40,.45); }
+        .btn-amarelo { background: var(--amarelo); color: #000 !important; box-shadow: 0 8px 26px rgba(251,191,36,.4); }
+        .btn-amarelo:hover { background: #F59E0B; transform: translateY(-2px); }
+        .btn-azul { background: var(--azul); color: #fff !important; box-shadow: 0 8px 26px rgba(6,136,212,.35); }
+        .btn-azul:hover { background: var(--azul-escuro); transform: translateY(-2px); }
+        .btn-ghost { border: 2px solid var(--borda); color: var(--titulo); padding: 14px 30px; background: #fff; }
+        .btn-ghost:hover { border-color: var(--azul); color: var(--azul); }
+        /* brilho passando no CTA */
+        .btn-brilho::after {
+            content: ''; position: absolute; top: 0; left: -60%; width: 40%; height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,.45), transparent);
+            transform: skewX(-20deg); animation: brilho 3.6s ease-in-out infinite;
+        }
+        @keyframes brilho { 0%,60% { left: -60%; } 100% { left: 130%; } }
 
-        .tag-rosa {
-            background: #FCE7F3;
-            color: #BE185D;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            display: inline-block;
-        }
-
-        /* =========================================
-           BOTÕES
-        ========================================= */
-        .btn-vermelho {
-            background: var(--vermelho);
-            color: #fff !important;
-            padding: 16px 36px;
-            border-radius: 10px;
-            font-weight: 800;
-            font-size: 16px;
-            display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 24px rgba(198,40,40,0.35);
-            cursor: pointer;
-            white-space: nowrap;
-        }
-        .btn-vermelho:hover {
-            background: var(--vermelho-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 32px rgba(198,40,40,0.45);
-        }
-
-        .btn-amarelo {
-            background: var(--amarelo);
-            color: #000 !important;
-            padding: 16px 36px;
-            border-radius: 10px;
-            font-weight: 800;
-            font-size: 16px;
-            display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 24px rgba(251,191,36,0.4);
-            cursor: pointer;
-            white-space: nowrap;
-        }
-        .btn-amarelo:hover {
-            background: #F59E0B;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 32px rgba(251,191,36,0.5);
-        }
-
-        .btn-ghost {
-            border: 2px solid var(--borda);
-            color: var(--titulo);
-            padding: 14px 32px;
-            border-radius: 10px;
-            font-weight: 700;
-            font-size: 15px;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-        .btn-ghost:hover {
-            border-color: var(--azul);
-            color: var(--azul);
-        }
-
-        /* =========================================
-           HEADER
-        ========================================= */
+        /* ===== HEADER ===== */
         .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 6%;
-            background: #1d3e73;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 16px 6%; background: rgba(29,62,115,.92);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            position: sticky; top: 0; z-index: 100; transition: padding .25s, box-shadow .25s;
         }
-
-        .logo {
-            font-size: 26px;
-            font-weight: 800;
-            color: #fff;
-            letter-spacing: -1px;
+        .header.rolou { padding: 10px 6%; box-shadow: 0 8px 30px rgba(0,0,0,.18); }
+        .logo { display: flex; align-items: center; gap: 10px; font-size: 25px; font-weight: 900; color: #fff; letter-spacing: -1px; }
+        .logo-icone {
+            width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, var(--azul), #38BDF8);
+            display: grid; place-items: center; box-shadow: 0 4px 14px rgba(6,136,212,.45);
         }
-
-        .nav { display: flex; gap: 32px; }
-        .nav a {
-            font-size: 15px;
-            font-weight: 600;
-            color: #BFDBFE;
-            transition: color 0.2s;
-        }
+        .logo-icone svg { width: 20px; height: 20px; }
+        .nav { display: flex; gap: 28px; }
+        .nav a { font-size: 14.5px; font-weight: 600; color: #BFDBFE; transition: color .2s; position: relative; }
+        .nav a::after { content:''; position:absolute; left:0; bottom:-6px; height:2px; width:0; background: var(--amarelo); transition: width .25s; }
         .nav a:hover { color: #fff; }
+        .nav a:hover::after { width: 100%; }
+        .header-btns { display: flex; align-items: center; gap: 18px; }
+        .btn-login { font-size: 15px; font-weight: 700; color: #fff; }
 
-        .header-btns { display: flex; align-items: center; gap: 20px; }
-        .btn-login {
-            font-size: 15px;
-            font-weight: 700;
-            color: #fff;
-        }
-        .btn-header-cta {
-            background: var(--vermelho);
-            color: #fff !important;
-            padding: 11px 24px;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 14px;
-            transition: background 0.2s;
-        }
-        .btn-header-cta:hover { background: var(--vermelho-hover); }
-
-        /* =========================================
-           HERO
-        ========================================= */
+        /* ===== HERO ===== */
         .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 60px;
-            padding: 90px 6%;
-            min-height: 88vh;
-            background: linear-gradient(135deg, #EFF6FF 0%, var(--fundo-cinza) 100%);
-            border-bottom: 1px solid var(--borda);
+            position: relative; overflow: hidden;
+            display: grid; grid-template-columns: 1.02fr 1fr; gap: 40px; align-items: center;
+            padding: 80px 6% 90px; min-height: 86vh;
+            background: radial-gradient(1200px 600px at 85% 10%, rgba(6,136,212,.14), transparent 60%),
+                        radial-gradient(800px 500px at 0% 100%, rgba(168,85,247,.10), transparent 60%),
+                        linear-gradient(180deg, #F3F8FF 0%, #fff 100%);
         }
-
-        .hero-texto {
-            flex: 0 0 52%;
-            max-width: 52%;
-            min-width: 0;
+        .hero::before {
+            content:''; position:absolute; inset:0; pointer-events:none;
+            background-image: radial-gradient(rgba(15,23,42,.07) 1px, transparent 1px);
+            background-size: 22px 22px; mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
+            -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
         }
-
+        .hero-texto { position: relative; z-index: 2; min-width: 0; }
         .hero-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #FEF3C7;
-            border: 1px solid #FDE68A;
-            padding: 7px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 700;
-            color: #92400E;
-            margin-bottom: 28px;
+            display: inline-flex; align-items: center; gap: 8px; background: #fff;
+            border: 1px solid var(--borda); padding: 7px 16px 7px 8px; border-radius: 30px;
+            font-size: 13px; font-weight: 700; color: var(--titulo); margin-bottom: 26px;
+            box-shadow: 0 6px 18px rgba(15,23,42,.06);
         }
+        .hero-eyebrow .pill { background: var(--amarelo); color:#000; border-radius: 20px; padding: 3px 10px; font-size: 11px; font-weight: 900; text-transform: uppercase; }
+        .hero-titulo { font-size: 3.35rem; line-height: 1.08; font-weight: 900; color: var(--titulo); letter-spacing: -1.8px; margin-bottom: 22px; }
+        .grad { background: linear-gradient(90deg, var(--azul), var(--roxo)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .palavra-destaque { background: var(--amarelo); color: #000; padding: 0 12px; border-radius: 10px; display: inline-block; transform: rotate(-2deg); white-space: nowrap; }
+        .hero-subtitulo { font-size: 1.12rem; color: var(--corpo); margin-bottom: 34px; line-height: 1.75; max-width: 600px; }
+        .hero-ctas { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 22px; }
+        .hero-nota { font-size: 13.5px; color: #64748B; display: flex; gap: 6px 16px; flex-wrap: wrap; }
+        .hero-nota span::before { content: '✓ '; color: var(--verde); font-weight: 900; }
+        .hero-pagamentos { display:flex; align-items:center; gap:12px; margin-top: 26px; font-size: 12.5px; color:#64748B; font-weight: 600; flex-wrap: wrap; }
+        .hero-pagamentos img { height: 22px; width: auto; }
 
-        .hero-titulo {
-            font-size: 3.2rem;
-            line-height: 1.12;
-            font-weight: 900;
-            color: var(--titulo);
-            letter-spacing: -1.5px;
-            margin-bottom: 24px;
+        /* Composição de mockups do hero */
+        .hero-visual { position: relative; height: 560px; min-width: 0; z-index: 1; }
+        .tablet {
+            position: absolute; left: 0; top: 70px; width: 88%; aspect-ratio: 4/3;
+            background: #111827; border-radius: 30px; padding: 16px; box-shadow: 0 40px 80px rgba(15,23,42,.28);
+            transform: perspective(1400px) rotateY(-14deg) rotateX(4deg) rotateZ(-2deg);
         }
-
-        .palavra-destaque {
-            background: var(--amarelo);
-            color: #000;
-            padding: 2px 14px;
-            border-radius: 8px;
-            display: inline-block;
-            transform: rotate(-2deg);
-            white-space: nowrap;
+        .tablet::before { content:''; position:absolute; left:6px; top:50%; width:5px; height:5px; border-radius:50%; background:#374151; transform: translateY(-50%); }
+        .tablet .tela { width: 100%; height: 100%; border-radius: 16px; overflow: hidden; background: #fff; }
+        .tablet img { width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+        .phone {
+            position: absolute; width: 220px; aspect-ratio: 402/875; background: #0B1220;
+            border-radius: 36px; padding: 9px; box-shadow: 0 40px 70px rgba(15,23,42,.35);
         }
-
-        .hero-subtitulo {
-            font-size: 1.1rem;
-            color: var(--corpo);
-            margin-bottom: 40px;
-            line-height: 1.8;
+        .phone::before { content:''; position:absolute; top: 15px; left: 50%; transform: translateX(-50%); width: 70px; height: 18px; border-radius: 12px; background: #0B1220; z-index: 3; }
+        .phone .tela { width: 100%; height: 100%; border-radius: 28px; overflow: hidden; background: #fff; }
+        .phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+        .hero-visual .phone { right: 0; top: 0; z-index: 3; }
+        .comanda {
+            position: absolute; left: 44%; bottom: 0; z-index: 4; width: 150px; background: #FFF7ED;
+            border: 3px solid #FED7AA; border-radius: 18px; padding: 14px 14px 12px; text-align: center;
+            box-shadow: 0 24px 50px rgba(15,23,42,.25); transform: rotate(-6deg);
         }
-
-        .hero-ctas {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .hero-nota {
-            font-size: 13px;
-            color: #94A3B8;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            flex-wrap: wrap;
-        }
-
-        /* ===== MOCKUP AREA ===== */
-        .hero-mockup {
-            flex: 1;
-            min-width: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        .moldura-celular {
-            width: 290px;
-            min-width: 290px;
-            height: 600px;
-            background: #fff;
-            border-radius: 40px;
-            border: 12px solid #1E293B;
-            box-shadow: 0 30px 70px rgba(0,0,0,0.2);
-            overflow: hidden;
-            position: relative;
-            z-index: 2;
-        }
-
-        .moldura-celular img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top;
-        }
-
+        .comanda b { display:block; font-size: 30px; line-height: 1; color: var(--titulo); font-weight: 900; }
+        .comanda small { display:block; font-size: 12px; letter-spacing: 3px; font-weight: 800; color: #9A3412; margin: 2px 0 8px; }
+        .comanda .qr { width: 96px; height: 96px; margin: 0 auto; background:#fff; padding: 6px; border-radius: 8px; }
         .card-flutuante {
-            background: #fff;
-            padding: 14px 18px;
-            border-radius: 14px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.14);
-            border: 1px solid var(--borda);
-            position: absolute;
-            z-index: 10;
+            position: absolute; z-index: 6; background: rgba(255,255,255,.96); backdrop-filter: blur(8px);
+            padding: 12px 16px; border-radius: 14px; box-shadow: 0 18px 40px rgba(15,23,42,.16);
+            border: 1px solid var(--borda); display: flex; align-items: center; gap: 12px;
             animation: flutuar 6s ease-in-out infinite;
-            min-width: 180px;
         }
-        .card-flutuante.topo  { top: 10%;    right: -30px;  animation-delay: 0s;  }
-        .card-flutuante.baixo { bottom: 18%; left:  -30px;  animation-delay: 3s;  }
+        .card-flutuante .ic { width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center; font-size: 18px; flex-shrink: 0; }
+        .card-flutuante .cf-titulo { font-size: 13.5px; font-weight: 800; color: var(--titulo); line-height: 1.2; }
+        .card-flutuante .cf-sub { font-size: 12px; color: var(--corpo); }
+        .cf-pedido { left: -10px; top: 18px; }
+        .cf-pix { right: 150px; bottom: 70px; animation-delay: 2.5s; }
+        .cf-pix img { width: 22px; }
+        @keyframes flutuar { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
 
-        .card-flutuante .cf-titulo {
-            font-size: 14px;
-            font-weight: 800;
-            color: var(--titulo);
-            margin-bottom: 4px;
-        }
-        .card-flutuante .cf-sub {
-            font-size: 12px;
-            color: var(--corpo);
-        }
+        /* ===== LOGOS (CARROSSEL) ===== */
+        .clientes { padding: 46px 0 40px; background: #fff; border-bottom: 1px solid var(--borda); }
+        .clientes p { text-align: center; font-size: 13px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #94A3B8; margin-bottom: 26px; padding: 0 6%; }
+        .marquee { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+        .marquee-trilho { display: flex; gap: 64px; width: max-content; animation: rolar 38s linear infinite; }
+        .marquee:hover .marquee-trilho { animation-play-state: paused; }
+        .marquee-trilho img { height: 52px; width: auto; filter: grayscale(1) opacity(.6); transition: filter .3s, transform .3s; }
+        .marquee-trilho img:hover { filter: none; transform: scale(1.06); }
+        @keyframes rolar { to { transform: translateX(-50%); } }
 
-        @keyframes flutuar {
-            0%, 100% { transform: translateY(0); }
-            50%       { transform: translateY(-10px); }
-        }
-
-        /* =========================================
-           BARRA DE PROVA SOCIAL
-        ========================================= */
+        /* ===== BARRA DE NÚMEROS ===== */
         .barra-prova {
-            background: var(--titulo);
-            padding: 32px 6%;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
+            background: linear-gradient(135deg, var(--navy) 0%, #0A1628 100%); padding: 40px 6%;
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
         }
-
         .item-prova { text-align: center; }
-        .item-prova .numero {
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--amarelo);
-            display: block;
-            line-height: 1;
-        }
-        .item-prova .label {
-            font-size: 13px;
-            color: #94A3B8;
-            font-weight: 500;
-            margin-top: 6px;
-        }
+        .item-prova .numero { font-size: 2.3rem; font-weight: 900; color: var(--amarelo); display: block; line-height: 1; }
+        .item-prova .label { font-size: 13.5px; color: #94A3B8; font-weight: 500; margin-top: 8px; display: block; }
 
-        /* =========================================
-           CABEÇALHO DE SEÇÃO (GENÉRICO)
-        ========================================= */
-        .cabecalho-secao {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-        .cabecalho-secao h2 {
-            font-size: 2.8rem;
-            font-weight: 900;
-            color: var(--titulo);
-            margin-bottom: 16px;
-            letter-spacing: -1px;
-        }
-        .cabecalho-secao p {
-            font-size: 1.1rem;
-            color: var(--corpo);
-            max-width: 560px;
-            margin: 0 auto;
-        }
+        /* ===== SEÇÕES / CABEÇALHO ===== */
+        section { scroll-margin-top: 70px; }
+        .secao { padding: 110px 6%; }
+        .secao-cinza { background: var(--fundo-cinza); }
+        .cabecalho-secao { text-align: center; margin: 0 auto 70px; max-width: 760px; }
+        .kicker { display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--azul); background: rgba(6,136,212,.08); padding: 6px 14px; border-radius: 30px; margin-bottom: 18px; }
+        .cabecalho-secao h2 { font-size: 2.7rem; font-weight: 900; color: var(--titulo); margin-bottom: 16px; letter-spacing: -1.2px; line-height: 1.12; }
+        .cabecalho-secao p { font-size: 1.1rem; color: var(--corpo); }
+        .cabecalho-secao p a, .desc-feature a, .faq-resposta a { color: var(--azul); font-weight: 600; border-bottom: 1px solid rgba(6,136,212,.3); }
 
-        /* =========================================
-           SEÇÃO FEATURES (ZIGZAG) — GRID FIX
-           O uso de CSS Grid evita o problema de
-           overflow que ocorria com Flexbox.
-        ========================================= */
-        .secao-features {
-            padding: 100px 6%;
-            background: var(--fundo-branco);
-        }
-        .secao-features-cinza {
-            background: var(--fundo-cinza);
-        }
+        /* ===== ONBOARDING (ILUSTRAÇÕES) ===== */
+        .passos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; position: relative; }
+        .passo { background: #fff; border: 1px solid var(--borda); border-radius: 22px; padding: 22px 22px 28px; position: relative; transition: transform .3s, box-shadow .3s; }
+        .passo:hover { transform: translateY(-6px); box-shadow: var(--sombra); }
+        .passo .ilustra { height: 170px; border-radius: 16px; margin-bottom: 20px; display: grid; place-items: center; overflow: hidden; }
+        .passo .ilustra svg { width: 100%; height: 100%; }
+        .passo .num { position: absolute; top: 14px; left: 14px; width: 30px; height: 30px; border-radius: 50%; background: var(--titulo); color: #fff; font-size: 13px; font-weight: 900; display: grid; place-items: center; z-index: 2; }
+        .passo h3 { font-size: 1.12rem; font-weight: 800; color: var(--titulo); margin-bottom: 8px; line-height: 1.3; }
+        .passo p { font-size: .95rem; line-height: 1.6; }
 
-        /* Linha zigzag: imagem (3fr) | texto (2fr) */
-        .linha-feature {
-            display: grid;
-            grid-template-columns: 3fr 2fr;
-            gap: 70px;
-            align-items: center;
-            margin-bottom: 100px;
-        }
+        /* ===== FEATURES (ZIGZAG) ===== */
+        .linha-feature { display: grid; grid-template-columns: 1.35fr 1fr; gap: 70px; align-items: center; margin-bottom: 120px; }
         .linha-feature:last-child { margin-bottom: 0; }
-
-        /* Invertida: texto (2fr) | imagem (3fr) */
-        .linha-feature.invertida {
-            grid-template-columns: 2fr 3fr;
-        }
+        .linha-feature.invertida { grid-template-columns: 1fr 1.35fr; }
         .linha-feature.invertida .feature-imagem { order: 2; }
-        .linha-feature.invertida .feature-texto  { order: 1; }
-
-        /* Frame estilo navegador para desktop screenshots */
-        .frame-desktop {
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 24px 60px rgba(0,0,0,0.12);
-            border: 1px solid var(--borda);
-            width: 100%;
-        }
-        .barra-browser {
-            background: #F1F5F9;
-            padding: 10px 16px;
-            display: flex;
-            align-items: center;
-            gap: 7px;
-            border-bottom: 1px solid var(--borda);
-        }
-        .dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
-        .dot.r { background: #EF4444; }
-        .dot.y { background: #F59E0B; }
-        .dot.g { background: #22C55E; }
-        .frame-desktop img { width: 100%; display: block; }
-
-        /* Conteúdo de texto da feature */
+        .feature-imagem { min-width: 0; position: relative; }
+        .feature-imagem::before { content:''; position:absolute; inset: 8% -4% -6% 8%; border-radius: 30px; background: linear-gradient(135deg, rgba(6,136,212,.16), rgba(168,85,247,.14)); z-index: 0; }
+        .linha-feature.invertida .feature-imagem::before { inset: 8% 8% -6% -4%; }
+        .frame-desktop { position: relative; z-index: 1; border-radius: 14px; overflow: hidden; box-shadow: var(--sombra); border: 1px solid var(--borda); background: #fff; transition: transform .5s ease; }
+        .barra-browser { background: #F1F5F9; padding: 10px 14px; display: flex; align-items: center; gap: 7px; border-bottom: 1px solid var(--borda); }
+        .barra-browser .url { margin-left: 14px; flex: 1; max-width: 340px; background: #fff; border: 1px solid var(--borda); border-radius: 6px; font-size: 11.5px; color: #64748B; padding: 3px 10px; font-weight: 500; }
+        .dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
+        .dot.r { background: #EF4444; } .dot.y { background: #F59E0B; } .dot.g { background: #22C55E; }
+        .frame-desktop img { width: 100%; }
         .feature-texto { min-width: 0; }
+        .eyebrow { font-size: 13px; font-weight: 800; color: var(--azul); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .tag-amarela { background: var(--amarelo); color: #000; font-size: 10.5px; font-weight: 900; padding: 3px 8px; border-radius: 5px; letter-spacing: .5px; }
+        .titulo-feature { font-size: 2rem; font-weight: 900; color: var(--titulo); margin-bottom: 18px; line-height: 1.18; letter-spacing: -.6px; }
+        .desc-feature { font-size: 1.05rem; line-height: 1.75; margin-bottom: 26px; }
+        .lista-feature { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+        .lista-feature li { display: flex; align-items: flex-start; gap: 12px; font-size: 1rem; color: var(--titulo); font-weight: 500; }
+        .check { width: 22px; height: 22px; min-width: 22px; background: var(--azul); border-radius: 50%; display: grid; place-items: center; margin-top: 1px; font-size: 12px; font-weight: 900; color: #fff; }
 
-        .eyebrow {
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--azul);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
+        /* ===== PERSONALIZAÇÃO (DEMO INTERATIVA) ===== */
+        .personaliza { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .controles { background: #fff; border: 1px solid var(--borda); border-radius: 22px; padding: 28px; box-shadow: 0 10px 40px rgba(15,23,42,.06); }
+        .controle { margin-bottom: 24px; }
+        .controle:last-child { margin-bottom: 0; }
+        .controle-label { font-size: 13px; font-weight: 800; color: var(--titulo); margin-bottom: 10px; display: block; text-transform: uppercase; letter-spacing: .6px; }
+        .swatches { display: flex; gap: 10px; flex-wrap: wrap; }
+        .swatch { width: 36px; height: 36px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 1px var(--borda); cursor: pointer; transition: transform .2s, box-shadow .2s; }
+        .swatch:hover { transform: scale(1.12); }
+        .swatch[aria-pressed="true"] { box-shadow: 0 0 0 3px var(--titulo); }
+        .opcoes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        .opcoes.duas { grid-template-columns: 1fr 1fr; }
+        .opcao { border: 1.5px solid var(--borda); background: #fff; border-radius: 12px; padding: 12px; text-align: left; cursor: pointer; font: inherit; color: var(--titulo); transition: border-color .2s, background .2s; }
+        .opcao strong { display: block; font-size: 14px; }
+        .opcao span { font-size: 12px; color: #64748B; }
+        .opcao[aria-pressed="true"] { border-color: var(--azul); background: #EFF8FF; }
+        .controles .nota { font-size: 12.5px; color: #64748B; margin-top: 18px; }
+        .demo-area { display: flex; justify-content: center; position: relative; }
+        .demo-area::before { content:''; position:absolute; width: 380px; height: 380px; border-radius: 50%; background: var(--brand, #F50018); opacity: .14; filter: blur(30px); top: 50%; left: 50%; transform: translate(-50%,-50%); transition: background .4s; }
+        .phone.demo { position: relative; width: 300px; }
+        .demo-loja { height: 100%; background: #F4F5F8; font-family: var(--fonte-demo, 'Inter'), sans-serif; display: flex; flex-direction: column; overflow: hidden; }
+        .demo-capa { height: 110px; background: linear-gradient(135deg, var(--brand, #F50018), #111); position: relative; transition: background .4s; }
+        .demo-capa::after { content:'🍔'; position:absolute; right: 18px; top: 18px; font-size: 52px; filter: drop-shadow(0 6px 10px rgba(0,0,0,.35)); }
+        .demo-info { background: #fff; margin: -26px 12px 10px; border-radius: 14px; padding: 12px; display: flex; gap: 10px; align-items: center; position: relative; z-index: 1; box-shadow: 0 6px 16px rgba(0,0,0,.08); }
+        .demo-logo { width: 42px; height: 42px; border-radius: 10px; background: var(--brand, #F50018); color: #fff; display: grid; place-items: center; font-weight: 900; font-size: 18px; transition: background .4s; }
+        .demo-info b { display:block; font-size: 15px; color: #111; }
+        .demo-info small { font-size: 11px; color: #16A34A; font-weight: 700; }
+        .demo-chips { display: flex; gap: 6px; padding: 0 12px 10px; }
+        .demo-chips span { font-size: 11px; padding: 5px 10px; border-radius: 20px; background: #fff; border: 1px solid #E5E7EB; color: #374151; font-weight: 600; }
+        .demo-chips span.on { background: var(--brand, #F50018); border-color: transparent; color: #fff; transition: background .4s; }
+        .demo-itens { padding: 0 12px; display: flex; flex-direction: column; gap: 8px; }
+        .demo-item { background: #fff; border-radius: 12px; padding: 10px; display: flex; gap: 10px; align-items: center; justify-content: space-between; }
+        .demo-item b { font-size: 13px; color: #111; display: block; }
+        .demo-item p { font-size: 10.5px; color: #6B7280; line-height: 1.35; }
+        .demo-item .preco { font-size: 13px; font-weight: 800; color: var(--brand, #F50018); margin-top: 3px; transition: color .4s; }
+        .demo-item .foto { width: var(--img, 58px); height: var(--img, 58px); border-radius: 10px; background: #FFEDD5; display: grid; place-items: center; font-size: 28px; flex-shrink: 0; transition: width .3s, height .3s; }
+        .demo-itens.cards { display: grid; grid-template-columns: 1fr 1fr; }
+        .demo-itens.cards .demo-item { flex-direction: column-reverse; align-items: stretch; text-align: left; }
+        .demo-itens.cards .demo-item .foto { width: 100%; height: 70px; }
+        .demo-itens.cards .demo-item p { display: none; }
+        .demo-btn { margin: auto 12px 12px; background: var(--brand, #F50018); color: #fff; text-align: center; padding: 11px; border-radius: 12px; font-weight: 800; font-size: 13px; transition: background .4s; }
+        .print-real { margin-top: 26px; border-radius: 14px; overflow: hidden; border: 1px solid var(--borda); box-shadow: 0 10px 30px rgba(15,23,42,.08); }
 
-        .titulo-feature {
-            font-size: 1.9rem;
-            font-weight: 900;
-            color: var(--titulo);
-            margin-bottom: 18px;
-            line-height: 1.2;
-            letter-spacing: -0.5px;
-        }
+        /* ===== MODOS DE VENDA (MOCKUPS) ===== */
+        .modos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .modo { background: #fff; border: 1px solid var(--borda); border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; transition: transform .3s, box-shadow .3s; }
+        .modo:hover { transform: translateY(-6px); box-shadow: var(--sombra); }
+        .modo-visual { height: 290px; position: relative; display: grid; place-items: center; overflow: hidden; }
+        .modo-visual.azul { background: linear-gradient(160deg, #E0F2FE, #F0F9FF); }
+        .modo-visual.verde { background: linear-gradient(160deg, #D1FAE5, #F0FDF4); }
+        .modo-visual.roxo { background: linear-gradient(160deg, #EDE9FE, #FAF5FF); }
+        .modo-visual.laranja { background: linear-gradient(160deg, #FFEDD5, #FFF7ED); }
+        .modo-visual.cinza { background: linear-gradient(160deg, #E2E8F0, #F8FAFC); }
+        .modo-visual.amarelo { background: linear-gradient(160deg, #FEF3C7, #FFFBEB); }
+        .modo-corpo { padding: 24px 26px 28px; }
+        .modo-corpo h3 { font-size: 1.2rem; font-weight: 800; color: var(--titulo); margin-bottom: 8px; }
+        .modo-corpo p { font-size: .96rem; line-height: 1.6; }
+        .modo .phone { position: relative; width: 140px; border-radius: 26px; padding: 6px; }
+        .modo .phone::before { width: 44px; height: 12px; top: 10px; }
+        .modo .phone .tela { border-radius: 21px; }
+        .mini-tablet { width: 300px; aspect-ratio: 4/3; background: #111827; border-radius: 20px; padding: 10px; box-shadow: 0 24px 50px rgba(15,23,42,.25); transform: rotate(-4deg); }
+        .mini-tablet .tela { width: 100%; height: 100%; border-radius: 11px; overflow: hidden; }
+        .mini-tablet img { width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+        .qr-mesa { position: absolute; right: 22px; bottom: 18px; background: #fff; border-radius: 14px; padding: 8px 8px 6px; text-align: center; box-shadow: 0 14px 30px rgba(15,23,42,.2); transform: rotate(5deg); }
+        .qr-mesa .qr { width: 70px; height: 70px; }
+        .qr-mesa span { display: block; font-size: 10px; font-weight: 900; color: var(--titulo); letter-spacing: 1px; margin-top: 3px; }
+        /* Totem */
+        .totem { position: relative; width: 132px; display: flex; flex-direction: column; align-items: center; transform: translateY(14px); }
+        .totem-corpo { width: 132px; height: 236px; background: linear-gradient(180deg, #1F2937, #0B1220); border-radius: 16px 16px 8px 8px; padding: 10px 9px 30px; box-shadow: 0 24px 40px rgba(15,23,42,.3); position: relative; }
+        .totem-corpo .tela { width: 100%; height: 100%; border-radius: 8px; overflow: hidden; background: #fff; }
+        .totem-corpo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+        .totem-corpo::after { content: ''; position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); width: 46px; height: 7px; border-radius: 4px; background: #374151; box-shadow: inset 0 2px 2px rgba(0,0,0,.6); }
+        .totem-haste { width: 26px; height: 46px; background: linear-gradient(90deg, #111827, #374151, #111827); }
+        .totem-base { width: 104px; height: 12px; border-radius: 8px; background: #111827; }
+        .totem-marca { position: absolute; top: -26px; background: var(--azul); color: #fff; font-size: 10px; font-weight: 900; padding: 4px 10px; border-radius: 8px; letter-spacing: 1px; }
+        .print-mini { width: 92%; border-radius: 12px; overflow: hidden; box-shadow: 0 18px 40px rgba(15,23,42,.18); border: 1px solid var(--borda); transform: rotate(-2deg); }
+        .print-mini img { width: 100%; }
 
-        .desc-feature {
-            font-size: 1.05rem;
-            color: var(--corpo);
-            line-height: 1.75;
-            margin-bottom: 28px;
+        /* ===== IMPRESSÃO TÉRMICA ===== */
+        .secao-impressao { background: radial-gradient(900px 500px at 80% 40%, rgba(251,191,36,.18), transparent 60%), linear-gradient(180deg, #fff, var(--fundo-cinza)); }
+        .impressao-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: center; }
+        .cena-impressora { position: relative; height: 560px; display: flex; justify-content: center; align-items: flex-end; }
+        .impressora { position: relative; width: 340px; z-index: 2; }
+        .impressora-topo { position: relative; height: 70px; background: linear-gradient(180deg, #3A4150, #262B35); border-radius: 26px 26px 0 0; }
+        .impressora-topo::after { content:''; position:absolute; left: 50px; right: 50px; top: 22px; height: 8px; border-radius: 4px; background: #0B0E13; box-shadow: inset 0 2px 3px rgba(0,0,0,.8); }
+        .impressora-corpo { height: 170px; background: linear-gradient(180deg, #2D333F, #1A1E26); border-radius: 0 0 22px 22px; position: relative; box-shadow: 0 40px 60px rgba(15,23,42,.35); }
+        .impressora-corpo .led { position: absolute; right: 28px; top: 24px; width: 9px; height: 9px; border-radius: 50%; background: #22C55E; box-shadow: 0 0 10px #22C55E; animation: piscar 1.4s infinite; }
+        .impressora-corpo .botao { position: absolute; right: 22px; top: 48px; width: 22px; height: 22px; border-radius: 6px; background: #3A4150; }
+        .impressora-corpo .marca { position: absolute; left: 28px; bottom: 24px; font-weight: 900; font-size: 15px; color: #64748B; letter-spacing: -.5px; }
+        @keyframes piscar { 50% { opacity: .3; } }
+        .cupom-wrap { position: absolute; left: 50%; bottom: 210px; transform: translateX(-50%); width: 236px; height: 380px; overflow: hidden; z-index: 1; display: flex; align-items: flex-end; }
+        .cupom {
+            width: 100%; background: #FFFEFA; padding: 18px 18px 26px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: #1F2937; line-height: 1.55;
+            box-shadow: 0 10px 30px rgba(0,0,0,.15); transform: translateY(100%);
+            -webkit-mask: radial-gradient(6px at 6px 0, transparent 98%, #000) -6px 0 / 12px 100% repeat-x; mask: radial-gradient(6px at 6px 0, transparent 98%, #000) -6px 0 / 12px 100% repeat-x;
         }
+        .cena-impressora.imprimindo .cupom { animation: imprimir 3.6s steps(28) forwards; }
+        @keyframes imprimir { to { transform: translateY(0); } }
+        .cupom .c-logo { text-align: center; font-family: 'Inter', sans-serif; font-weight: 900; font-size: 22px; letter-spacing: -1px; color: #111; display: flex; align-items: center; justify-content: center; gap: 6px; }
+        .cupom .c-logo i { width: 22px; height: 22px; border-radius: 6px; background: #111; display: grid; place-items: center; }
+        .cupom .c-logo i svg { width: 13px; height: 13px; }
+        .cupom .c-centro { text-align: center; }
+        .cupom .c-linha { border-top: 1px dashed #9CA3AF; margin: 7px 0; }
+        .cupom .c-row { display: flex; justify-content: space-between; gap: 8px; }
+        .cupom .c-sub { padding-left: 10px; color: #4B5563; }
+        .cupom .c-total { font-weight: 700; font-size: 12px; }
+        .cupom .c-pago { margin-top: 6px; text-align: center; background: #111; color: #fff; font-weight: 700; padding: 3px; letter-spacing: 1px; }
+        .cupom .c-qr { display: flex; gap: 10px; align-items: center; margin-top: 8px; }
+        .cupom .c-qr .qr { width: 54px; height: 54px; flex-shrink: 0; }
+        .cupom .barcode { height: 26px; margin-top: 8px; background: repeating-linear-gradient(90deg, #111 0 2px, transparent 2px 4px, #111 4px 5px, transparent 5px 8px, #111 8px 11px, transparent 11px 12px); }
+        .sacola { position: absolute; width: 110px; height: 130px; border-radius: 10px 10px 14px 14px; background: linear-gradient(180deg, #C9A06A, #A97C46); box-shadow: 0 20px 40px rgba(15,23,42,.25); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 3; animation: flutuar 7s ease-in-out infinite; }
+        .sacola::before { content:''; position:absolute; top: 0; left: 0; right: 0; height: 18px; background: repeating-linear-gradient(90deg, #B98E57 0 6px, #A97C46 6px 12px); border-radius: 10px 10px 0 0; }
+        .sacola .faixa { width: 100%; background: var(--azul); color: #fff; text-align: center; font-weight: 900; font-size: 17px; letter-spacing: -.5px; padding: 8px 0; margin-top: 10px; }
+        .sacola .faixa small { display: block; font-size: 8px; font-weight: 700; letter-spacing: 1px; opacity: .85; }
+        .sacola.s1 { left: 0; top: 40px; rotate: -12deg; }
+        .sacola.s2 { right: 0; top: 180px; rotate: 10deg; animation-delay: 2s; width: 96px; height: 116px; }
+        .sacola.s3 { left: 30px; bottom: 30px; rotate: 8deg; animation-delay: 4s; width: 84px; height: 100px; }
+        .sacola.s3 .faixa { background: var(--vermelho); font-size: 14px; }
 
-        .lista-feature {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .lista-feature li {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            font-size: 1rem;
-            color: var(--titulo);
-            font-weight: 500;
-        }
-        .check {
-            width: 22px;
-            height: 22px;
-            min-width: 22px;
-            background: var(--azul);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            margin-top: 1px;
-            font-size: 12px;
-            font-weight: 800;
-            color: #fff;
-        }
+        /* ===== PAGAMENTO ONLINE ===== */
+        .pagamento { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; background: linear-gradient(135deg, #00B1EA 0%, #0688D4 55%, #1d3e73 100%); border-radius: 32px; padding: 56px; color: #fff; position: relative; overflow: hidden; }
+        .pagamento::after { content:''; position:absolute; width: 420px; height: 420px; border-radius: 50%; border: 60px solid rgba(255,255,255,.07); right: -120px; top: -160px; }
+        .pagamento h2 { font-size: 2.4rem; font-weight: 900; letter-spacing: -1px; line-height: 1.12; margin: 14px 0 16px; }
+        .pagamento p { color: #E0F2FE; font-size: 1.05rem; line-height: 1.7; }
+        .mp-selo { display: inline-flex; align-items: center; gap: 10px; background: #fff; color: #0F172A; padding: 8px 16px 8px 10px; border-radius: 40px; font-weight: 800; font-size: 14px; }
+        .mp-selo img { width: 30px; }
+        .pg-lista { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
+        .pg-lista span { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.25); padding: 8px 14px; border-radius: 30px; font-size: 14px; font-weight: 700; }
+        .checkout { background: #fff; color: var(--titulo); border-radius: 22px; padding: 24px; max-width: 360px; margin-left: auto; box-shadow: 0 30px 60px rgba(0,0,0,.25); position: relative; z-index: 1; }
+        .checkout h4 { font-size: 15px; font-weight: 800; margin-bottom: 14px; }
+        .ck-op { display: flex; align-items: center; gap: 12px; border: 1.5px solid var(--borda); border-radius: 12px; padding: 12px; margin-bottom: 10px; font-size: 14px; font-weight: 700; }
+        .ck-op.on { border-color: #00B1EA; background: #F0FAFF; }
+        .ck-op .rd { width: 18px; height: 18px; border-radius: 50%; border: 2px solid #CBD5E1; }
+        .ck-op.on .rd { border: 5px solid #00B1EA; }
+        .ck-op small { margin-left: auto; font-size: 11px; color: #16A34A; font-weight: 800; }
+        .ck-total { display: flex; justify-content: space-between; font-weight: 900; font-size: 18px; margin: 16px 0 14px; }
+        .ck-btn { background: #16A34A; color: #fff; text-align: center; padding: 13px; border-radius: 12px; font-weight: 800; }
+        .ck-ok { display: flex; align-items: center; gap: 8px; justify-content: center; margin-top: 12px; font-size: 12px; color: #64748B; }
 
-        /* =========================================
-           SEÇÃO KANBAN (FUNDO ESCURO)
-        ========================================= */
-        .secao-kanban {
-            background: var(--titulo);
-            color: #fff;
-            padding: 100px 6%;
-            text-align: center;
-        }
-        .secao-kanban h2 {
-            font-size: 2.6rem;
-            font-weight: 900;
-            margin-bottom: 18px;
-            letter-spacing: -1px;
-        }
-        .secao-kanban > p {
-            font-size: 1.1rem;
-            color: #94A3B8;
-            max-width: 600px;
-            margin: 0 auto 60px;
-        }
+        /* ===== INTEGRAÇÕES ===== */
+        .integracoes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+        .integra { background: #fff; border: 1px solid var(--borda); border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 12px; transition: transform .3s, box-shadow .3s, border-color .3s; }
+        .integra:hover { transform: translateY(-5px); box-shadow: 0 18px 40px rgba(15,23,42,.10); border-color: #BAE6FD; }
+        .integra-topo { display: flex; align-items: center; justify-content: space-between; }
+        .integra img { width: 42px; height: 42px; }
+        .integra .ativa { font-size: 11px; font-weight: 800; color: #15803D; background: #DCFCE7; padding: 3px 9px; border-radius: 20px; }
+        .integra h3 { font-size: 1.02rem; font-weight: 800; color: var(--titulo); }
+        .integra p { font-size: .9rem; line-height: 1.55; }
+        .print-integra { max-width: 980px; margin: 50px auto 0; }
 
-        .etapas-kanban {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .etapa-item {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 16px;
-            padding: 28px 18px;
-            text-align: center;
-            position: relative;
-        }
-        .etapa-item::after {
-            content: '→';
-            position: absolute;
-            right: -14px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--amarelo);
-            font-size: 22px;
-            font-weight: 900;
-            z-index: 1;
-        }
+        /* ===== KANBAN WHATSAPP ===== */
+        .secao-kanban { background: var(--titulo); color: #fff; padding: 110px 6%; text-align: center; position: relative; overflow: hidden; }
+        .secao-kanban::before { content:''; position:absolute; width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(6,136,212,.25), transparent 65%); left: 50%; top: -350px; transform: translateX(-50%); }
+        .secao-kanban h2 { font-size: 2.6rem; font-weight: 900; margin-bottom: 18px; letter-spacing: -1px; position: relative; }
+        .secao-kanban > p { font-size: 1.1rem; color: #94A3B8; max-width: 640px; margin: 0 auto 60px; position: relative; }
+        .etapas-kanban { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1040px; margin: 0 auto; position: relative; }
+        .etapa-item { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 18px; padding: 28px 18px; position: relative; border-top: 3px solid var(--c, var(--azul)); }
+        .etapa-item::after { content: '→'; position: absolute; right: -16px; top: 50%; transform: translateY(-50%); color: var(--amarelo); font-size: 22px; font-weight: 900; z-index: 1; }
         .etapa-item:last-child::after { display: none; }
-
         .etapa-icone { font-size: 2.4rem; margin-bottom: 14px; }
-        .etapa-nome  { font-size: 15px; font-weight: 800; color: #fff; margin-bottom: 8px; }
-        .etapa-desc  { font-size: 13px; color: #94A3B8; line-height: 1.5; }
-        .etapa-badge {
-            background: var(--amarelo);
-            color: #000;
-            font-size: 10px;
-            font-weight: 800;
-            padding: 3px 8px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            display: inline-block;
-            margin-top: 12px;
-        }
+        .etapa-nome { font-size: 15px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+        .etapa-desc { font-size: 13px; color: #94A3B8; line-height: 1.5; }
+        .etapa-badge { background: var(--amarelo); color: #000; font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 20px; text-transform: uppercase; display: inline-block; margin-top: 12px; }
 
-        /* =========================================
-           SEÇÃO MOTOBOY
-        ========================================= */
-        .secao-motoboy {
-            padding: 100px 6%;
-            background: var(--fundo-cinza);
-            display: grid;
-            grid-template-columns: 3fr 2fr;
-            gap: 70px;
-            align-items: center;
-            border-top: 1px solid var(--borda);
-            border-bottom: 1px solid var(--borda);
-        }
+        /* ===== MOTOBOY / CARDÁPIO ===== */
+        .duas-colunas { display: grid; grid-template-columns: 1.1fr 1fr; gap: 70px; align-items: center; }
+        .area-celulares { display: flex; gap: 26px; justify-content: center; align-items: flex-start; }
+        .area-celulares .phone { position: relative; width: 250px; }
+        .area-celulares .phone + .phone { margin-top: 70px; }
+        .moto-phone { position: relative; width: 260px; margin: 0 auto; }
 
-        /* =========================================
-           SEÇÃO CARDÁPIO DEMO
-        ========================================= */
-        .secao-cardapio-demo {
-            padding: 100px 6%;
-            background: var(--fundo-branco);
-            display: grid;
-            grid-template-columns: 2fr 2fr;
-            gap: 70px;
-            align-items: center;
-        }
-
-        .area-celulares {
-            display: flex;
-            gap: 24px;
-            justify-content: center;
-            align-items: flex-start;
-        }
-        .celular-secundario { margin-top: 60px; }
-
-        /* =========================================
-           SEÇÃO PREÇOS
-        ========================================= */
-        .secao-precos {
-            background: linear-gradient(135deg, #0A1628 0%, #0F2D56 100%);
-            color: #fff;
-            padding: 100px 6%;
-            text-align: center;
-        }
-        .secao-precos h2 {
-            font-size: 2.8rem;
-            font-weight: 900;
-            margin-bottom: 16px;
-            letter-spacing: -1px;
-        }
-        .secao-precos > .subtitulo-preco {
-            font-size: 1.1rem;
-            color: #94A3B8;
-            max-width: 580px;
-            margin: 0 auto 60px;
-            line-height: 1.7;
-        }
-
-        .grid-precos {
-            display: grid;
-            grid-template-columns: 1fr 1.35fr 1fr;
-            gap: 24px;
-            max-width: 1020px;
-            margin: 0 auto 48px;
-            align-items: center;
-        }
-
-        .card-preco {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 36px 28px;
-            text-align: left;
-        }
-        .card-preco.destaque {
-            background: #fff;
-            color: var(--titulo);
-            border: 2px solid var(--amarelo);
-            box-shadow: 0 30px 80px rgba(0,0,0,0.4);
-            transform: scale(1.04);
-            position: relative;
-            z-index: 1;
-        }
-
-        .badge-destaque {
-            background: var(--amarelo);
-            color: #000;
-            font-size: 11px;
-            font-weight: 800;
-            padding: 5px 14px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        .card-preco .nome-plano {
-            font-size: 16px;
-            font-weight: 700;
-            color: #64748B;
-            margin-bottom: 8px;
-        }
-        .card-preco.destaque .nome-plano { color: var(--corpo); }
-
-        .valor-riscado {
-            font-size: 13px;
-            color: #64748B;
-            text-decoration: line-through;
-            margin-bottom: 4px;
-        }
-
-        .valor-principal {
-            font-size: 2.6rem;
-            font-weight: 900;
-            color: #fff;
-            line-height: 1;
-            margin-bottom: 4px;
-        }
+        /* ===== PREÇOS ===== */
+        .secao-precos { background: linear-gradient(135deg, #0A1628 0%, var(--navy-2) 100%); color: #fff; padding: 110px 6%; text-align: center; position: relative; overflow: hidden; }
+        .secao-precos h2 { font-size: 2.8rem; font-weight: 900; margin-bottom: 16px; letter-spacing: -1px; }
+        .secao-precos > .subtitulo-preco { font-size: 1.1rem; color: #94A3B8; max-width: 620px; margin: 0 auto 60px; line-height: 1.7; }
+        .grid-precos { display: grid; grid-template-columns: 1fr 1.35fr 1fr; gap: 24px; max-width: 1060px; margin: 0 auto 48px; align-items: center; }
+        .card-preco { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 22px; padding: 36px 28px; text-align: left; }
+        .card-preco.destaque { background: #fff; color: var(--titulo); border: 2px solid var(--amarelo); box-shadow: 0 30px 80px rgba(0,0,0,.4); transform: scale(1.04); position: relative; z-index: 1; }
+        .badge-destaque { background: var(--amarelo); color: #000; font-size: 11px; font-weight: 800; padding: 5px 14px; border-radius: 20px; text-transform: uppercase; display: inline-block; margin-bottom: 20px; }
+        .card-preco .nome-plano { font-size: 16px; font-weight: 700; color: #64748B; margin-bottom: 8px; }
+        .valor-riscado { font-size: 13px; color: #64748B; text-decoration: line-through; margin-bottom: 4px; }
+        .valor-principal { font-size: 2.8rem; font-weight: 900; color: #fff; line-height: 1; margin-bottom: 4px; }
         .card-preco.destaque .valor-principal { color: var(--titulo); }
-
-        .valor-periodo {
-            font-size: 13px;
-            color: #64748B;
-            margin-bottom: 28px;
-        }
-        .card-preco.destaque .valor-periodo { color: var(--corpo); }
-
-        .lista-preco {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 28px;
-        }
-        .lista-preco li {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            font-size: 14px;
-            color: #94A3B8;
-            line-height: 1.4;
-        }
+        .valor-periodo { font-size: 13px; color: #64748B; margin-bottom: 28px; }
+        .lista-preco { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 28px; }
+        .lista-preco li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #94A3B8; line-height: 1.4; }
         .card-preco.destaque .lista-preco li { color: var(--corpo); }
+        .lista-preco li.sim::before { content: '✓'; color: #22C55E; font-weight: 900; font-size: 15px; flex-shrink: 0; }
+        .lista-preco li.nao { text-decoration: line-through; opacity: .45; }
+        .lista-preco li.nao::before { content: '✗'; color: #EF4444; font-weight: 900; font-size: 15px; flex-shrink: 0; }
+        .nota-card { padding-top: 20px; border-top: 1px solid rgba(255,255,255,.08); font-size: 12px; color: #64748B; text-align: center; }
+        .card-preco.destaque .nota-card { border-color: var(--borda); color: #94A3B8; }
+        .rodape-preco { font-size: 14px; color: #64748B; max-width: 640px; margin: 0 auto; line-height: 1.7; }
 
-        .lista-preco li.sim::before {
-            content: '✓';
-            color: #22C55E;
-            font-weight: 900;
-            font-size: 15px;
-            flex-shrink: 0;
-        }
-        .lista-preco li.nao {
-            text-decoration: line-through;
-            opacity: 0.45;
-        }
-        .lista-preco li.nao::before {
-            content: '✗';
-            color: #EF4444;
-            font-weight: 900;
-            font-size: 15px;
-            flex-shrink: 0;
-        }
-
-        .nota-card {
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.08);
-            font-size: 12px;
-            color: #64748B;
-            text-align: center;
-        }
-        .card-preco.destaque .nota-card {
-            border-color: var(--borda);
-            color: #94A3B8;
-        }
-
-        .rodape-preco {
-            font-size: 14px;
-            color: #475569;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.7;
-        }
-
-        /* =========================================
-           SEÇÃO FINAL CTA
-        ========================================= */
-        .secao-final-cta {
-            background: var(--azul);
-            padding: 90px 6%;
-            text-align: center;
-        }
-        .secao-final-cta h2 {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: #fff;
-            margin-bottom: 18px;
-            letter-spacing: -1px;
-        }
-        .secao-final-cta p {
-            font-size: 1.1rem;
-            color: #BFDBFE;
-            max-width: 520px;
-            margin: 0 auto 36px;
-            line-height: 1.7;
-        }
-        .secao-final-cta .meta-cta {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #93C5FD;
-            margin-bottom: 0;
-        }
-
-        /* =========================================
-           SEÇÃO FAQ / DÚVIDAS FREQUENTES
-        ========================================= */
-        .secao-faq {
-            padding: 100px 6%;
-            background: var(--fundo-cinza);
-            border-top: 1px solid var(--borda);
-        }
-        .faq-lista {
-            max-width: 760px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-        .faq-item {
-            background: #fff;
-            border: 1px solid var(--borda);
-            border-radius: 14px;
-            padding: 4px 24px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
-        }
-        .faq-item summary {
-            list-style: none;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--titulo);
-            padding: 20px 36px 20px 0;
-            position: relative;
-        }
+        /* ===== FAQ ===== */
+        .faq-lista { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+        .faq-item { background: #fff; border: 1px solid var(--borda); border-radius: 16px; padding: 4px 24px; box-shadow: 0 4px 16px rgba(0,0,0,.03); transition: border-color .2s; }
+        .faq-item[open] { border-color: #BAE6FD; }
+        .faq-item summary { list-style: none; cursor: pointer; font-size: 1.08rem; font-weight: 700; color: var(--titulo); padding: 20px 36px 20px 0; position: relative; }
         .faq-item summary::-webkit-details-marker { display: none; }
-        .faq-item summary::after {
-            content: '+';
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 26px;
-            font-weight: 400;
-            color: var(--azul);
-            transition: transform 0.2s;
-        }
+        .faq-item summary::after { content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 26px; font-weight: 400; color: var(--azul); }
         .faq-item[open] summary::after { content: '−'; }
-        .faq-resposta {
-            font-size: 1rem;
-            color: var(--corpo);
-            line-height: 1.75;
-            padding: 0 0 22px;
-        }
-        .faq-cta {
-            text-align: center;
-            margin-top: 56px;
-        }
-        .faq-cta .meta-cta {
-            margin-top: 18px;
-            font-size: 14px;
-            color: #94A3B8;
-        }
+        .faq-resposta { font-size: 1rem; line-height: 1.75; padding: 0 0 22px; }
+        .faq-cta { text-align: center; margin-top: 56px; }
+        .meta-cta { margin-top: 18px; font-size: 14px; color: #94A3B8; }
 
-        /* =========================================
-           FOOTER
-        ========================================= */
-        .footer {
-            background: #060E1A;
-            color: #475569;
-            padding: 48px 6%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 24px;
-        }
+        /* ===== CTA FINAL ===== */
+        .secao-final-cta { background: linear-gradient(135deg, var(--azul) 0%, var(--navy) 100%); padding: 100px 6%; text-align: center; position: relative; overflow: hidden; }
+        .secao-final-cta::before, .secao-final-cta::after { content:''; position:absolute; border-radius: 50%; border: 50px solid rgba(255,255,255,.06); }
+        .secao-final-cta::before { width: 400px; height: 400px; left: -140px; bottom: -200px; }
+        .secao-final-cta::after { width: 300px; height: 300px; right: -80px; top: -120px; }
+        .secao-final-cta h2 { font-size: 2.6rem; font-weight: 900; color: #fff; margin-bottom: 18px; letter-spacing: -1px; position: relative; }
+        .secao-final-cta p { font-size: 1.1rem; color: #BFDBFE; max-width: 560px; margin: 0 auto 36px; line-height: 1.7; position: relative; }
+        .secao-final-cta .meta-cta { color: #93C5FD; margin-bottom: 0; }
+
+        /* ===== FOOTER ===== */
+        .footer { background: #060E1A; color: #475569; padding: 48px 6%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
         .footer-logo { font-size: 22px; font-weight: 800; color: #fff; }
         .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
-        .footer-links a { font-size: 14px; color: #475569; transition: color 0.2s; }
+        .footer-links a { font-size: 14px; color: #475569; transition: color .2s; }
         .footer-links a:hover { color: #94A3B8; }
         .footer-copy { font-size: 13px; }
 
-        /* =========================================
-           RESPONSIVO
-        ========================================= */
-        @media (max-width: 1100px) {
-            .grid-precos {
-                grid-template-columns: 1fr;
-                max-width: 480px;
-            }
-            .card-preco.destaque { transform: none; }
-        }
+        /* ===== REVEAL ON SCROLL ===== */
+        .js .revela { opacity: 0; transform: translateY(34px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0s); }
+        .js .revela.visivel { opacity: 1; transform: none; }
 
+        /* ===== WHATSAPP FLUTUANTE ===== */
+        .wpp-float { position: fixed; right: 20px; bottom: 20px; z-index: 9999; display: flex; align-items: center; gap: 10px; background: #25D366; color: #fff; padding: 12px 18px 12px 14px; border-radius: 50px; font-weight: 700; font-size: 15px; line-height: 1; box-shadow: 0 8px 24px rgba(37,211,102,.4); transition: transform .2s ease, box-shadow .2s ease; }
+        .wpp-float:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(37,211,102,.5); }
+        .wpp-float svg { width: 26px; height: 26px; flex-shrink: 0; fill: #fff; }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 1100px) {
+            .grid-precos { grid-template-columns: 1fr; max-width: 480px; }
+            .card-preco.destaque { transform: none; }
+            .passos { grid-template-columns: 1fr 1fr; }
+            .integracoes-grid { grid-template-columns: repeat(2, 1fr); }
+            .modos { grid-template-columns: 1fr 1fr; }
+            .hero { grid-template-columns: 1fr; }
+            .hero-visual { max-width: 640px; width: 100%; margin: 0 auto; }
+        }
         @media (max-width: 900px) {
             .etapas-kanban { grid-template-columns: 1fr 1fr; }
             .etapa-item::after { display: none; }
+            .personaliza, .impressao-grid, .pagamento, .duas-colunas { grid-template-columns: 1fr; }
+            .checkout { margin: 0 auto; }
         }
-
         @media (max-width: 768px) {
             .nav { display: none; }
-
-            /* Hero */
-            .hero {
-                flex-direction: column;
-                padding: 60px 5%;
-                min-height: auto;
-                text-align: center;
-                gap: 50px;
-            }
-            .hero-texto { flex: unset; max-width: 100%; }
-            .hero-titulo { font-size: 2.3rem; }
-            .hero-ctas { justify-content: center; }
-            .hero-nota { justify-content: center; text-align: center; }
-            .hero-mockup { width: 100%; }
-            .moldura-celular { width: 260px; min-width: 260px; height: 540px; }
-            .card-flutuante.topo  { right: -10px; }
-            .card-flutuante.baixo { left: -10px; }
-
-            /* Features */
-            .linha-feature,
-            .linha-feature.invertida {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .linha-feature.invertida .feature-imagem { order: 0; }
-            .linha-feature.invertida .feature-texto  { order: 0; }
-
-            /* Motoboy */
-            .secao-motoboy {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .secao-motoboy .lista-feature li { text-align: left; }
-            .secao-motoboy .feature-imagem { display: flex; justify-content: center; }
-
-            /* Cardápio demo */
-            .secao-cardapio-demo {
-                grid-template-columns: 1fr;
-                gap: 50px;
-            }
-            .area-celulares { flex-direction: column; align-items: center; }
-            .celular-secundario { margin-top: 0; }
-
-            /* Kanban */
-            .secao-kanban h2 { font-size: 2rem; }
-            .etapas-kanban { grid-template-columns: 1fr 1fr; }
-
-            /* Seções genéricas */
-            .secao-features, .secao-kanban, .secao-motoboy,
-            .secao-cardapio-demo, .secao-precos, .secao-final-cta, .secao-faq {
-                padding: 72px 5%;
-            }
-            .faq-item summary { font-size: 1rem; }
-            .header { padding: 14px 5%; }
+            .header, .header.rolou { padding: 12px 5%; }
             .logo { font-size: 22px; }
             .header-btns { gap: 12px; }
-            .btn-header-cta { padding: 9px 16px; font-size: 13px; }
-            .cabecalho-secao { margin-bottom: 48px; }
-
-            .cabecalho-secao h2 { font-size: 2rem; }
-            .secao-precos h2 { font-size: 2rem; }
-            .secao-final-cta h2 { font-size: 2rem; }
+            .header-btns .btn-amarelo { padding: 9px 14px !important; font-size: 13px !important; }
+            .hero { padding: 50px 5% 60px; text-align: center; min-height: auto; }
+            .hero-subtitulo { margin-left: auto; margin-right: auto; }
+            .hero-titulo { font-size: 2.3rem; letter-spacing: -1px; }
+            .hero-ctas, .hero-nota, .hero-pagamentos { justify-content: center; }
+            .hero-visual { height: 430px; }
+            .hero-visual .phone { width: 160px; }
+            .tablet { width: 92%; top: 60px; padding: 10px; border-radius: 20px; }
+            .comanda { width: 116px; left: 38%; padding: 10px; }
+            .comanda b { font-size: 22px; }
+            .comanda .qr { width: 70px; height: 70px; }
+            .cf-pix { display: none; }
+            .cf-pedido { left: 0; top: 0; }
+            .barra-prova { grid-template-columns: 1fr 1fr; gap: 28px; }
+            .item-prova .numero { font-size: 1.8rem; }
+            .secao, .secao-kanban, .secao-precos, .secao-final-cta { padding: 76px 5%; }
+            .cabecalho-secao { margin-bottom: 46px; }
+            .cabecalho-secao h2, .secao-precos h2, .secao-final-cta h2, .secao-kanban h2 { font-size: 2rem; }
             .titulo-feature { font-size: 1.65rem; }
-
-            /* Prova social */
-            .barra-prova { flex-direction: column; gap: 28px; padding: 40px 5%; }
-            .item-prova .numero { font-size: 1.7rem; }
-
-            /* Footer */
+            .linha-feature, .linha-feature.invertida { grid-template-columns: 1fr; gap: 40px; margin-bottom: 80px; }
+            .linha-feature.invertida .feature-imagem { order: 0; }
+            .passos, .modos { grid-template-columns: 1fr; }
+            .integracoes-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .integra { padding: 16px; }
+            .integra p { font-size: .82rem; }
+            .duas-colunas > *, .personaliza > *, .impressao-grid > *, .pagamento > * { min-width: 0; }
+            .area-celulares { gap: 14px; }
+            .area-celulares .phone { width: 46%; max-width: 190px; }
+            .area-celulares .phone + .phone { margin-top: 40px; }
+            .pagamento { padding: 36px 24px; border-radius: 24px; }
+            .pagamento h2 { font-size: 1.9rem; }
+            .cena-impressora { height: 520px; }
+            .impressora { width: 280px; }
+            .cupom-wrap { width: 210px; }
+            .sacola { scale: .75; }
+            .sacola.s1 { left: -10px; top: 0; }
+            .sacola.s2 { right: -10px; top: 60px; }
+            .sacola.s3 { display: none; }
+            .btn-vermelho, .btn-amarelo { white-space: normal; text-align: center; }
+            .faq-item summary { font-size: 1rem; }
             .footer { flex-direction: column; text-align: center; gap: 16px; }
             .footer-links { justify-content: center; }
         }
-
         @media (max-width: 480px) {
             .hero-titulo { font-size: 1.95rem; }
-            .btn-vermelho { padding: 14px 24px; font-size: 15px; }
+            .btn-vermelho { padding: 14px 22px; font-size: 15px; }
             .etapas-kanban { grid-template-columns: 1fr; }
-            .moldura-celular { width: 240px; min-width: 240px; height: 500px; }
+            .hero-visual { height: 360px; }
+            .hero-visual .phone { width: 130px; }
+            .card-flutuante { padding: 8px 10px; }
+            .card-flutuante .ic { width: 30px; height: 30px; }
+            .controles { padding: 20px; }
+            #fontes { grid-template-columns: 1fr; }
+            .opcao { padding: 10px; }
         }
-
-    /* --- BOTAO FLUTUANTE WHATSAPP --- */
-    .wpp-float{
-        position:fixed; right:20px; bottom:20px; z-index:9999;
-        display:flex; align-items:center; gap:10px;
-        background:#25D366; color:#fff; text-decoration:none;
-        padding:12px 18px 12px 14px; border-radius:50px;
-        font-weight:700; font-size:15px; line-height:1;
-        box-shadow:0 8px 24px rgba(37,211,102,.4);
-        transition:transform .2s ease, box-shadow .2s ease;
-    }
-    .wpp-float:hover{ transform:translateY(-3px); box-shadow:0 12px 30px rgba(37,211,102,.5); }
-    .wpp-float svg{ width:26px; height:26px; flex-shrink:0; fill:#fff; }
-    @media (max-width: 640px){
-        .wpp-float{ right:16px; bottom:16px; padding:14px; border-radius:50%; gap:0; }
-        .wpp-float .wpp-float-txt{ display:none; }
-    }
+        @media (max-width: 640px) {
+            .wpp-float { right: 16px; bottom: 16px; padding: 14px; border-radius: 50%; gap: 0; }
+            .wpp-float .wpp-float-txt { display: none; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+            .js .revela { opacity: 1; transform: none; }
+            .cupom { transform: none; }
+        }
     </style>
 
     <!-- Meta Pixel Code -->
@@ -1066,23 +695,32 @@
     src="https://www.facebook.com/tr?id=1337286018510761&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
+<!-- Ícone da marca reutilizável -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-menuzia" viewBox="0 0 24 24"><path fill="#fff" d="M4 19V7.5a2.5 2.5 0 0 1 4.6-1.4L12 11l3.4-4.9A2.5 2.5 0 0 1 20 7.5V19h-3.2v-8.4l-3.5 5a1.6 1.6 0 0 1-2.6 0l-3.5-5V19z"/></symbol>
+</svg>
+
 <!-- ===== CABEÇALHO ===== -->
-<header class="header">
-    <div class="logo">menuzia</div>
-    <nav class="nav">
+<header class="header" id="topo">
+    <a href="https://menuzia.com.br/" class="logo" aria-label="Menuzia — página inicial">
+        <span class="logo-icone"><svg aria-hidden="true"><use href="#i-menuzia"/></svg></span>menuzia
+    </a>
+    <nav class="nav" aria-label="Principal">
         <a href="#funcionalidades">Funcionalidades</a>
         <a href="#cardapio">Cardápio Digital</a>
+        <a href="#modos">Mesas e Totem</a>
+        <a href="#integracoes">Integrações</a>
         <a href="#precos">Preços</a>
         <a href="#duvidas">Dúvidas</a>
-        <a href="cardapio-digital-barato.html">Preço Baixo</a>
         <a href="blog/index.html">Blog</a>
     </nav>
     <div class="header-btns">
         <a href="https://app.menuzia.com.br/login" class="btn-login">Login</a>
-        <a href="#precos" class="btn-amarelo" style="padding: 11px 24px; font-size: 14px;">Criar Cardápio</a>
+        <a href="#precos" class="btn-amarelo" style="padding: 11px 22px; font-size: 14px;">Criar Cardápio</a>
     </div>
 </header>
 
@@ -1091,317 +729,544 @@
     <!-- ===== HERO ===== -->
     <section class="hero">
         <div class="hero-texto">
-            <div class="hero-eyebrow">
-                🔥 Mais de 500 hamburguerias já saíram do iFood
-            </div>
+            <div class="hero-eyebrow"><span class="pill">Novo</span> Mesas com QR Code, totem e pagamento online</div>
             <h1 class="hero-titulo">
-                Chega de pagar comissão e perder seus clientes pra <span class="palavra-destaque">plataforma</span>
+                Cardápio digital <span class="grad">sem comissão</span> para hamburgueria e <span class="palavra-destaque">delivery</span>
             </h1>
             <p class="hero-subtitulo">
-                Com o Menuzia, você tem seu próprio cardápio digital, a lista de clientes é <strong>sua pra sempre</strong>, e você dispara campanhas no WhatsApp, rastreia cada venda e fideliza quem já comprou — por apenas <strong>R$67 fixos por mês</strong>.
+                Chega de pagar comissão e perder seus clientes pra plataforma. Com o Menuzia você tem <strong>seu próprio cardápio digital</strong> no celular, no tablet da mesa e no totem, recebe <strong>Pix e cartão online</strong>, imprime o pedido sozinho e fica com a lista de clientes <strong>pra sempre</strong> — por apenas <strong>R$67 fixos por mês</strong>.
             </p>
             <div class="hero-ctas">
-                <a href="#precos" class="btn-vermelho" style="font-size: 17px; padding: 18px 42px;">Criar Meu Cardápio Agora →</a>
-                <a href="#funcionalidades" class="btn-ghost">Ver como funciona</a>
+                <a href="#precos" class="btn-vermelho btn-brilho" style="font-size: 17px; padding: 18px 40px;">Criar Meu Cardápio Agora →</a>
+                <a href="#funcionalidades" class="btn-ghost">Ver o sistema por dentro</a>
             </div>
             <p class="hero-nota">
-                ✅ Sem taxa por pedido &nbsp;·&nbsp; ✅ Preço fixo que não sobe &nbsp;·&nbsp; ✅ Sem contrato de fidelidade
+                <span>Sem taxa por pedido</span><span>Preço fixo que não sobe</span><span>Sem fidelidade</span><span>Nós configuramos pra você</span>
             </p>
+            <div class="hero-pagamentos">
+                Integra com
+                <img src="assets/img/logos/ifood.svg" alt="iFood" width="22" height="22">
+                <img src="assets/img/logos/99food.svg" alt="99Food" width="22" height="22">
+                <img src="assets/img/logos/aiqfome.svg" alt="aiqfome" width="22" height="22">
+                <img src="assets/img/logos/mercadopago.svg" alt="Mercado Pago" width="22" height="22">
+                <img src="assets/img/logos/meta.svg" alt="Meta" width="22" height="22">
+                <img src="assets/img/logos/googleanalytics.svg" alt="Google Analytics" width="22" height="22">
+            </div>
         </div>
 
-        <div class="hero-mockup">
-            <div class="card-flutuante topo">
-                <div class="cf-titulo">🔔 Novo Pedido — #47</div>
-                <div class="cf-sub">Especial Monstro · R$ 42,00</div>
+        <div class="hero-visual" aria-hidden="true">
+            <div class="tablet" data-parallax="0.04">
+                <div class="tela"><img src="assets/img/sistema/vitrine-desktop.webp" alt="" width="1290" height="735" fetchpriority="high"></div>
             </div>
-
-            <div class="moldura-celular">
-                <img src="assets/img/foto01.webp" alt="Cardápio Digital Menuzia" loading="eager" fetchpriority="high" decoding="async" width="290" height="600">
+            <div class="phone" data-parallax="0.08">
+                <div class="tela"><img src="assets/img/foto01.webp" alt="" width="402" height="875" fetchpriority="high"></div>
             </div>
-
-            <div class="card-flutuante baixo">
-                <div class="cf-titulo">📣 Campanha enviada!</div>
-                <div class="cf-sub">128 clientes alcançados</div>
+            <div class="comanda" data-parallax="0.12">
+                <b>10</b><small>MESA</small>
+                <svg class="qr" data-seed="10"></svg>
+            </div>
+            <div class="card-flutuante cf-pedido">
+                <div class="ic" style="background:#FFEDD5;">🔔</div>
+                <div><div class="cf-titulo">Novo pedido · Mesa 10</div><div class="cf-sub">2x Smash Duplo · R$ 64,00</div></div>
+            </div>
+            <div class="card-flutuante cf-pix">
+                <div class="ic" style="background:#E0F7FF;"><img src="assets/img/logos/mercadopago.svg" alt=""></div>
+                <div><div class="cf-titulo">Pix aprovado ✓</div><div class="cf-sub">Pago online · R$ 42,90</div></div>
             </div>
         </div>
     </section>
 
-    <!-- ===== BARRA PROVA SOCIAL ===== -->
-    <div class="barra-prova">
-        <div class="item-prova">
-            <span class="numero">+500</span>
-            <span class="label">hamburguerias ativas</span>
-        </div>
-        <div class="item-prova">
-            <span class="numero">R$0</span>
-            <span class="label">de comissão por pedido</span>
-        </div>
-        <div class="item-prova">
-            <span class="numero">100%</span>
-            <span class="label">dos clientes ficam com você</span>
-        </div>
-        <div class="item-prova">
-            <span class="numero">R$67</span>
-            <span class="label">preço fixo, para sempre</span>
+    <!-- ===== LOGOS DE CLIENTES (CARROSSEL) ===== -->
+    <!-- PLACEHOLDER: logos fictícios. Trocar pelos logos reais dos restaurantes clientes em assets/img/logos/cliente-*.svg -->
+    <div class="clientes">
+        <p>Hamburguerias, pizzarias e deliveries que já vendem com o Menuzia</p>
+        <div class="marquee">
+            <div class="marquee-trilho">
+                <img src="assets/img/logos/cliente-brasa-burger.svg" alt="Brasa Burger" width="160" height="57">
+                <img src="assets/img/logos/cliente-smash-house.svg" alt="Smash House" width="160" height="57">
+                <img src="assets/img/logos/cliente-bella-nonna.svg" alt="Pizzaria Bella Nonna" width="160" height="57">
+                <img src="assets/img/logos/cliente-acai-da-praia.svg" alt="Açaí da Praia" width="160" height="57">
+                <img src="assets/img/logos/cliente-seu-ze.svg" alt="Seu Zé Lanches" width="160" height="57">
+                <img src="assets/img/logos/cliente-marmita-fit.svg" alt="Marmita Fit" width="160" height="57">
+                <img src="assets/img/logos/cliente-burger-lab.svg" alt="Burger Lab" width="160" height="57">
+                <img src="assets/img/logos/cliente-dona-doce.svg" alt="Dona Doce Confeitaria" width="160" height="57">
+                <img src="assets/img/logos/cliente-taco-loco.svg" alt="Taco Loco" width="160" height="57">
+                <img src="assets/img/logos/cliente-pastel-porto.svg" alt="Pastel do Porto" width="160" height="57">
+            </div>
         </div>
     </div>
 
+    <!-- ===== BARRA DE NÚMEROS ===== -->
+    <div class="barra-prova">
+        <div class="item-prova"><span class="numero" data-contar="500" data-prefixo="+">+500</span><span class="label">hamburguerias ativas</span></div>
+        <div class="item-prova"><span class="numero">R$0</span><span class="label">de comissão por pedido</span></div>
+        <div class="item-prova"><span class="numero" data-contar="100" data-sufixo="%">100%</span><span class="label">dos clientes ficam com você</span></div>
+        <div class="item-prova"><span class="numero" data-contar="67" data-prefixo="R$">R$67</span><span class="label">preço fixo, para sempre</span></div>
+    </div>
+
+    <!-- ===== COMO FUNCIONA (ONBOARDING) ===== -->
+    <section class="secao" id="como-funciona">
+        <div class="container">
+            <div class="cabecalho-secao revela">
+                <span class="kicker">Como funciona</span>
+                <h2>Do zero ao primeiro pedido em poucos dias</h2>
+                <p>Você não precisa entender de tecnologia. A gente monta o seu <strong>sistema de delivery próprio</strong> e você só precisa vender.</p>
+            </div>
+            <div class="passos">
+                <div class="passo revela" style="--d:.0s">
+                    <span class="num">1</span>
+                    <div class="ilustra" style="background:#EFF8FF;">
+                        <svg viewBox="0 0 260 170" aria-hidden="true"><circle cx="200" cy="40" r="36" fill="#BAE6FD"/><rect x="40" y="38" width="150" height="96" rx="10" fill="#1d3e73"/><rect x="48" y="46" width="134" height="80" rx="5" fill="#fff"/><rect x="56" y="54" width="42" height="64" rx="5" fill="#EDEEF1"/><rect x="106" y="56" width="66" height="8" rx="4" fill="#0688D4"/><rect x="106" y="72" width="52" height="6" rx="3" fill="#CBD5E1"/><rect x="106" y="86" width="60" height="6" rx="3" fill="#CBD5E1"/><rect x="106" y="100" width="40" height="10" rx="5" fill="#C62828"/><circle cx="77" cy="76" r="12" fill="#FBBF24"/><rect x="66" y="92" width="22" height="5" rx="2.5" fill="#94A3B8"/><rect x="26" y="134" width="178" height="8" rx="4" fill="#0F172A"/><circle cx="214" cy="118" r="18" fill="#A855F7"/><path d="M206 118l6 6 10-12" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3>A gente monta seu cardápio</h3>
+                    <p>Produtos, fotos, complementos, taxas por bairro e horários — configurados pela nossa equipe.</p>
+                </div>
+                <div class="passo revela" style="--d:.1s">
+                    <span class="num">2</span>
+                    <div class="ilustra" style="background:#F5F3FF;">
+                        <svg viewBox="0 0 260 170" aria-hidden="true"><circle cx="60" cy="50" r="34" fill="#DDD6FE"/><rect x="92" y="18" width="76" height="140" rx="14" fill="#0F172A"/><rect x="98" y="26" width="64" height="124" rx="9" fill="#fff"/><g fill="#0F172A"><rect x="108" y="46" width="18" height="18"/><rect x="134" y="46" width="18" height="18"/><rect x="108" y="72" width="18" height="18"/><rect x="134" y="78" width="6" height="6"/><rect x="146" y="72" width="6" height="12"/><rect x="140" y="88" width="12" height="6"/></g><g fill="#fff"><rect x="112" y="50" width="10" height="10"/><rect x="138" y="50" width="10" height="10"/><rect x="112" y="76" width="10" height="10"/></g><rect x="108" y="104" width="44" height="10" rx="5" fill="#A855F7"/><rect x="112" y="122" width="36" height="6" rx="3" fill="#CBD5E1"/><circle cx="196" cy="60" r="16" fill="#25D366"/><path d="M190 60l4 4 8-8" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round"/><circle cx="210" cy="112" r="14" fill="#0866FF"/><text x="210" y="118" text-anchor="middle" font-size="16" font-weight="900" fill="#fff" font-family="Arial">f</text><circle cx="52" cy="122" r="14" fill="#FBBF24"/><path d="M45 122h14M52 115v14" stroke="#0F172A" stroke-width="3" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3>Divulgue link e QR Code</h3>
+                    <p>Link na bio, no WhatsApp e no Google. QR Code impresso em cada mesa e na embalagem.</p>
+                </div>
+                <div class="passo revela" style="--d:.2s">
+                    <span class="num">3</span>
+                    <div class="ilustra" style="background:#FFF7ED;">
+                        <svg viewBox="0 0 260 170" aria-hidden="true"><circle cx="196" cy="48" r="32" fill="#FED7AA"/><rect x="74" y="88" width="112" height="56" rx="12" fill="#262B35"/><rect x="66" y="70" width="128" height="26" rx="10" fill="#3A4150"/><rect x="94" y="22" width="72" height="62" fill="#FFFEFA" stroke="#E5E7EB"/><rect x="104" y="32" width="52" height="6" rx="3" fill="#0F172A"/><rect x="104" y="44" width="40" height="4" rx="2" fill="#94A3B8"/><rect x="104" y="54" width="48" height="4" rx="2" fill="#94A3B8"/><rect x="104" y="64" width="30" height="4" rx="2" fill="#94A3B8"/><circle cx="168" cy="106" r="4" fill="#22C55E"/><circle cx="52" cy="58" r="20" fill="#F97316"/><path d="M44 62a8 8 0 0 1 16 0zM52 50v4" stroke="#fff" stroke-width="3" fill="#fff" stroke-linecap="round"/><rect x="40" y="62" width="24" height="3" rx="1.5" fill="#fff"/></svg>
+                    </div>
+                    <h3>Pedido chega e imprime sozinho</h3>
+                    <p>Painel de pedidos em tempo real, tela da cozinha e cupom saindo na impressora térmica.</p>
+                </div>
+                <div class="passo revela" style="--d:.3s">
+                    <span class="num">4</span>
+                    <div class="ilustra" style="background:#ECFDF5;">
+                        <svg viewBox="0 0 260 170" aria-hidden="true"><circle cx="70" cy="44" r="30" fill="#A7F3D0"/><path d="M40 104l60-30v76l-60-30z" fill="#0688D4"/><rect x="30" y="102" width="16" height="26" rx="4" fill="#1d3e73"/><path d="M100 74c20 8 20 68 0 76" stroke="#1d3e73" stroke-width="6" fill="none" stroke-linecap="round"/><rect x="128" y="34" width="104" height="40" rx="14" fill="#fff" stroke="#D1FAE5" stroke-width="2"/><rect x="140" y="46" width="64" height="6" rx="3" fill="#10B981"/><rect x="140" y="58" width="44" height="5" rx="2.5" fill="#CBD5E1"/><rect x="140" y="90" width="96" height="40" rx="14" fill="#25D366"/><rect x="152" y="102" width="58" height="6" rx="3" fill="#fff"/><rect x="152" y="114" width="40" height="5" rx="2.5" fill="#D1FAE5"/><circle cx="226" cy="40" r="10" fill="#C62828"/><text x="226" y="45" text-anchor="middle" font-size="12" font-weight="900" fill="#fff" font-family="Arial">%</text></svg>
+                    </div>
+                    <h3>Venda de novo pelo WhatsApp</h3>
+                    <p>Cliente volta pra sua base. Dispare cupons e campanhas sem pagar nada por isso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== FUNCIONALIDADES ===== -->
-    <section id="funcionalidades" class="secao-features">
-        <div class="cabecalho-secao">
-            <h2>Tudo que você precisa em um lugar só</h2>
-            <p>Do pedido ao caixa, do cliente ao entregador — o Menuzia cobre cada etapa do seu delivery.</p>
-        </div>
+    <section id="funcionalidades" class="secao secao-cinza">
+        <div class="container">
+            <div class="cabecalho-secao revela">
+                <span class="kicker">O sistema por dentro</span>
+                <h2>Tudo que seu delivery precisa em um lugar só</h2>
+                <p>Do pedido ao caixa, do cliente ao entregador — telas reais do painel do Menuzia, sem maquiagem.</p>
+            </div>
 
-        <!-- 1. GESTÃO DE CARDÁPIO -->
-        <div class="linha-feature">
-            <div class="feature-imagem">
-                <div class="frame-desktop">
-                    <div class="barra-browser">
-                        <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+            <!-- 1. DASHBOARD -->
+            <div class="linha-feature">
+                <div class="feature-imagem revela">
+                    <div class="frame-desktop" data-tilt>
+                        <div class="barra-browser"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div><span class="url">app.menuzia.com.br/admin/dashboard</span></div>
+                        <img src="assets/img/sistema/dashboard.webp" alt="Dashboard do cardápio digital Menuzia com funil de vendas: visitas, sacola, checkout e pedidos" loading="lazy" decoding="async" width="1523" height="784">
                     </div>
-                    <img src="assets/img/foto03.webp" alt="Gestor de Cardápio Menuzia" loading="lazy" decoding="async" width="800" height="600">
+                </div>
+                <div class="feature-texto revela" style="--d:.1s">
+                    <div class="eyebrow">📊 Dashboard e funil de vendas</div>
+                    <h3 class="titulo-feature">Veja onde o cliente desiste — e onde está o dinheiro</h3>
+                    <p class="desc-feature">
+                        Funil completo do seu cardápio digital: quantos visitaram, abriram um item, colocaram na sacola, chegaram ao checkout e pediram. Faturamento por canal (vitrine, balcão e mesas), ticket médio, horário de pico e tempo médio de entrega. Chega de achismo.
+                    </p>
+                    <ul class="lista-feature">
+                        <li><div class="check">✓</div> Funil visita → sacola → checkout → pedido</li>
+                        <li><div class="check">✓</div> Faturamento separado por vitrine, PDV e mesas</li>
+                        <li><div class="check">✓</div> Ticket médio, itens por pedido e horário de pico</li>
+                        <li><div class="check">✓</div> Comparação com o período anterior</li>
+                    </ul>
                 </div>
             </div>
-            <div class="feature-texto">
-                <div class="eyebrow">📋 Gestão de Cardápio <span class="tag-amarela">Importante</span></div>
-                <h3 class="titulo-feature">Seu cardápio, do seu jeito — atualizado em segundos</h3>
-                <p class="desc-feature">
-                    Adicione produtos, crie categorias, defina disponibilidade por dia da semana e ative promoções com um clique. Marque os campeões de venda e deixe seu cardápio sempre irresistível. Sem precisar de programador, sem complicação.
-                </p>
-                <ul class="lista-feature">
-                    <li><div class="check">✓</div> Organização por categorias com controle total</li>
-                    <li><div class="check">✓</div> Disponibilidade configurável por dia da semana</li>
-                    <li><div class="check">✓</div> Tags de "Mais Vendido" e promoções automáticas</li>
-                    <li><div class="check">✓</div> Order Bump para aumentar o ticket médio</li>
-                </ul>
-            </div>
-        </div>
 
-        <!-- 2. DASHBOARD -->
-        <div class="linha-feature invertida">
-            <div class="feature-imagem">
-                <div class="frame-desktop">
-                    <div class="barra-browser">
-                        <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+            <!-- 2. GESTÃO DE CARDÁPIO -->
+            <div class="linha-feature invertida">
+                <div class="feature-imagem revela">
+                    <div class="frame-desktop" data-tilt>
+                        <div class="barra-browser"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div><span class="url">app.menuzia.com.br/admin/cardapio</span></div>
+                        <img src="assets/img/sistema/gestor-cardapio.webp" alt="Gestor de cardápio digital Menuzia com categorias, preços, promoções e disponibilidade por dia da semana" loading="lazy" decoding="async" width="1536" height="735">
                     </div>
-                    <img src="assets/img/dashboard.webp" alt="Dashboard de Métricas Menuzia" loading="lazy" decoding="async" width="800" height="600">
+                </div>
+                <div class="feature-texto revela" style="--d:.1s">
+                    <div class="eyebrow">📋 Gestão de Cardápio <span class="tag-amarela">Importante</span></div>
+                    <h3 class="titulo-feature">Seu cardápio, do seu jeito — atualizado em segundos</h3>
+                    <p class="desc-feature">
+                        Adicione produtos, crie categorias, defina disponibilidade por dia da semana e ative promoções com um clique. Grupos de <a href="blog/tutoriais/como-cadastrar-complementos-e-adicionais-no-cardapio.html">complementos e adicionais</a>, tamanhos e "peça também" (order bump) para subir o ticket médio. Sem programador, sem complicação.
+                    </p>
+                    <ul class="lista-feature">
+                        <li><div class="check">✓</div> Categorias com arrastar-e-soltar</li>
+                        <li><div class="check">✓</div> Disponibilidade por dia da semana</li>
+                        <li><div class="check">✓</div> Preço promocional e tags "Mais Vendido" / "Oferta limitada"</li>
+                        <li><div class="check">✓</div> Order Bump para aumentar o ticket médio</li>
+                    </ul>
                 </div>
             </div>
-            <div class="feature-texto">
-                <div class="eyebrow">📊 Dashboard de Métricas</div>
-                <h3 class="titulo-feature">Saiba exatamente onde está o dinheiro</h3>
-                <p class="desc-feature">
-                    Faturamento em tempo real, ticket médio, horário de pico, ranking dos lanches que mais vendem e formas de pagamento. Chega de achismo — tome decisões com dados reais do seu próprio negócio.
-                </p>
-                <ul class="lista-feature">
-                    <li><div class="check">✓</div> Faturamento do dia, semana e mês ao vivo</li>
-                    <li><div class="check">✓</div> Ticket médio e Top 5 produtos mais vendidos</li>
-                    <li><div class="check">✓</div> Horário de pico da sua loja identificado</li>
-                    <li><div class="check">✓</div> Vendas por canal e forma de pagamento</li>
-                </ul>
-            </div>
-        </div>
 
-        <!-- 3. CAMPANHAS WHATSAPP -->
-        <div class="linha-feature">
-            <div class="feature-imagem">
-                <div class="frame-desktop">
-                    <div class="barra-browser">
-                        <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+            <!-- 3. CAMPANHAS WHATSAPP -->
+            <div class="linha-feature">
+                <div class="feature-imagem revela">
+                    <div class="frame-desktop" data-tilt>
+                        <div class="barra-browser"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div><span class="url">app.menuzia.com.br/admin/campanhas</span></div>
+                        <img src="assets/img/foto05.webp" alt="Campanhas no WhatsApp para delivery no Menuzia" loading="lazy" decoding="async" width="1400" height="866">
                     </div>
-                    <img src="assets/img/foto05.webp" alt="Campanhas WhatsApp Menuzia" loading="lazy" decoding="async" width="800" height="600">
+                </div>
+                <div class="feature-texto revela" style="--d:.1s">
+                    <div class="eyebrow">📣 Campanhas WhatsApp <span class="tag-amarela">Novidade</span></div>
+                    <h3 class="titulo-feature">Sua base de clientes é ouro. Comece a usar.</h3>
+                    <p class="desc-feature">
+                        Todo cliente que pediu no seu cardápio entra na sua lista — e essa lista é <strong>sua pra sempre</strong>. Com um clique você dispara promoções, lançamentos e mensagens de reengajamento direto no WhatsApp deles. Veja como montar uma <a href="blog/marketing/campanha-whatsapp-para-delivery.html">campanha de WhatsApp para delivery</a>.
+                    </p>
+                    <ul class="lista-feature">
+                        <li><div class="check">✓</div> Disparo em massa para toda a sua base</li>
+                        <li><div class="check">✓</div> Segmentação por frequência de compra</li>
+                        <li><div class="check">✓</div> Envio de imagem, texto e áudio PTT</li>
+                        <li><div class="check">✓</div> Programa de fidelidade e cupons</li>
+                    </ul>
                 </div>
             </div>
-            <div class="feature-texto">
-                <div class="eyebrow">📣 Campanhas WhatsApp <span class="tag-amarela">Novidade</span></div>
-                <h3 class="titulo-feature">Sua base de clientes é ouro. Comece a usar.</h3>
-                <p class="desc-feature">
-                    Todo cliente que pediu no seu cardápio entra na sua lista — e essa lista é <strong>sua pra sempre</strong>. Com um clique, você dispara promoções, lançamentos e mensagens de reengajamento direto no WhatsApp deles. Sem pagar por isso. Sem depender do iFood.
-                </p>
-                <ul class="lista-feature">
-                    <li><div class="check">✓</div> Disparo em massa para toda a sua base</li>
-                    <li><div class="check">✓</div> Segmentação por frequência de compra</li>
-                    <li><div class="check">✓</div> Envio de imagem, texto e áudio PTT</li>
-                    <li><div class="check">✓</div> Agendamento de campanhas futuras</li>
-                </ul>
-            </div>
-        </div>
 
-        <!-- 4. RASTREAMENTO -->
-        <div class="linha-feature invertida">
-            <div class="feature-imagem">
-                <div class="frame-desktop">
-                    <div class="barra-browser">
-                        <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+            <!-- 4. ROBÔ -->
+            <div class="linha-feature invertida">
+                <div class="feature-imagem revela">
+                    <div class="frame-desktop" data-tilt>
+                        <div class="barra-browser"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div><span class="url">app.menuzia.com.br/admin/ajustes</span></div>
+                        <img src="assets/img/robo.webp" alt="Robô de atendimento no WhatsApp do Menuzia" loading="lazy" decoding="async" width="1400" height="1453" style="max-height:520px; object-fit:cover; object-position:top;">
                     </div>
-                    <img src="assets/img/rastreio.webp" alt="Rastreamento de Vendas Menuzia" loading="lazy" decoding="async" width="800" height="600">
+                </div>
+                <div class="feature-texto revela" style="--d:.1s">
+                    <div class="eyebrow">🤖 Robô de Atendimento</div>
+                    <h3 class="titulo-feature">Atendimento automático 24h. Sem contratar ninguém.</h3>
+                    <p class="desc-feature">
+                        O robô do Menuzia atende seus clientes no WhatsApp, responde dúvidas, manda o link do cardápio e avisa cada etapa do pedido. Menos confusão, mais pedidos fechados — mesmo quando você está dormindo.
+                    </p>
+                    <ul class="lista-feature">
+                        <li><div class="check">✓</div> Responde automaticamente no WhatsApp</li>
+                        <li><div class="check">✓</div> Mensagens automáticas por etapa do pedido</li>
+                        <li><div class="check">✓</div> Nunca perde um pedido por falta de atendimento</li>
+                        <li><div class="check">✓</div> Funciona 24 horas, 7 dias por semana</li>
+                    </ul>
                 </div>
             </div>
-            <div class="feature-texto">
-                <div class="eyebrow">🎯 Rastreamento de Vendas</div>
-                <h3 class="titulo-feature">Cada centavo do seu tráfego pago rastreado até a venda</h3>
-                <p class="desc-feature">
-                    Instale o Pixel do Facebook e o Google Analytics direto no seu cardápio — sem precisar de programador. Saiba exatamente quais anúncios estão gerando pedidos de verdade e pare de jogar dinheiro fora em campanha que não converte.
-                </p>
-                <ul class="lista-feature">
-                    <li><div class="check">✓</div> Pixel do Facebook integrado com 1 clique</li>
-                    <li><div class="check">✓</div> Google Analytics e rastreamento de conversão</li>
-                    <li><div class="check">✓</div> Rastreamento de pedidos via Pix</li>
-                    <li><div class="check">✓</div> Tráfego pago com resultado real e mensurável</li>
-                </ul>
-            </div>
         </div>
+    </section>
 
-        <!-- 5. ROBÔ DE ATENDIMENTO -->
-        <div class="linha-feature">
-            <div class="feature-imagem">
-                <div class="frame-desktop">
-                    <div class="barra-browser">
-                        <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+    <!-- ===== CARDÁPIO DIGITAL / PERSONALIZAÇÃO ===== -->
+    <section id="cardapio" class="secao">
+        <div class="container">
+            <div class="cabecalho-secao revela">
+                <span class="kicker">🎨 Personalização</span>
+                <h2>Um cardápio digital com a cara da sua marca</h2>
+                <p>Escolha a <strong>cor da loja</strong>, a <strong>fonte</strong>, o <strong>modo de exibição</strong> e o tamanho das fotos. Teste aqui do lado — é exatamente o que você faz no painel.</p>
+            </div>
+            <div class="personaliza">
+                <div class="revela">
+                    <div class="controles">
+                        <div class="controle">
+                            <span class="controle-label">Cor da loja</span>
+                            <div class="swatches" id="swatches">
+                                <button class="swatch" style="background:#F50018" data-cor="#F50018" aria-pressed="true" aria-label="Vermelho"></button>
+                                <button class="swatch" style="background:#F97316" data-cor="#F97316" aria-pressed="false" aria-label="Laranja"></button>
+                                <button class="swatch" style="background:#0688D4" data-cor="#0688D4" aria-pressed="false" aria-label="Azul"></button>
+                                <button class="swatch" style="background:#10B981" data-cor="#10B981" aria-pressed="false" aria-label="Verde"></button>
+                                <button class="swatch" style="background:#A855F7" data-cor="#A855F7" aria-pressed="false" aria-label="Roxo"></button>
+                                <button class="swatch" style="background:#DB2777" data-cor="#DB2777" aria-pressed="false" aria-label="Rosa"></button>
+                                <button class="swatch" style="background:#CA8A04" data-cor="#CA8A04" aria-pressed="false" aria-label="Mostarda"></button>
+                                <button class="swatch" style="background:#111827" data-cor="#111827" aria-pressed="false" aria-label="Preto"></button>
+                            </div>
+                        </div>
+                        <div class="controle">
+                            <span class="controle-label">Fonte da vitrine</span>
+                            <div class="opcoes" id="fontes">
+                                <button class="opcao" data-fonte="Inter" aria-pressed="true" style="font-family:Inter"><strong>Moderna</strong><span>Inter</span></button>
+                                <button class="opcao" data-fonte="Nunito" aria-pressed="false" style="font-family:Nunito"><strong>Arredondada</strong><span>Estilo app</span></button>
+                                <button class="opcao" data-fonte="Poppins" aria-pressed="false" style="font-family:Poppins"><strong>Geométrica</strong><span>Poppins</span></button>
+                            </div>
+                        </div>
+                        <div class="controle">
+                            <span class="controle-label">Modo de exibição</span>
+                            <div class="opcoes duas" id="modos-exibicao">
+                                <button class="opcao" data-modo="lista" aria-pressed="true"><strong>Lista</strong><span>Itens em lista compacta</span></button>
+                                <button class="opcao" data-modo="cards" aria-pressed="false"><strong>Categorias</strong><span>Cards grandes, 2 por linha</span></button>
+                            </div>
+                        </div>
+                        <div class="controle">
+                            <span class="controle-label">Tamanho da foto</span>
+                            <div class="opcoes" id="tamanhos">
+                                <button class="opcao" data-img="48px" aria-pressed="false"><strong>90×90</strong></button>
+                                <button class="opcao" data-img="54px" aria-pressed="false"><strong>100×100</strong></button>
+                                <button class="opcao" data-img="58px" aria-pressed="true"><strong>110×110</strong></button>
+                            </div>
+                        </div>
+                        <p class="nota">Também dá pra trocar logo, banner de capa, aviso promocional com efeito pulsar e nota de avaliação como prova social.</p>
                     </div>
-                    <img src="assets/img/robo.webp" alt="Robô de Atendimento WhatsApp Menuzia" loading="lazy" decoding="async" width="800" height="600">
+                    <div class="print-real">
+                        <img src="assets/img/sistema/aparencia-vitrine.webp" alt="Tela de aparência da vitrine no painel Menuzia: cor da loja, formato da lista, tamanho da imagem e fonte do cardápio" loading="lazy" decoding="async" width="990" height="585">
+                    </div>
+                </div>
+                <div class="demo-area revela" style="--d:.15s" id="demo" aria-label="Prévia do cardápio digital personalizado">
+                    <div class="phone demo">
+                        <div class="tela">
+                            <div class="demo-loja">
+                                <div class="demo-capa"></div>
+                                <div class="demo-info"><div class="demo-logo">B</div><div><b>Brasa Burger</b><small>● Aberto agora · 30–45 min</small></div></div>
+                                <div class="demo-chips"><span class="on">Burgers</span><span>Combos</span><span>Bebidas</span></div>
+                                <div class="demo-itens" id="demo-itens">
+                                    <div class="demo-item"><div><b>X-Burguer Duplo</b><p>Pão brioche, 2 carnes de 120 g, cheddar e molho da casa.</p><div class="preco">R$ 32,90</div></div><div class="foto">🍔</div></div>
+                                    <div class="demo-item"><div><b>Smash Bacon</b><p>Smash 90 g, bacon crocante e cebola caramelizada.</p><div class="preco">R$ 28,50</div></div><div class="foto">🥓</div></div>
+                                    <div class="demo-item"><div><b>Combo Família</b><p>4 burgers, 2 fritas grandes e refri 2L.</p><div class="preco">R$ 109,90</div></div><div class="foto">🍟</div></div>
+                                    <div class="demo-item"><div><b>Milk-shake</b><p>Ovomaltine, 400 ml.</p><div class="preco">R$ 18,00</div></div><div class="foto">🥤</div></div>
+                                </div>
+                                <div class="demo-btn">Ver sacola · R$ 61,40</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="feature-texto">
-                <div class="eyebrow">🤖 Robô de Atendimento</div>
-                <h3 class="titulo-feature">Atendimento automático 24h. Sem contratar ninguém.</h3>
-                <p class="desc-feature">
-                    O robô do Menuzia atende seus clientes no WhatsApp, responde dúvidas, ajuda a escolher o produto certo e encaminha o pedido para o seu caixa. Menos confusão, mais pedidos fechados — mesmo quando você está dormindo.
-                </p>
-                <ul class="lista-feature">
-                    <li><div class="check">✓</div> Responde automaticamente no WhatsApp</li>
-                    <li><div class="check">✓</div> Guia o cliente na escolha do item</li>
-                    <li><div class="check">✓</div> Nunca perde um pedido por falta de atendimento</li>
-                    <li><div class="check">✓</div> Funciona 24 horas, 7 dias por semana</li>
-                </ul>
+        </div>
+    </section>
+
+    <!-- ===== MODOS DE VENDA ===== -->
+    <section id="modos" class="secao secao-cinza">
+        <div class="container">
+            <div class="cabecalho-secao revela">
+                <span class="kicker">Um sistema, vários canais</span>
+                <h2>Delivery, mesa com QR Code, tablet e totem</h2>
+                <p>O mesmo cardápio digital funciona em qualquer tela. Todos os pedidos caem num painel só — e a <a href="blog/guias/qr-code-para-cardapio-digital.html">QR Code para cardápio digital</a> já sai pronto pra imprimir.</p>
+            </div>
+            <div class="modos">
+                <article class="modo revela">
+                    <div class="modo-visual azul">
+                        <div class="phone"><div class="tela"><img src="assets/img/foto02.webp" alt="Cardápio digital no celular para delivery" loading="lazy" width="402" height="881"></div></div>
+                    </div>
+                    <div class="modo-corpo">
+                        <h3>📱 Delivery e retirada</h3>
+                        <p>Link próprio pro Instagram, Google e WhatsApp. Cliente pede sem baixar app, com frete calculado por bairro.</p>
+                    </div>
+                </article>
+                <article class="modo revela" style="--d:.1s">
+                    <div class="modo-visual verde">
+                        <div class="mini-tablet"><div class="tela"><img src="assets/img/sistema/vitrine-desktop.webp" alt="Cardápio digital no tablet da mesa" loading="lazy" width="1290" height="735"></div></div>
+                        <div class="qr-mesa"><svg class="qr" data-seed="7"></svg><span>MESA 07</span></div>
+                    </div>
+                    <div class="modo-corpo">
+                        <h3>🍽️ Mesas com QR Code e tablet</h3>
+                        <p>Cada mesa tem seu QR Code. O cliente pede da mesa, o pedido cai na comanda e o garçom só entrega.</p>
+                    </div>
+                </article>
+                <article class="modo revela" style="--d:.2s">
+                    <div class="modo-visual roxo">
+                        <div class="totem">
+                            <span class="totem-marca">PEÇA AQUI</span>
+                            <div class="totem-corpo"><div class="tela"><img src="assets/img/foto01.webp" alt="Totem de autoatendimento com cardápio digital" loading="lazy" width="402" height="875"></div></div>
+                            <div class="totem-haste"></div><div class="totem-base"></div>
+                        </div>
+                    </div>
+                    <div class="modo-corpo">
+                        <h3>🖥️ Totem de autoatendimento</h3>
+                        <p>Coloque o cardápio num totem ou tablet no balcão. Fila menor, ticket maior e zero erro de anotação.</p>
+                    </div>
+                </article>
+                <article class="modo revela">
+                    <div class="modo-visual laranja">
+                        <div class="print-mini"><img src="assets/img/sistema/mesas.webp" alt="Painel de mesas e comandas do Menuzia com status livre, ocupada e em limpeza" loading="lazy" width="1536" height="735"></div>
+                    </div>
+                    <div class="modo-corpo">
+                        <h3>🧾 Mesas e comandas</h3>
+                        <p>Mapa de mesas com status (livre, ocupada, em limpeza), conta, folha de QR e pagamentos por mesa.</p>
+                    </div>
+                </article>
+                <article class="modo revela" style="--d:.1s">
+                    <div class="modo-visual cinza">
+                        <div class="print-mini"><img src="assets/img/sistema/cozinha-kds.webp" alt="Tela de cozinha KDS do Menuzia com estações e QR Code de acesso" loading="lazy" width="1536" height="735"></div>
+                    </div>
+                    <div class="modo-corpo">
+                        <h3>👨‍🍳 Tela da cozinha (KDS)</h3>
+                        <p>Cada estação vira uma tela em tablet, monitor ou TV, sem login. <a href="blog/tutoriais/o-que-e-kds-tela-de-cozinha.html" style="color:var(--azul);font-weight:600;">O que é KDS?</a></p>
+                    </div>
+                </article>
+                <article class="modo revela" style="--d:.2s">
+                    <div class="modo-visual amarelo">
+                        <div class="mini-tablet" style="aspect-ratio:16/10; transform:rotate(3deg);"><div class="tela"><img src="assets/img/sistema/pdv-touch.webp" alt="PDV touch do Menuzia no tablet do garçom com balcão e mesas" loading="lazy" width="1520" height="565"></div></div>
+                    </div>
+                    <div class="modo-corpo">
+                        <h3>💻 PDV touch e balcão</h3>
+                        <p>PDV em tela cheia pro tablet do garçom e do caixa: lance pedidos de balcão, telefone e mesa. Tudo cai no mesmo Kanban.</p>
+                    </div>
+                </article>
             </div>
         </div>
+    </section>
 
-        <!-- 6. IMPRESSÃO AUTOMÁTICA -->
-        <div class="linha-feature invertida">
-            <div class="feature-imagem">
-                <div class="frame-desktop">
-                    <div class="barra-browser">
-                        <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+    <!-- ===== IMPRESSÃO TÉRMICA ===== -->
+    <section id="impressao" class="secao secao-impressao">
+        <div class="container impressao-grid">
+            <div class="cena-impressora revela" id="cena-impressora" aria-hidden="true">
+                <div class="sacola s1"><div class="faixa">menuzia<small>DELIVERY</small></div></div>
+                <div class="sacola s2"><div class="faixa">menuzia<small>DELIVERY</small></div></div>
+                <div class="sacola s3"><div class="faixa">menuzia</div></div>
+                <div class="cupom-wrap">
+                    <div class="cupom">
+                        <div class="c-logo"><i><svg><use href="#i-menuzia"/></svg></i>menuzia</div>
+                        <div class="c-centro">DELIVERY · ENTREGA PRÓPRIA<br>Brasa Burger</div>
+                        <div class="c-linha"></div>
+                        <div class="c-row"><b>PEDIDO #1047</b><span>19:42</span></div>
+                        <div class="c-linha"></div>
+                        <div class="c-row"><span>2x X-Burguer Duplo</span><span>65,80</span></div>
+                        <div class="c-sub">+ Bacon extra (2x)</div>
+                        <div class="c-sub">+ Sem cebola</div>
+                        <div class="c-row"><span>1x Batata Rústica G</span><span>22,00</span></div>
+                        <div class="c-row"><span>1x Coca-Cola 2L</span><span>14,00</span></div>
+                        <div class="c-linha"></div>
+                        <div class="c-row"><span>Taxa de entrega</span><span>5,00</span></div>
+                        <div class="c-row c-total"><span>TOTAL</span><span>R$ 106,80</span></div>
+                        <div class="c-pago">PAGO ONLINE · PIX</div>
+                        <div class="c-qr"><svg class="qr" data-seed="3"></svg><span>Avalie seu pedido<br>e ganhe cupom na<br>próxima compra</span></div>
+                        <div class="barcode"></div>
                     </div>
-                    <img src="assets/img/config-impressora.webp" alt="Impressão Automática de Pedidos Menuzia" loading="lazy" decoding="async" width="800" height="600">
+                </div>
+                <div class="impressora">
+                    <div class="impressora-topo"></div>
+                    <div class="impressora-corpo"><span class="led"></span><span class="botao"></span><span class="marca">menuzia print</span></div>
                 </div>
             </div>
-            <div class="feature-texto">
-                <div class="eyebrow">🖨️ Impressão Automática</div>
-                <h3 class="titulo-feature">Pedido chegou. Imprimiu sozinho. Acabou.</h3>
+            <div class="feature-texto revela" style="--d:.1s">
+                <div class="eyebrow">🖨️ Impressão automática</div>
+                <h2 class="titulo-feature" style="font-size:2.4rem;">Pedido chegou. Imprimiu sozinho. Acabou.</h2>
                 <p class="desc-feature">
-                    O Assistente de Impressão conecta o Menuzia direto à sua impressora de cozinha. Novo pedido entra, o cupom imprime na hora — sem abrir o computador, sem clicar em nada. Opera o negócio enquanto você cuida do lanche.
+                    O Assistente de Impressão liga o Menuzia direto à sua impressora térmica. Pedido novo entra, o cupom sai na hora com <strong>itens, adicionais, observações, endereço e forma de pagamento</strong> — sem abrir o computador, sem clicar em nada. Veja <a href="blog/tutoriais/como-configurar-impressora-termica-para-delivery.html">como configurar a impressora térmica</a> e <a href="blog/tutoriais/melhor-impressora-termica-para-delivery.html">qual impressora comprar</a>.
                 </p>
                 <ul class="lista-feature">
                     <li><div class="check">✓</div> Impressão automática assim que o pedido chega</li>
-                    <li><div class="check">✓</div> Funciona com qualquer impressora térmica</li>
-                    <li><div class="check">✓</div> Aceita e move pedidos no Kanban automaticamente</li>
+                    <li><div class="check">✓</div> Funciona com impressora térmica 58 mm e 80 mm</li>
+                    <li><div class="check">✓</div> Via da cozinha e via do entregador</li>
                     <li><div class="check">✓</div> Cupom com QR Code de avaliação incluso</li>
                 </ul>
             </div>
         </div>
+    </section>
 
+    <!-- ===== PAGAMENTO ONLINE ===== -->
+    <section id="pagamento" class="secao" style="padding-top: 40px;">
+        <div class="container">
+            <div class="pagamento revela">
+                <div>
+                    <span class="mp-selo"><img src="assets/img/logos/mercadopago.svg" alt="" width="30" height="30"> Integração Mercado Pago</span>
+                    <h2>Receba Pix e cartão online direto no cardápio</h2>
+                    <p>O cliente paga na hora do pedido e o dinheiro cai na <strong>sua</strong> conta Mercado Pago. Pedido só vai pra cozinha depois de pago — fim do calote e do "manda o Pix depois". O Menuzia não cobra nada por transação. Veja <a href="blog/tutoriais/como-receber-pix-no-delivery.html" style="color:#fff;border-bottom:1px solid rgba(255,255,255,.5);font-weight:700;">como receber Pix no delivery</a>.</p>
+                    <div class="pg-lista"><span>⚡ Pix</span><span>💳 Crédito</span><span>💳 Débito</span><span>💵 Dinheiro na entrega</span></div>
+                </div>
+                <div class="checkout" aria-hidden="true">
+                    <h4>Como você quer pagar?</h4>
+                    <div class="ck-op on"><span class="rd"></span>Pix<small>aprovação na hora</small></div>
+                    <div class="ck-op"><span class="rd"></span>Cartão de crédito</div>
+                    <div class="ck-op"><span class="rd"></span>Pagar na entrega</div>
+                    <div class="ck-total"><span>Total</span><span>R$ 106,80</span></div>
+                    <div class="ck-btn">Pagar com Pix</div>
+                    <div class="ck-ok"><img src="assets/img/logos/mercadopago.svg" alt="" width="18" height="18"> Pagamento processado pelo Mercado Pago</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INTEGRAÇÕES ===== -->
+    <section id="integracoes" class="secao secao-cinza">
+        <div class="container">
+            <div class="cabecalho-secao revela">
+                <span class="kicker">🔌 Integrações</span>
+                <h2>Conecta com o que você já usa</h2>
+                <p>Marketplaces, pagamento e rastreamento de anúncios — tudo no mesmo painel. Use o iFood pra ser encontrado e o seu <a href="cardapio-digital-sem-comissao.html">cardápio digital sem comissão</a> pra fidelizar.</p>
+            </div>
+            <div class="integracoes-grid">
+                <div class="integra revela"><div class="integra-topo"><img src="assets/img/logos/ifood.svg" alt="iFood" width="42" height="42"></div><h3>iFood</h3><p>Pedidos do iFood entram no mesmo painel e na mesma impressora.</p></div>
+                <div class="integra revela" style="--d:.05s"><div class="integra-topo"><img src="assets/img/logos/99food.svg" alt="99Food" width="42" height="42"></div><h3>99Food</h3><p>Centralize os pedidos da 99 junto com o seu delivery próprio.</p></div>
+                <div class="integra revela" style="--d:.1s"><div class="integra-topo"><img src="assets/img/logos/aiqfome.svg" alt="aiqfome" width="42" height="42"></div><h3>aiqfome</h3><p>Pedidos do aiqfome sem precisar de outra tela no balcão.</p></div>
+                <div class="integra revela" style="--d:.15s"><div class="integra-topo"><img src="assets/img/logos/mercadopago.svg" alt="Mercado Pago" width="42" height="42"><span class="ativa">Pagamento</span></div><h3>Mercado Pago</h3><p>Pix e cartão online no checkout, direto na sua conta.</p></div>
+                <div class="integra revela"><div class="integra-topo"><img src="assets/img/logos/facebook.svg" alt="Facebook Pixel" width="42" height="42"></div><h3>Facebook Pixel</h3><p>Saiba quais anúncios do Instagram e Facebook geram pedidos.</p></div>
+                <div class="integra revela" style="--d:.05s"><div class="integra-topo"><img src="assets/img/logos/meta.svg" alt="API de Conversões da Meta" width="42" height="42"></div><h3>API de Conversões (Meta)</h3><p>Eventos enviados do servidor: rastreio que não se perde com bloqueador.</p></div>
+                <div class="integra revela" style="--d:.1s"><div class="integra-topo"><img src="assets/img/logos/googleanalytics.svg" alt="Google Analytics" width="42" height="42"></div><h3>Google Analytics / Tag Manager</h3><p>Métricas de acesso e conversão do cardápio no GA4.</p></div>
+                <div class="integra revela" style="--d:.15s"><div class="integra-topo"><img src="assets/img/logos/whatsapp.svg" alt="WhatsApp" width="42" height="42"></div><h3>WhatsApp</h3><p>Notificações automáticas, robô e campanhas. <a href="cardapio-digital-para-whatsapp.html" style="color:var(--azul);font-weight:600;">Cardápio para WhatsApp</a></p></div>
+            </div>
+            <div class="print-integra revela">
+                <div class="frame-desktop">
+                    <div class="barra-browser"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div><span class="url">app.menuzia.com.br/admin/integracoes</span></div>
+                    <img src="assets/img/sistema/integracoes.webp" alt="Tela de integrações do Menuzia: WhatsApp, Mercado Pago, Facebook Pixel, API de Conversões da Meta e Google Analytics" loading="lazy" decoding="async" width="1536" height="735">
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- ===== KANBAN / NOTIFICAÇÕES ===== -->
     <section class="secao-kanban">
-        <h2>Seu cliente informado.<br>Em cada etapa. No WhatsApp.</h2>
-        <p>
+        <h2 class="revela">Seu cliente informado.<br>Em cada etapa. No WhatsApp.</h2>
+        <p class="revela">
             Do momento que o pedido é feito até a entrega na porta, seu cliente recebe mensagens automáticas no WhatsApp — sem você precisar fazer nada. Profissionalismo que gera confiança, elimina ligações desnecessárias e aumenta avaliações positivas.
         </p>
-
         <div class="etapas-kanban">
-            <div class="etapa-item">
-                <div class="etapa-icone">🛒</div>
-                <div class="etapa-nome">Pedido Recebido</div>
-                <div class="etapa-desc">Confirmação automática no WhatsApp do cliente</div>
-                <div class="etapa-badge">Automático</div>
-            </div>
-            <div class="etapa-item">
-                <div class="etapa-icone">🍔</div>
-                <div class="etapa-nome">Em Preparo</div>
-                <div class="etapa-desc">Cliente sabe que o lanche está sendo feito</div>
-                <div class="etapa-badge">Automático</div>
-            </div>
-            <div class="etapa-item">
-                <div class="etapa-icone">🛵</div>
-                <div class="etapa-nome">Saiu pra Entrega</div>
-                <div class="etapa-desc">Aviso com nome do motoboy e tempo estimado</div>
-                <div class="etapa-badge">Automático</div>
-            </div>
-            <div class="etapa-item">
-                <div class="etapa-icone">✅</div>
-                <div class="etapa-nome">Entregue</div>
-                <div class="etapa-desc">Confirmação de entrega + pedido de avaliação</div>
-                <div class="etapa-badge">Automático</div>
-            </div>
+            <div class="etapa-item revela" style="--c:#F97316;"><div class="etapa-icone">🛒</div><div class="etapa-nome">Pedido Recebido</div><div class="etapa-desc">Confirmação automática no WhatsApp do cliente</div><div class="etapa-badge">Automático</div></div>
+            <div class="etapa-item revela" style="--c:#0688D4; --d:.1s"><div class="etapa-icone">🍔</div><div class="etapa-nome">Em Preparo</div><div class="etapa-desc">Cliente sabe que o lanche está sendo feito</div><div class="etapa-badge">Automático</div></div>
+            <div class="etapa-item revela" style="--c:#A855F7; --d:.2s"><div class="etapa-icone">🛵</div><div class="etapa-nome">Saiu pra Entrega</div><div class="etapa-desc">Aviso com nome do motoboy e tempo estimado</div><div class="etapa-badge">Automático</div></div>
+            <div class="etapa-item revela" style="--c:#10B981; --d:.3s"><div class="etapa-icone">✅</div><div class="etapa-nome">Entregue</div><div class="etapa-desc">Confirmação de entrega + pedido de avaliação</div><div class="etapa-badge">Automático</div></div>
         </div>
     </section>
 
     <!-- ===== MOTOBOY ===== -->
-    <section id="motoboy" class="secao-motoboy">
-        <div class="feature-texto">
-            <div class="eyebrow">🛵 Logística Integrada</div>
-            <h2 class="titulo-feature">Seus motoboys com tudo na palma da mão</h2>
-            <p class="desc-feature">
-                Eles acessam pedidos, rotas e valores de troco direto pelo celular. Acabou a papelada, acabou a confusão. Você monitora tudo em tempo real — quem está em rota, quantas entregas fizeram e onde cada um está no mapa.
-            </p>
-            <ul class="lista-feature">
-                <li><div class="check">✓</div> <strong>Rota inteligente:</strong> abre direto no Google Maps</li>
-                <li><div class="check">✓</div> <strong>Controle de caixa:</strong> troco, forma de pagamento e valor a receber</li>
-                <li><div class="check">✓</div> <strong>Tempo real:</strong> clicou em "Entregue" e o painel atualiza na hora</li>
-                <li><div class="check">✓</div> <strong>Localização ao vivo:</strong> você vê onde cada entregador está no mapa</li>
-            </ul>
-            <a href="#precos" class="btn-vermelho" style="margin-top: 32px; display: inline-block;">Quero isso no meu delivery →</a>
-        </div>
-
-        <div style="display: flex; justify-content: center;">
-            <div class="moldura-celular">
-                <img src="assets/img/foto06.webp" alt="Aplicativo do Entregador Menuzia" loading="lazy" decoding="async" width="800" height="600">
+    <section id="motoboy" class="secao secao-cinza">
+        <div class="container duas-colunas">
+            <div class="feature-texto revela">
+                <div class="eyebrow">🛵 Logística Integrada</div>
+                <h2 class="titulo-feature">Seus motoboys com tudo na palma da mão</h2>
+                <p class="desc-feature">
+                    Eles acessam pedidos, rotas e valores de troco direto pelo celular. Acabou a papelada, acabou a confusão. Você monitora tudo em tempo real — quem está em rota, quantas entregas fizeram, quanto dinheiro está com cada um e onde cada entregador está no mapa.
+                </p>
+                <ul class="lista-feature">
+                    <li><div class="check">✓</div> <span><strong>Rota inteligente:</strong> abre direto no Google Maps</span></li>
+                    <li><div class="check">✓</div> <span><strong>Controle de caixa:</strong> troco, forma de pagamento e valor a receber</span></li>
+                    <li><div class="check">✓</div> <span><strong>Tempo real:</strong> clicou em "Entregue" e o painel atualiza na hora</span></li>
+                    <li><div class="check">✓</div> <span><strong>Taxa por bairro:</strong> <a href="blog/tutoriais/como-configurar-taxa-de-entrega-por-bairro.html" style="color:var(--azul);font-weight:600;">configure a taxa de entrega</a> em minutos</span></li>
+                </ul>
+                <a href="#precos" class="btn-vermelho" style="margin-top: 32px;">Quero isso no meu delivery →</a>
+            </div>
+            <div class="revela" style="--d:.1s">
+                <div class="phone moto-phone"><div class="tela"><img src="assets/img/foto06.webp" alt="Aplicativo do entregador Menuzia com rota e controle de troco" loading="lazy" decoding="async" width="1376" height="3058"></div></div>
             </div>
         </div>
     </section>
 
-    <!-- ===== CARDÁPIO DIGITAL ===== -->
-    <section id="cardapio" class="secao-cardapio-demo">
-        <div class="area-celulares">
-            <div class="moldura-celular">
-                <img src="assets/img/foto01.webp" alt="Cardápio Digital — Topo" loading="lazy" decoding="async" width="800" height="600">
+    <!-- ===== CARDÁPIO NO CELULAR ===== -->
+    <section class="secao">
+        <div class="container duas-colunas">
+            <div class="area-celulares revela">
+                <div class="phone"><div class="tela"><img src="assets/img/foto01.webp" alt="Cardápio digital Menuzia no celular — topo com banner e destaques" loading="lazy" decoding="async" width="402" height="875"></div></div>
+                <div class="phone"><div class="tela"><img src="assets/img/foto02.webp" alt="Cardápio digital Menuzia no celular — lista de produtos" loading="lazy" decoding="async" width="402" height="881"></div></div>
             </div>
-            <div class="moldura-celular celular-secundario">
-                <img src="assets/img/foto02.webp" alt="Cardápio Digital — Produtos" loading="lazy" decoding="async" width="800" height="600">
+            <div class="feature-texto revela" style="--d:.1s">
+                <div class="eyebrow">📱 Cardápio Digital</div>
+                <h2 class="titulo-feature">Uma experiência de compra que converte clique em dinheiro</h2>
+                <p class="desc-feature">
+                    Seu cliente não baixa app. Abre o link, escolhe e pede em segundos. Um cardápio rápido, bonito e otimizado para vender — a melhor <a href="blog/estrategia/como-sair-do-ifood-e-vender-direto.html">alternativa ao iFood</a> pra quem quer vender direto, sem intermediário e sem taxa por pedido.
+                </p>
+                <ul class="lista-feature">
+                    <li><div class="check">✓</div> Layout organizado por categorias e destaques</li>
+                    <li><div class="check">✓</div> Tags de "Mais Vendido" e desconto visíveis</li>
+                    <li><div class="check">✓</div> Cálculo automático de frete por bairro</li>
+                    <li><div class="check">✓</div> Barra de "falta pouco pra entrega grátis"</li>
+                    <li><div class="check">✓</div> Cupons e promoções integrados ao cardápio</li>
+                </ul>
             </div>
-        </div>
-
-        <div class="feature-texto">
-            <div class="eyebrow">📱 Cardápio Digital</div>
-            <h2 class="titulo-feature">Uma experiência de compra que converte clique em dinheiro</h2>
-            <p class="desc-feature">
-                Seu cliente não baixa app. Abre o link, escolhe e pede em segundos. Um cardápio rápido, bonito e otimizado para vender — sem intermediário, sem taxa por pedido, sem ninguém no meio.
-            </p>
-            <ul class="lista-feature">
-                <li><div class="check">✓</div> Layout organizado por categorias e destaques</li>
-                <li><div class="check">✓</div> Tags de "Mais Vendido" e desconto visíveis</li>
-                <li><div class="check">✓</div> Cálculo automático de frete por bairro</li>
-                <li><div class="check">✓</div> Banner de destaque com promoção personalizado</li>
-                <li><div class="check">✓</div> Cupons e promoções integrados ao cardápio</li>
-            </ul>
         </div>
     </section>
 
     <!-- ===== PREÇOS ===== -->
     <section id="precos" class="secao-precos">
-        <h2>Tudo isso por apenas <span style="color: var(--amarelo);">R$67</span> por mês.</h2>
-        <p class="subtitulo-preco">
+        <h2 class="revela">Tudo isso por apenas <span style="color: var(--amarelo);">R$67</span> por mês.</h2>
+        <p class="subtitulo-preco revela">
             Preço fixo que não aumenta. Sem taxa por pedido. Sem surpresa na fatura. Enquanto o iFood fica com a sua comissão e guarda a lista de clientes pra ele, você paga um valor único e fica com <strong style="color: #fff;">tudo</strong>.
         </p>
 
         <div class="grid-precos">
-
-            <!-- IFOOD / PLATAFORMAS -->
-            <div class="card-preco">
+            <div class="card-preco revela">
                 <div class="nome-plano">iFood / Plataformas</div>
                 <div class="valor-principal" style="font-size: 1.4rem; color: #475569;">% por pedido</div>
                 <div class="valor-periodo">+ mensalidade variável</div>
@@ -1417,37 +1282,32 @@
                 <div class="nota-card">Você paga, vende, e não fica com nada.</div>
             </div>
 
-            <!-- MENUZIA — DESTAQUE -->
-            <div class="card-preco destaque">
+            <div class="card-preco destaque revela" style="--d:.1s">
                 <div class="badge-destaque">🏆 Melhor escolha</div>
                 <div class="nome-plano">Menuzia</div>
                 <div class="valor-riscado">Outros cobram R$150–300/mês</div>
                 <div class="valor-principal">R$67<span style="font-size: 1.2rem; font-weight: 600;">/mês</span></div>
                 <div class="valor-periodo">Preço fixo. Não aumenta. Nunca.</div>
                 <ul class="lista-preco">
-                    <li class="sim">Cardápio digital profissional</li>
-                    <li class="sim">Painel de pedidos em tempo real</li>
-                    <li class="sim">Dashboard com métricas completas</li>
+                    <li class="sim">Cardápio digital personalizável (cores, fonte, layout)</li>
+                    <li class="sim">Mesas com QR Code, tablet e totem</li>
+                    <li class="sim">Painel de pedidos, PDV e tela da cozinha</li>
+                    <li class="sim">Pagamento online Pix e cartão (Mercado Pago)</li>
+                    <li class="sim">Integração iFood, 99Food e aiqfome</li>
+                    <li class="sim">Dashboard com funil de vendas</li>
                     <li class="sim">Campanhas WhatsApp ilimitadas</li>
                     <li class="sim">Base de clientes sua para sempre</li>
-                    <li class="sim">Rastreamento Facebook + Google</li>
+                    <li class="sim">Pixel, API de Conversões e Google Analytics</li>
                     <li class="sim">Robô de atendimento 24h</li>
-                    <li class="sim">Notificações automáticas por etapa</li>
                     <li class="sim">Gestão de motoboys com GPS</li>
                     <li class="sim">Impressão automática de pedidos</li>
-                    <li class="sim">Sistema de promoções e cupons</li>
-                    <li class="sim">Order Bump para subir ticket médio</li>
+                    <li class="sim">Cupons, fidelidade e Order Bump</li>
                 </ul>
-                <div style="margin-top: 28px;">
-                    <a href="https://pay.kiwify.com.br/vmfSCsa" class="btn-amarelo" style="width: 100%; text-align: center; display: block; font-size: 16px;">
-                        Quero começar agora →
-                    </a>
-                </div>
+                <a href="https://pay.kiwify.com.br/vmfSCsa" class="btn-amarelo btn-brilho" style="width: 100%; font-size: 16px; margin-bottom: 20px;">Quero começar agora →</a>
                 <div class="nota-card">Sem taxa por pedido · Sem contrato · Cancele quando quiser</div>
             </div>
 
-            <!-- OUTROS CARDÁPIOS -->
-            <div class="card-preco">
+            <div class="card-preco revela" style="--d:.2s">
                 <div class="nome-plano">Outros cardápios digitais</div>
                 <div class="valor-principal" style="font-size: 1.4rem; color: #475569;">R$150–300</div>
                 <div class="valor-periodo">por mês, e cobram mais por recurso</div>
@@ -1462,17 +1322,17 @@
                 </ul>
                 <div class="nota-card">Cobram o dobro e entregam a metade.</div>
             </div>
-
         </div>
 
         <p class="rodape-preco">
-            * O Menuzia mantém o preço de R$67/mês como compromisso com quem escolhe crescer com a gente. Nosso objetivo é simples: que você venda mais, fidelize mais e nunca mais dependa de plataforma de terceiro para acessar sua própria base de clientes.
+            * O Menuzia mantém o preço de R$67/mês como compromisso com quem escolhe crescer com a gente. Compare com o <a href="cardapio-digital-preco.html" style="color:#94A3B8;text-decoration:underline;">preço de cardápio digital</a> no mercado e veja por que somos o <a href="cardapio-digital-mais-barato.html" style="color:#94A3B8;text-decoration:underline;">cardápio digital mais barato</a> com tudo incluso.
         </p>
     </section>
 
     <!-- ===== DÚVIDAS FREQUENTES (FAQ) ===== -->
-    <section id="duvidas" class="secao-faq">
-        <div class="cabecalho-secao">
+    <section id="duvidas" class="secao secao-cinza">
+        <div class="cabecalho-secao revela">
+            <span class="kicker">FAQ</span>
             <h2>Dúvidas Frequentes</h2>
             <p>Tudo o que você precisa saber antes de criar o seu cardápio digital com o Menuzia.</p>
         </div>
@@ -1480,53 +1340,58 @@
         <div class="faq-lista">
             <details class="faq-item" open>
                 <summary>Quem configura o meu cardápio digital?</summary>
-                <div class="faq-resposta">
-                    <strong>Nós configuramos o cardápio digital pra você.</strong> Depois da compra, nossa equipe monta seus produtos, categorias, fotos, preços e taxas de entrega para você já começar a vender — sem precisar de nenhum conhecimento técnico.
-                </div>
+                <div class="faq-resposta"><strong>Nós configuramos o cardápio digital pra você.</strong> Depois da compra, nossa equipe monta seus produtos, categorias, fotos, preços e taxas de entrega para você já começar a vender — sem precisar de nenhum conhecimento técnico.</div>
             </details>
-
             <details class="faq-item">
                 <summary>Tem suporte técnico depois da compra?</summary>
-                <div class="faq-resposta">
-                    Sim. Você conta com <strong>todo o suporte técnico após a compra</strong>. Nossa equipe acompanha você na configuração inicial e no dia a dia da plataforma sempre que precisar de ajuda.
-                </div>
+                <div class="faq-resposta">Sim. Você conta com <strong>todo o suporte técnico após a compra</strong>. Nossa equipe acompanha você na configuração inicial e no dia a dia da plataforma sempre que precisar de ajuda.</div>
             </details>
-
             <details class="faq-item">
                 <summary>O que acontece logo depois que eu compro?</summary>
-                <div class="faq-resposta">
-                    Assim que a compra é confirmada, você recebe <strong>no seu e-mail a confirmação do pedido e as instruções completas para logar na plataforma</strong> e começar a usar o Menuzia imediatamente.
-                </div>
+                <div class="faq-resposta">Assim que a compra é confirmada, você recebe <strong>no seu e-mail a confirmação do pedido e as instruções completas para logar na plataforma</strong> e começar a usar o Menuzia imediatamente.</div>
             </details>
-
             <details class="faq-item">
                 <summary>O Menuzia cobra comissão por pedido?</summary>
-                <div class="faq-resposta">
-                    Não. É <strong>preço fixo de R$67 por mês</strong>, sem taxa por pedido e sem contrato de fidelidade. Todo o dinheiro de cada venda fica com você.
-                </div>
+                <div class="faq-resposta">Não. É <strong>preço fixo de R$67 por mês</strong>, sem taxa por pedido e sem contrato de fidelidade. Todo o dinheiro de cada venda fica com você.</div>
             </details>
-
+            <details class="faq-item">
+                <summary>Dá pra personalizar as cores e a fonte do cardápio digital?</summary>
+                <div class="faq-resposta">Sim. No painel você escolhe a <strong>cor da sua loja</strong>, a <strong>fonte da vitrine</strong>, o <strong>formato de exibição</strong> (lista compacta ou cards por categoria), o tamanho das fotos, o banner de capa e o logo. O cardápio fica com a cara da sua marca.</div>
+            </details>
+            <details class="faq-item">
+                <summary>O cardápio digital funciona nas mesas com QR Code e em tablet?</summary>
+                <div class="faq-resposta">Sim. Cada mesa ganha um <strong>QR Code próprio</strong>: o cliente aponta a câmera, pede e o pedido cai na comanda da mesa. O mesmo cardápio roda em <strong>tablet na mesa</strong>, em <strong>totem de autoatendimento</strong> no balcão e no celular para delivery.</div>
+            </details>
+            <details class="faq-item">
+                <summary>Aceita pagamento online?</summary>
+                <div class="faq-resposta">Sim. O Menuzia integra com o <strong>Mercado Pago</strong> para receber Pix e cartão online direto no cardápio. O dinheiro cai na sua conta do Mercado Pago, sem comissão do Menuzia.</div>
+            </details>
+            <details class="faq-item">
+                <summary>O Menuzia integra com iFood, 99Food e aiqfome?</summary>
+                <div class="faq-resposta">Sim. Os pedidos dos marketplaces entram no mesmo painel de pedidos do Menuzia, junto com os do seu cardápio próprio. Também integramos com <strong>Facebook Pixel, API de Conversões da Meta e Google Analytics</strong>. Compare: <a href="cardapio-digital-99food.html">cardápio digital x 99Food</a>.</div>
+            </details>
             <details class="faq-item">
                 <summary>A lista de clientes é minha mesmo?</summary>
-                <div class="faq-resposta">
-                    Sim. Todo cliente que pede no seu cardápio entra na <strong>sua base, que é sua pra sempre</strong>. Você usa essa lista para disparar campanhas no WhatsApp quando quiser, sem depender de plataforma de terceiro.
-                </div>
+                <div class="faq-resposta">Sim. Todo cliente que pede no seu cardápio entra na <strong>sua base, que é sua pra sempre</strong>. Você usa essa lista para disparar campanhas no WhatsApp quando quiser, sem depender de plataforma de terceiro.</div>
             </details>
-
             <details class="faq-item">
                 <summary>Preciso instalar algum aplicativo?</summary>
-                <div class="faq-resposta">
-                    Não. O Menuzia funciona pelo navegador. Seu cliente abre o link, escolhe e pede em segundos — sem baixar app. Você gerencia tudo pelo painel online, de qualquer dispositivo.
-                </div>
+                <div class="faq-resposta">Não. O Menuzia funciona pelo navegador. Seu cliente abre o link, escolhe e pede em segundos — sem baixar app. Você gerencia tudo pelo painel online, de qualquer dispositivo.</div>
             </details>
         </div>
 
         <div class="faq-cta">
-            <a href="#precos" class="btn-vermelho" style="font-size: 18px; padding: 20px 52px; box-shadow: 0 8px 30px rgba(198,40,40,0.5);">
-                Criar Meu Cardápio Digital Agora
-            </a>
+            <a href="#precos" class="btn-vermelho btn-brilho" style="font-size: 18px; padding: 20px 50px;">Criar Meu Cardápio Digital Agora</a>
             <p class="meta-cta">R$67/mês · Nós configuramos pra você · Suporte técnico incluso</p>
         </div>
+    </section>
+
+    <!-- ===== CTA FINAL ===== -->
+    <section class="secao-final-cta">
+        <h2 class="revela">Seu delivery, suas regras, seus clientes.</h2>
+        <p class="revela">Cardápio digital próprio, mesas com QR Code, pagamento online e impressão automática por R$67 fixos por mês. Sem comissão. Sem fidelidade.</p>
+        <a href="https://pay.kiwify.com.br/vmfSCsa" class="btn-amarelo btn-brilho" style="font-size: 17px; padding: 18px 44px;">Começar agora por R$67/mês →</a>
+        <p class="meta-cta">Já é cliente? <a href="https://app.menuzia.com.br/login" style="color:#fff;font-weight:700;">Entrar no painel</a></p>
     </section>
 
 </main>
@@ -1621,6 +1486,90 @@
     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01c-1.52 0-3.02-.41-4.32-1.18l-.31-.18-3.21.84.86-3.13-.2-.32a8.21 8.21 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24z"/></svg>
     <span class="wpp-float-txt">Fale no WhatsApp</span>
 </a>
+
+<script>
+(function () {
+    var reduz = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // QR Codes decorativos (padrão pseudo-aleatório com marcadores de canto)
+    document.querySelectorAll('svg.qr').forEach(function (svg) {
+        var n = 21, s = parseInt(svg.getAttribute('data-seed') || '1', 10) * 9301 + 49297, r = '';
+        function rnd() { s = (s * 9301 + 49297) % 233280; return s / 233280; }
+        function finder(x, y) { return '<rect x="' + x + '" y="' + y + '" width="7" height="7"/><rect x="' + (x + 1) + '" y="' + (y + 1) + '" width="5" height="5" fill="#fff"/><rect x="' + (x + 2) + '" y="' + (y + 2) + '" width="3" height="3"/>'; }
+        for (var y = 0; y < n; y++) for (var x = 0; x < n; x++) {
+            var canto = (x < 8 && y < 8) || (x > 12 && y < 8) || (x < 8 && y > 12);
+            if (!canto && rnd() > 0.52) r += '<rect x="' + x + '" y="' + y + '" width="1" height="1"/>';
+        }
+        svg.setAttribute('viewBox', '0 0 21 21');
+        svg.setAttribute('shape-rendering', 'crispEdges');
+        svg.setAttribute('aria-hidden', 'true');
+        svg.innerHTML = '<g fill="#0F172A">' + r + finder(0, 0) + finder(14, 0) + finder(0, 14) + '</g>';
+    });
+
+    // Header encolhe ao rolar
+    var header = document.querySelector('.header');
+    window.addEventListener('scroll', function () { header.classList.toggle('rolou', window.scrollY > 20); }, { passive: true });
+
+    // Revelar ao rolar + contadores + impressora
+    function contar(el) {
+        var alvo = +el.getAttribute('data-contar'), pre = el.getAttribute('data-prefixo') || '', suf = el.getAttribute('data-sufixo') || '', t0 = null;
+        function passo(t) { if (!t0) t0 = t; var p = Math.min((t - t0) / 1400, 1), v = Math.round(alvo * (1 - Math.pow(1 - p, 3))); el.textContent = pre + v + suf; if (p < 1) requestAnimationFrame(passo); }
+        requestAnimationFrame(passo);
+    }
+    if ('IntersectionObserver' in window && !reduz) {
+        var io = new IntersectionObserver(function (entradas) {
+            entradas.forEach(function (e) {
+                if (!e.isIntersecting) return;
+                e.target.classList.add('visivel');
+                if (e.target.hasAttribute('data-contar')) contar(e.target);
+                if (e.target.id === 'cena-impressora') e.target.classList.add('imprimindo');
+                io.unobserve(e.target);
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.revela, [data-contar]').forEach(function (el) { io.observe(el); });
+    } else {
+        document.querySelectorAll('.revela').forEach(function (el) { el.classList.add('visivel'); });
+        var cena = document.getElementById('cena-impressora'); if (cena) cena.classList.add('imprimindo');
+    }
+
+    // Carrossel infinito: duplica os logos
+    var trilho = document.querySelector('.marquee-trilho');
+    if (trilho) trilho.innerHTML += trilho.innerHTML.replace(/alt="[^"]*"/g, 'alt="" aria-hidden="true"');
+
+    if (!reduz && window.matchMedia('(hover: hover)').matches) {
+        // Tilt 3D nos prints
+        document.querySelectorAll('[data-tilt]').forEach(function (el) {
+            el.addEventListener('mousemove', function (ev) {
+                var b = el.getBoundingClientRect(), x = (ev.clientX - b.left) / b.width - .5, y = (ev.clientY - b.top) / b.height - .5;
+                el.style.transform = 'perspective(1200px) rotateY(' + (x * 6) + 'deg) rotateX(' + (-y * 6) + 'deg)';
+            });
+            el.addEventListener('mouseleave', function () { el.style.transform = ''; });
+        });
+        // Parallax suave no hero
+        var camadas = document.querySelectorAll('[data-parallax]');
+        document.querySelector('.hero').addEventListener('mousemove', function (ev) {
+            var cx = ev.clientX - window.innerWidth / 2, cy = ev.clientY - window.innerHeight / 2;
+            camadas.forEach(function (c) { var k = +c.getAttribute('data-parallax'); c.style.translate = (cx * k) + 'px ' + (cy * k) + 'px'; });
+        });
+    }
+
+    // Demo de personalização
+    var demo = document.getElementById('demo'), itens = document.getElementById('demo-itens');
+    function grupo(id, fn) {
+        var bts = document.querySelectorAll('#' + id + ' button');
+        bts.forEach(function (b) {
+            b.addEventListener('click', function () {
+                bts.forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
+                b.setAttribute('aria-pressed', 'true'); fn(b);
+            });
+        });
+    }
+    grupo('swatches', function (b) { demo.style.setProperty('--brand', b.getAttribute('data-cor')); });
+    grupo('fontes', function (b) { demo.style.setProperty('--fonte-demo', b.getAttribute('data-fonte')); });
+    grupo('modos-exibicao', function (b) { itens.classList.toggle('cards', b.getAttribute('data-modo') === 'cards'); });
+    grupo('tamanhos', function (b) { demo.style.setProperty('--img', b.getAttribute('data-img')); });
+})();
+</script>
 
 </body>
 </html>
