@@ -1465,6 +1465,7 @@ ${header()}
 ${sidebar(n)}
 </div>
 ${footer()}
+<script src="/assets/js/crm-form.js" data-offer="4b235100-bbed-413b-869d-c713ecebf15e" data-phone="5527992534407" defer></script>
 </body>
 </html>`;
 }

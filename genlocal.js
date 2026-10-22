@@ -1174,6 +1174,7 @@ ${header()}
 ${sidebar(c)}
 </div>
 ${localFooter(c)}
+<script src="/assets/js/crm-form.js" data-offer="4b235100-bbed-413b-869d-c713ecebf15e" data-phone="5527992534407" defer></script>
 </body>
 </html>`;
 }
@@ -1281,6 +1282,7 @@ ${cards}
     © 2026 Menuzia. Cardápio digital barato e sem comissão para delivery em todo o Brasil.
   </div>
 </footer>
+<script src="/assets/js/crm-form.js" data-offer="4b235100-bbed-413b-869d-c713ecebf15e" data-phone="5527992534407" defer></script>
 </body>
 </html>`;
 }
