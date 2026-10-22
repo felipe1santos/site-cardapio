@@ -229,7 +229,7 @@
       fields.forEach(function (f) {
         var v = (vals[f.key] || '').trim();
         if (CORE.indexOf(f.key) >= 0) data[f.key] = v;
-        else if (v) data.answers.push({ key: f.key, label: f.label, value: v });
+        if (v) data.answers.push({ key: f.key, label: f.label, value: v }); // todas as respostas, na ordem
       });
       if (window.gtag) try { window.gtag('event', 'generate_lead', { method: 'crm_form' }); } catch (x) { /* sem gtag */ }
       if (window.fbq) try { window.fbq('track', 'Lead'); } catch (x) { /* sem pixel */ }
