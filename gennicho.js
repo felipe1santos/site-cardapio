@@ -19,6 +19,22 @@ const NAP = {
 
 const B = 'blog/'; // raiz -> pasta blog
 
+// Cluster de GESTÃO (PDV, caixa, mesas, motoboy, disparos, fidelidade, integração, marketing, CMV):
+// chips de cauda longa compartilhados — todas as páginas do cluster se linkam entre si.
+const LT_GESTAO = [
+  ['sistema PDV para delivery', 'sistema-pdv-para-delivery.html'],
+  ['controle de caixa e sangria', 'controle-de-caixa-para-restaurante.html'],
+  ['sistema de mesas e comandas', 'sistema-de-mesas-e-comandas.html'],
+  ['rota de motoboy para delivery', 'rota-de-motoboy-para-delivery.html'],
+  ['disparo em massa no WhatsApp', 'disparo-whatsapp-para-delivery.html'],
+  ['programa de fidelidade e ticket médio', 'programa-de-fidelidade-para-delivery.html'],
+  ['cardápio digital integrado ao iFood', 'cardapio-digital-integrado-ifood.html'],
+  ['marketing para delivery', 'blog/marketing/marketing-para-delivery.html'],
+  ['como fazer anúncios para delivery', 'blog/marketing/como-fazer-anuncios-para-delivery.html'],
+  ['como calcular CMV', 'blog/guias/como-calcular-cmv-restaurante.html'],
+  ['cardápio digital sem comissão', 'cardapio-digital-sem-comissao.html'],
+];
+
 // ============================================================
 //  Landings (uma por intenção de busca)
 // ============================================================
@@ -888,6 +904,354 @@ const niches = [
       ['Preciso de cozinha industrial ou CNPJ?', 'Não. Funciona para marmitaria caseira, MEI ou empresa constituída.'],
     ],
   },
+
+  // ======================= CLUSTER DE GESTÃO =======================
+  {
+    slug: 'sistema-pdv-para-delivery.html',
+    cat: 'PDV',
+    heroImg: 'tut-painel.webp',
+    heroAlt: 'Painel do sistema PDV para delivery com pedidos de balcão, telefone e mesa',
+    title: 'Sistema PDV para Delivery e Restaurante | R$67/mês | Menuzia',
+    h1: 'Sistema PDV para delivery: balcão, telefone e mesa num painel só',
+    desc: 'Sistema PDV para delivery e restaurante por R$67/mês fixo: PDV touch no tablet, pedidos de balcão, telefone e mesa no mesmo painel do cardápio digital, caixa por operador e impressão na cozinha.',
+    keywords: 'sistema pdv para delivery, pdv para restaurante, pdv para lanchonete, sistema de caixa para delivery, pdv touch tablet, frente de caixa para restaurante, pdv para hamburgueria, sistema pdv barato',
+    lt: LT_GESTAO,
+    body: `<p>Um <strong>sistema PDV para delivery</strong> (ponto de venda, ou frente de caixa) é onde a equipe lança os pedidos que <em>não</em> chegam pelo cardápio digital: o cliente do balcão, o pedido por telefone, a mesa que chamou o garçom. Quando o PDV é um sistema separado do delivery, você passa a ter dois caixas, dois relatórios e pedido perdido entre um e outro.</p>
+
+<h2>O problema de ter PDV e delivery separados</h2>
+<ul>
+  <li><strong>Cozinha recebendo de dois lugares:</strong> uma comanda sai da impressora do PDV, outra do WhatsApp, outra do app — e a ordem de preparo vira palpite.</li>
+  <li><strong>Fechamento de caixa que não bate:</strong> o faturamento do dia fica espalhado e ninguém sabe quanto entrou de cada canal.</li>
+  <li><strong>Cliente do balcão some:</strong> quem comprou no balcão não entra na base de clientes e nunca recebe uma campanha.</li>
+</ul>
+
+<h2>Como funciona o PDV do Menuzia</h2>
+<p>O PDV roda <strong>em tela cheia no tablet, no computador ou no celular</strong> — sem instalar programa. A pessoa do caixa ou o garçom lança o pedido em poucos toques, com os mesmos produtos, adicionais e tamanhos do cardápio digital. O pedido cai no <strong>mesmo painel de pedidos</strong> (recebido, preparando, pronto) junto com o que veio do cardápio online e dos marketplaces, e sai na impressora da cozinha automaticamente.</p>
+<ul>
+  <li>Pedidos de <strong>balcão, telefone e mesa</strong> no mesmo lugar</li>
+  <li><strong>Abertura e fechamento de caixa por operador</strong> — cada turno responde pelo seu caixa (veja <a href="/controle-de-caixa-para-restaurante.html">controle de caixa e sangria</a>)</li>
+  <li><strong>Impressão automática</strong> na cozinha, sem redigitar nada</li>
+  <li>Faturamento separado por canal: vitrine (cardápio digital), PDV e mesas</li>
+  <li>Integra com <a href="/sistema-de-mesas-e-comandas.html">mesas e comandas com QR Code</a> e com a <a href="/rota-de-motoboy-para-delivery.html">gestão de motoboys</a></li>
+</ul>
+
+<h2>PDV no tablet x computador de caixa</h2>
+<p>Hamburgueria pequena costuma resolver tudo com <strong>um tablet no balcão</strong>: lança o pedido, recebe e acompanha a fila. Quem tem salão coloca o mesmo PDV no celular do garçom. Como é tudo no navegador, trocar de aparelho é só fazer login — não existe licença por máquina.</p>
+
+<h2>Quanto custa um sistema PDV para delivery</h2>
+<p>PDV de restaurante costuma ser cobrado à parte do cardápio digital, às vezes por terminal. No Menuzia o PDV faz parte do mesmo plano: <strong>R$67/mês fixo, sem comissão por pedido</strong>, com cardápio digital, painel, impressão, mesas e motoboy no pacote. Compare as faixas do mercado em <a href="/cardapio-digital-preco.html">quanto custa um cardápio digital</a>.</p>
+
+<h2>Para quem é</h2>
+<p>Hamburguerias, pizzarias, lanchonetes, açaíterias e restaurantes que vendem no balcão <em>e</em> no delivery e querem um caixa só. Se você ainda organiza a operação, leia também <a href="/blog/tutoriais/como-organizar-cozinha-de-delivery.html">como organizar a cozinha do delivery</a> e <a href="/blog/tutoriais/o-que-e-kds-tela-de-cozinha.html">o que é KDS (tela de cozinha)</a>.</p>`,
+    faq: [
+      ['Preciso comprar um computador para usar o PDV?', 'Não. O PDV roda no navegador em tela cheia: tablet, notebook, computador ou celular. Basta fazer login no painel.'],
+      ['O pedido lançado no PDV vai para a cozinha?', 'Sim. Ele entra no mesmo painel de pedidos do cardápio digital e dos marketplaces e é impresso automaticamente na impressora da cozinha.'],
+      ['Dá para ter mais de um operador de caixa?', 'Sim. A abertura e o fechamento de caixa são feitos por operador, o que facilita conferir cada turno.'],
+      ['O PDV é cobrado à parte?', 'Não. O PDV faz parte do plano de <strong>R$67/mês fixo</strong>, sem taxa por pedido e sem cobrança por terminal.'],
+      ['Funciona para pedido por telefone?', 'Funciona. A atendente lança o pedido no PDV com endereço e forma de pagamento, e ele segue o mesmo fluxo de cozinha e entrega do delivery.'],
+    ],
+  },
+
+  {
+    slug: 'controle-de-caixa-para-restaurante.html',
+    cat: 'Financeiro',
+    heroImg: 'blog-precos.webp',
+    heroAlt: 'Dono de restaurante conferindo o fechamento de caixa e a sangria do dia',
+    title: 'Controle de Caixa para Restaurante: Sangria e Fechamento | Menuzia',
+    h1: 'Controle de caixa para restaurante e delivery: abertura, sangria e fechamento sem furo',
+    desc: 'Como fazer controle de caixa no restaurante e no delivery: abertura com fundo de troco, sangria, suprimento, fechamento por operador e conferência de Pix, cartão e dinheiro dos motoboys.',
+    keywords: 'controle de caixa para restaurante, sangria de caixa, como fazer sangria, fechamento de caixa delivery, gestão financeira restaurante, controle financeiro delivery, abertura e fechamento de caixa, suprimento de caixa',
+    lt: LT_GESTAO,
+    body: `<p>Quase todo delivery que "fatura bem e não sobra dinheiro" tem o mesmo problema: <strong>o caixa não é fechado de verdade</strong>. Entra Pix, cartão, dinheiro na mão do motoboy, troco que saiu da gaveta — e no fim do dia ninguém sabe dizer se faltou R$5 ou R$500. Controle de caixa é rotina, não software caro.</p>
+
+<h2>Os 4 movimentos do caixa</h2>
+<table>
+  <tr><th>Movimento</th><th>O que é</th><th>Exemplo</th></tr>
+  <tr><td><strong>Abertura</strong></td><td>Valor em dinheiro que o operador recebe para começar o turno (fundo de troco)</td><td>R$150 em notas pequenas e moedas</td></tr>
+  <tr><td><strong>Suprimento</strong></td><td>Dinheiro que <em>entra</em> na gaveta sem ser venda</td><td>Mais R$50 de troco no meio do pico</td></tr>
+  <tr><td><strong>Sangria</strong></td><td>Dinheiro que <em>sai</em> da gaveta sem ser troco</td><td>Retirar R$800 para o cofre, pagar o gás</td></tr>
+  <tr><td><strong>Fechamento</strong></td><td>Contagem final comparada com o que o sistema diz que deveria ter</td><td>Esperado R$1.240, contado R$1.235</td></tr>
+</table>
+
+<h2>Como fazer sangria do jeito certo</h2>
+<ol>
+  <li><strong>Defina um teto de gaveta</strong> (ex.: R$600). Passou disso, faz sangria — menos dinheiro exposto, menos prejuízo se der problema.</li>
+  <li><strong>Toda sangria tem registro:</strong> valor, horário, quem retirou e o motivo. Pagamento de fornecedor com dinheiro do caixa também é sangria.</li>
+  <li><strong>Duas pessoas conferem</strong> quando o valor for alto.</li>
+  <li>O dinheiro da sangria vai para envelope identificado ou cofre, nunca para o bolso "pra devolver depois".</li>
+</ol>
+
+<h2>Fechamento: a conta que tem que bater</h2>
+<p><strong>Dinheiro esperado = abertura + vendas em dinheiro + suprimentos − sangrias.</strong> Compare com o dinheiro contado. Depois confira separadamente:</p>
+<ul>
+  <li><strong>Pix:</strong> total no sistema x total no extrato do banco (veja <a href="/blog/tutoriais/como-receber-pix-no-delivery.html">como receber Pix no delivery com segurança</a>).</li>
+  <li><strong>Cartão:</strong> total no sistema x relatório da maquininha ou do pagamento online.</li>
+  <li><strong>Motoboys:</strong> o dinheiro que cada entregador recebeu na porta precisa voltar para o caixa.</li>
+</ul>
+
+<h2>Como o Menuzia ajuda no controle financeiro</h2>
+<ul>
+  <li><strong>Abertura e fechamento de caixa por operador</strong> no <a href="/sistema-pdv-para-delivery.html">PDV</a> — cada turno responde pelo seu caixa.</li>
+  <li><strong>Faturamento por forma de pagamento</strong> (Pix, cartão, dinheiro) e separado por canal: cardápio digital, PDV e mesas.</li>
+  <li><strong>Fechamento de caixa dos entregadores</strong> na tela de Logística: quanto dinheiro está com cada motoboy, troco levado e valor a receber (veja <a href="/rota-de-motoboy-para-delivery.html">rota e controle de motoboy</a>).</li>
+  <li>Ticket médio, itens por pedido, horário de pico e comparação com o período anterior.</li>
+</ul>
+
+<h2>O furo que não aparece no caixa: comissão</h2>
+<p>Caixa bater não significa margem boa. Se 30% das vendas passam por aplicativo com comissão, esse dinheiro nem chega na gaveta. Calcule o seu <a href="/blog/guias/como-calcular-cmv-restaurante.html">CMV</a> e o peso das taxas, e compare com um <a href="/cardapio-digital-sem-comissao.html">cardápio digital sem comissão</a> por R$67/mês fixo.</p>`,
+    faq: [
+      ['O que é sangria de caixa?', 'É a retirada de dinheiro da gaveta que não é troco: levar o excesso para o cofre, pagar um fornecedor ou uma despesa. Toda sangria deve ser registrada com valor, horário, responsável e motivo.'],
+      ['Qual a diferença entre sangria e suprimento?', 'Sangria é dinheiro que sai do caixa; suprimento é dinheiro que entra no caixa sem ser venda, como reforço de troco.'],
+      ['Como calcular o valor esperado no fechamento?', 'Abertura + vendas em dinheiro + suprimentos − sangrias. O resultado deve bater com o dinheiro contado na gaveta.'],
+      ['Como controlar o dinheiro que fica com o motoboy?', 'No Menuzia, a tela de Logística mostra quanto cada entregador tem em mãos, o troco levado e o valor a receber, e faz o fechamento de caixa dos entregadores.'],
+      ['Dá para separar o faturamento do delivery e do balcão?', 'Sim. O relatório separa o faturamento por canal (cardápio digital, PDV e mesas) e por forma de pagamento.'],
+    ],
+  },
+
+  {
+    slug: 'sistema-de-mesas-e-comandas.html',
+    cat: 'Mesas',
+    heroImg: 'blog-hamburgueria.webp',
+    heroAlt: 'Mesa de restaurante com QR Code para pedido direto na comanda digital',
+    title: 'Sistema de Mesas e Comandas com QR Code | Sem Papel | Menuzia',
+    h1: 'Sistema de mesas e comandas com QR Code: salão e delivery no mesmo painel',
+    desc: 'Controle de mesas e comandas sem papel: QR Code por mesa, pedido direto na comanda, mapa de mesas em tempo real (livre, ocupada, em limpeza), conta por mesa e delivery no mesmo sistema. R$67/mês.',
+    keywords: 'sistema de mesas e comandas, controle de mesas restaurante, comanda digital, comanda eletrônica, qr code na mesa, cardápio digital para mesa, gestão de mesas e delivery, sistema de comanda para bar',
+    lt: LT_GESTAO,
+    body: `<p>Comanda de papel funciona até o primeiro sábado cheio: letra que ninguém entende, item que não chegou na cozinha, mesa que pagou e saiu sem ninguém conferir. Um <strong>sistema de mesas e comandas</strong> resolve isso — e quando ele é o mesmo sistema do delivery, o salão e a entrega param de brigar pela cozinha.</p>
+
+<h2>Como funciona a comanda com QR Code</h2>
+<ol>
+  <li>Cada mesa ganha um <strong>QR Code próprio</strong> (o sistema gera a folha pronta para imprimir).</li>
+  <li>O cliente aponta a câmera, abre o cardápio e pede — sem baixar aplicativo.</li>
+  <li>O pedido cai <strong>direto na comanda daquela mesa</strong> e sai na impressora da cozinha.</li>
+  <li>O garçom só entrega. Quem preferir pedir ao garçom, ele lança pelo <a href="/sistema-pdv-para-delivery.html">PDV no celular</a>.</li>
+  <li>No fim, a conta da mesa está pronta: é só receber e fechar.</li>
+</ol>
+
+<h2>Mapa de mesas em tempo real</h2>
+<p>No painel você vê o salão inteiro com o status de cada mesa: <strong>livre, aguardando, ocupada e em limpeza</strong>. Dá para saber na hora quem está esperando há muito tempo e qual mesa pode receber o próximo cliente.</p>
+
+<h2>O que vem incluso</h2>
+<ul>
+  <li>QR Code por mesa, com folha pronta para imprimir</li>
+  <li>Conta e pagamentos por mesa</li>
+  <li>Comandas de balcão e <strong>totem de autoatendimento</strong></li>
+  <li>Cardápio rodando também em tablet na mesa</li>
+  <li>Pedidos de mesa, delivery e marketplaces na mesma fila da cozinha</li>
+  <li>Faturamento das mesas separado do delivery no relatório</li>
+</ul>
+
+<h2>Mesa + delivery: por que no mesmo sistema</h2>
+<p>Restaurante que tem salão e delivery em sistemas diferentes vive com duas filas de cozinha e dois fechamentos. Com tudo no mesmo painel, a cozinha vê a ordem real dos pedidos e o <a href="/controle-de-caixa-para-restaurante.html">fechamento de caixa</a> sai num lugar só. Leia como montar o QR Code em <a href="/blog/guias/qr-code-para-cardapio-digital.html">QR Code para cardápio digital</a>.</p>
+
+<h2>Comanda digital aumenta o ticket</h2>
+<p>Cliente que pede pelo celular vê foto, adicional e sugestão "peça também" em cada item — e pede mais sobremesa e bebida do que pediria esperando o garçom passar. Veja estratégias em <a href="/programa-de-fidelidade-para-delivery.html">fidelidade e ticket médio</a>.</p>
+
+<h2>Quanto custa</h2>
+<p>Mesas e comandas estão no mesmo plano do cardápio digital: <strong>R$67/mês fixo</strong>, sem taxa por pedido e sem cobrança por mesa. Veja o <a href="/cardapio-digital-para-restaurante.html">cardápio digital para restaurante</a>.</p>`,
+    faq: [
+      ['O cliente precisa baixar aplicativo para pedir na mesa?', 'Não. Ele aponta a câmera para o QR Code da mesa e o cardápio abre no navegador do celular.'],
+      ['O pedido da mesa vai direto para a cozinha?', 'Sim. Ele entra na comanda da mesa, aparece no painel e é impresso automaticamente na cozinha.'],
+      ['Dá para o garçom lançar o pedido?', 'Dá. O garçom usa o PDV no celular ou tablet e o pedido vai para a mesma comanda.'],
+      ['Consigo ver quais mesas estão ocupadas?', 'Sim. O mapa de mesas mostra em tempo real se cada mesa está livre, aguardando, ocupada ou em limpeza.'],
+      ['Tem custo por mesa ou por QR Code?', 'Não. Mesas, comandas e QR Codes fazem parte do plano de R$67/mês fixo.'],
+    ],
+  },
+
+  {
+    slug: 'rota-de-motoboy-para-delivery.html',
+    cat: 'Entregas',
+    heroImg: 'tut-logistica.webp',
+    heroAlt: 'Tela de logística mostrando motoboys em rota e entregas em tempo real',
+    title: 'Rota de Motoboy para Delivery: App do Entregador e GPS | Menuzia',
+    h1: 'Rota de motoboy para delivery: entregador com rota, troco e GPS no celular',
+    desc: 'Gestão de motoboy para delivery: rota no Google Maps, troco e valor a receber no celular do entregador, acompanhamento em tempo real e fechamento de caixa por motoboy. R$67/mês fixo.',
+    keywords: 'rota de motoboy, roteirização de entregas delivery, aplicativo para entregador, app para motoboy delivery, gestão de motoboy, controle de entregadores, rastrear motoboy delivery, sistema de entrega para restaurante',
+    lt: LT_GESTAO,
+    body: `<p>No pico de sexta à noite, a entrega é onde o delivery perde dinheiro: motoboy que sai com um pedido só, endereço errado, troco que não confere, cliente ligando "cadê meu lanche?". Organizar a <strong>rota de motoboy</strong> é a forma mais barata de entregar mais rápido sem contratar mais gente.</p>
+
+<h2>Como montar uma rota de entrega eficiente</h2>
+<ol>
+  <li><strong>Agrupe por região:</strong> pedidos do mesmo bairro ou do mesmo eixo saem juntos. Duas entregas no mesmo caminho custam quase o tempo de uma.</li>
+  <li><strong>Defina um limite por saída</strong> (ex.: até 3 pedidos) para o primeiro cliente não esfriar esperando o último.</li>
+  <li><strong>Ordem de entrega = ordem do caminho</strong>, não ordem de chegada do pedido.</li>
+  <li><strong>Raio e taxa por bairro</strong> combinados com a rota: bairro longe paga mais e entra em rota própria (veja <a href="/blog/tutoriais/como-configurar-taxa-de-entrega-por-bairro.html">como configurar taxa de entrega por bairro</a>).</li>
+  <li><strong>Pedido pronto só sai com tudo conferido:</strong> bebida, molho, troco.</li>
+</ol>
+
+<h2>Aplicativo para entregadores do Menuzia</h2>
+<p>Seus motoboys acessam <strong>pedidos, rota e valor de troco direto pelo celular</strong>. Acaba a papelada e a comanda rabiscada.</p>
+<ul>
+  <li><strong>Rota inteligente:</strong> o endereço abre direto no Google Maps</li>
+  <li><strong>Controle de caixa:</strong> troco, forma de pagamento e valor a receber em cada entrega</li>
+  <li><strong>Tempo real:</strong> o motoboy marca "Entregue" e o painel atualiza na hora</li>
+  <li><strong>GPS:</strong> você vê onde cada entregador está no mapa e quem está em rota</li>
+  <li>Quantas entregas cada um fez e <strong>quanto dinheiro está com cada um</strong> — base para o <a href="/controle-de-caixa-para-restaurante.html">fechamento de caixa</a></li>
+</ul>
+
+<h2>Motoboy fixo, freelancer ou por corrida?</h2>
+<p>Quem está começando costuma pagar por entrega ou diária e só fixa entregador quando o volume é previsível. Seja qual for o modelo, ter o registro de quantas entregas cada um fez evita discussão no acerto. O app funciona para entregador próprio e para parceiro.</p>
+
+<h2>Cliente avisado não liga</h2>
+<p>Quando o pedido sai para entrega, o cliente pode receber aviso automático no WhatsApp — menos ligação, menos mensagem "já saiu?". Veja <a href="/blog/tutoriais/como-configurar-whatsapp-business-para-delivery.html">como configurar o WhatsApp Business para delivery</a>.</p>
+
+<h2>Quanto custa</h2>
+<p>A gestão de motoboys está no plano do cardápio digital: <strong>R$67/mês fixo</strong>, sem cobrança por entregador e sem taxa por pedido. Organize também a produção com <a href="/blog/tutoriais/como-organizar-cozinha-de-delivery.html">como organizar a cozinha de delivery</a>.</p>`,
+    faq: [
+      ['O motoboy precisa instalar um aplicativo?', 'Ele acessa os pedidos e a rota pelo celular. O endereço de cada entrega abre direto no Google Maps.'],
+      ['Consigo ver onde o entregador está?', 'Sim. A tela de Logística mostra no mapa onde cada entregador está, quem está em rota e quantas entregas cada um fez.'],
+      ['Como controlar o troco e o dinheiro do motoboy?', 'Cada entrega mostra troco, forma de pagamento e valor a receber. No painel você vê quanto dinheiro está com cada entregador e faz o fechamento de caixa deles.'],
+      ['Cobra por entregador cadastrado?', 'Não. A gestão de motoboys faz parte do plano de R$67/mês fixo.'],
+      ['Funciona com motoboy freelancer?', 'Funciona. O app serve para entregador próprio ou parceiro — o registro de entregas ajuda no acerto no fim do dia.'],
+    ],
+  },
+
+  {
+    slug: 'disparo-whatsapp-para-delivery.html',
+    cat: 'Disparos',
+    heroImg: 'tut-campanhas.webp',
+    heroAlt: 'Tela de campanhas para disparo em massa de mensagens no WhatsApp para clientes do delivery',
+    title: 'Disparo em Massa no WhatsApp para Delivery | Campanhas | Menuzia',
+    h1: 'Disparo em massa no WhatsApp para delivery: venda de novo para quem já comprou',
+    desc: 'Ferramenta de disparo em massa no WhatsApp para delivery: base de clientes própria, segmentação por frequência de compra, imagem, texto e áudio, agendamento de campanhas. R$67/mês fixo.',
+    keywords: 'disparo em massa whatsapp, disparo de mensagens para delivery, disparo whatsapp restaurante, campanha whatsapp delivery, envio em massa whatsapp clientes, ferramenta de disparo whatsapp, whatsapp marketing delivery',
+    lt: LT_GESTAO,
+    body: `<p>O cliente mais barato de conquistar é o que <strong>já comprou de você</strong>. O problema é que, no aplicativo, a lista de clientes é da plataforma. No cardápio digital próprio, todo cliente que pede entra na <strong>sua base</strong> — e o <strong>disparo de mensagens no WhatsApp</strong> transforma essa base em pedido.</p>
+
+<h2>O que dá para fazer com disparo em massa</h2>
+<ul>
+  <li><strong>Disparo para toda a base</strong> com um clique</li>
+  <li><strong>Segmentação por frequência de compra:</strong> quem pede toda semana, quem sumiu há 30 dias, quem comprou uma vez só</li>
+  <li><strong>Imagem, texto e áudio</strong> (áudio PTT, aquele que aparece como gravado na hora)</li>
+  <li><strong>Agendamento de campanhas</strong> — monta na segunda, dispara na sexta às 18h</li>
+  <li>Combina com <a href="/programa-de-fidelidade-para-delivery.html">programa de fidelidade e cupons</a></li>
+</ul>
+
+<h2>4 disparos que mais vendem no delivery</h2>
+<ol>
+  <li><strong>Reativação:</strong> "Faz tempo que você não pede 😢 Hoje tem frete grátis pra você" — só para quem não compra há 30+ dias.</li>
+  <li><strong>Dia parado:</strong> combo especial na terça ou quarta, quando a cozinha está ociosa.</li>
+  <li><strong>Lançamento:</strong> o lanche novo chega primeiro para quem já é cliente.</li>
+  <li><strong>Pré-pico:</strong> lembrete às 18h de sexta com foto do carro-chefe.</li>
+</ol>
+<p>O passo a passo com exemplos de texto está em <a href="/blog/marketing/campanha-whatsapp-para-delivery.html">como fazer campanha de WhatsApp para delivery</a>.</p>
+
+<h2>Como não ser bloqueado</h2>
+<ul>
+  <li>Dispare para <strong>quem já é cliente</strong> — nunca compre lista.</li>
+  <li><strong>Uma a duas mensagens por semana</strong>, no máximo. Mais que isso vira spam.</li>
+  <li>Sempre com algo de valor: desconto, novidade, brinde.</li>
+  <li>Segmentar é melhor que mandar para todo mundo: mensagem certa para o cliente certo é bloqueada menos.</li>
+</ul>
+
+<h2>Disparo + robô de atendimento</h2>
+<p>O mesmo WhatsApp conectado ao Menuzia tem robô que tira pedido, mandando o link do cardápio, e envia avisos automáticos de status do pedido. O cliente que recebeu a campanha clica e pede em segundos. Veja o <a href="/cardapio-digital-para-whatsapp.html">cardápio digital para WhatsApp</a>.</p>
+
+<h2>Quanto custa</h2>
+<p>Disparos estão no plano: <strong>R$67/mês fixo</strong>, sem comissão por pedido. Uma campanha de reativação que traga 5 pedidos já paga o mês. Para atrair cliente novo (que ainda não está na base), veja <a href="/blog/marketing/como-fazer-anuncios-para-delivery.html">como fazer anúncios para delivery</a>.</p>`,
+    faq: [
+      ['De onde vem a lista de clientes para o disparo?', 'Todo cliente que faz pedido no seu cardápio digital entra automaticamente na sua base, com nome, telefone e histórico de compras. A lista é sua.'],
+      ['Dá para mandar só para quem parou de comprar?', 'Sim. A segmentação por frequência de compra permite disparar só para quem não pede há um tempo, para os clientes mais fiéis ou para quem comprou uma vez.'],
+      ['Posso mandar foto e áudio?', 'Pode. A campanha aceita imagem, texto e áudio PTT.'],
+      ['Consigo agendar a campanha?', 'Sim. Você agenda o disparo para o dia e horário que quiser.'],
+      ['Quantas mensagens por semana é o ideal?', 'Uma a duas por semana, sempre com algo de valor. Mais que isso aumenta o risco de bloqueio e de o cliente sair da lista.'],
+    ],
+  },
+
+  {
+    slug: 'programa-de-fidelidade-para-delivery.html',
+    cat: 'Fidelidade',
+    heroImg: 'blog-sem-comissao.webp',
+    heroAlt: 'Cliente fiel pedindo de novo no cardápio digital com cupom de fidelidade',
+    title: 'Programa de Fidelidade e Ticket Médio no Delivery | Menuzia',
+    h1: 'Programa de fidelidade para delivery: como fazer o cliente voltar e aumentar o ticket médio',
+    desc: 'Como criar programa de fidelidade para delivery e aumentar o ticket médio: cupons, order bump ("peça também"), combos, adicionais e campanhas de WhatsApp. Tudo no cardápio digital de R$67/mês.',
+    keywords: 'programa de fidelidade para delivery, como aumentar ticket médio, ticket médio delivery, fidelizar clientes delivery, cupom de desconto delivery, order bump restaurante, cartão fidelidade digital, como vender mais no delivery',
+    lt: LT_GESTAO,
+    body: `<p>Faturamento de delivery é uma conta simples: <strong>número de pedidos × ticket médio</strong>. Dá para crescer trazendo cliente novo (caro) ou fazendo o cliente atual <strong>voltar mais vezes</strong> e <strong>gastar um pouco mais em cada pedido</strong> (barato). Fidelidade e ticket médio são as duas alavancas do segundo caminho.</p>
+
+<h2>Como calcular o ticket médio</h2>
+<p><strong>Ticket médio = faturamento do período ÷ número de pedidos.</strong> R$30.000 em 750 pedidos = R$40. Subir para R$44 (10%) com os mesmos pedidos = R$3.000 a mais no mês, sem gastar um real com anúncio. O relatório do Menuzia mostra ticket médio, itens por pedido e horário de pico, comparando com o período anterior.</p>
+
+<h2>6 jeitos de aumentar o ticket médio</h2>
+<ol>
+  <li><strong>Order bump ("peça também"):</strong> ao adicionar o lanche, o cardápio sugere batata, bebida ou sobremesa. É a técnica com maior retorno.</li>
+  <li><strong>Adicionais pagos bem fotografados:</strong> bacon extra, cheddar, borda recheada. Veja <a href="/blog/tutoriais/como-cadastrar-complementos-e-adicionais-no-cardapio.html">como cadastrar complementos e adicionais</a>.</li>
+  <li><strong>Combos com desconto pequeno:</strong> lanche + batata + bebida por menos que a soma — o cliente sobe de 1 para 3 itens.</li>
+  <li><strong>Tamanhos:</strong> P, M e G, com o M como "mais pedido" (o famoso efeito isca).</li>
+  <li><strong>Pedido mínimo para frete grátis</strong> um pouco acima do ticket atual.</li>
+  <li><strong>Cardápio enxuto e com foto:</strong> menos dúvida, mais clique.</li>
+</ol>
+
+<h2>Programa de fidelidade que funciona no delivery</h2>
+<ul>
+  <li><strong>Recompensa alcançável:</strong> se o cliente pede 2 vezes por mês, fidelidade de "20 pedidos" não motiva ninguém. Prefira metas curtas.</li>
+  <li><strong>Brinde, não só desconto:</strong> sobremesa ou batata grátis custa pouco no seu <a href="/blog/guias/como-calcular-cmv-restaurante.html">CMV</a> e vale muito na percepção do cliente.</li>
+  <li><strong>Cupom de volta:</strong> cupom válido só no próximo pedido, com prazo curto, puxa a recompra.</li>
+  <li><strong>Avise pelo WhatsApp:</strong> "faltam 2 pedidos pro seu lanche grátis" — use o <a href="/disparo-whatsapp-para-delivery.html">disparo segmentado</a>.</li>
+</ul>
+<p>No Menuzia você tem <strong>cupons, programa de fidelidade e order bump</strong> no mesmo cardápio digital, e a base de clientes é sua — no aplicativo, o cliente fiel é fiel à plataforma.</p>
+
+<h2>Fidelidade não funciona se você paga comissão em cada recompra</h2>
+<p>No app, o cliente que volta 10 vezes gera 10 comissões. No canal próprio, a recompra sai a custo fixo. Por isso a fidelidade rende mais no <a href="/cardapio-digital-sem-comissao.html">cardápio digital sem comissão</a> — R$67/mês fixo, venda quanto vender.</p>`,
+    faq: [
+      ['Como calcular o ticket médio do delivery?', 'Divida o faturamento do período pelo número de pedidos. Exemplo: R$30.000 em 750 pedidos = ticket médio de R$40.'],
+      ['O que é order bump?', 'É a sugestão "peça também" que aparece quando o cliente adiciona um item: batata, bebida ou sobremesa com um clique. É uma das formas mais simples de aumentar o ticket médio.'],
+      ['Qual o melhor tipo de programa de fidelidade para delivery?', 'O que tem recompensa alcançável em poucos pedidos e é lembrado pelo WhatsApp. Brindes de baixo custo, como sobremesa ou batata, costumam funcionar melhor que descontos grandes.'],
+      ['O Menuzia tem cupom e fidelidade?', 'Sim. Cupons, programa de fidelidade e order bump fazem parte do plano de R$67/mês fixo.'],
+      ['Dá para ver o ticket médio no sistema?', 'Sim. O relatório mostra ticket médio, itens por pedido, horário de pico e comparação com o período anterior.'],
+    ],
+  },
+
+  {
+    slug: 'cardapio-digital-integrado-ifood.html',
+    cat: 'Integração',
+    heroImg: 'tut-integracoes.webp',
+    heroAlt: 'Tela de integrações do cardápio digital com iFood, 99Food e aiqfome',
+    title: 'Cardápio Digital Integrado ao iFood, 99Food e aiqfome | Menuzia',
+    h1: 'Cardápio digital integrado ao iFood e 99Food: todos os pedidos num painel só',
+    desc: 'Cardápio digital integrado ao iFood, 99Food e aiqfome: pedidos dos marketplaces e do seu link próprio no mesmo painel e na mesma impressora. Use o app como vitrine e o canal próprio sem comissão. R$67/mês.',
+    keywords: 'cardápio digital integrado ao ifood, integração ifood, sistema integrado ifood 99food, integração 99food, integração aiqfome, receber pedidos ifood e whatsapp no mesmo lugar, gestor de pedidos ifood, sistema para delivery integrado',
+    lt: LT_GESTAO,
+    body: `<p>Quem vende em mais de um aplicativo conhece a cena: um tablet para o iFood, outro para o 99Food, o celular apitando com pedido do WhatsApp — e alguém redigitando tudo na comanda da cozinha. Um <strong>cardápio digital integrado ao iFood</strong> junta tudo isso num lugar só.</p>
+
+<h2>O que a integração faz</h2>
+<ul>
+  <li>Pedidos do <strong>iFood, 99Food e aiqfome</strong> entram no <strong>mesmo painel de pedidos</strong> do seu cardápio digital, do <a href="/sistema-pdv-para-delivery.html">PDV</a> e das <a href="/sistema-de-mesas-e-comandas.html">mesas</a></li>
+  <li><strong>Mesma impressora:</strong> todos os pedidos saem na cozinha no mesmo formato</li>
+  <li>Uma fila de produção só — a cozinha prepara na ordem real</li>
+  <li>Faturamento consolidado para comparar quanto vem de cada canal</li>
+</ul>
+
+<h2>A estratégia: app como vitrine, link como canal</h2>
+<p>O marketplace é bom para <strong>ser encontrado</strong> por quem ainda não te conhece. O problema é depender dele para tudo: a comissão incide em cada pedido, inclusive na recompra do cliente que já é seu. O caminho que dá mais margem:</p>
+<ol>
+  <li>Continue no iFood e no 99Food para ganhar cliente novo.</li>
+  <li>Coloque um <a href="/blog/guias/qr-code-para-cardapio-digital.html">QR Code na embalagem</a> levando para o seu cardápio próprio, com um cupom de primeira compra.</li>
+  <li>Quem pede no seu link entra na sua base e passa a receber <a href="/disparo-whatsapp-para-delivery.html">campanhas no WhatsApp</a>.</li>
+  <li>A recompra acontece no canal sem comissão.</li>
+</ol>
+<p>Comparativo completo em <a href="/cardapio-digital-99food.html">cardápio digital x 99Food</a> e o passo a passo em <a href="/blog/estrategia/como-sair-do-ifood-e-vender-direto.html">como sair do iFood e vender direto</a>.</p>
+
+<h2>Outras integrações</h2>
+<ul>
+  <li><strong>Mercado Pago:</strong> Pix e cartão online no checkout, direto na sua conta</li>
+  <li><strong>Facebook Pixel e API de Conversões (Meta):</strong> saiba quais anúncios geram pedidos (veja <a href="/blog/marketing/como-fazer-anuncios-para-delivery.html">como fazer anúncios para delivery</a>)</li>
+  <li><strong>Google Analytics / Tag Manager:</strong> acessos e conversões no GA4</li>
+  <li><strong>WhatsApp:</strong> robô, notificações de status e disparos</li>
+</ul>
+
+<h2>Quanto custa</h2>
+<p><strong>R$67/mês fixo</strong>, com as integrações inclusas e sem comissão sobre os pedidos do seu cardápio. A comissão do marketplace continua sendo cobrada pelo marketplace nos pedidos feitos lá — por isso vale levar a recompra para o canal próprio.</p>`,
+    faq: [
+      ['O Menuzia integra com o iFood?', 'Sim. Os pedidos do iFood, do 99Food e do aiqfome entram no mesmo painel de pedidos do Menuzia e saem na mesma impressora da cozinha.'],
+      ['Preciso sair do iFood para usar o cardápio digital?', 'Não. A recomendação é usar o marketplace como vitrine para cliente novo e o cardápio próprio para a recompra, sem comissão.'],
+      ['A integração cobra taxa por pedido?', 'O Menuzia não cobra comissão: são R$67/mês fixos. A comissão dos pedidos feitos dentro do iFood ou do 99Food continua sendo cobrada por eles.'],
+      ['Os pedidos do marketplace imprimem automaticamente?', 'Sim. Todos os pedidos, de qualquer canal, saem na mesma impressora no mesmo formato.'],
+      ['Integra com Facebook Pixel e Google Analytics?', 'Sim. Há integração com Facebook Pixel, API de Conversões da Meta e Google Analytics/Tag Manager para medir quais anúncios geram pedidos.'],
+    ],
+  },
 ];
 
 // ------------------------------------------------------------
@@ -1076,7 +1440,7 @@ function page(n) {
     .replace(/href="\/blog\//g, `href="${B}`)
     .replace(/href="\/#/g, `href="${SITE}/#`)
     .replace(/href="\/"/g, `href="${SITE}/"`)
-    .replace(/href="\/(cardapio-|cidades)/g, 'href="$1');   // páginas da raiz -> relativo
+    .replace(/href="\/([a-z0-9-]+\.html)/g, 'href="$1');   // páginas da raiz -> relativo
   return `${head(n, url)}
 ${serviceLd(n, url)}
 ${faqLd(n)}
