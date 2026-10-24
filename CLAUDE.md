@@ -1,6 +1,6 @@
 # Menuzia — site-cardapio
 
-Site institucional do **Menuzia** (menuzia.com.br): cardápio digital sem comissão para hamburguerias e delivery. R$67/mês fixo. Host canônico: `https://menuzia.com.br` (sem www). App do cliente: `app.menuzia.com.br`.
+Site institucional do **Menuzia** (menuzia.com.br): cardápio digital sem comissão para hamburguerias e delivery. R$97/mês com tudo incluso + 1º mês grátis (na home; landings/cidades/blog ainda dizem R$67 — pendente). Host canônico: `https://menuzia.com.br` (sem www). App do cliente: `app.menuzia.com.br`.
 
 Site **estático** (HTML/CSS puro, sem framework). Imagens em `.webp`. Deploy = subir os arquivos da raiz.
 
@@ -54,7 +54,8 @@ Categoria **`tutoriais/`** (cat `Tutorial`): guias de operação que ajudam o le
 ## Padrões
 - Links internos: caminhos root-absolutos no corpo (`/blog/...`), reescritos pelos geradores pra relativo conforme a profundidade da página.
 - Links de home/marca/CTA: URL absoluta do site (`SITE`).
-- Identidade visual: azul `#1d3e73` / `#0084D6`, vermelho CTA `#C62828`, amarelo `#FBBF24`. Fonte Inter.
+- Identidade visual (nova, de `assets/img/marca/` — fonte original em `Videos/menuzia/Logo`): navy `#1F3F8A`, tinta `#0F1B3D`, laranja CTA `#EE6A2C`. Títulos Plus Jakarta Sans, corpo Inter. As páginas geradas (cidades/nicho/blog) ainda usam a paleta antiga.
+- **Home (`index.html`) = página de vendas**: R$97/mês com tudo incluso + 1º mês grátis. **Todo CTA** é link `wa.me/5527992534407` com `data-crm-form` → abre o formulário do CRM (`assets/js/crm-form.js`) e depois o WhatsApp. Não usar link de checkout na home. Vídeos em `assets/video/` (H.264 faststart, poster .jpg); logos de clientes reais em `assets/img/clientes/` (vêm do `logo_url` da tabela `restaurantes` do app).
 
 ## Arquivos-chave
 | Arquivo | O quê |
