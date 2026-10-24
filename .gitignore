@@ -5,3 +5,7 @@ conv.js
 genblog.js
 desktop.ini
 *.png
+telas-src/out/
+!telas-src/mapa.png
+!telas-src/logos/*.png
+!telas-src/bela-marmita.png

@@ -170,6 +170,13 @@
         .header.rolou { border-color: var(--linha); box-shadow: 0 6px 24px -14px rgba(15,27,61,.25); }
         .header .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; gap: 24px; }
         .logo img { height: 40px; width: auto; }
+        .logo .l-branca { display: none; }
+        .header.azul { background: rgba(31,63,138,.97); border-color: rgba(255,255,255,.08); box-shadow: 0 10px 30px -14px rgba(5,12,35,.6); }
+        .header.azul .l-cor { display: none; }
+        .header.azul .l-branca { display: block; }
+        .header.azul .nav a { color: rgba(255,255,255,.9); }
+        .header.azul .nav a:hover { color: #FFB089; }
+        .header { transition: background .35s, border-color .2s, box-shadow .2s; }
         .nav { display: flex; gap: 30px; }
         .nav a { font-family: var(--titulo); font-weight: 600; font-size: 15px; color: var(--tinta); transition: color .2s; }
         .nav a:hover { color: var(--laranja); }
@@ -196,25 +203,18 @@
         .hero .micro { color: rgba(255,255,255,.8); }
         .hero .micro span::before { color: #7CF0A6; }
 
-        .vitrine { position: relative; height: clamp(330px, 44vw, 560px); max-width: 1180px; margin: 30px auto 0; }
+        .vitrine { position: relative; height: clamp(260px, 32vw, 420px); max-width: 1180px; margin: 30px auto 0; }
         .disp { position: absolute; bottom: 0; transition: transform .6s cubic-bezier(.2,.8,.2,1); }
         .disp img, .disp video { width: 100%; filter: drop-shadow(0 30px 40px rgba(5,12,35,.45)); }
-        .d-mac { left: 50%; width: 52%; transform: translateX(-50%); bottom: 4%; z-index: 2; }
-        .d-cel { left: 2%; width: 15.5%; z-index: 3; bottom: 12%; }
-        .d-tab { left: 17%; width: 22%; z-index: 1; bottom: 16%; }
-        .d-robo { right: 3%; width: 16%; z-index: 3; bottom: 10%; }
-        .d-tab .moldura { border-radius: 26px; padding: 12px; background: linear-gradient(145deg, #2b2f3a, #0b0d12); box-shadow: 0 30px 50px -10px rgba(5,12,35,.6), inset 0 0 0 2px #3a3f4c; }
-        .d-tab video { border-radius: 14px; filter: none; aspect-ratio: 9/16; object-fit: cover; background: #111; }
-        .d-robo .moldura { border-radius: 34px; padding: 9px; background: #0b0d12; box-shadow: 0 30px 50px -10px rgba(5,12,35,.6), inset 0 0 0 2px #3a3f4c; position: relative; }
-        .d-robo .moldura::before { content: ""; position: absolute; top: 15px; left: 50%; transform: translateX(-50%); width: 30%; height: 14px; background: #0b0d12; border-radius: 99px; z-index: 2; }
-        .d-robo video { border-radius: 26px; filter: none; aspect-ratio: 464/832; object-fit: cover; background: #111; }
+        .d-mac { left: 50%; width: 50%; transform: translateX(-50%); bottom: 3%; z-index: 1; }
+        .d-mesa { left: 0; width: 39%; bottom: 8%; z-index: 3; }
+        .d-imp { right: 0; width: 27%; bottom: 5%; z-index: 3; }
         .pilula { position: absolute; z-index: 5; white-space: nowrap; font-family: var(--titulo); font-weight: 700; font-size: clamp(12px, 1.35vw, 17px); color: #fff; background: rgba(15,27,61,.72); border: 1px solid rgba(255,255,255,.22); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); padding: 9px 18px; border-radius: 999px; box-shadow: 0 10px 30px -8px rgba(0,0,0,.45); animation: flutua 6s ease-in-out infinite; }
         .pilula i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--laranja); margin-right: 8px; vertical-align: middle; }
         @keyframes flutua { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-        .p1 { left: 1%; bottom: 8%; }
-        .p2 { left: 20%; bottom: 4%; animation-delay: 1.2s; }
-        .p3 { left: 50%; bottom: 1%; margin-left: -90px; animation-delay: 2.4s; }
-        .p4 { right: 1%; bottom: 5%; animation-delay: 3.6s; }
+        .p1 { left: 3%; bottom: 6%; }
+        .p3 { left: 50%; bottom: 0; transform: translateX(-50%); animation: none; }
+        .p4 { right: 3%; bottom: 6%; animation-delay: 2.4s; }
 
         /* ===== NÚMEROS ===== */
         .numeros { background: var(--branco); border-bottom: 1px solid var(--linha); }
@@ -328,6 +328,44 @@
         .rec-corpo p { font-size: 15px; }
         .rec-tag { display: inline-block; font-size: 12px; font-weight: 700; color: var(--laranja); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 8px; }
 
+        /* ===== GESTÃO (abas com telas do painel) ===== */
+        .gestao { padding: clamp(80px, 9vw, 120px) 0; background: linear-gradient(180deg, #fff, var(--gelo)); }
+        .g-abas { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 26px; }
+        .g-abas button { font-family: var(--titulo); font-weight: 700; font-size: 15px; color: var(--tinta); background: #fff; border: 1px solid var(--linha); padding: 11px 20px; border-radius: 999px; cursor: pointer; transition: background .2s, color .2s, border-color .2s, box-shadow .2s; }
+        .g-abas button:hover { border-color: var(--navy); }
+        .g-abas button[aria-selected="true"] { background: var(--navy); color: #fff; border-color: var(--navy); box-shadow: 0 10px 24px -10px rgba(31,63,138,.7); }
+        .g-palco { max-width: 1080px; margin: 0 auto; }
+        .g-info { text-align: center; max-width: 700px; margin: 0 auto 22px; min-height: 84px; }
+        .g-info h3 { font-size: clamp(21px, 2.2vw, 26px); letter-spacing: -.02em; }
+        .g-info p { margin-top: 6px; font-size: 16px; }
+        .janela { border-radius: 16px; overflow: hidden; background: #fff; border: 1px solid #dfe5ef; box-shadow: 0 50px 90px -40px rgba(15,27,61,.55), 0 0 0 8px rgba(31,63,138,.05); }
+        .janela-barra { display: flex; align-items: center; gap: 7px; padding: 11px 16px; background: #F1F4F9; border-bottom: 1px solid #e3e8f0; }
+        .janela-barra i { width: 11px; height: 11px; border-radius: 50%; background: #FF5F57; }
+        .janela-barra i:nth-child(2) { background: #FEBC2E; } .janela-barra i:nth-child(3) { background: #28C840; }
+        .janela-barra span { margin-left: 12px; flex: 1; max-width: 420px; background: #fff; border: 1px solid #e3e8f0; border-radius: 8px; padding: 4px 12px; font-size: 12.5px; color: var(--suave); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .janela img { width: 100%; height: auto; display: block; transition: opacity .25s; }
+        .janela img.trocando { opacity: 0; }
+        .g-nota { text-align: center; font-size: 12.5px; color: var(--suave); margin-top: 12px; }
+
+        /* ===== INTEGRAÇÕES (órbita) ===== */
+        .integ { padding: clamp(80px, 9vw, 120px) 0; background: var(--branco); overflow: hidden; }
+        .integ .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .integ .lead { margin-top: 18px; }
+        .integ .lista-check li span { display: block; }
+        .orbita { position: relative; width: 100%; max-width: 520px; aspect-ratio: 1; margin: 0 auto; }
+        .orbita .anel { position: absolute; top: 50%; left: 50%; border-radius: 50%; transform: translate(-50%, -50%); border: 1.5px dashed #CBD3E1; }
+        .orbita .a1 { width: 36%; height: 36%; border-style: solid; border-color: var(--azul-claro); background: radial-gradient(circle, rgba(31,63,138,.08), transparent 70%); }
+        .orbita .a2 { width: 64%; height: 64%; } .orbita .a3 { width: 98%; height: 98%; }
+        .orbita .giro { position: absolute; inset: 0; animation: orb-gira 60s linear infinite; }
+        .orbita .g-ex { animation-duration: 90s; animation-direction: reverse; }
+        .orb-logo { position: absolute; width: 15%; aspect-ratio: 1; margin: -7.5% 0 0 -7.5%; background: #fff; border-radius: 24%; display: grid; place-items: center; box-shadow: 0 14px 30px -12px rgba(15,27,61,.35), 0 0 0 1px rgba(15,27,61,.05); animation: orb-gira 60s linear infinite reverse; }
+        .orbita .g-ex .orb-logo { animation-duration: 90s; animation-direction: normal; }
+        .orb-logo img { width: 66%; height: 66%; object-fit: contain; }
+        .orb-centro { position: absolute; top: 50%; left: 50%; width: 24%; aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 28%; background: #fff; display: grid; place-items: center; box-shadow: 0 20px 50px -14px rgba(31,63,138,.55), 0 0 0 10px rgba(31,63,138,.06); z-index: 2; }
+        .orb-centro img { width: 78%; height: 78%; border-radius: 22%; }
+        .orbita:hover .giro, .orbita:hover .orb-logo { animation-play-state: paused; }
+        @keyframes orb-gira { to { transform: rotate(360deg); } }
+
         /* ===== PARA QUEM ===== */
         .para-quem { padding: clamp(80px, 9vw, 110px) 0; }
         .segmentos { display: grid; grid-template-columns: repeat(7, 1fr); gap: 14px; }
@@ -390,26 +428,83 @@
 
         /* ===== CTA FINAL ===== */
         .cta-final { padding: clamp(80px, 9vw, 110px) 0; }
-        .cta-box { position: relative; overflow: hidden; border-radius: 36px; padding: clamp(46px, 6vw, 80px) 30px; text-align: center; color: #fff; background: radial-gradient(600px 300px at 15% 0%, rgba(255,255,255,.16), transparent 60%), radial-gradient(600px 340px at 90% 100%, rgba(238,106,44,.45), transparent 60%), linear-gradient(150deg, #2A52A8, var(--navy-3)); }
-        .cta-box img.simbolo { width: 72px; margin: 0 auto 24px; border-radius: 18px; box-shadow: 0 0 0 1px rgba(255,255,255,.35), 0 14px 30px -10px rgba(0,0,0,.5); }
-        .cta-box h2 { color: #fff; max-width: 820px; margin: 0 auto; }
-        .cta-box p { color: rgba(255,255,255,.82); max-width: 640px; margin: 18px auto 32px; font-size: 18px; }
-        .cta-box .micro { color: rgba(255,255,255,.75); }
+        .cta-box { position: relative; overflow: hidden; border-radius: 36px; padding: clamp(40px, 5vw, 70px) clamp(26px, 5vw, 70px) 0; color: #fff; display: grid; grid-template-columns: 1.1fr .9fr; gap: 30px; align-items: end; background: radial-gradient(600px 300px at 15% 0%, rgba(255,255,255,.16), transparent 60%), radial-gradient(600px 340px at 90% 100%, rgba(238,106,44,.45), transparent 60%), linear-gradient(150deg, #2A52A8, var(--navy-3)); }
+        .cta-texto { align-self: center; padding-bottom: clamp(40px, 5vw, 70px); }
+        .cta-online { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); padding: 7px 14px; border-radius: 999px; margin-bottom: 20px; }
+        .cta-online i { width: 8px; height: 8px; border-radius: 50%; background: #3BE07F; box-shadow: 0 0 0 0 rgba(59,224,127,.6); animation: online 1.8s infinite; }
+        @keyframes online { 70% { box-shadow: 0 0 0 9px rgba(59,224,127,0); } 100% { box-shadow: 0 0 0 0 rgba(59,224,127,0); } }
+        .cta-box h2 { color: #fff; max-width: 560px; }
+        .cta-box p { color: rgba(255,255,255,.82); max-width: 520px; margin: 18px 0 30px; font-size: 18px; }
+        .cta-box .micro { color: rgba(255,255,255,.75); justify-content: flex-start; }
         .cta-box .micro span::before { color: #7CF0A6; }
+        /* botão do formulário */
+        .btn-form { position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 16px; background: #fff; color: var(--tinta); padding: 12px 12px 12px 14px; border-radius: 22px; box-shadow: 0 22px 44px -16px rgba(5,12,35,.7), 0 0 0 6px rgba(255,255,255,.12); transition: transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s; max-width: 100%; }
+        .btn-form::after { content: ""; position: absolute; top: 0; bottom: 0; left: -60%; width: 40%; background: linear-gradient(100deg, transparent, rgba(238,106,44,.16), transparent); transform: skewX(-20deg); animation: brilho 3.4s 1s infinite; pointer-events: none; }
+        @keyframes brilho { 0% { left: -60%; } 40%, 100% { left: 130%; } }
+        .btn-form:hover { transform: translateY(-3px); box-shadow: 0 30px 54px -16px rgba(5,12,35,.8), 0 0 0 8px rgba(255,255,255,.16); }
+        .bf-ic { flex: 0 0 52px; height: 52px; border-radius: 15px; background: var(--azul-claro); color: var(--navy); display: grid; place-items: center; }
+        .bf-ic svg { width: 26px; height: 26px; }
+        .bf-txt { display: flex; flex-direction: column; text-align: left; line-height: 1.25; flex: 1; }
+        .bf-txt b { font-family: var(--titulo); font-size: 18px; font-weight: 800; letter-spacing: -.01em; }
+        .bf-txt small { font-size: 13px; color: var(--suave); }
+        .bf-seta { flex: 0 0 52px; height: 52px; border-radius: 15px; background: var(--laranja); color: #fff; display: grid; place-items: center; transition: transform .3s cubic-bezier(.2,.8,.2,1); box-shadow: 0 10px 22px -8px rgba(238,106,44,.8); }
+        .bf-seta svg { width: 24px; height: 24px; }
+        .btn-form:hover .bf-seta { transform: translateX(4px); }
+        /* foto da atendente (recorte, Pexels #6535396) */
+        .cta-ilus { position: relative; align-self: end; width: 100%; max-width: 390px; justify-self: center; padding-top: 30px; }
+        .cta-aro { position: absolute; left: 50%; bottom: 0; width: 92%; aspect-ratio: 1; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(circle at 50% 40%, rgba(255,255,255,.22), rgba(255,255,255,.04) 62%, transparent 63%), linear-gradient(160deg, #FF8A4C, var(--laranja)); box-shadow: 0 0 0 14px rgba(255,255,255,.06), 0 0 0 30px rgba(255,255,255,.035); }
+        .atendente { position: relative; z-index: 1; width: 82%; height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 20px 30px rgba(5,12,35,.45)); -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent); mask-image: linear-gradient(to bottom, #000 82%, transparent); }
+        .bolha { position: absolute; z-index: 2; display: flex; align-items: center; gap: 10px; background: #fff; color: var(--tinta); border-radius: 18px; padding: 10px 14px; font-size: 13px; font-weight: 700; box-shadow: 0 18px 40px -14px rgba(5,12,35,.6); animation: flutua 6s ease-in-out infinite; white-space: nowrap; line-height: 1.3; }
+        .bolha b { display: block; font-size: 12px; color: var(--navy); }
+        .bolha span { font-weight: 600; }
+        .b-av img { width: 28px; height: 28px; border-radius: 8px; }
+        .b-on { width: 10px; height: 10px; border-radius: 50%; background: #22C55E; box-shadow: 0 0 0 4px rgba(34,197,94,.2); }
+        .b0 { right: -8%; top: 18%; animation-delay: .8s; }
+        .b0 span:last-child { color: var(--verde); font-size: 12px; }
+        .b1 { left: -22%; top: 50%; border-bottom-left-radius: 4px; }
+        .b2 { right: -10%; top: 64%; background: #25D366; color: #fff; animation-delay: 1.5s; }
+        .b2 svg { width: 18px; height: 18px; }
+        .b3 { left: -14%; top: 76%; animation-delay: 3s; }
+        .b3 i { width: 8px; height: 8px; border-radius: 50%; background: var(--laranja); }
 
-        /* ===== FOOTER ===== */
-        .footer { background: var(--navy-3); color: rgba(255,255,255,.68); padding: 70px 0 30px; font-size: 14px; }
-        .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 44px; }
-        .footer .logo img { height: 38px; margin-bottom: 18px; }
-        .footer h4 { color: #fff; font-size: 15px; letter-spacing: -.01em; margin-bottom: 14px; }
-        .footer ul { list-style: none; display: grid; gap: 8px; }
+        /* ===== FOOTER (estilo BeeFood: marca + contato + IA | soluções | integrações | acesso) ===== */
+        .footer { background: #0A1330; color: rgba(255,255,255,.66); padding: 84px 0 30px; font-size: 14.5px; position: relative; }
+        .footer::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: linear-gradient(90deg, var(--navy), var(--laranja)); }
+        .footer-grid { display: grid; grid-template-columns: 1.35fr 1fr 1fr 1fr; gap: 44px; margin-bottom: 50px; }
+        .footer .logo img { height: 40px; margin-bottom: 20px; }
+        .f-marca > p { line-height: 1.65; margin-bottom: 22px; }
+        .f-marca > p strong { color: #fff; font-weight: 600; }
+        .footer h4 { color: #fff; font-size: 16px; letter-spacing: -.01em; margin: 0 0 14px; }
+        .footer ul + h4, .f-pilulas + h4 { margin-top: 28px; }
+        .footer ul { list-style: none; display: grid; gap: 10px; }
+        .footer a { transition: color .2s; }
         .footer a:hover { color: #fff; }
+        .f-tag { display: inline-block; margin-left: 6px; background: var(--laranja); color: #fff; font-size: 11.5px; font-weight: 700; padding: 2px 9px; border-radius: 999px; vertical-align: 1px; }
+        .f-contato li { display: flex; gap: 12px; align-items: flex-start; }
+        .f-contato svg { flex: 0 0 18px; width: 18px; height: 18px; fill: var(--laranja); margin-top: 2px; }
+        .f-ia-tit { margin: 26px 0 12px; font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.8); }
+        .f-ia { display: flex; gap: 10px; }
+        .f-ia a { width: 42px; height: 42px; border-radius: 50%; background: #fff; color: #111; display: grid; place-items: center; transition: transform .2s, box-shadow .2s; }
+        .f-ia a:hover { transform: translateY(-3px); box-shadow: 0 10px 20px -8px rgba(0,0,0,.6); color: #111; }
+        .f-ia svg { width: 22px; height: 22px; }
+        .f-integ a { display: flex; align-items: center; gap: 12px; color: #fff; font-weight: 600; }
+        .f-integ i { flex: 0 0 32px; height: 32px; border-radius: 9px; display: grid; place-items: center; font-style: normal; font-family: var(--titulo); font-weight: 800; font-size: 11.5px; color: #fff; }
+        .f-pilulas { display: grid; gap: 10px; justify-items: start; }
+        .f-pil { display: inline-flex; align-items: center; gap: 9px; background: #fff; color: var(--tinta); font-weight: 600; padding: 10px 20px; border-radius: 999px; transition: transform .2s; }
+        .f-pil:hover { color: var(--tinta); transform: translateY(-2px); }
+        .f-pil svg { width: 17px; height: 17px; fill: currentColor; }
+        .f-pil-cta { background: rgba(238,106,44,.16); color: #FFB089; border: 1px solid rgba(238,106,44,.55); }
+        .f-pil-cta:hover { color: #fff; background: var(--laranja); }
         .footer-cidades { border-top: 1px solid rgba(255,255,255,.1); padding-top: 34px; }
-        .footer-cidades h4 { margin: 18px 0 12px; }
-        .footer-cidades .lista { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+        .footer-cidades h4 { margin: 18px 0 12px; font-size: 15px; }
+        .footer-cidades .lista { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 13.5px; }
         .footer-cidades .todas { color: #FFB089; font-weight: 600; }
-        .footer-atende { margin-top: 22px; font-size: 13px; line-height: 1.7; }
-        .footer-base { border-top: 1px solid rgba(255,255,255,.1); margin-top: 30px; padding-top: 24px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+        .footer-atende { margin-top: 22px; font-size: 13px; line-height: 1.7; color: rgba(255,255,255,.5); }
+        .footer-base { border-top: 1px solid rgba(255,255,255,.1); margin-top: 30px; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+        .f-base-links { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+        .f-topo { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,.08); display: grid; place-items: center; }
+        .f-topo:hover { background: var(--laranja); }
+        .f-topo svg { width: 18px; height: 18px; fill: #fff; }
 
         /* ===== CTA FIXO (mobile) + WhatsApp ===== */
         .cta-fixo { display: none; }
@@ -430,6 +525,9 @@
         @media (max-width: 900px) {
             .vsl .wrap, .calc .wrap, .bloco .wrap, .plano-grid { grid-template-columns: 1fr; gap: 46px; }
             .bloco.inv .f-visual { order: 0; }
+            .integ .wrap { grid-template-columns: 1fr; gap: 46px; }
+            .integ-texto { text-align: center; }
+            .integ .lista-check { text-align: left; max-width: 520px; margin-left: auto; margin-right: auto; }
             .parceiros-topo { grid-template-columns: 1fr; gap: 14px; }
             .perso-grid { grid-template-columns: 1fr 1fr; }
             .passos-grid { grid-template-columns: 1fr; }
@@ -442,19 +540,13 @@
             .logo img { height: 32px; }
             .header .btn { padding: 10px 16px; font-size: 14px; }
             .hero { padding-top: 48px; }
-            .vitrine { height: 90vw; max-height: 480px; margin-top: 20px; }
+            .vitrine { height: 68vw; max-height: 420px; margin-top: 18px; }
             .d-mac { display: none; }
-            .d-tab { left: 0; width: 47%; bottom: 13%; }
-            .d-cel { left: 36%; width: 31%; bottom: 7%; z-index: 4; }
-            .d-robo { right: 0; width: 33%; bottom: 15%; }
-            .d-tab .moldura { padding: 7px; border-radius: 18px; }
-            .d-robo .moldura { padding: 6px; border-radius: 24px; }
-            .d-robo .moldura::before { top: 10px; height: 9px; }
-            .d-robo video { border-radius: 19px; }
-            .p1 { left: 30%; bottom: 0; }
-            .p2 { left: 0; bottom: 7%; }
+            .d-mesa { left: -3%; width: 76%; bottom: 13%; }
+            .d-imp { right: -3%; width: 38%; bottom: 6%; }
+            .p1 { left: 0; bottom: 0; }
             .p3 { display: none; }
-            .p4 { right: 2%; bottom: 10%; }
+            .p4 { right: 0; bottom: auto; top: 0; }
             .pilula { padding: 7px 12px; }
             .hero-selo { font-size: 12px; padding: 6px 12px 6px 6px; }
             .hero-selo .longo { display: none; }
@@ -463,6 +555,13 @@
             .segmentos::-webkit-scrollbar { display: none; }
             .seg { flex: 0 0 46%; scroll-snap-align: start; }
             .rec-topo { flex-direction: column; align-items: flex-start; }
+            .orbita { max-width: 86%; }
+            .g-abas { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; margin: 0 -24px 22px; padding: 4px 24px 8px; scrollbar-width: none; }
+            .g-abas::-webkit-scrollbar { display: none; }
+            .g-abas button { flex: 0 0 auto; padding: 10px 16px; font-size: 14px; }
+            .janela { border-radius: 12px; }
+            .janela-barra { padding: 8px 12px; }
+            .g-info { min-height: 0; }
             .setas { display: none; }
             .plano { padding: 38px 24px; }
             .plano ul { grid-template-columns: 1fr; }
@@ -475,6 +574,15 @@
             .cta-fixo.on { transform: none; }
             .cta-fixo .btn { width: 100%; padding: 16px; }
             .footer { padding-bottom: 100px; }
+            .cta-box { grid-template-columns: 1fr; text-align: center; }
+            .cta-texto { padding-bottom: 0; }
+            .cta-box h2, .cta-box p { margin-left: auto; margin-right: auto; }
+            .cta-box .micro { justify-content: center; }
+            .btn-form { width: 100%; gap: 12px; }
+            .bf-txt b { font-size: 16px; }
+            .bf-ic { display: none; }
+            .cta-ilus { max-width: 340px; }
+            .b0 { right: 0; } .b1 { left: -2%; } .b2 { right: 0; } .b3 { left: 0; }
         }
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -505,12 +613,12 @@
 <!-- Todos os CTAs apontam pro mesmo lugar: o formulário do CRM (crm-form.js intercepta
      links wa.me do número de atendimento e [data-crm-form]) → depois abre o WhatsApp. -->
 
-<div class="faixa">🎁 <b>Primeiro mês grátis</b> · depois R$97/mês com tudo incluso, sem comissão <a href="https://wa.me/5527992534407?text=Ol%C3%A1!%20Quero%20testar%20o%20Menuzia%20gr%C3%A1tis." data-crm-form>Quero testar →</a></div>
+<div class="faixa" id="topo">🎁 <b>Primeiro mês grátis</b> · depois R$97/mês com tudo incluso, sem comissão <a href="https://wa.me/5527992534407?text=Ol%C3%A1!%20Quero%20testar%20o%20Menuzia%20gr%C3%A1tis." data-crm-form>Quero testar →</a></div>
 
 <!-- ===== CABEÇALHO ===== -->
 <header class="header">
     <div class="wrap">
-        <a href="https://menuzia.com.br/" class="logo" aria-label="Menuzia — página inicial"><img src="assets/img/marca/horizontal-logo.webp" alt="Menuzia" width="366" height="96"></a>
+        <a href="https://menuzia.com.br/" class="logo" aria-label="Menuzia — página inicial"><img class="l-cor" src="assets/img/marca/horizontal-logo.webp" alt="Menuzia" width="366" height="96"><img class="l-branca" src="assets/img/marca/horizontal_branca-logo.webp" alt="Menuzia" width="366" height="96"></a>
         <nav class="nav" aria-label="Principal">
             <a href="#video">Como funciona</a>
             <a href="#recursos">Recursos</a>
@@ -536,14 +644,12 @@
             </div>
 
             <div class="vitrine rv" style="--d:.25s" aria-label="Menuzia no celular, no tablet, no computador e no WhatsApp">
-                <div class="disp d-tab"><div class="moldura"><video src="assets/video/cardapio-tablet.mp4" poster="assets/video/cardapio-tablet.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Cardápio digital da Fire House rodando no tablet"></video></div></div>
-                <div class="disp d-mac"><img src="assets/img/mockups/mac-vitrine.webp" alt="Cardápio digital Menuzia no computador — vitrine da Estância Burger" width="1400" height="868" fetchpriority="high"></div>
-                <div class="disp d-cel"><img src="assets/img/mockups/cel-home.webp" alt="Cardápio digital Menuzia no celular" width="640" height="1299" fetchpriority="high"></div>
-                <div class="disp d-robo"><div class="moldura"><video src="assets/video/robo-whatsapp.mp4" poster="assets/video/robo-whatsapp.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Robô do Menuzia atendendo no WhatsApp e enviando o link do cardápio"></video></div></div>
-                <span class="pilula p2"><i></i>Cardápio no tablet</span>
-                <span class="pilula p1"><i></i>Cardápio QR Code</span>
-                <span class="pilula p3"><i></i>Gestão integrada</span>
-                <span class="pilula p4"><i></i>Robô no WhatsApp</span>
+                <div class="disp d-mac"><img src="assets/img/hero/hero-notebook.webp" alt="Cardápio digital da Bela Marmita, cliente Menuzia, no computador" width="1400" height="856" fetchpriority="high"></div>
+                <div class="disp d-mesa"><img src="assets/img/hero/hero-mesa.webp" alt="Cardápio digital no tablet e no celular com comanda de mesa com QR Code" width="1373" height="978" fetchpriority="high"></div>
+                <div class="disp d-imp"><img src="assets/img/hero/hero-impressora.webp" alt="Impressora térmica imprimindo pedido de delivery do Menuzia automaticamente" width="1100" height="949" fetchpriority="high"></div>
+                <span class="pilula p1"><i></i>Cardápio QR Code na mesa</span>
+                <span class="pilula p3"><i></i>Cardápio digital delivery</span>
+                <span class="pilula p4"><i></i>Impressão automática</span>
             </div>
         </div>
     </section>
@@ -732,6 +838,59 @@
         <div class="wrap" style="text-align:center;margin-top:30px"><a href="https://wa.me/5527992534407?text=Ol%C3%A1!%20Quero%20testar%20o%20Menuzia%20gr%C3%A1tis." data-crm-form class="btn btn-cta btn-lg">Quero tudo isso por R$97</a></div>
     </section>
 
+    <!-- ===== GESTÃO (telas reais do painel, dados fictícios — fonte: telas-src/gentelas.js) ===== -->
+    <section id="gestao" class="gestao">
+        <div class="wrap">
+            <div class="centro rv">
+                <span class="rotulo">Gestão completa</span>
+                <h2 class="h2">Saiba quanto vende, quanto gasta e <span class="laranja">quanto lucra de verdade</span></h2>
+                <p class="lead">Do pedido à entrega e do caixa à ficha técnica: o painel do Menuzia mostra o seu negócio inteiro numa tela só.</p>
+            </div>
+            <div class="g-abas rv" role="tablist" aria-label="Telas do painel">
+                <button role="tab" aria-selected="true" data-tela="dashboard" data-url="dashboard" data-t="Dashboard e funil de vendas" data-d="Faturamento do mês, ticket médio, lucro estimado e o funil do seu cardápio: quantos visitaram, colocaram na sacola e pediram." data-alt="Dashboard do Menuzia com faturamento de R$ 81 mil no mês, gráfico diário e funil de vendas do cardápio">Dashboard</button>
+                <button role="tab" aria-selected="false" data-tela="resumo" data-url="dashboard/origem" data-t="De onde vêm as suas vendas" data-d="Instagram, WhatsApp, Google ou anúncio: veja quanto cada canal traz de visita, pedido e faturamento, além de clientes novos e recorrentes." data-alt="Resumo do período com faturamento, ticket médio, clientes novos e recorrentes e origem das visitas por canal">Resultados</button>
+                <button role="tab" aria-selected="false" data-tela="rotas" data-url="logistica/rotas" data-t="Despacho de rotas no mapa" data-d="Todos os pedidos do dia no mapa, com status por cor. Atribua o motoboy em um clique e acompanhe quem está em rota." data-alt="Despacho de rotas com pedidos no mapa, status por cor e lista de entregadores online">Rotas</button>
+                <button role="tab" aria-selected="false" data-tela="fluxo" data-url="financeiro/fluxo-de-caixa" data-t="Fluxo de caixa sem planilha" data-d="Cada turno fechado com dinheiro, Pix e cartão separados. Diferença de caixa aparece na hora, sem conferência manual." data-alt="Fluxo de caixa dos últimos 7 dias com vendas em dinheiro, Pix e cartão por turno">Caixa</button>
+                <button role="tab" aria-selected="false" data-tela="insumos" data-url="financeiro/precificacao" data-t="Custo dos insumos sempre atualizado" data-d="Cadastre o preço do blend, do pão e da embalagem uma vez. Mudou o preço do fornecedor? Todas as fichas técnicas recalculam sozinhas." data-alt="Lista de insumos com preço por quilo e por unidade usados nas fichas técnicas">Insumos</button>
+                <button role="tab" aria-selected="false" data-tela="precificacao" data-url="financeiro/precificacao/produtos" data-t="Precificação e lucro real" data-d="Ficha técnica de cada produto com custo, margem e preço sugerido. Você vê o lucro real por venda, já descontando a taxa do cartão." data-alt="Tela de precificação com custo, lucro, margem e preço sugerido por produto e ficha técnica com lucro real por venda">Precificação</button>
+                <button role="tab" aria-selected="false" data-tela="integracoes" data-url="integracoes" data-t="Integrações que você já usa" data-d="WhatsApp, Meta, Mercado Pago, Google Analytics, iFood, 99Food, aiqfome, Keeta, Uber Direct, Lalamove e mais, no mesmo painel." data-alt="Tela de integrações do Menuzia com WhatsApp, Meta, Mercado Pago, iFood, 99Food, aiqfome, Keeta, Uber Direct e Lalamove">Integrações</button>
+            </div>
+            <div class="g-palco rv">
+                <div class="g-info"><h3 id="g-tit">Dashboard e funil de vendas</h3><p id="g-desc">Faturamento do mês, ticket médio, lucro estimado e o funil do seu cardápio: quantos visitaram, colocaram na sacola e pediram.</p></div>
+                <div class="janela">
+                    <div class="janela-barra"><i></i><i></i><i></i><span id="g-url">app.menuzia.com.br/dashboard</span></div>
+                    <img id="g-img" src="assets/img/telas/dashboard.webp" alt="Dashboard do Menuzia com faturamento de R$ 81 mil no mês, gráfico diário e funil de vendas do cardápio" width="2000" height="1292" loading="lazy">
+                </div>
+                <p class="g-nota">Telas reais do painel com dados ilustrativos.</p>
+            </div>
+            <div style="text-align:center;margin-top:34px"><a href="https://wa.me/5527992534407?text=Ol%C3%A1!%20Quero%20testar%20o%20Menuzia%20gr%C3%A1tis." data-crm-form class="btn btn-cta btn-lg">Quero esse painel no meu delivery</a></div>
+        </div>
+    </section>
+
+    <!-- ===== INTEGRAÇÕES (órbita com as integrações disponíveis no painel) ===== -->
+    <section id="integracoes" class="integ">
+        <div class="wrap">
+            <div class="integ-texto rv">
+                <span class="rotulo">Integrações</span>
+                <h2 class="h2">Conecta com <span class="laranja">tudo o que você já usa</span></h2>
+                <p class="lead">Marketplaces, entregas, pagamento e anúncios no mesmo painel. Use o iFood pra ser encontrado e o seu cardápio próprio pra vender sem comissão.</p>
+                <ul class="lista-check">
+                    <li><span><strong>iFood, 99Food, aiqfome e Keeta:</strong> pedidos entram no mesmo painel e na mesma impressora</span></li>
+                    <li><span><strong>Uber Direct, Lalamove e Foody:</strong> chame entregador sob demanda quando faltar motoboy</span></li>
+                    <li><span><strong>Mercado Pago:</strong> Pix e cartão online, direto na sua conta</span></li>
+                    <li><span><strong>Meta e Google:</strong> Pixel, API de Conversões, Analytics e Tag Manager pra saber qual anúncio vende</span></li>
+                </ul>
+                <a href="https://wa.me/5527992534407?text=Ol%C3%A1!%20Quero%20testar%20o%20Menuzia%20gr%C3%A1tis." data-crm-form class="btn btn-cta btn-lg">Quero integrar meu delivery</a>
+            </div>
+            <div class="orbita rv" style="--d:.1s" role="img" aria-label="Integrações do Menuzia: iFood, 99Food, aiqfome, Keeta, Mercado Pago, WhatsApp, Uber Direct, Lalamove, Foody Delivery, Meta e Google">
+                <div class="anel a1"></div><div class="anel a2"></div><div class="anel a3"></div>
+                <div class="giro g-in"><div class="orb-logo" style="left:50.00%;top:18.00%" title="iFood"><img src="assets/img/logos/app-ifood.webp" alt="iFood" width="80" height="80" loading="lazy"></div><div class="orb-logo" style="left:77.71%;top:34.00%" title="99Food"><img src="assets/img/logos/app-99food.webp" alt="99Food" width="80" height="80" loading="lazy"></div><div class="orb-logo" style="left:77.71%;top:66.00%" title="aiqfome"><img src="assets/img/logos/app-aiqfome.webp" alt="aiqfome" width="80" height="80" loading="lazy"></div><div class="orb-logo" style="left:50.00%;top:82.00%" title="Keeta"><img src="assets/img/logos/app-keeta.webp" alt="Keeta" width="80" height="80" loading="lazy"></div><div class="orb-logo" style="left:22.29%;top:66.00%" title="Mercado Pago"><img src="assets/img/logos/mercadopago.svg" alt="Mercado Pago" width="80" height="80" loading="lazy"></div><div class="orb-logo" style="left:22.29%;top:34.00%" title="WhatsApp"><img src="assets/img/logos/whatsapp.svg" alt="WhatsApp" width="80" height="80" loading="lazy"></div></div>
+                <div class="giro g-ex"><div class="orb-logo" style="left:64.48%;top:3.19%" title="Uber Direct"><img src="assets/img/logos/app-uber.webp" alt="Uber Direct" width="80" height="80" loading="lazy"></div><div class="orb-logo" style="left:95.63%;top:32.13%" title="Lalamove"><img src="assets/img/logos/app-lalamove.webp" alt="Lalamove" width="80" height="80" loading="lazy"></div><div class="orb-logo" style="left:92.42%;top:74.53%" title="Foody Delivery"><img src="assets/img/logos/app-foody.webp" alt="Foody Delivery" width="80" height="80" loading="lazy"></div><div class="orb-logo" style="left:57.26%;top:98.46%" title="Facebook Pixel"><img src="assets/img/logos/facebook.svg" alt="Facebook Pixel" width="80" height="80" loading="lazy"></div><div class="orb-logo" style="left:16.64%;top:85.89%" title="API de Conversões da Meta"><img src="assets/img/logos/meta.svg" alt="API de Conversões da Meta" width="80" height="80" loading="lazy"></div><div class="orb-logo" style="left:1.14%;top:46.30%" title="Google Analytics"><img src="assets/img/logos/googleanalytics.svg" alt="Google Analytics" width="80" height="80" loading="lazy"></div><div class="orb-logo" style="left:22.43%;top:9.49%" title="Google Tag Manager"><img src="assets/img/logos/googletagmanager.svg" alt="Google Tag Manager" width="80" height="80" loading="lazy"></div></div>
+                <div class="orb-centro"><img src="assets/img/marca/simbolo_azul.webp" alt="" width="120" height="120"></div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== PARA QUEM É ===== -->
     <section class="para-quem">
         <div class="wrap">
@@ -740,13 +899,13 @@
                 <h2 class="h2">Feito pra quem vive de delivery e salão</h2>
             </div>
             <div class="segmentos rv">
-                <a class="seg" href="cardapio-digital-para-delivery.html"><img src="assets/img/blog/blog-hamburgueria.webp" alt="Hamburgueria" loading="lazy" width="440" height="600"><span>🍔 Hamburguerias</span></a>
-                <a class="seg" href="cardapio-digital-para-pizzaria.html"><img src="assets/img/blog/local-vitoria.webp" alt="Pizzaria" loading="lazy" width="440" height="600"><span>🍕 Pizzarias</span></a>
-                <a class="seg" href="cardapio-digital-para-lanchonete.html"><img src="assets/img/blog/local-serra.webp" alt="Lanchonete" loading="lazy" width="440" height="600"><span>🥪 Lanchonetes</span></a>
-                <a class="seg" href="cardapio-digital-para-marmitaria.html"><img src="assets/img/blog/local-vila-velha.webp" alt="Marmitaria" loading="lazy" width="440" height="600"><span>🍱 Marmitarias</span></a>
-                <a class="seg" href="cardapio-digital-para-restaurante.html"><img src="assets/img/blog/local-cariacica.webp" alt="Restaurante" loading="lazy" width="440" height="600"><span>🍽️ Restaurantes</span></a>
-                <a class="seg" href="cardapio-digital-para-whatsapp.html"><img src="assets/img/blog/local-vila-velha-2.webp" alt="Delivery pelo WhatsApp" loading="lazy" width="440" height="600"><span>🛵 Delivery</span></a>
-                <a class="seg" href="cardapio-digital-para-confeitaria.html"><img src="assets/img/blog/local-guarapari.webp" alt="Açaí e confeitaria" loading="lazy" width="440" height="600"><span>🍨 Açaí e doces</span></a>
+                <div class="seg"><img src="assets/img/blog/blog-hamburgueria.webp" alt="Hamburgueria" loading="lazy" width="440" height="600"><span>🍔 Hamburguerias</span></div>
+                <div class="seg"><img src="assets/img/blog/local-vitoria.webp" alt="Pizzaria" loading="lazy" width="440" height="600"><span>🍕 Pizzarias</span></div>
+                <div class="seg"><img src="assets/img/blog/local-serra.webp" alt="Lanchonete" loading="lazy" width="440" height="600"><span>🥪 Lanchonetes</span></div>
+                <div class="seg"><img src="assets/img/blog/local-vila-velha.webp" alt="Marmitaria" loading="lazy" width="440" height="600"><span>🍱 Marmitarias</span></div>
+                <div class="seg"><img src="assets/img/blog/local-cariacica.webp" alt="Restaurante" loading="lazy" width="440" height="600"><span>🍽️ Restaurantes</span></div>
+                <div class="seg"><img src="assets/img/blog/local-vila-velha-2.webp" alt="Delivery pelo WhatsApp" loading="lazy" width="440" height="600"><span>🛵 Delivery</span></div>
+                <div class="seg"><img src="assets/img/blog/local-guarapari.webp" alt="Açaí e confeitaria" loading="lazy" width="440" height="600"><span>🍨 Açaí e doces</span></div>
             </div>
         </div>
     </section>
@@ -848,11 +1007,25 @@
     <section class="cta-final">
         <div class="wrap">
             <div class="cta-box rv">
-                <img class="simbolo" src="assets/img/marca/simbolo_azul.webp" alt="" width="72" height="72">
-                <h2 class="h2">Seu delivery, suas regras, seus clientes.</h2>
-                <p>Comece hoje com o primeiro mês grátis. Depois, R$97/mês com tudo incluso — sem comissão, sem fidelidade.</p>
-                <a href="https://wa.me/5527992534407?text=Ol%C3%A1!%20Quero%20meu%20primeiro%20m%C3%AAs%20gr%C3%A1tis%20no%20Menuzia." data-crm-form class="btn btn-cta btn-lg btn-pulso">Quero meu 1º mês grátis</a>
-                <div class="micro"><span>Configuração inclusa</span><span>Suporte no WhatsApp</span><span>Cancele quando quiser</span></div>
+                <div class="cta-texto">
+                    <span class="cta-online"><i></i>Equipe online agora</span>
+                    <h2 class="h2">Seu delivery, suas regras, seus clientes.</h2>
+                    <p>Comece hoje com o primeiro mês grátis. Depois, R$97/mês com tudo incluso — sem comissão, sem fidelidade.</p>
+                    <a href="https://wa.me/5527992534407?text=Ol%C3%A1!%20Quero%20meu%20primeiro%20m%C3%AAs%20gr%C3%A1tis%20no%20Menuzia." data-crm-form class="btn-form">
+                        <span class="bf-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M9 3.5h6v2.5H9z"/><path d="M8.5 11h7M8.5 15h4.5"/></svg></span>
+                        <span class="bf-txt"><b>Preencher o formulário</b><small>Leva menos de 1 minuto · 1º mês grátis</small></span>
+                        <span class="bf-seta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+                    <div class="micro"><span>Configuração inclusa</span><span>Suporte no WhatsApp</span><span>Cancele quando quiser</span></div>
+                </div>
+                <div class="cta-ilus" aria-hidden="true">
+                    <span class="cta-aro"></span>
+                    <img class="atendente" src="assets/img/atendente-menuzia.webp" alt="" width="760" height="1158" loading="lazy">
+                    <div class="bolha b0"><span class="b-on"></span><div><b>Especialista Menuzia</b><span>online agora</span></div></div>
+                    <div class="bolha b1"><span class="b-av"><img src="assets/img/marca/simbolo_azul.webp" alt="" width="28" height="28"></span><div><b>Menuzia</b><span>Oi! Vamos montar seu cardápio? 🍔</span></div></div>
+                    <div class="bolha b2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12.5l5 5L18 6.5M9 15l2.5 2.5L22 6.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Responde em minutos</div>
+                    <div class="bolha b3"><i></i>Configuração grátis</div>
+                </div>
             </div>
         </div>
     </section>
@@ -863,55 +1036,74 @@
 <footer class="footer">
     <div class="wrap">
         <div class="footer-grid">
-            <div>
+            <div class="f-marca">
                 <a href="https://menuzia.com.br/" class="logo"><img src="assets/img/marca/horizontal_branca-logo.webp" alt="Menuzia" width="366" height="96"></a>
-                <p style="margin-bottom:16px;">Cardápio digital sem comissão para delivery e restaurante. R$97/mês com tudo incluso e o primeiro mês grátis.</p>
+                <p><strong>Cardápio digital sem comissão para delivery e restaurante.</strong> Venda direto pro seu cliente, automatize o WhatsApp e organize a cozinha num sistema só. R$97/mês com tudo incluso e o primeiro mês grátis.</p>
+                <ul class="f-contato">
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a8 8 0 0 0-8 8c0 5.6 8 12 8 12s8-6.4 8-12a8 8 0 0 0-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg><span>Atendimento online em todo o Brasil</span></li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2z"/></svg><a href="https://wa.me/5527992534407?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Menuzia." data-crm-form>(27) 99253-4407</a></li>
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4 7.5V17h16V7.5l-8 4.7z"/></svg><a href="mailto:contato@menuzia.com.br">contato@menuzia.com.br</a></li>
+                </ul>
+                <p class="f-ia-tit">Pergunte à IA se o Menuzia é ideal pro seu negócio:</p>
+                <div class="f-ia">
+                    <a href="https://chatgpt.com/?q=O%20Menuzia%20(menuzia.com.br)%20%C3%A9%20um%20bom%20card%C3%A1pio%20digital%20sem%20comiss%C3%A3o%20para%20o%20meu%20delivery%3F" target="_blank" rel="noopener" aria-label="Perguntar ao ChatGPT" title="ChatGPT"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2a4.3 4.3 0 0 1 4.1 3 4.3 4.3 0 0 1 3.9 6.3 4.3 4.3 0 0 1-3.6 6.4 4.3 4.3 0 0 1-7.1 1.4 4.3 4.3 0 0 1-5-5.1 4.3 4.3 0 0 1 2.4-7.5A4.3 4.3 0 0 1 12 3.2z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 8.5v6l5 3M15 6.5l-5 3v5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
+                    <a href="https://www.google.com/search?udm=50&amp;q=O%20Menuzia%20(menuzia.com.br)%20%C3%A9%20um%20bom%20card%C3%A1pio%20digital%20sem%20comiss%C3%A3o%20para%20o%20meu%20delivery%3F" target="_blank" rel="noopener" aria-label="Perguntar ao Google" title="Google"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.3z" fill="#4285F4"/><path d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22z" fill="#34A853"/><path d="M6.4 14c-.2-.6-.3-1.3-.3-2s.1-1.4.3-2V7.4H3.1a10 10 0 0 0 0 9.2L6.4 14z" fill="#FBBC05"/><path d="M12 6c1.5 0 2.8.5 3.8 1.5l2.9-2.9A10 10 0 0 0 3.1 7.4L6.4 10C7.2 7.7 9.4 6 12 6z" fill="#EA4335"/></svg></a>
+                    <a href="https://claude.ai/new?q=O%20Menuzia%20(menuzia.com.br)%20%C3%A9%20um%20bom%20card%C3%A1pio%20digital%20sem%20comiss%C3%A3o%20para%20o%20meu%20delivery%3F" target="_blank" rel="noopener" aria-label="Perguntar ao Claude" title="Claude"><svg viewBox="0 0 24 24" aria-hidden="true"><g stroke="#D97757" stroke-width="2.4" stroke-linecap="round"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></g></svg></a>
+                    <a href="https://www.perplexity.ai/search?q=O%20Menuzia%20(menuzia.com.br)%20%C3%A9%20um%20bom%20card%C3%A1pio%20digital%20sem%20comiss%C3%A3o%20para%20o%20meu%20delivery%3F" target="_blank" rel="noopener" aria-label="Perguntar ao Perplexity" title="Perplexity"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M5 6l7 5 7-5M5 6v6l7-1M19 6v6l-7-1M5 12v6l7-5 7 5v-6" fill="none" stroke="#20808D" stroke-width="1.8" stroke-linejoin="round"/></svg></a>
+                </div>
+            </div>
+            <div>
+                <h4>Soluções para delivery</h4>
                 <ul>
-                    <li><a href="#recursos">Recursos</a></li>
-                    <li><a href="#planos">Preço</a></li>
-                    <li><a href="#duvidas">Dúvidas frequentes</a></li>
-                    <li><a href="cardapio-digital-barato.html">Cardápio digital barato</a></li>
-                    <li><a href="politica-de-privacidade.html">Política de Privacidade</a></li>
-                    <li><a href="https://app.menuzia.com.br/login">Já é cliente? Entrar</a></li>
+                    <li><a href="cardapio-digital-para-delivery.html">Cardápio digital <span class="f-tag">Delivery</span></a></li>
+                    <li><a href="cardapio-digital-para-whatsapp.html">Robô e cardápio no WhatsApp</a></li>
+                    <li><a href="disparo-whatsapp-para-delivery.html">Disparo de campanhas</a></li>
+                    <li><a href="rota-de-motoboy-para-delivery.html">App e rota do entregador</a></li>
+                    <li><a href="programa-de-fidelidade-para-delivery.html">Fidelidade e ticket médio</a></li>
+                    <li><a href="cardapio-digital-integrado-ifood.html">Integração iFood e outros</a></li>
+                </ul>
+                <h4>Salão (mesas e comandas)</h4>
+                <ul>
+                    <li><a href="sistema-de-mesas-e-comandas.html">Cardápio digital <span class="f-tag">QR Code</span></a></li>
+                    <li><a href="cardapio-digital-para-restaurante.html">Cardápio digital <span class="f-tag">Tablet</span></a></li>
+                    <li><a href="sistema-pdv-para-delivery.html">Sistema PDV</a></li>
+                    <li><a href="controle-de-caixa-para-restaurante.html">Controle de caixa e sangria</a></li>
                 </ul>
             </div>
             <div>
-                <h4>Cardápio digital por segmento</h4>
+                <h4>Integrações</h4>
+                <ul class="f-integ">
+                    <li><a href="cardapio-digital-integrado-ifood.html"><i style="background:#EA1D2C">iF</i>iFood</a></li>
+                    <li><a href="cardapio-digital-99food.html"><i style="background:#FFD000;color:#111">99</i>99Food</a></li>
+                    <li><a href="cardapio-digital-integrado-ifood.html"><i style="background:#7B2BC9">aq</i>aiqfome</a></li>
+                    <li><a href="cardapio-digital-sem-comissao.html"><i style="background:#00A6E6">MP</i>Mercado Pago</a></li>
+                    <li><a href="disparo-whatsapp-para-delivery.html"><i style="background:#25D366">WA</i>WhatsApp API oficial</a></li>
+                </ul>
+                <h4>Por segmento</h4>
                 <ul>
-                    <li><a href="cardapio-digital-para-delivery.html">Cardápio digital para delivery</a></li>
-                    <li><a href="cardapio-digital-para-restaurante.html">Cardápio digital para restaurante</a></li>
-                    <li><a href="cardapio-digital-para-whatsapp.html">Cardápio digital para WhatsApp</a></li>
                     <li><a href="cardapio-digital-para-pizzaria.html">Cardápio digital para pizzaria</a></li>
-                    <li><a href="cardapio-digital-para-confeitaria.html">Cardápio digital para confeitaria</a></li>
                     <li><a href="cardapio-digital-para-lanchonete.html">Cardápio digital para lanchonete</a></li>
+                    <li><a href="cardapio-digital-para-confeitaria.html">Cardápio digital para confeitaria</a></li>
                     <li><a href="cardapio-digital-para-marmitaria.html">Cardápio digital para marmitaria</a></li>
-                    <li><a href="cardapio-digital-gratis.html">Cardápio digital grátis</a></li>
-                    <li><a href="cardapio-digital-pdf.html">Cardápio digital em PDF</a></li>
-                    <li><a href="cardapio-digital-99food.html">Cardápio digital x 99Food</a></li>
+                    <li><a href="cardapio-digital-para-restaurante-iniciante.html">Para restaurante iniciante</a></li>
                 </ul>
             </div>
             <div>
+                <h4>Menuzia</h4>
+                <div class="f-pilulas">
+                    <a href="https://app.menuzia.com.br/login" class="f-pil"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zm0 2c-4.4 0-8 2.2-8 5v2h16v-2c0-2.8-3.6-5-8-5z"/></svg>Acessar sistema</a>
+                    <a href="https://wa.me/5527992534407?text=Ol%C3%A1!%20Quero%20testar%20o%20Menuzia%20gr%C3%A1tis." data-crm-form class="f-pil f-pil-cta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7h-3.2A3 3 0 0 0 12 3.8 3 3 0 0 0 7.2 7H4a1 1 0 0 0-1 1v3h18V8a1 1 0 0 0-1-1zM9.5 7a1.2 1.2 0 1 1 1.2-1.2V7H9.5zm5 0h-1.2V5.8A1.2 1.2 0 1 1 14.5 7zM4 13v7a1 1 0 0 0 1 1h6v-8H4zm9 8h6a1 1 0 0 0 1-1v-7h-7v8z"/></svg>Testar 1 mês grátis</a>
+                </div>
                 <h4>Preço e comparativos</h4>
                 <ul>
+                    <li><a href="cardapio-digital-barato.html">Cardápio digital barato</a></li>
                     <li><a href="cardapio-digital-mais-barato.html">Cardápio digital mais barato</a></li>
                     <li><a href="cardapio-digital-sem-comissao.html">Cardápio digital sem comissão</a></li>
                     <li><a href="cardapio-digital-preco.html">Preço de cardápio digital</a></li>
                     <li><a href="cardapio-digital-mensalidade-fixa.html">Mensalidade fixa</a></li>
                     <li><a href="melhor-cardapio-digital.html">Melhor cardápio digital</a></li>
-                    <li><a href="cardapio-digital-para-restaurante-iniciante.html">Para restaurante iniciante</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Gestão</h4>
-                <ul>
-                    <li><a href="sistema-pdv-para-delivery.html">Sistema PDV para delivery</a></li>
-                    <li><a href="controle-de-caixa-para-restaurante.html">Controle de caixa e sangria</a></li>
-                    <li><a href="sistema-de-mesas-e-comandas.html">Sistema de mesas e comandas</a></li>
-                    <li><a href="rota-de-motoboy-para-delivery.html">Rota de motoboy</a></li>
-                    <li><a href="disparo-whatsapp-para-delivery.html">Disparo em massa no WhatsApp</a></li>
-                    <li><a href="programa-de-fidelidade-para-delivery.html">Fidelidade e ticket médio</a></li>
-                    <li><a href="cardapio-digital-integrado-ifood.html">Integrado ao iFood e 99Food</a></li>
-                    <li><a href="cidades.html">Todas as cidades atendidas</a></li>
+                    <li><a href="cardapio-digital-gratis.html">Cardápio digital grátis</a></li>
+                    <li><a href="cardapio-digital-pdf.html">Cardápio digital em PDF</a></li>
                 </ul>
             </div>
         </div>
@@ -965,7 +1157,11 @@
         </div>
         <div class="footer-base">
             <span>© 2026 Menuzia. Todos os direitos reservados.</span>
-            <a href="politica-de-privacidade.html">Política de Privacidade</a>
+            <div class="f-base-links">
+                <a href="politica-de-privacidade.html">Política de Privacidade</a>
+                <a href="cidades.html">Cidades atendidas</a>
+                <a href="#topo" class="f-topo" aria-label="Voltar ao topo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5l-7 7h4.5v7h5v-7H19z"/></svg></a>
+            </div>
         </div>
     </div>
 </footer>
@@ -1068,6 +1264,25 @@
         trilho.addEventListener('pointermove', function (e) { if (arr) x = xIni + (e.clientX - ini); });
         ['pointerup', 'pointercancel'].forEach(function (ev) { trilho.addEventListener(ev, function () { arr = false; trilho.classList.remove('arrastando'); }); });
     }
+
+    // Menu do topo fica azul a partir da 3ª dobra
+    function menuAzul() { header.classList.toggle('azul', window.scrollY > window.innerHeight * 2 - 80); }
+    window.addEventListener('scroll', menuAzul, { passive: true }); menuAzul();
+
+    // Gestão: abas trocam a tela do painel
+    var abas = document.querySelectorAll(".g-abas button"), gImg = document.getElementById("g-img");
+    abas.forEach(function (b) {
+        b.addEventListener("click", function () {
+            abas.forEach(function (x) { x.setAttribute("aria-selected", x === b ? "true" : "false"); });
+            document.getElementById("g-tit").textContent = b.getAttribute("data-t");
+            document.getElementById("g-desc").textContent = b.getAttribute("data-d");
+            document.getElementById("g-url").textContent = "app.menuzia.com.br/" + b.getAttribute("data-url");
+            var nova = new Image(); nova.src = "assets/img/telas/" + b.getAttribute("data-tela") + ".webp";
+            gImg.classList.add("trocando");
+            nova.onload = function () { gImg.src = nova.src; gImg.alt = b.getAttribute("data-alt"); gImg.width = nova.naturalWidth; gImg.height = nova.naturalHeight; gImg.classList.remove("trocando"); };
+            b.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
+        });
+    });
 
     // Carrossel de recursos: setas
     var rec = document.getElementById('rec-trilho');

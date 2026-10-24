@@ -68,8 +68,9 @@
 
   // ---- estilos
   var css = '' +
-    '.crmf-bg{position:fixed;inset:0;z-index:99999;background:rgba(15,23,42,.6);display:flex;align-items:center;justify-content:center;padding:16px;font-family:Inter,system-ui,-apple-system,sans-serif;animation:crmf-fade .18s ease-out;-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}' +
-    '.crmf{background:#fff;border-radius:20px;width:100%;max-width:460px;box-shadow:0 24px 60px rgba(0,0,0,.3);position:relative;color:#0f172a;overflow:hidden;max-height:calc(100vh - 32px);display:flex;flex-direction:column}' +
+    '.crmf-bg{position:fixed;inset:0;z-index:99999;background:rgba(15,23,42,.6);display:flex;align-items:center;justify-content:center;padding:16px;font-family:Inter,system-ui,-apple-system,sans-serif;animation:crmf-fade .3s ease-out both;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}' +
+    '.crmf{background:#fff;border-radius:20px;width:100%;max-width:460px;box-shadow:0 24px 60px rgba(0,0,0,.3);position:relative;color:#0f172a;overflow:hidden;max-height:calc(100vh - 32px);display:flex;flex-direction:column;animation:crmf-pop .55s cubic-bezier(.2,.9,.3,1.12) both}' +
+    '.crmf-bg.saindo{animation:crmf-fade .2s ease-in reverse both}.crmf-bg.saindo .crmf{animation:crmf-out .2s ease-in both}' +
     '.crmf-bar{height:5px;background:#eef2f7}.crmf-bar i{display:block;height:100%;background:linear-gradient(90deg,#EE6A2C,#25D366);transition:width .3s ease}' +
     '.crmf-body{padding:26px 26px 22px;overflow-y:auto}' +
     '.crmf-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}' +
@@ -94,8 +95,8 @@
     '.crmf-next:hover{background:#0F1B3D}.crmf-next.wa{background:#25D366}.crmf-next.wa:hover{background:#1eba57}.crmf-next:disabled{opacity:.7;cursor:wait}' +
     '.crmf-hint{font-size:12px;color:#94a3b8;margin-top:12px;text-align:right}' +
     '.crmf-foot{font-size:12px;color:#94a3b8;text-align:center;padding:0 26px 18px}' +
-    '@keyframes crmf-fade{from{opacity:0}to{opacity:1}}@keyframes crmf-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}' +
-    '@media (max-width:480px){.crmf-body{padding:22px 20px 18px}.crmf-q{font-size:19px}}';
+    '@keyframes crmf-fade{from{opacity:0}to{opacity:1}}@keyframes crmf-pop{0%{opacity:0;transform:translate(var(--fx,0),var(--fy,40px)) scale(.15)}60%{opacity:1}100%{opacity:1;transform:none}}@keyframes crmf-out{to{opacity:0;transform:translateY(16px) scale(.94)}}@keyframes crmf-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}' +
+    '@media (prefers-reduced-motion:reduce){.crmf-bg,.crmf,.crmf-step{animation:none!important}}@media (max-width:480px){.crmf-body{padding:22px 20px 18px}.crmf-q{font-size:19px}}';
   var st = document.createElement('style');
   st.textContent = css;
   document.head.appendChild(st);
@@ -115,6 +116,7 @@
     if (dest) window.location.href = dest; // mesma aba: não é bloqueado como popup no celular
   }
 
+  var origem = null;
   function open(fallbackHref) {
     var fields = (cfg.fields || []).filter(function (f) { return f.enabled; });
     if (!fields.length) return goWhatsapp(null, fallbackHref);
@@ -125,6 +127,8 @@
     var bg = document.createElement('div');
     bg.className = 'crmf-bg';
     bg.innerHTML = '<div class="crmf" role="dialog" aria-modal="true"><div class="crmf-bar"><i></i></div><div class="crmf-body"></div><div class="crmf-foot">🔒 Seus dados ficam só com a nossa equipe.</div></div>';
+    // o card "sai" do botão clicado e cresce até o centro da tela
+    if (origem) { var card = bg.querySelector('.crmf'); card.style.setProperty('--fx', Math.round(origem.x - innerWidth / 2) + 'px'); card.style.setProperty('--fy', Math.round(origem.y - innerHeight / 2) + 'px'); origem = null; }
     document.body.appendChild(bg);
     var body = bg.querySelector('.crmf-body');
     var bar = bg.querySelector('.crmf-bar i');
@@ -132,7 +136,9 @@
     document.body.style.overflow = 'hidden';
 
     function close() {
-      bg.remove();
+      if (bg.classList.contains('saindo')) return;
+      bg.classList.add('saindo');
+      setTimeout(function () { bg.remove(); }, 200);
       document.body.style.overflow = prevOverflow;
       document.removeEventListener('keydown', onKey);
     }
@@ -247,6 +253,8 @@
     var a = e.target.closest && e.target.closest(sel);
     if (!a || e.ctrlKey || e.metaKey || e.shiftKey) return;
     e.preventDefault();
+    var rc = a.getBoundingClientRect();
+    origem = { x: rc.left + rc.width / 2, y: rc.top + rc.height / 2 };
     var href = a.getAttribute('href');
     open(href && href !== '#' ? href : null);
   }, true);

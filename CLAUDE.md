@@ -68,6 +68,8 @@ Categoria **`tutoriais/`** (cat `Tutorial`): guias de operação que ajudam o le
 | `genblog.js` | Gerador do blog |
 | `getimg.js` | Baixa imagens da Pexels → webp |
 | `conv.js` | Converte PNG → webp |
+| `telas-src/gentelas.js` | Telas do painel da seção "Gestão completa" da home (`assets/img/telas/`). Dados **fictícios e coerentes** (fat. R$ 81.347,60/30 dias) saem do bloco DADOS; recria HTML e renderiza com Chrome headless: `node telas-src/gentelas.js [nome]` |
+| `telas-src/genhero.js` | 3 peças da vitrine da hero da home (`assets/img/hero/`): notebook com o cardápio da Bela Marmita (cliente real, endereço do cliente removido), mesa (tablet + celular + comanda QR) e impressora com cupom Menuzia. `node telas-src/genhero.js [nome]` |
 | `blog/blog.css` | CSS do blog + páginas locais |
 | `gensitemap.js` | Gera `sitemap.xml` varrendo os HTML (rodar depois de qualquer gerador) |
 | `sitemap.xml` / `robots.txt` | SEO técnico (`sitemap.xml` é **gerado**, não editar à mão) |
