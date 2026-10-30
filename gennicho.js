@@ -35,6 +35,30 @@ const LT_GESTAO = [
   ['cardápio digital sem comissão', 'cardapio-digital-sem-comissao.html'],
 ];
 
+// Cluster de DORES (atendimento, erro, atraso, comissão, calote, lucro, recompra): chips cruzados.
+const LT_DORES = [
+  ['agente de IA para delivery', 'agente-de-ia-para-delivery.html'],
+  ['como tirar pedidos pelo WhatsApp', 'tirar-pedidos-pelo-whatsapp.html'],
+  ['status do pedido no WhatsApp', 'status-do-pedido-no-whatsapp.html'],
+  ['como evitar pedido errado no delivery', 'pedido-errado-no-delivery.html'],
+  ['tela de cozinha KDS', 'tela-de-cozinha-kds.html'],
+  ['alternativa ao iFood', 'alternativa-ao-ifood.html'],
+  ['pagamento online para delivery', 'pagamento-online-para-delivery.html'],
+  ['ficha técnica e precificação', 'ficha-tecnica-e-precificacao.html'],
+  ['CRM para restaurante', 'crm-para-restaurante.html'],
+  ['cashback para delivery', 'cashback-para-delivery.html'],
+  ['cardápio digital sem comissão', 'cardapio-digital-sem-comissao.html'],
+];
+
+// Preços atuais da home. Página com `plano` usa estes textos; sem `plano` segue o texto antigo (R$67, pendente).
+// 'modulo' = Agente de IA, módulo pago sem preço público: não publica Offer nem valor.
+const PLANOS = {
+  basico: { preco: '97.00', meta: 'Plano Básico R$97/mês' },
+  completo: { preco: '149.00', meta: 'Plano Completo R$149/mês' },
+  modulo: { preco: null, meta: 'Módulo Agente de IA' },
+};
+const WA_CTA = `https://wa.me/${NAP.phoneRaw}?text=Ol%C3%A1!%20Quero%20conhecer%20o%20Menuzia.`;
+
 // ============================================================
 //  Landings (uma por intenção de busca)
 // ============================================================
@@ -1252,6 +1276,548 @@ const niches = [
       ['Integra com Facebook Pixel e Google Analytics?', 'Sim. Há integração com Facebook Pixel, API de Conversões da Meta e Google Analytics/Tag Manager para medir quais anúncios geram pedidos.'],
     ],
   },
+
+  {
+    slug: 'agente-de-ia-para-delivery.html',
+    cat: 'Agente de IA',
+    plano: 'modulo',
+    heroImg: 'tut-whatsapp.webp',
+    heroAlt: 'Atendimento de delivery no WhatsApp feito por agente de inteligência artificial',
+    title: 'Agente de IA para Delivery: Atendente no WhatsApp 24h | Menuzia',
+    h1: 'Agente de IA para delivery: um atendente no WhatsApp que conversa e fecha o pedido',
+    desc: 'Agente de IA para delivery: conversa no WhatsApp, entende texto e áudio, consulta seu cardápio real, calcula a taxa e fecha o pedido sozinho.',
+    keywords: 'agente de ia para delivery, agente de ia para restaurante, atendimento com ia no whatsapp, inteligência artificial para restaurante, atendente virtual delivery, ia para delivery, chatbot com ia para restaurante, ia que anota pedido',
+    lt: LT_DORES,
+    body: `<p>Sexta, 20h: a chapa está cheia, o WhatsApp não para e cada minuto sem resposta é um cliente indo pedir em outro lugar. Um <strong>agente de IA para delivery</strong> assume essa conversa: lê o que o cliente escreveu, entende o que ele quer e conduz o pedido até o fim, como um bom atendente faria.</p>
+
+<h2>Robô de menu x agente de IA</h2>
+<p>O robô tradicional funciona por opções: "digite 1 para cardápio". O <strong>Agente de IA do Menuzia</strong> entende frases soltas, como "me vê dois x-bacon sem cebola e uma coca", e segue a conversa de onde ela parou. Os dois trabalham juntos no mesmo número: o robô cuida do automático e a IA entra na conversa livre.</p>
+
+<h2>O que o agente faz no WhatsApp</h2>
+<ul>
+  <li><strong>Tira dúvidas do cardápio</strong> consultando os itens e preços reais da sua loja</li>
+  <li><strong>Anota o pedido pela conversa</strong>, com complementos, adicionais e observações</li>
+  <li><strong>Calcula a taxa de entrega</strong> pelo sistema, sem conta de cabeça</li>
+  <li><strong>Oferece o "peça também"</strong> uma vez, depois que o cliente diz que é só isso</li>
+  <li><strong>Entende áudio:</strong> a mensagem de voz do cliente é transcrita e tratada como texto</li>
+  <li><strong>Envia o Pix copia e cola</strong> na hora, quando essa é a forma de pagamento</li>
+  <li><strong>Informa o status</strong> de um pedido já feito</li>
+</ul>
+
+<h2>A IA não pode inventar preço</h2>
+<p>Esse é o medo de todo dono, e com razão. Por isso o agente segue regras fixas:</p>
+<ul>
+  <li>Só cita item e preço que vieram do seu cardápio naquele momento.</li>
+  <li>Total e taxa vêm do sistema, nunca de um cálculo da IA.</li>
+  <li>Não dá desconto, não promete brinde e não faz exceção.</li>
+  <li>Se perguntarem, diz que é o atendente virtual da loja.</li>
+  <li>Sem a informação, chama uma pessoa da loja em vez de chutar.</li>
+</ul>
+
+<h2>Você ensina, ele aprende as regras da casa</h2>
+<p>Estacionamento, aceita vale-refeição, tem opção sem glúten: você cadastra as respostas no <strong>Conhecimento da loja</strong> e o agente passa a usá-las, mesmo que o cliente pergunte de outro jeito.</p>
+
+<h2>Quando o humano entra</h2>
+<p>Reclamação séria, pedido fora do comum ou cliente que quer falar com alguém: o agente chama sua equipe e avisa o cliente. Mudanças em pedido já feito ficam registradas para a loja confirmar quando for o caso.</p>
+
+<h2>Como contratar</h2>
+<p>O Agente de IA é um módulo do Menuzia, liberado pela nossa equipe na sua loja, sem comissão sobre os pedidos. Fale com a gente para ver as condições. Quer entender o fluxo completo? Veja <a href="/tirar-pedidos-pelo-whatsapp.html">como tirar pedidos pelo WhatsApp</a>.</p>`,
+    faq: [
+      ['A IA do Menuzia inventa preço ou item?', 'Não. O agente só cita itens e preços devolvidos pelo seu cardápio naquele momento, e o total e a taxa são calculados pelo sistema.'],
+      ['O agente de IA entende áudio do cliente?', 'Sim. Com o Agente de IA ligado, o áudio recebido no WhatsApp é transcrito e a conversa segue normalmente.'],
+      ['O cliente sabe que está falando com uma IA?', 'Se perguntar, sim. A regra do agente é dizer que é o atendente virtual da loja e nunca fingir ser uma pessoa.'],
+      ['E se a IA não souber responder?', 'Ela chama uma pessoa da loja e avisa o cliente que alguém vai confirmar a informação, sem chutar a resposta.'],
+      ['O agente de IA cobra comissão por pedido?', 'Não. O Menuzia não cobra comissão por pedido. O Agente de IA é um módulo liberado pela nossa equipe; fale com a gente para ver as condições.'],
+    ],
+  },
+
+  {
+    slug: 'tirar-pedidos-pelo-whatsapp.html',
+    cat: 'Pedidos no WhatsApp',
+    plano: 'modulo',
+    heroImg: 'blog-whatsapp.webp',
+    heroAlt: 'Cliente fazendo pedido de delivery pela conversa do WhatsApp',
+    title: 'Como Tirar Pedidos pelo WhatsApp Automaticamente | Menuzia',
+    h1: 'Como tirar pedidos pelo WhatsApp: sem digitar, sem esquecer item, sem perder cliente',
+    desc: 'Tirar pedidos pelo WhatsApp na mão gera erro e fila. Veja como automatizar pela conversa ou pelo link, com taxa e pagamento, sem redigitar.',
+    keywords: 'tirar pedidos pelo whatsapp, como tirar pedidos pelo whatsapp, automatizar pedidos whatsapp, receber pedidos pelo whatsapp, robô que tira pedido no whatsapp, anotar pedido whatsapp automático, pedido whatsapp delivery',
+    lt: LT_DORES,
+    body: `<p>Tirar pedido pelo WhatsApp parece simples até o movimento subir. Uma pessoa responde cinco conversas ao mesmo tempo, pergunta o bairro, soma a taxa de cabeça, copia tudo para a comanda e, no meio disso, alguém fica sem resposta. O problema não é o WhatsApp: é fazer <strong>à mão</strong> um trabalho repetitivo.</p>
+
+<h2>O que trava o pedido feito à mão</h2>
+<ul>
+  <li><strong>Pergunta repetida:</strong> "tem o quê?", "quanto é a entrega?", "aceita cartão?"</li>
+  <li><strong>Pedido picado</strong> em várias mensagens, fácil de perder um item</li>
+  <li><strong>Redigitação</strong> no caixa e na cozinha</li>
+  <li><strong>Espera:</strong> no pico, a resposta atrasa e o cliente vai para outro lugar</li>
+</ul>
+
+<h2>Os 3 jeitos de automatizar</h2>
+<h3>1. Pelo link do cardápio</h3>
+<p>O cliente recebe o link, monta o pedido com fotos e adicionais, e tudo chega pronto no painel. É o caminho do <a href="/cardapio-digital-para-whatsapp.html">cardápio digital para WhatsApp</a>.</p>
+<h3>2. Com robô de atendimento</h3>
+<p>O robô responde na hora, manda o link e cuida das mensagens automáticas. Bom para quem já tem cliente acostumado a pedir pelo cardápio.</p>
+<h3>3. Com agente de IA, pela própria conversa</h3>
+<p>Muita gente prefere escrever ou mandar áudio. O <a href="/agente-de-ia-para-delivery.html">Agente de IA</a> anota o pedido ali mesmo, sem o cliente abrir nada.</p>
+
+<h2>Como fica o pedido pela conversa</h2>
+<ol>
+  <li>O cliente diz o que quer, por texto ou áudio.</li>
+  <li>O sistema confere no cardápio e pergunta uma coisa por vez: complementos, adicionais, "mais alguma coisa?".</li>
+  <li>Pergunta se é entrega ou retirada, pega o endereço e mostra taxa e tempo.</li>
+  <li>Registra pagamento e troco, e manda o resumo com o total.</li>
+  <li>O cliente confirma e o pedido entra no painel com número, sem ninguém redigitar.</li>
+</ol>
+
+<h2>Depois do "pode mandar"</h2>
+<p>O pedido segue para a cozinha e o cliente recebe os avisos de <a href="/status-do-pedido-no-whatsapp.html">status no WhatsApp</a>. Se pagar por Pix, recebe o copia e cola na hora; veja <a href="/pagamento-online-para-delivery.html">pagamento online para delivery</a>.</p>
+
+<h2>Dica para começar</h2>
+<p>Antes de automatizar, deixe nome, preço, adicionais e taxa por bairro corretos: a automação repete o que está cadastrado. Veja <a href="/blog/tutoriais/como-configurar-whatsapp-business-para-delivery.html">como configurar o WhatsApp Business</a> e <a href="/blog/tutoriais/como-configurar-taxa-de-entrega-por-bairro.html">a taxa de entrega por bairro</a>.</p>`,
+    faq: [
+      ['Dá para receber pedido pelo WhatsApp sem digitar nada?', 'Sim. Com o cardápio digital, o pedido chega pronto. Com o Agente de IA, a própria conversa vira pedido no painel, sem redigitação.'],
+      ['O cliente precisa baixar aplicativo?', 'Não. Ele pede pelo WhatsApp que já usa ou pelo link do cardápio, que abre no navegador.'],
+      ['Dá para pedir por áudio no WhatsApp?', 'Sim, com o Agente de IA ligado. O áudio é transcrito e a conversa continua normalmente.'],
+      ['E se o cliente mudar o pedido no meio da conversa?', 'Antes de confirmar, a alteração atualiza o resumo. Depois de confirmado, a solicitação fica registrada para a loja quando for preciso aprovar.'],
+      ['Qual a diferença entre o robô e o Agente de IA?', 'O robô segue fluxos automáticos e manda o link do cardápio. O Agente de IA entende frases livres e anota o pedido pela conversa.'],
+    ],
+  },
+
+  {
+    slug: 'status-do-pedido-no-whatsapp.html',
+    cat: 'Status do pedido',
+    plano: 'completo',
+    heroImg: 'tut-painel.webp',
+    heroAlt: 'Painel de pedidos que dispara aviso de status no WhatsApp do cliente',
+    title: 'Status do Pedido no WhatsApp Automático para Delivery | Menuzia',
+    h1: 'Status do pedido no WhatsApp: acabe com o "cadê meu pedido?"',
+    desc: 'Avisos automáticos de status do pedido no WhatsApp: recebido, aceito, pronto, saiu para entrega e entregue. Menos cobrança no chat.',
+    keywords: 'status do pedido whatsapp, notificação de pedido whatsapp, cadê meu pedido delivery, aviso automático pedido delivery, acompanhar pedido delivery whatsapp, mensagem automática delivery, cliente reclamando demora delivery',
+    lt: LT_DORES,
+    body: `<p>"Moço, cadê meu pedido?" Essa mensagem chega na pior hora, tira alguém da produção e quase sempre tem a mesma resposta: "já está saindo". Quase ninguém cobra por maldade. O cliente pergunta porque <strong>não sabe o que está acontecendo</strong>. Quando o <strong>status do pedido chega no WhatsApp</strong> sozinho, boa parte dessa cobrança deixa de existir.</p>
+
+<h2>Quais avisos o cliente recebe</h2>
+<ul>
+  <li><strong>Pedido recebido:</strong> assim que entra na loja</li>
+  <li><strong>Pedido aceito:</strong> com resumo de itens, total e pagamento</li>
+  <li><strong>Pronto:</strong> para retirada, ou pronto e aguardando a saída</li>
+  <li><strong>Saiu para entrega:</strong> quando o entregador sai</li>
+  <li><strong>Entregue:</strong> fecha o ciclo</li>
+  <li><strong>Pedido agendado e pedido alterado:</strong> para os casos fora do fluxo normal</li>
+</ul>
+
+<h2>Sem trabalho a mais para a equipe</h2>
+<p>Ninguém digita nada. Quando o pedido muda de coluna no painel, o aviso sai. Quem já move o pedido para acompanhar a produção passa a informar o cliente sem nenhum clique extra.</p>
+
+<h2>Do seu jeito</h2>
+<p>Dá para trocar o texto das etapas, desligar uma etapa ou desligar os avisos para um tipo de pedido (entrega, retirada ou consumo no local). Quem quer poucos avisos deixa só o essencial; quem tem marca informal escreve com a própria voz.</p>
+
+<h2>Por que isso vende mais</h2>
+<ul>
+  <li><strong>Menos interrupção</strong> no pico: quem responde cobrança não está produzindo.</li>
+  <li><strong>Espera mais tranquila:</strong> saber que o pedido saiu muda a percepção do tempo.</li>
+  <li><strong>Confiança na primeira compra:</strong> principalmente de quem veio do aplicativo.</li>
+  <li><strong>Marca presente:</strong> cada aviso leva o nome da loja para o WhatsApp do cliente.</li>
+</ul>
+
+<h2>Se o problema é o atraso, não o aviso</h2>
+<p>Aviso informa, mas não acelera. Se o pedido atrasa de verdade, olhe a produção com a <a href="/tela-de-cozinha-kds.html">tela de cozinha</a>, a <a href="/rota-de-motoboy-para-delivery.html">rota de motoboy</a> e o guia de <a href="/blog/tutoriais/como-organizar-cozinha-de-delivery.html">organização da cozinha</a>.</p>
+
+<h2>Quanto custa</h2>
+<p>O robô de atendimento no WhatsApp faz parte do <strong>plano Completo, R$149/mês</strong>, sem comissão por pedido e sem fidelidade.</p>`,
+    faq: [
+      ['Quais status o cliente recebe no WhatsApp?', 'Recebido, aceito com resumo, pronto, saiu para entrega e entregue, além de avisos de pedido agendado e pedido alterado.'],
+      ['Preciso enviar as mensagens manualmente?', 'Não. Elas saem automaticamente quando o pedido muda de etapa no painel.'],
+      ['Posso mudar o texto das mensagens?', 'Sim, nas etapas personalizáveis. Também dá para desligar uma etapa ou um tipo de pedido.'],
+      ['Funciona para retirada no balcão?', 'Sim. Há avisos separados para entrega, retirada e consumo no local.'],
+      ['O cliente precisa instalar algo?', 'Não. Ele recebe os avisos no WhatsApp que já usa.'],
+    ],
+  },
+
+  {
+    slug: 'pedido-errado-no-delivery.html',
+    cat: 'Pedido errado',
+    plano: 'basico',
+    heroImg: 'tut-impressora.webp',
+    heroAlt: 'Comanda impressa automaticamente para evitar pedido errado no delivery',
+    title: 'Pedido Errado no Delivery: Como Evitar e Parar de Refazer | Menuzia',
+    h1: 'Pedido errado no delivery: como eliminar a causa e parar de pagar duas vezes',
+    desc: 'Pedido errado custa o lanche refeito, a segunda corrida e o cliente. Veja de onde vêm os erros e como evitar com pedido estruturado e conferência.',
+    keywords: 'pedido errado delivery, como evitar erro de pedido, erro de pedido no delivery, pedido trocado delivery, reduzir erros na cozinha delivery, comanda automática delivery, impressão automática de pedidos',
+    lt: LT_DORES,
+    body: `<p>Um <strong>pedido errado no delivery</strong> sai caro três vezes: você refaz o produto, paga outra corrida e ainda arrisca perder o cliente. E a causa raramente é falta de atenção da equipe: é o caminho que a informação percorre até a cozinha.</p>
+
+<h2>A conta de um erro</h2>
+<p>Exemplo: lanche de R$35 com custo de R$12, mais R$8 de nova entrega. Refazer custa R$20 e consome o lucro de outro pedido. Com 3 erros por dia, são cerca de R$1.800 por mês, sem contar o cliente que não volta. Faça a conta com os seus números: calcule o custo real de cada item pelo <a href="/blog/guias/como-calcular-cmv-restaurante.html">CMV</a>.</p>
+
+<h2>De onde vêm os erros</h2>
+<ol>
+  <li><strong>Pedido em texto livre:</strong> "sem cebola" no meio de oito mensagens.</li>
+  <li><strong>Redigitação:</strong> cada cópia é uma nova chance de errar.</li>
+  <li><strong>Comanda à mão:</strong> letra ruim, abreviação que só uma pessoa entende.</li>
+  <li><strong>Vários canais:</strong> tablet de um app, celular de outro, papel no meio.</li>
+  <li><strong>Saída sem conferência:</strong> sacola trocada na hora do pico.</li>
+</ol>
+
+<h2>Como eliminar cada causa</h2>
+<ul>
+  <li><strong>Pedido estruturado:</strong> tamanho, sabor e adicionais viram opções, não texto. O <a href="/blog/tutoriais/como-cadastrar-complementos-e-adicionais-no-cardapio.html">cadastro de complementos</a> é onde isso começa.</li>
+  <li><strong>Campo de observação:</strong> "sem cebola" fica ligado ao item certo.</li>
+  <li><strong>Impressão automática:</strong> o pedido sai na cozinha sem ninguém redigitar. Veja <a href="/blog/tutoriais/como-configurar-impressora-termica-para-delivery.html">como configurar a impressora térmica</a>.</li>
+  <li><strong>Um painel para todos os canais:</strong> link próprio, <a href="/cardapio-digital-integrado-ifood.html">iFood, 99Food e aiqfome</a> no mesmo fluxo.</li>
+  <li><strong>Tela de cozinha:</strong> com <a href="/tela-de-cozinha-kds.html">KDS</a>, cada pedido passa por fila, preparo e pronto.</li>
+</ul>
+
+<h2>Rotina de conferência em 15 segundos</h2>
+<ol>
+  <li>Compare número do pedido e nome na comanda e na sacola.</li>
+  <li>Confira quantidade de itens e bebidas.</li>
+  <li>Leia as observações em voz alta.</li>
+  <li>Grampeie a comanda na sacola antes de entregar ao motoboy.</li>
+</ol>
+
+<h2>Errou mesmo assim?</h2>
+<p>Responda rápido, peça desculpas e resolva sem discussão. Depois anote a causa: erro que se repete é falha de processo, e não de pessoa.</p>
+
+<h2>Quanto custa</h2>
+<p>Cardápio, painel, impressão automática e KDS estão no <strong>plano Básico, R$97/mês</strong>, sem comissão por pedido.</p>`,
+    faq: [
+      ['Qual a principal causa de pedido errado no delivery?', 'Em geral, a informação passada à mão: pedido em texto solto, redigitação e comanda manuscrita. Tornar o pedido estruturado elimina boa parte dos erros.'],
+      ['Como evitar sacola trocada?', 'Conferindo número do pedido, nome, quantidade e observações antes de entregar ao motoboy, com a comanda presa à sacola.'],
+      ['Impressão automática reduz erros?', 'Sim, porque tira a etapa de redigitar. O pedido sai igual ao que o cliente escolheu.'],
+      ['Pedidos do iFood saem na mesma impressora?', 'Sim. Pedidos de iFood, 99Food e aiqfome entram no mesmo painel e na mesma impressora.'],
+      ['O erro do cliente ao pedir também é evitado?', 'Opções obrigatórias e o resumo antes de confirmar reduzem esse tipo de erro, mas a conferência final continua importante.'],
+    ],
+  },
+
+  {
+    slug: 'tela-de-cozinha-kds.html',
+    cat: 'KDS',
+    plano: 'basico',
+    heroImg: 'tut-cardapio.webp',
+    heroAlt: 'Sistema de pedidos usado para organizar a produção da cozinha do restaurante',
+    title: 'Tela de Cozinha KDS para Restaurante e Delivery | Menuzia',
+    h1: 'Tela de cozinha KDS: pare de perder a ordem dos pedidos no pico',
+    desc: 'Tela de cozinha KDS para restaurante e delivery: fila, preparo e prontos em tempo real, cronômetro por cor e filtro por setor.',
+    keywords: 'tela de cozinha, kds para restaurante, kitchen display system, sistema kds, tela de pedidos cozinha, monitor de cozinha restaurante, kds delivery, organizar pedidos na cozinha, pedido atrasado cozinha',
+    lt: LT_DORES,
+    body: `<p>Comandas penduradas, uma caindo atrás da chapa e ninguém sabe qual pedido é o mais antigo. No pico, a cozinha perde a ordem, e é assim que o pedido das 20h sai depois do das 20h15. A <strong>tela de cozinha KDS</strong> troca o papel por uma fila visível, que todo mundo enxerga igual.</p>
+<p>Quer entender o conceito antes? Leia <a href="/blog/tutoriais/o-que-e-kds-tela-de-cozinha.html">o que é KDS</a>. Esta página mostra como ele funciona no Menuzia.</p>
+
+<h2>Como funciona</h2>
+<ol>
+  <li>A loja aceita o pedido no painel e ele aparece em <strong>Na fila</strong>.</li>
+  <li>A cozinha toca em <strong>Começar preparo</strong>.</li>
+  <li>Ao terminar, toca em <strong>Pronto</strong>, e o pedido fica disponível para despacho.</li>
+  <li>Tocou errado? <strong>Voltar</strong> desfaz o engano.</li>
+</ol>
+
+<h2>O atraso aparece antes da reclamação</h2>
+<p>Cada pedido tem um <strong>cronômetro por cor</strong>: verde, amarelo e vermelho, com limites padrão de 10 e 20 minutos que você pode ajustar conforme o seu preparo. Quem olha a tela sabe na hora o que priorizar.</p>
+
+<h2>Feito para cozinha de verdade</h2>
+<ul>
+  <li><strong>Filtro por setor:</strong> chapa vê a chapa, bar vê o bar (setores vêm das categorias do cardápio)</li>
+  <li><strong>Riscar itens</strong> conforme ficam prontos</li>
+  <li><strong>Modo escuro e fonte grande</strong> para ler de longe</li>
+  <li><strong>Tempo real:</strong> usa os mesmos eventos do painel de pedidos</li>
+</ul>
+
+<h2>Todos os canais na mesma fila</h2>
+<p>O pedido do link próprio, do salão e dos <a href="/cardapio-digital-integrado-ifood.html">marketplaces integrados</a> entra no mesmo fluxo. A cozinha prepara na ordem real, e não na ordem de qual aparelho apitou primeiro.</p>
+
+<h2>Preciso abandonar a impressora?</h2>
+<p>Não. Muitas operações usam os dois: KDS na produção e comanda para conferir e prender na sacola. Comece pelo que resolve o seu gargalo; a <a href="/blog/tutoriais/melhor-impressora-termica-para-delivery.html">impressora térmica</a> continua útil.</p>
+
+<h2>Menos erro, cliente mais calmo</h2>
+<p>O KDS ataca a ordem de produção. Para o restante, veja <a href="/pedido-errado-no-delivery.html">como evitar pedido errado</a> e <a href="/status-do-pedido-no-whatsapp.html">avisos de status no WhatsApp</a>.</p>
+
+<h2>Quanto custa</h2>
+<p>O KDS está no <strong>plano Básico, R$97/mês</strong>, sem comissão por pedido. Basta uma tela com navegador na cozinha.</p>`,
+    faq: [
+      ['O que é KDS?', 'KDS é a sigla de Kitchen Display System: uma tela que mostra os pedidos na cozinha, no lugar da comanda de papel.'],
+      ['Que equipamento preciso para o KDS?', 'Uma tela com navegador na cozinha, como um tablet ou monitor com computador.'],
+      ['Dá para separar por setor?', 'Sim. O filtro por setor usa as categorias do cardápio, então cada estação vê o que é seu.'],
+      ['Posso mudar o tempo de alerta?', 'Sim. O padrão é amarelo a partir de 10 minutos e vermelho depois de 20, e você pode ajustar.'],
+      ['Posso usar KDS e impressora juntos?', 'Sim. A impressão automática continua disponível e muitas lojas usam os dois.'],
+    ],
+  },
+
+  {
+    slug: 'alternativa-ao-ifood.html',
+    cat: 'Alternativa ao iFood',
+    plano: 'basico',
+    heroImg: 'blog-delivery-ifood.webp',
+    heroAlt: 'Dono de restaurante comparando marketplace com canal próprio de delivery',
+    title: 'Alternativa ao iFood: Venda Direto sem Comissão | Menuzia',
+    h1: 'Alternativa ao iFood: como vender direto e pagar menos sem sumir do mapa',
+    desc: 'Procurando alternativa ao iFood? Compare marketplaces, WhatsApp e canal próprio sem comissão e veja como migrar a recompra sem perder pedidos.',
+    keywords: 'alternativa ao ifood, alternativas ao ifood, opção ao ifood para restaurante, sair do ifood, taxa do ifood alta, comissão ifood restaurante, concorrente do ifood, delivery sem ifood, vender sem ifood',
+    lt: LT_DORES,
+    body: `<p>Quem busca <strong>alternativa ao iFood</strong> normalmente não quer abandonar o aplicativo no susto: quer parar de pagar comissão sobre o cliente que já é seu. Essa diferença muda a estratégia. O iFood traz demanda; o erro é depender dele para tudo.</p>
+
+<h2>Quanto a comissão pesa</h2>
+<p>Guias e reportagens de 2026 citam 12% de comissão no plano em que a loja entrega e 23% quando o iFood entrega, mais cerca de 3,2% sobre pagamentos online e mensalidade acima de certo faturamento. Os valores mudam: confira os seus no contrato e no app.</p>
+<p>Com essas taxas, R$30.000 por mês em pedidos pagam R$3.600 a R$6.900 só de comissão, antes da taxa de pagamento. Veja mais contas em <a href="/cardapio-digital-sem-comissao.html">cardápio digital sem comissão</a>.</p>
+
+<h2>Quais são as alternativas</h2>
+<ul>
+  <li><strong>Outros marketplaces:</strong> 99Food, aiqfome e outros. Ampliam alcance, mas o modelo segue sendo plataforma; verifique condições atuais e cobertura na sua cidade. Veja o <a href="/cardapio-digital-99food.html">comparativo com 99Food</a>.</li>
+  <li><strong>WhatsApp manual:</strong> sem comissão, mas limitado pela sua capacidade de responder.</li>
+  <li><strong>Canal próprio:</strong> cardápio digital com link seu, preço fixo e base de clientes sua.</li>
+  <li><strong>Todos juntos:</strong> o caminho que costuma dar mais margem.</li>
+</ul>
+
+<h2>Comparação rápida</h2>
+<ul>
+  <li><strong>Encontrar cliente novo:</strong> marketplace ganha. No canal próprio, você leva o tráfego.</li>
+  <li><strong>Custo da recompra:</strong> canal próprio ganha, com custo fixo.</li>
+  <li><strong>Dados do cliente:</strong> canal próprio ganha, porque a lista fica com você.</li>
+  <li><strong>Sua marca:</strong> canal próprio ganha, sem concorrente ao lado.</li>
+</ul>
+
+<h2>O caminho sem perder faturamento</h2>
+<ol>
+  <li>Continue no marketplace como vitrine.</li>
+  <li>Monte o canal próprio e conecte os marketplaces ao <a href="/cardapio-digital-integrado-ifood.html">mesmo painel</a>.</li>
+  <li>Divulgue o link fora do app: bio, Google, status e cartão na loja, respeitando as regras do contrato de cada plataforma.</li>
+  <li>Dê um motivo para pedir direto, como cupom ou <a href="/cashback-para-delivery.html">cashback</a>.</li>
+  <li>Reative a base com <a href="/disparo-whatsapp-para-delivery.html">campanhas no WhatsApp</a>.</li>
+</ol>
+<p>Passo a passo completo em <a href="/blog/estrategia/como-sair-do-ifood-e-vender-direto.html">como sair do iFood e vender direto</a>.</p>
+
+<h2>O que muda com o Menuzia</h2>
+<p>Cardápio próprio, PDV, mesas, impressão e integrações por <strong>R$97/mês no Básico</strong>, sem comissão. No <strong>Completo, R$149/mês</strong>, entram robô no WhatsApp, disparos e sistema financeiro.</p>`,
+    faq: [
+      ['Qual a melhor alternativa ao iFood?', 'Para a maioria das lojas, é manter o marketplace para ganhar clientes novos e usar um canal próprio sem comissão para a recompra.'],
+      ['Preciso sair do iFood para usar o Menuzia?', 'Não. Os pedidos do iFood, do 99Food e do aiqfome entram no mesmo painel do seu cardápio próprio.'],
+      ['Quanto o iFood cobra de comissão?', 'Fontes de 2026 citam 12% quando a loja entrega e 23% quando o iFood entrega, além de taxa de pagamento online. Confira os valores do seu contrato no app.'],
+      ['O canal próprio traz cliente sozinho?', 'Não. Você precisa divulgar por redes sociais, Google, WhatsApp e anúncios. A vantagem é que o cliente conquistado fica com você.'],
+      ['O Menuzia cobra comissão?', 'Não. O valor é fixo: R$97/mês no Básico ou R$149/mês no Completo, sem fidelidade.'],
+    ],
+  },
+
+  {
+    slug: 'pagamento-online-para-delivery.html',
+    cat: 'Pagamento online',
+    plano: 'basico',
+    heroImg: 'blog-precos.webp',
+    heroAlt: 'Pagamento online por Pix e cartão em pedido de delivery',
+    title: 'Pagamento Online para Delivery: Pix e Cartão no Pedido | Menuzia',
+    h1: 'Pagamento online para delivery: Pix confirmado no pedido, sem conferir comprovante',
+    desc: 'Pagamento online para delivery com Pix e cartão via Mercado Pago. Confirmação automática no pedido, sem comprovante falso e sem conferir print.',
+    keywords: 'pagamento online para delivery, pix automático delivery, pix no cardápio digital, golpe do comprovante pix delivery, comprovante falso pix, cartão online delivery, pagamento no cardápio digital, mercado pago delivery',
+    lt: LT_DORES,
+    body: `<p>O cliente manda um print, a equipe está na correria e o pedido sai. Horas depois, o dinheiro não está na conta. Conferir comprovante à mão é lento e abre espaço para <strong>comprovante falso</strong>. Com <strong>pagamento online no delivery</strong>, quem confirma é o sistema, e não um olhar apressado em um print.</p>
+
+<h2>Os problemas do pagamento manual</h2>
+<ul>
+  <li><strong>Comprovante falso ou editado</strong> no WhatsApp</li>
+  <li><strong>Pix sem identificação:</strong> valor na conta sem saber de qual pedido é</li>
+  <li><strong>Troco e dinheiro</strong> circulando com o motoboy</li>
+  <li><strong>Conferência no fechamento</strong> que toma tempo</li>
+</ul>
+
+<h2>Como funciona no Menuzia</h2>
+<ol>
+  <li>Você conecta a sua conta do <strong>Mercado Pago</strong>.</li>
+  <li>O cliente escolhe Pix ou cartão ao fechar o pedido.</li>
+  <li>No Pix, recebe o código copia e cola.</li>
+  <li>O Mercado Pago avisa o sistema, que <strong>consulta o pagamento direto na API</strong> antes de confirmar.</li>
+  <li>O pedido aparece como pago no painel.</li>
+</ol>
+<p>A confirmação é registrada uma única vez, mesmo que o aviso chegue repetido, e o sistema verifica periodicamente pagamentos pendentes.</p>
+
+<h2>O dinheiro é seu desde o início</h2>
+<p>O pagamento cai na <strong>sua conta do Mercado Pago</strong>. O Menuzia não fica com percentual do pedido. As tarifas do Mercado Pago seguem as condições da sua conta.</p>
+
+<h2>Também funciona pelo WhatsApp</h2>
+<p>Quem pede pelo <a href="/agente-de-ia-para-delivery.html">Agente de IA</a> recebe o Pix copia e cola na própria conversa. Assim, o <a href="/tirar-pedidos-pelo-whatsapp.html">pedido pelo WhatsApp</a> já sai pago.</p>
+
+<h2>Dinheiro e maquininha continuam</h2>
+<p>Parte dos clientes vai continuar pagando na entrega. O sistema mostra forma de pagamento e troco, e você define quais formas aceita em cada canal. O acerto com entregadores está em <a href="/rota-de-motoboy-para-delivery.html">rota de motoboy</a> e o fechamento, em <a href="/controle-de-caixa-para-restaurante.html">controle de caixa</a>.</p>
+
+<h2>Cuidados com Pix sem integração</h2>
+<p>Se ainda recebe por chave Pix, confira no extrato do banco, e não no print, antes de liberar o pedido. Mais dicas em <a href="/blog/tutoriais/como-receber-pix-no-delivery.html">como receber Pix com segurança</a>.</p>
+
+<h2>Quanto custa</h2>
+<p>Pix e cartão online estão no <strong>plano Básico, R$97/mês</strong>, sem comissão por pedido.</p>`,
+    faq: [
+      ['O Pix é confirmado automaticamente?', 'Sim. Com o Pix online via Mercado Pago, o sistema consulta o pagamento e confirma o pedido sem conferência de comprovante.'],
+      ['Isso acaba com o golpe do comprovante falso?', 'No Pix online, a confirmação vem do Mercado Pago, e não de um print. Em pagamentos fora do sistema, continue conferindo no extrato.'],
+      ['O dinheiro passa pelo Menuzia?', 'O pagamento vai para a sua conta do Mercado Pago. O Menuzia não cobra percentual sobre o pedido.'],
+      ['Preciso de conta no Mercado Pago?', 'Sim. O pagamento online usa a sua conta do Mercado Pago, que é conectada ao sistema.'],
+      ['Ainda posso aceitar dinheiro e cartão na entrega?', 'Sim. Você define quais formas de pagamento aceita em cada canal.'],
+    ],
+  },
+
+  {
+    slug: 'ficha-tecnica-e-precificacao.html',
+    cat: 'Precificação',
+    plano: 'completo',
+    heroImg: 'blog-hero.webp',
+    heroAlt: 'Dono de restaurante calculando ficha técnica e preço de venda',
+    title: 'Ficha Técnica e Precificação para Restaurante e Delivery | Menuzia',
+    h1: 'Ficha técnica e precificação: descubra quanto você lucra em cada produto',
+    desc: 'Vende muito e não sobra dinheiro? Monte a ficha técnica, calcule custo, margem e preço sugerido por produto. O custo acompanha o preço dos insumos, sem planilha.',
+    keywords: 'ficha técnica restaurante, precificação de cardápio, sistema de ficha técnica, como precificar lanche, calcular preço de venda restaurante, lucro por produto delivery, controle de insumos restaurante, planilha ficha técnica',
+    lt: LT_DORES,
+    body: `<p>"Vendo muito e não sobra dinheiro." Em muitos casos, o problema está aqui: o preço foi definido olhando o concorrente, e não o custo. Sem <strong>ficha técnica</strong>, um produto campeão de vendas pode estar pagando quase nada. Quando pão, carne e embalagem sobem, a margem some sem ninguém perceber.</p>
+
+<h2>O que é ficha técnica</h2>
+<p>É a receita com números: cada ingrediente, quantidade usada e custo. Somando tudo, você tem o <strong>custo real por produto</strong>, que é a base para definir preço e calcular o <a href="/blog/guias/como-calcular-cmv-restaurante.html">CMV</a>.</p>
+
+<h2>Como calcular em 4 passos</h2>
+<ol>
+  <li><strong>Liste os itens:</strong> inclua molho, guardanapo e embalagem.</li>
+  <li><strong>Calcule o custo de cada um:</strong> R$50 por kg, usando 150 g, dá R$7,50.</li>
+  <li><strong>Some o custo total</strong> do produto.</li>
+  <li><strong>Defina o preço</strong> pela margem desejada, considerando taxas de cartão e canal.</li>
+</ol>
+
+<h3>Exemplo</h3>
+<p>Se um lanche custa R$14 e é vendido a R$35, a margem bruta é de R$21 (60%). Antes de chamar isso de lucro, ainda faltam taxa de pagamento, comissão de marketplace, mão de obra e custos fixos.</p>
+
+<h2>Por que a planilha falha</h2>
+<ul>
+  <li>Fica desatualizada na primeira alta de preço.</li>
+  <li>Exige atualizar produto por produto.</li>
+  <li>Fica separada das vendas do dia a dia.</li>
+</ul>
+
+<h2>Como funciona no Menuzia</h2>
+<ul>
+  <li><strong>Cadastro de insumos</strong> com preço, unidade de compra e conversão</li>
+  <li><strong>Ficha técnica por produto</strong>, com custo calculado a partir dos insumos</li>
+  <li><strong>Margem e preço sugerido</strong>, com opção de arredondamento</li>
+  <li><strong>Recálculo:</strong> mudou o insumo, o custo das fichas acompanha</li>
+  <li><strong>Você decide:</strong> o preço de venda nunca muda sozinho</li>
+</ul>
+
+<h2>Lucro é mais que preço</h2>
+<p>Precificação boa se junta com <a href="/controle-de-caixa-para-restaurante.html">controle de caixa</a>, ticket médio e redução de <a href="/cardapio-digital-sem-comissao.html">comissões</a>. Uma pequena mudança no produto mais vendido costuma pesar mais que ajustar dezenas de itens pouco pedidos.</p>
+
+<h2>Quanto custa</h2>
+<p>Insumos, ficha técnica e lucro real estão no sistema financeiro do <strong>plano Completo, R$149/mês</strong>, sem comissão por pedido.</p>`,
+    faq: [
+      ['O que precisa ter em uma ficha técnica?', 'Ingredientes, quantidade usada, custo de cada item, embalagem e rendimento da receita.'],
+      ['Como calcular o preço de venda?', 'Parta do custo da ficha técnica e aplique a margem desejada, considerando taxas de pagamento, comissões e custos da operação.'],
+      ['Quando atualizar a ficha técnica?', 'Sempre que um insumo mudar de preço ou a receita mudar. No Menuzia, o custo acompanha o preço do insumo cadastrado.'],
+      ['O sistema muda meu preço automaticamente?', 'Não. Ele mostra custo, margem e preço sugerido, mas quem decide é você.'],
+      ['Qual a diferença entre ficha técnica e CMV?', 'A ficha técnica mostra o custo de um produto. O CMV mostra o custo das mercadorias vendidas em relação ao faturamento do período.'],
+    ],
+  },
+
+  {
+    slug: 'crm-para-restaurante.html',
+    cat: 'CRM',
+    plano: 'basico',
+    heroImg: 'tut-campanhas.webp',
+    heroAlt: 'Base de clientes do restaurante organizada para campanhas no WhatsApp',
+    title: 'CRM para Restaurante e Delivery: Sua Base de Clientes | Menuzia',
+    h1: 'CRM para restaurante: saiba quem compra de você e traga o cliente de volta',
+    desc: 'Não sabe quem são seus clientes? Tenha nome, telefone e histórico de compras em uma base sua, importe e exporte planilhas e use os dados em campanhas e fidelidade.',
+    keywords: 'crm para restaurante, crm para delivery, cadastro de clientes restaurante, base de clientes delivery, gestão de clientes restaurante, histórico de compras cliente, como recuperar clientes delivery, clientes que sumiram',
+    lt: LT_DORES,
+    body: `<p>Se o seu principal canal fosse fechar amanhã, para quantos clientes você conseguiria mandar uma mensagem? Muita loja vende há anos e não tem resposta, porque a relação ficou no aplicativo ou em conversas perdidas no celular. Um <strong>CRM para restaurante</strong> é a memória do negócio: quem comprou, o quê e quando.</p>
+
+<h2>O custo de não conhecer o cliente</h2>
+<ul>
+  <li>Você só nota que um cliente sumiu quando o movimento já caiu.</li>
+  <li>Promoção vai para todo mundo, ou para ninguém.</li>
+  <li>O melhor cliente recebe o mesmo tratamento de quem pediu uma vez.</li>
+  <li>Se a equipe muda, o conhecimento vai junto.</li>
+</ul>
+
+<h2>Como a base se forma</h2>
+<p>Quem pede no seu <a href="/cardapio-digital-para-delivery.html">cardápio digital</a> entra na sua base com nome, telefone e histórico de compras. Você não precisa pedir cadastro em papel, e a lista passa a crescer com a operação.</p>
+
+<h2>Já tem clientes em planilha?</h2>
+<p>O Menuzia <strong>importa CSV</strong> de planilhas, reconhece as colunas mais comuns e padroniza telefones. Também dá para <strong>exportar a base</strong> em planilha completa ou no formato de públicos do Meta Ads, para usar em <a href="/blog/marketing/como-fazer-anuncios-para-delivery.html">anúncios para delivery</a>.</p>
+
+<h2>4 listas que todo delivery deveria ter</h2>
+<ol>
+  <li><strong>Frequentes:</strong> reconheça, sem precisar dar desconto.</li>
+  <li><strong>Sumidos há 30 dias:</strong> a mensagem de reativação vai aqui.</li>
+  <li><strong>Compraram uma vez:</strong> a segunda compra é a mais difícil de conseguir.</li>
+  <li><strong>Maior ticket:</strong> bons candidatos para lançamentos.</li>
+</ol>
+
+<h2>Da informação para o pedido</h2>
+<ul>
+  <li><strong>Disparos segmentados:</strong> veja <a href="/disparo-whatsapp-para-delivery.html">disparo no WhatsApp</a>, no plano Completo.</li>
+  <li><strong>Fidelidade e cupons:</strong> veja <a href="/programa-de-fidelidade-para-delivery.html">programa de fidelidade</a>.</li>
+  <li><strong>Crédito para a próxima compra:</strong> veja <a href="/cashback-para-delivery.html">cashback para delivery</a>.</li>
+</ul>
+
+<h2>Respeite os dados</h2>
+<p>Nome e telefone são dados pessoais. Use-os para falar sobre sua loja, dê opção de sair da lista, não compre listas e limite o acesso da equipe. Em caso de dúvida sobre a LGPD, consulte um profissional.</p>
+
+<h2>Quanto custa</h2>
+<p>A base de clientes vem com o <strong>plano Básico, R$97/mês</strong>. Disparos entram no <strong>Completo, R$149/mês</strong>. Sem comissão por pedido.</p>`,
+    faq: [
+      ['O que é CRM para restaurante?', 'É a organização dos dados dos clientes, como contato e histórico de compras, para vender melhor e trazer quem sumiu de volta.'],
+      ['Os dados dos clientes são meus?', 'Sim. A base do seu canal próprio fica com você e pode ser exportada em planilha.'],
+      ['Consigo importar minha lista atual?', 'Sim. O Menuzia importa arquivos CSV, inclusive exportados do Excel, e padroniza os telefones.'],
+      ['Clientes do iFood entram na base?', 'A base é formada principalmente pelos pedidos do seu canal próprio. Por isso vale levar a recompra para o seu link.'],
+      ['Posso usar a base em anúncios?', 'Sim. A exportação tem um formato próprio para públicos do Meta Ads.'],
+    ],
+  },
+
+  {
+    slug: 'cashback-para-delivery.html',
+    cat: 'Cashback',
+    plano: 'basico',
+    heroImg: 'blog-sem-comissao.webp',
+    heroAlt: 'Cliente recebendo cashback para usar no próximo pedido do delivery',
+    title: 'Cashback para Delivery: Faça o Cliente Voltar a Comprar | Menuzia',
+    h1: 'Cashback para delivery: dê um motivo para o cliente voltar',
+    desc: 'Como usar cashback no delivery para trazer o cliente de volta: crédito por item, com validade e uso automático no próximo pedido.',
+    keywords: 'cashback para delivery, cashback restaurante, programa de cashback delivery, como fazer cashback, sistema de cashback para restaurante, cliente não volta delivery, recompra delivery, cashback ou cupom',
+    lt: LT_DORES,
+    body: `<p>O cliente pediu uma vez, gostou e nunca mais voltou. Muitas vezes não foi por insatisfação: ele apenas esqueceu de você. O <strong>cashback para delivery</strong> dá um motivo concreto para o segundo pedido, porque o cliente sai da compra com um crédito que tem prazo para usar.</p>
+
+<h2>Cashback ou desconto?</h2>
+<ul>
+  <li><strong>Desconto</strong> reduz a venda de agora, inclusive para quem compraria de qualquer jeito.</li>
+  <li><strong>Cashback</strong> preserva o preço de hoje e só custa se o cliente voltar.</li>
+</ul>
+<p>Outros formatos também têm espaço: veja o <a href="/programa-de-fidelidade-para-delivery.html">programa de fidelidade</a> para metas por pedido e cupons.</p>
+
+<h2>Como funciona no Menuzia</h2>
+<ol>
+  <li>Você escolhe <strong>o item</strong> que gera cashback.</li>
+  <li>Define o valor: <strong>em reais por unidade ou em % do valor</strong>.</li>
+  <li>Define <strong>por quantos dias</strong> o crédito vale.</li>
+  <li>O crédito nasce quando o pedido é <strong>entregue</strong>.</li>
+  <li>No próximo pedido, ele é <strong>usado automaticamente</strong>, no cardápio ou com o Agente de IA.</li>
+</ol>
+<p>O crédito abate apenas o subtotal, nunca o frete, e expira sozinho no prazo definido.</p>
+
+<h2>Como definir o valor sem perder margem</h2>
+<p>Comece pela margem: use sua <a href="/ficha-tecnica-e-precificacao.html">ficha técnica</a> antes de escolher o percentual. Exemplo: em um combo de R$50 com 5% de cashback, o custo máximo é de R$2,50, e apenas se o cliente voltar.</p>
+<ul>
+  <li><strong>Escolha itens com boa margem</strong>, não necessariamente os mais baratos.</li>
+  <li><strong>Use validade curta:</strong> 15 a 30 dias costuma criar urgência, mas teste no seu ritmo de recompra.</li>
+  <li><strong>Evite valores irrisórios:</strong> crédito de centavos não muda comportamento.</li>
+</ul>
+
+<h2>Avise o cliente</h2>
+<p>Cashback esquecido não traz ninguém de volta. Mencione o benefício no cardápio, na embalagem e nas <a href="/disparo-whatsapp-para-delivery.html">campanhas de WhatsApp</a>. Se quer levar quem compra no marketplace para o seu canal, combine com <a href="/alternativa-ao-ifood.html">a estratégia de venda direta</a>.</p>
+
+<h2>Sem comissão, a recompra rende mais</h2>
+<p>No marketplace, cada recompra gera nova comissão. No canal próprio, o custo é fixo: o que você investe em cashback fica no relacionamento com o cliente. Acompanhe quem volta na sua <a href="/crm-para-restaurante.html">base de clientes</a>.</p>
+
+<h2>Quanto custa</h2>
+<p>Cupons, fidelidade e cashback ficam na área de Fidelidade do <strong>plano Básico, R$97/mês</strong>, sem comissão por pedido.</p>`,
+    faq: [
+      ['O que é cashback no delivery?', 'É um crédito gerado em uma compra para o cliente usar no próximo pedido, dentro de um prazo definido pela loja.'],
+      ['Quando o crédito fica disponível?', 'Quando o pedido é marcado como entregue.'],
+      ['O cliente precisa digitar um código?', 'Não. O crédito é aplicado automaticamente no próximo pedido.'],
+      ['O cashback pode pagar o frete?', 'Não. Ele abate somente o subtotal dos itens.'],
+      ['O cashback vale para todos os produtos?', 'Você escolhe quais itens geram cashback e define valor ou percentual e validade de cada regra.'],
+    ],
+  },
 ];
 
 // ------------------------------------------------------------
@@ -1302,14 +1868,14 @@ const serviceLd = (n, url) => `<script type="application/ld+json">
   },
   "areaServed": { "@type": "Country", "name": "Brasil" },
   "url": "${SITE}${url}",
-  "image": "${SITE}/assets/img/blog/${n.heroImg}",
+  "image": "${SITE}/assets/img/blog/${n.heroImg}"${n.plano === 'modulo' ? '' : `,
   "offers": {
     "@type": "Offer",
-    "price": "67.00",
+    "price": "${n.plano ? PLANOS[n.plano].preco : '67.00'}",
     "priceCurrency": "BRL",
     "url": "${SITE}/#precos",
     "availability": "https://schema.org/InStock"
-  }
+  }`}
 }
 </script>`;
 
@@ -1345,7 +1911,11 @@ const header = () => `<header class="header">
   <a href="${SITE}/#precos" class="btn-header-cta">Criar Cardápio</a>
 </header>`;
 
-const ctaBox = () => `<div class="cta-box">
+const ctaBox = (n) => n.plano ? `<div class="cta-box">
+  <h3>Fale com um especialista do Menuzia</h3>
+  <p>Sem comissão por pedido e sem fidelidade. Planos a partir de R$97/mês, com configuração feita pela nossa equipe.</p>
+  <a href="${WA_CTA}" data-crm-form class="btn-vermelho">Quero conhecer o Menuzia →</a>
+</div>` : `<div class="cta-box">
   <h3>Pare de pagar comissão por pedido</h3>
   <p>Cardápio digital próprio por R$67/mês fixo. Nossa equipe configura pra você e o suporte está incluso.</p>
   <a href="${SITE}/#precos" class="btn-vermelho">Criar Meu Cardápio Agora →</a>
@@ -1379,13 +1949,13 @@ ${outras}
   </div>
   <div class="sidebar-cta">
     <h3>Menuzia</h3>
-    <p>Cardápio digital sem comissão, R$67/mês fixo. Nós configuramos pra você.</p>
-    <a href="${SITE}/#precos" class="btn-site">Criar Cardápio →</a>
+    <p>Cardápio digital sem comissão, ${n.plano ? 'planos a partir de R$97/mês' : 'R$67/mês fixo'}. Nós configuramos pra você.</p>
+    <a href="${n.plano ? WA_CTA : SITE + '/#precos'}"${n.plano ? ' data-crm-form' : ''} class="btn-site">${n.plano ? 'Falar com especialista' : 'Criar Cardápio'} →</a>
   </div>
 </aside>`;
 };
 
-const footer = () => `<footer class="local-footer">
+const footer = (n) => `<footer class="local-footer">
   <div class="lf-grid">
     <div class="lf-col">
       <div class="footer-logo">menuzia</div>
@@ -1406,7 +1976,7 @@ const footer = () => `<footer class="local-footer">
   </div>
   <div class="lf-bottom">
     <a href="${SITE}/">Início</a> · <a href="${B}index.html">Blog</a> · <a href="cidades.html">Cidades</a> · <a href="cardapio-digital-barato.html">Cardápio digital barato</a> · <a href="${SITE}/#precos">Preços</a><br>
-    © 2026 Menuzia. Cardápio digital sem comissão — R$67/mês fixo.
+    © 2026 Menuzia. Cardápio digital sem comissão — ${n.plano ? 'planos a partir de R$97/mês' : 'R$67/mês fixo'}.
   </div>
 </footer>`;
 
@@ -1453,18 +2023,18 @@ ${header()}
   <div class="breadcrumb"><a href="${SITE}/">Início</a> › ${n.cat}</div>
   <span class="cat">${n.cat}</span>
   <h1>${n.h1}</h1>
-  <div class="meta">R$67/mês fixo · Sem comissão por pedido · Equipe Menuzia</div>
+  <div class="meta">${n.plano ? PLANOS[n.plano].meta : 'R$67/mês fixo'} · Sem comissão por pedido · Equipe Menuzia</div>
   <figure class="artigo-hero">
     <img src="assets/img/blog/${n.heroImg}" alt="${n.heroAlt}" width="1200" height="675" loading="eager" fetchpriority="high" decoding="async">
   </figure>
   ${body}
   ${ltBlock(n)}
   ${faqSection(n)}
-  ${ctaBox()}
+  ${ctaBox(n)}
 </article>
 ${sidebar(n)}
 </div>
-${footer()}
+${footer(n)}
 <script src="/assets/js/crm-form.js" data-offer="4b235100-bbed-413b-869d-c713ecebf15e" data-phone="5527992534407" defer></script>
 </body>
 </html>`;
