@@ -157,7 +157,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* Marca d'água do M nos blocos azuis */
 .painel-azul, .plano-top, .disp { isolation: isolate; overflow: hidden; }
-.painel-azul::before, .plano-top::before, .disp::before { content: ""; position: absolute; z-index: -1; inset: 0; pointer-events: none; opacity: .06; background: url(assets/home/logo-m-branco.png) -5% 110% / 36% auto no-repeat, url(assets/home/logo-m-branco.png) 103% -8% / 24% auto no-repeat, url(assets/home/logo-m-branco.png) 56% 50% / 12% auto no-repeat; }
+.painel-azul::before, .plano-top::before, .disp::before { content: ""; position: absolute; z-index: -1; inset: 0; pointer-events: none; opacity: .06; background: url(assets/home/logo-m-branco.webp) -5% 110% / 36% auto no-repeat, url(assets/home/logo-m-branco.webp) 103% -8% / 24% auto no-repeat, url(assets/home/logo-m-branco.webp) 56% 50% / 12% auto no-repeat; }
 .disp::before { z-index: 0; }
 
 /* Funções */
