@@ -231,6 +231,27 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .msg { flex: none; max-width: 86%; padding: 6px 10px; border-radius: 8px; font-size: 13.500px; line-height: 1.35; background: #fff; align-self: flex-start; animation: chega .2s ease-out; }
 .msg.cliente { align-self: flex-end; background: #D9FDD3; }
 .msg a, .msg .link { display: block; margin-top: 6px; padding: 5px; background: var(--fundo); border-radius: 5px; text-align: center; font-weight: 700; color: #027EB5; }
+.msg { position: relative; box-shadow: 0 1px .5px rgba(11, 20, 26, .13); font-family: Inter, "Segoe UI", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji"; }
+.msg-txt { white-space: pre-line; }
+.msg-txt b { font-weight: 700; }
+.msg-meta { float: right; display: inline-flex; align-items: center; gap: 3px; margin: 6px 0 -3px 10px; font-size: 10.500px; line-height: 1; color: #667781; }
+.msg-meta .lido { font-style: normal; font-size: 11px; letter-spacing: -3px; padding-right: 3px; color: #53BDEB; }
+.zap-prev { display: flex; gap: 8px; align-items: center; margin-top: 6px; padding: 6px; background: #F0F2F5; border-radius: 6px; border-left: 3px solid #25D366; }
+.zap-prev-img { display: grid; place-items: center; flex: none; width: 38px; height: 38px; background: #0F1B3D; border-radius: 6px; font-size: 20px; }
+.zap-prev b { display: block; font-size: 12.500px; }
+.zap-prev small { font-size: 11px; color: #667781; }
+.zap-url { display: block; margin-top: 4px; color: #027EB5; text-decoration: underline; word-break: break-all; }
+.zap-pix { display: flex; flex-direction: column; align-items: center; gap: 5px; margin-top: 6px; padding: 8px; background: #F0F2F5; border-radius: 6px; }
+.zap-qr { width: 104px; padding: 4px; background: #fff; border-radius: 4px; }
+.zap-qr svg { display: block; width: 100%; height: auto; }
+.zap-pix b { font-size: 12.500px; }
+.zap-pix-btn { width: 100%; padding: 5px; background: #fff; border-radius: 5px; text-align: center; font-weight: 700; color: #027EB5; }
+.zap-arq { display: flex; gap: 8px; align-items: center; padding: 6px 8px; background: rgba(0, 0, 0, .05); border-radius: 6px; }
+.zap-arq-ic { flex: none; padding: 7px 5px; background: #E5484D; border-radius: 4px; color: #fff; font-size: 9px; font-weight: 800; }
+.zap-arq b { display: block; font-size: 12.500px; }
+.zap-arq small { font-size: 10.500px; color: #667781; }
+.zap-ava { display: grid; place-items: center; flex: none; width: 36px; height: 36px; background: #0F1B3D; border-radius: 50%; font-size: 18px; }
+.zap-verif { display: inline-block; width: 13px; height: 13px; margin-left: 4px; vertical-align: -2px; }
 .msg.dig { display: flex; gap: 4px; padding: 10px 12px; }
 .msg.dig i { width: 7px; height: 7px; border-radius: 50%; background: #8A97AE; animation: pisca 1s infinite; }
 .msg.dig i:nth-child(2) { animation-delay: .15s; }
