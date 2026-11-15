@@ -3,10 +3,10 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://menuzia.com.br/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image><image:loc>https://menuzia.com.br/assets/img/mockups/mac-vitrine.webp</image:loc></image:image>
+    <image:image><image:loc>https://menuzia.com.br/assets/home/og.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/cardapio-digital-barato.html</loc>
@@ -360,234 +360,304 @@
   </url>
   <url>
     <loc>https://menuzia.com.br/agente-de-ia-para-delivery.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/tut-whatsapp.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/alternativa-ao-ifood.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-delivery-ifood.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/cardapio-digital-99food.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-delivery-ifood.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/cardapio-digital-gratis.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-precos.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/cardapio-digital-integrado-ifood.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/tut-integracoes.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/cardapio-digital-mais-barato.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-precos.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/cardapio-digital-mensalidade-fixa.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/local-vitoria.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/cardapio-digital-para-confeitaria.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/local-guarapari.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/cardapio-digital-para-delivery.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/local-vila-velha-2.webp</image:loc></image:image>
   </url>
   <url>
+    <loc>https://menuzia.com.br/cardapio-digital-para-hamburgueria.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-hamburgueria.webp</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://menuzia.com.br/cardapio-digital-para-lanchonete.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/local-vila-velha-2.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/cardapio-digital-para-marmitaria.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-whatsapp.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/cardapio-digital-para-pizzaria.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/local-vitoria.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/cardapio-digital-para-restaurante-iniciante.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-hamburgueria.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/cardapio-digital-para-restaurante.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-sem-comissao.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/cardapio-digital-para-whatsapp.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-whatsapp.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/cardapio-digital-pdf.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-hero.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/cardapio-digital-preco.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-hero.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/cardapio-digital-sem-comissao.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-sem-comissao.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/cardapio-digital-vale-a-pena.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-precos.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/cashback-para-delivery.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-sem-comissao.webp</image:loc></image:image>
   </url>
   <url>
+    <loc>https://menuzia.com.br/catalogo-whatsapp-ou-cardapio-digital.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/tut-cardapio.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/cliente-nao-finaliza-pedido.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-hero.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/como-aumentar-vendas-no-delivery.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/tut-campanhas.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/como-organizar-pedidos-do-delivery.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/tut-painel.webp</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://menuzia.com.br/controle-de-caixa-para-restaurante.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-precos.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/crm-para-restaurante.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/tut-campanhas.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/disparo-whatsapp-para-delivery.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/tut-campanhas.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/ficha-tecnica-e-precificacao.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-hero.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/melhor-cardapio-digital.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-delivery-ifood.webp</image:loc></image:image>
   </url>
   <url>
+    <loc>https://menuzia.com.br/mensagem-automatica-whatsapp-delivery.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-whatsapp.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/o-que-um-cardapio-digital-deve-ter.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/tut-cardapio.webp</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://menuzia.com.br/pagamento-online-para-delivery.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-precos.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/pedido-errado-no-delivery.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/tut-impressora.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/programa-de-fidelidade-para-delivery.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-sem-comissao.webp</image:loc></image:image>
   </url>
   <url>
+    <loc>https://menuzia.com.br/robo-de-atendimento-whatsapp.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/tut-whatsapp.webp</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://menuzia.com.br/rota-de-motoboy-para-delivery.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/tut-logistica.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/sistema-de-mesas-e-comandas.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-hamburgueria.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/sistema-pdv-para-delivery.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/tut-painel.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/status-do-pedido-no-whatsapp.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/tut-painel.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/tela-de-cozinha-kds.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/tut-cardapio.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/tirar-pedidos-pelo-whatsapp.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://menuzia.com.br/assets/img/blog/blog-whatsapp.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://menuzia.com.br/whatsapp-do-delivery-lotado.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://menuzia.com.br/assets/img/blog/tut-painel.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://menuzia.com.br/blog/index.html</loc>

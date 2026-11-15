@@ -50,6 +50,32 @@ const LT_DORES = [
   ['cardápio digital sem comissão', 'cardapio-digital-sem-comissao.html'],
 ];
 
+// Cluster ATENDIMENTO NO WHATSAPP: robô, mensagens automáticas, fila, catálogo x cardápio.
+const LT_WHATSAPP = [
+  ['como configurar robô de atendimento no WhatsApp', 'robo-de-atendimento-whatsapp.html'],
+  ['mensagem automática para delivery', 'mensagem-automatica-whatsapp-delivery.html'],
+  ['WhatsApp do delivery lotado', 'whatsapp-do-delivery-lotado.html'],
+  ['catálogo do WhatsApp ou cardápio digital', 'catalogo-whatsapp-ou-cardapio-digital.html'],
+  ['como tirar pedidos pelo WhatsApp automaticamente', 'tirar-pedidos-pelo-whatsapp.html'],
+  ['agente de IA para delivery', 'agente-de-ia-para-delivery.html'],
+  ['status do pedido no WhatsApp', 'status-do-pedido-no-whatsapp.html'],
+  ['disparo em massa no WhatsApp', 'disparo-whatsapp-para-delivery.html'],
+  ['como configurar o WhatsApp Business', 'blog/tutoriais/como-configurar-whatsapp-business-para-delivery.html'],
+];
+
+// Cluster ESCOLHA E CONVERSÃO: o que o cardápio deve ter, qual o melhor, vale a pena, vender mais.
+const LT_ESCOLHA = [
+  ['o que um bom cardápio digital deve ter', 'o-que-um-cardapio-digital-deve-ter.html'],
+  ['melhor cardápio digital: checklist', 'melhor-cardapio-digital.html'],
+  ['melhor cardápio digital para hamburgueria', 'cardapio-digital-para-hamburgueria.html'],
+  ['cardápio digital vale a pena?', 'cardapio-digital-vale-a-pena.html'],
+  ['cliente não finaliza o pedido', 'cliente-nao-finaliza-pedido.html'],
+  ['como aumentar as vendas do delivery', 'como-aumentar-vendas-no-delivery.html'],
+  ['como organizar pedidos do delivery', 'como-organizar-pedidos-do-delivery.html'],
+  ['preço de cardápio digital', 'cardapio-digital-preco.html'],
+  ['cardápio digital sem comissão', 'cardapio-digital-sem-comissao.html'],
+];
+
 // Preços atuais da home. Página com `plano` usa estes textos; sem `plano` segue o texto antigo (R$67, pendente).
 // 'modulo' = Agente de IA, módulo pago sem preço público: não publica Offer nem valor.
 const PLANOS = {
@@ -701,11 +727,12 @@ const niches = [
   {
     slug: 'melhor-cardapio-digital.html',
     cat: 'Comparativo',
+    plano: 'basico',
     heroImg: 'blog-delivery-ifood.webp',
     heroAlt: 'Dono de restaurante comparando plataformas de cardápio digital no notebook',
     title: 'Melhor Cardápio Digital para Delivery: Checklist de Escolha | Menuzia',
     h1: 'Melhor cardápio digital para delivery: o checklist antes de assinar',
-    desc: 'Como escolher o melhor cardápio digital para o seu delivery: 10 critérios objetivos de custo, conversão e propriedade da base de clientes — e onde o Menuzia entra por R$67/mês sem comissão.',
+    desc: 'Como escolher o melhor cardápio digital para o seu delivery: 10 critérios objetivos de custo, conversão e propriedade da base de clientes — e onde o Menuzia entra, sem comissão, a partir de R$97/mês.',
     keywords: 'melhor cardápio digital, melhor plataforma de cardápio digital, melhor cardápio digital para delivery, qual cardápio digital escolher, melhor cardápio digital custo benefício, comparativo cardápio digital, melhor sistema de delivery próprio',
     lt: [
       ['melhor cardápio digital para delivery', '#'],
@@ -716,6 +743,9 @@ const niches = [
       ['cardápio digital x 99Food', 'cardapio-digital-99food.html'],
       ['cardápio digital em PDF', 'cardapio-digital-pdf.html'],
       ['cardápio digital no WhatsApp', 'cardapio-digital-para-whatsapp.html'],
+      ['o que um bom cardápio digital deve ter', 'o-que-um-cardapio-digital-deve-ter.html'],
+      ['melhor cardápio digital para hamburgueria', 'cardapio-digital-para-hamburgueria.html'],
+      ['cardápio digital vale a pena?', 'cardapio-digital-vale-a-pena.html'],
       ['cardápio digital por cidade', 'cidades.html'],
     ],
     body: `<p>Não existe "melhor cardápio digital" no absoluto — existe o que resolve o seu tipo de operação pelo menor custo total. Este é o checklist objetivo que separa plataforma boa de vitrine cara.</p>
@@ -737,9 +767,9 @@ const niches = [
 <h2>Como o Menuzia se sai no checklist</h2>
 <table>
   <tr><th>Critério</th><th>Menuzia</th></tr>
-  <tr><td>Comissão por pedido</td><td>Nenhuma — R$67/mês fixo</td></tr>
+  <tr><td>Comissão por pedido</td><td>Nenhuma — a partir de R$97/mês fixo</td></tr>
   <tr><td>Base de clientes</td><td>Sua, com histórico e campanhas</td></tr>
-  <tr><td>Pedido no WhatsApp</td><td>Sim, com robô 24h</td></tr>
+  <tr><td>Pedido no WhatsApp</td><td>Sim, com robô 24h no plano Completo</td></tr>
   <tr><td>Taxa por bairro</td><td>Sim, com raio de entrega</td></tr>
   <tr><td>Montagem do cardápio</td><td>Feita pela nossa equipe</td></tr>
   <tr><td>Fidelidade</td><td>Não tem</td></tr>
@@ -1816,6 +1846,607 @@ const niches = [
       ['O cliente precisa digitar um código?', 'Não. O crédito é aplicado automaticamente no próximo pedido.'],
       ['O cashback pode pagar o frete?', 'Não. Ele abate somente o subtotal dos itens.'],
       ['O cashback vale para todos os produtos?', 'Você escolhe quais itens geram cashback e define valor ou percentual e validade de cada regra.'],
+    ],
+  },
+
+  // ===== Cluster ATENDIMENTO NO WHATSAPP (LT_WHATSAPP) + ESCOLHA DO CARDÁPIO (LT_ESCOLHA) — 2026-11-15 =====
+  {
+    slug: 'robo-de-atendimento-whatsapp.html',
+    cat: 'Robô no WhatsApp',
+    plano: 'completo',
+    heroImg: 'tut-whatsapp.webp',
+    heroAlt: 'Tela de configuração do robô de atendimento no WhatsApp do delivery',
+    title: 'Como Configurar Robô de Atendimento no WhatsApp | Menuzia',
+    h1: 'Como configurar um robô de atendimento no WhatsApp para delivery, passo a passo',
+    desc: 'Passo a passo para configurar o robô de atendimento no WhatsApp do delivery: conectar o número, ligar os assuntos, editar respostas e testar no simulador.',
+    keywords: 'como configurar robô de atendimento whatsapp, robô de atendimento whatsapp, robô whatsapp delivery, chatbot whatsapp delivery, robô para whatsapp restaurante, atendimento automático whatsapp, configurar chatbot whatsapp, robô whatsapp grátis delivery',
+    lt: LT_WHATSAPP,
+    body: `<p>Um <strong>robô de atendimento no WhatsApp</strong> resolve as perguntas que tomam metade do dia do delivery: "tem cardápio?", "quanto é a entrega no meu bairro?", "aceita Pix?", "cadê meu pedido?". Configurar um bom robô leva menos de uma hora, desde que você siga a ordem certa. Este é o passo a passo usado no Menuzia.</p>
+
+<h2>Antes de começar: arrume os dados que o robô vai repetir</h2>
+<p>O robô não inventa nada: ele responde com o que está cadastrado. Se a taxa do bairro estiver errada, ele vai repetir o erro para todo mundo. Confira antes:</p>
+<ul>
+  <li><strong>Bairros e taxas de entrega</strong> (ou faixas de km) — veja <a href="/blog/tutoriais/como-configurar-taxa-de-entrega-por-bairro.html">como configurar a taxa por bairro</a></li>
+  <li><strong>Horário de funcionamento</strong>, inclusive dias de folga</li>
+  <li><strong>Tempo de entrega e de retirada</strong></li>
+  <li><strong>Chave Pix e formas de pagamento</strong></li>
+  <li><strong>Endereço</strong> para quem retira no balcão</li>
+</ul>
+
+<h2>Passo 1: conecte o número do WhatsApp</h2>
+<p>No painel, vá em <strong>Integrações › WhatsApp</strong> e clique em <strong>Conectar WhatsApp</strong>. Aparece um QR Code. No celular da loja, abra o WhatsApp em <strong>Aparelhos conectados › Conectar um aparelho</strong> e leia o código. A tela atualiza sozinha quando conecta. O número continua funcionando normal no celular.</p>
+
+<h2>Passo 2: ligue o robô</h2>
+<p>Em <strong>Ajustes › Robô de atendimento</strong>, ligue o interruptor <strong>Robô de atendimento</strong>. Ele responde por palavras-chave, sem inteligência artificial e sem custo por mensagem.</p>
+
+<h2>Passo 3: escolha os assuntos</h2>
+<p>Cada assunto tem seu liga/desliga e aceita palavras extras (uma por linha), para o robô entender como o seu cliente fala:</p>
+<ul>
+  <li><strong>Saudação</strong> — já manda o link do cardápio e um menu numerado (no máximo uma vez a cada 6 horas)</li>
+  <li><strong>Cardápio</strong>, <strong>Entrega</strong> (taxa e tempo do bairro), <strong>Horário</strong></li>
+  <li><strong>Pagamento e Pix</strong> — a chave Pix vai numa mensagem separada, fácil de copiar</li>
+  <li><strong>Endereço e retirada</strong>, <strong>Status do pedido</strong>, <strong>Meu progresso</strong> (cashback e cupons)</li>
+  <li><strong>Reclamação</strong>, <strong>Atendente</strong> e <strong>Parar</strong> — sempre ligados: nesses casos o robô sai da conversa</li>
+</ul>
+
+<h2>Passo 4: escreva as respostas com a voz da loja</h2>
+<p>Todos os textos são editáveis, com prévia no estilo do WhatsApp e botão <strong>Restaurar padrão</strong>. Use os campos automáticos para personalizar: <code>{nome_cliente}</code>, <code>{link_cardapio}</code>, <code>{bairro}</code>, <code>{taxa}</code>, <code>{tempo}</code>, <code>{horario}</code>, <code>{aberto_agora}</code>, <code>{formas_pagamento}</code>. Modelos prontos em <a href="/mensagem-automatica-whatsapp-delivery.html">mensagem automática para delivery</a>.</p>
+
+<h2>Passo 5: defina quando o robô volta</h2>
+<p>Quando alguém da equipe assume a conversa, o robô fica quieto. No campo <strong>Voltar a atender depois de (min) sem resposta da loja</strong> (padrão: 5 minutos) você decide quanto tempo ele espera antes de retomar com um "Desculpe a demora!". Assim nenhum cliente fica no vácuo no pico.</p>
+
+<h2>Passo 6: teste no simulador</h2>
+<p>O <strong>Simulador</strong> deixa você conversar como se fosse o cliente, sem enviar nada para ninguém. Teste "oi", "quanto é a entrega no Centro?", "aceita pix?" e "quero falar com alguém".</p>
+
+<h2>Passo 7: ensine o que ele não entendeu</h2>
+<p>No cartão <strong>Mensagens que o robô não entendeu</strong>, clique em <strong>Revisar</strong> e associe a frase a um assunto. Em uma semana o robô fala a língua do seu bairro.</p>
+
+<h2>Robô ou agente de IA?</h2>
+<p>O robô responde e leva o cliente para o cardápio, onde o pedido é montado com foto e adicionais. Se você quer que o pedido seja anotado pela própria conversa, inclusive por áudio, isso é o <a href="/agente-de-ia-para-delivery.html">Agente de IA</a>. Veja a comparação em <a href="/tirar-pedidos-pelo-whatsapp.html">como tirar pedidos pelo WhatsApp</a>.</p>
+
+<h2>Quanto custa</h2>
+<p>O robô de atendimento faz parte do <strong>plano Completo, R$149/mês</strong>, sem comissão por pedido e sem fidelidade. Nossa equipe ajuda na configuração.</p>`,
+    faq: [
+      ['Preciso de WhatsApp Business API para usar o robô?', 'Não. A conexão é feita lendo um QR Code com o WhatsApp da loja, em Aparelhos conectados. O número continua funcionando no celular.'],
+      ['O robô do Menuzia usa inteligência artificial?', 'Não. Ele responde por palavras-chave, sem custo por mensagem. Quem entende frase livre e anota pedido pela conversa é o Agente de IA, um módulo à parte.'],
+      ['O robô atrapalha quando eu quero responder pessoalmente?', 'Não. Quando alguém da loja responde, o robô para naquela conversa e só volta se a loja ficar sem responder pelo tempo que você definir.'],
+      ['Dá para testar antes de ligar para os clientes?', 'Sim. O Simulador mostra as respostas como se você fosse o cliente, sem enviar mensagem para ninguém.'],
+      ['O robô responde quando a loja está fechada?', 'Sim. Ele avisa que a loja está fechada e informa quando abre, usando o horário cadastrado.'],
+    ],
+  },
+
+  {
+    slug: 'mensagem-automatica-whatsapp-delivery.html',
+    cat: 'Mensagens automáticas',
+    plano: 'completo',
+    heroImg: 'blog-whatsapp.webp',
+    heroAlt: 'Mensagens automáticas de delivery chegando no WhatsApp do cliente',
+    title: 'Mensagem Automática para Delivery no WhatsApp: Modelos | Menuzia',
+    h1: 'Mensagem automática para delivery no WhatsApp: 12 modelos prontos para copiar',
+    desc: 'Modelos de mensagem automática para delivery no WhatsApp: saudação, fora do horário, taxa de entrega, Pix, pedido aceito, saiu para entrega e recuperação de cliente.',
+    keywords: 'mensagem automática whatsapp delivery, mensagem automática para delivery, mensagem de saudação delivery, mensagem fora do horário whatsapp, modelo de mensagem para delivery, resposta automática whatsapp restaurante, mensagem pedido saiu para entrega, mensagem de boas vindas delivery',
+    lt: LT_WHATSAPP,
+    body: `<p>Mensagem automática boa não parece robô: é curta, responde a pergunta e diz o próximo passo. Abaixo, modelos testados em delivery para você copiar e adaptar. Os textos entre chaves, como <code>{nome}</code>, são preenchidos sozinhos pelo sistema.</p>
+
+<h2>Atendimento (robô)</h2>
+<h3>1. Saudação</h3>
+<p><em>"{saudacao}, {nome_cliente}! Aqui é da {nome_loja} 🍔 Faça seu pedido pelo cardápio: {link_cardapio}. Ou responda com o número: {menu}"</em></p>
+<h3>2. Fora do horário</h3>
+<p><em>"{aberto_agora} Você já pode deixar seu pedido agendado pelo cardápio: {link_cardapio}"</em></p>
+<h3>3. Taxa de entrega</h3>
+<p><em>"Para o {bairro} a entrega fica {taxa} e chega em cerca de {tempo}. Peça por aqui: {link_cardapio}"</em></p>
+<h3>4. Pagamento e Pix</h3>
+<p><em>"Aceitamos {formas_pagamento}. Nossa chave Pix ({tipo_chave}) vai na próxima mensagem, é só copiar."</em></p>
+<h3>5. Retirada</h3>
+<p><em>"Pode retirar no balcão: {endereco}. Fica pronto em cerca de {tempo}."</em></p>
+<h3>6. Não entendi</h3>
+<p><em>"Não entendi muito bem 😅 Responda com o número do que precisa: {menu}"</em></p>
+
+<h2>Status do pedido</h2>
+<h3>7. Pedido recebido</h3>
+<p><em>"Oi {nome}! Recebemos seu pedido #{numero} na {loja}. Já já confirmamos."</em></p>
+<h3>8. Pronto para retirada</h3>
+<p><em>"{nome}, seu pedido #{numero} está pronto para retirada! 🙌"</em></p>
+<h3>9. Saiu para entrega</h3>
+<p><em>"Seu pedido #{numero} saiu para entrega, {nome}! Fique de olho no interfone."</em></p>
+<h3>10. Entregue</h3>
+<p><em>"Pedido entregue! Obrigado por pedir na {loja}, {nome}. Bom apetite!"</em></p>
+
+<h2>Campanhas para a base</h2>
+<h3>11. Recuperação de cliente sumido</h3>
+<p><em>"{nome}, faz tempo que você não pede na {loja}! Hoje tem frete grátis para matar a saudade: {link}"</em></p>
+<h3>12. Promoção do dia</h3>
+<p><em>"Terça do burger em dobro na {loja} 🍔🍔 Só hoje: {link}"</em></p>
+
+<h2>4 regras para não virar spam</h2>
+<ul>
+  <li><strong>Uma pergunta, uma resposta.</strong> Texto longo ninguém lê no celular.</li>
+  <li><strong>Sempre com o próximo passo:</strong> link do cardápio, número do menu ou chave Pix.</li>
+  <li><strong>Saudação com intervalo:</strong> quem volta a falar em 10 minutos não precisa de boas-vindas de novo.</li>
+  <li><strong>Campanha só para quem já comprou</strong> e com opção de parar de receber.</li>
+</ul>
+
+<h2>Onde isso fica no Menuzia</h2>
+<p>Respostas do robô em <strong>Ajustes › Robô de atendimento</strong> (veja <a href="/robo-de-atendimento-whatsapp.html">como configurar o robô</a>). Avisos de status em <strong>Ajustes › Mensagens automáticas</strong>, com liga/desliga por etapa e por tipo de pedido (entrega, retirada, consumo no local) — detalhes em <a href="/status-do-pedido-no-whatsapp.html">status do pedido no WhatsApp</a>. Campanhas recorrentes como Recuperação de clientes ficam em <strong>Campanhas</strong> — veja <a href="/disparo-whatsapp-para-delivery.html">disparo no WhatsApp</a>.</p>
+
+<h2>Quanto custa</h2>
+<p>Robô, mensagens automáticas e campanhas estão no <strong>plano Completo, R$149/mês</strong>, sem comissão por pedido.</p>`,
+    faq: [
+      ['Como colocar mensagem automática no WhatsApp do delivery?', 'O WhatsApp Business tem saudação e ausência básicas. Para responder taxa por bairro, status e Pix com dados reais do pedido, é preciso um robô conectado ao sistema, como o do Menuzia.'],
+      ['Qual a melhor mensagem de saudação para delivery?', 'Curta, com o nome da loja e o link do cardápio logo de cara. O cliente quer pedir, não ler um texto de boas-vindas.'],
+      ['Mensagem automática pode ser personalizada com o nome do cliente?', 'Sim. Campos como {nome} e {numero} são preenchidos sozinhos com os dados do cliente e do pedido.'],
+      ['Posso desligar algum aviso de status?', 'Sim. Cada etapa tem seu liga/desliga e você escolhe para quais tipos de pedido os avisos saem.'],
+      ['Mensagem automática faz o número ser bloqueado?', 'Respostas a quem chamou a loja e avisos do próprio pedido são esperadas pelo cliente. O risco está em disparo em massa para lista fria; por isso campanha deve ir só para quem já comprou.'],
+    ],
+  },
+
+  {
+    slug: 'whatsapp-do-delivery-lotado.html',
+    cat: 'Atendimento lotado',
+    plano: 'completo',
+    heroImg: 'tut-painel.webp',
+    heroAlt: 'Dono de delivery com WhatsApp lotado de mensagens no horário de pico',
+    title: 'WhatsApp do Delivery Lotado? Como Responder Rápido | Menuzia',
+    h1: 'WhatsApp do delivery lotado: como parar de perder cliente por demora na resposta',
+    desc: 'Cliente desiste quando o WhatsApp demora. Veja por que o atendimento trava no pico e como responder em segundos com robô, cardápio e avisos automáticos.',
+    keywords: 'whatsapp do delivery lotado, demora para responder whatsapp delivery, perdendo clientes no whatsapp, atendimento whatsapp restaurante lento, como responder clientes mais rápido whatsapp, muitas mensagens whatsapp delivery, atendente whatsapp delivery',
+    lt: LT_WHATSAPP,
+    body: `<p>Sexta, 20h15. Trinta conversas abertas, a pessoa do caixa respondendo uma por uma, e no meio delas três clientes perguntaram "tá aberto?" e foram embora porque ninguém respondeu em dois minutos. O WhatsApp lotado não é sinal de sucesso: é <strong>venda escapando pela fila</strong>.</p>
+
+<h2>De onde vem tanta mensagem</h2>
+<p>Abra as conversas de um sábado e conte. Na maioria dos deliveries, mais da metade das mensagens são as mesmas cinco perguntas:</p>
+<ol>
+  <li>Está aberto? Até que horas?</li>
+  <li>Manda o cardápio?</li>
+  <li>Quanto é a entrega no meu bairro?</li>
+  <li>Aceita Pix/cartão?</li>
+  <li>Cadê meu pedido?</li>
+</ol>
+<p>Nenhuma delas precisa de uma pessoa. Todas têm resposta cadastrada no sistema.</p>
+
+<h2>O plano em 3 camadas</h2>
+<h3>1. Robô responde o repetitivo na hora</h3>
+<p>Horário, cardápio, taxa do bairro, Pix e endereço saem em segundos, 24 horas por dia. Veja <a href="/robo-de-atendimento-whatsapp.html">como configurar o robô de atendimento</a>.</p>
+<h3>2. Cardápio digital monta o pedido</h3>
+<p>Em vez de alguém anotar item por item, o cliente monta o pedido no link, com foto e adicionais, e ele chega pronto no painel. Ninguém redigita, ninguém esquece a "sem cebola".</p>
+<h3>3. Aviso automático acaba com o "cadê meu pedido?"</h3>
+<p>Quando o pedido muda de etapa no painel, o cliente recebe o aviso: aceito, pronto, saiu para entrega. Veja <a href="/status-do-pedido-no-whatsapp.html">status do pedido no WhatsApp</a>.</p>
+
+<h2>E o que sobra para a equipe</h2>
+<p>Reclamação, pedido especial e cliente que pede "falar com alguém". O robô sai da conversa nesses casos e a pessoa da loja assume com calma. Se ninguém responder no tempo que você definir, ele volta para não deixar o cliente sem resposta.</p>
+
+<h2>Sinais de que você está perdendo venda</h2>
+<ul>
+  <li>Conversas com "oi" e nenhum pedido depois</li>
+  <li>Pedido do mesmo cliente no iFood logo depois de falar com você</li>
+  <li>Equipe parando a produção para responder</li>
+  <li>Reclamação de demora antes mesmo de o pedido sair</li>
+</ul>
+
+<h2>Quer que a conversa vire pedido sozinha?</h2>
+<p>Tem cliente que não abre link de jeito nenhum. Para esses, o <a href="/agente-de-ia-para-delivery.html">Agente de IA</a> anota o pedido pela conversa, inclusive por áudio. Compare os caminhos em <a href="/tirar-pedidos-pelo-whatsapp.html">como tirar pedidos pelo WhatsApp</a>.</p>
+
+<h2>Quanto custa</h2>
+<p>Robô e avisos automáticos estão no <strong>plano Completo, R$149/mês</strong>, sem comissão por pedido e sem fidelidade.</p>`,
+    faq: [
+      ['Quanto tempo o cliente espera resposta no WhatsApp?', 'No delivery, poucos minutos. Com fome e outro app aberto, quem não recebe resposta rápida costuma pedir em outro lugar.'],
+      ['Contratar mais um atendente resolve?', 'Ajuda no pico, mas custa caro e continua respondendo as mesmas perguntas. Automatizar o repetitivo libera a equipe para o que precisa de gente.'],
+      ['O robô responde vários clientes ao mesmo tempo?', 'Sim. Cada conversa recebe a resposta na hora, não importa quantas cheguem juntas.'],
+      ['O cliente percebe que é um robô?', 'As respostas são curtas e com a voz da loja. Quando o cliente pede atendente ou reclama, o robô sai e a equipe assume.'],
+      ['Preciso trocar de número?', 'Não. O robô usa o mesmo número que seus clientes já conhecem.'],
+    ],
+  },
+
+  {
+    slug: 'catalogo-whatsapp-ou-cardapio-digital.html',
+    cat: 'Catálogo x cardápio',
+    plano: 'basico',
+    heroImg: 'tut-cardapio.webp',
+    heroAlt: 'Comparação entre catálogo do WhatsApp Business e cardápio digital de delivery',
+    title: 'Catálogo do WhatsApp ou Cardápio Digital? Compare | Menuzia',
+    h1: 'Catálogo do WhatsApp Business ou cardápio digital: qual usar no delivery?',
+    desc: 'Catálogo do WhatsApp Business é grátis, mas não calcula taxa, não tem adicionais nem pagamento. Compare com o cardápio digital e veja quando trocar.',
+    keywords: 'catálogo do whatsapp ou cardápio digital, catálogo whatsapp business delivery, catálogo whatsapp restaurante, cardápio no catálogo do whatsapp, diferença catálogo whatsapp e cardápio digital, link de pedido whatsapp, cardápio digital para whatsapp',
+    lt: LT_WHATSAPP,
+    body: `<p>O <strong>catálogo do WhatsApp Business</strong> é o primeiro passo de muita hamburgueria: é grátis e fica dentro do app que o cliente já usa. O problema aparece quando os pedidos crescem e o catálogo começa a gerar mais conversa do que pedido.</p>
+
+<h2>O que o catálogo faz bem</h2>
+<ul>
+  <li>Mostra produtos com foto e preço</li>
+  <li>Não custa nada</li>
+  <li>O cliente não sai do WhatsApp</li>
+</ul>
+
+<h2>Onde o catálogo trava no delivery</h2>
+<ul>
+  <li><strong>Sem adicionais de verdade:</strong> bacon extra, ponto da carne, sem cebola viram mensagem de texto.</li>
+  <li><strong>Sem taxa de entrega:</strong> alguém precisa perguntar o bairro e responder o valor.</li>
+  <li><strong>Sem total com taxa e troco:</strong> a conta é feita à mão.</li>
+  <li><strong>Sem pagamento online:</strong> o Pix é combinado na conversa.</li>
+  <li><strong>Sem horário:</strong> o cliente "compra" com a loja fechada.</li>
+  <li><strong>Sem painel:</strong> o pedido fica perdido entre as conversas e é redigitado na comanda.</li>
+</ul>
+
+<h2>Comparativo direto</h2>
+<table>
+  <tr><th>Recurso</th><th>Catálogo WhatsApp</th><th>Cardápio digital Menuzia</th></tr>
+  <tr><td>Foto e preço</td><td>Sim</td><td>Sim</td></tr>
+  <tr><td>Complementos e tamanhos</td><td>Não</td><td>Sim</td></tr>
+  <tr><td>Taxa por bairro ou km</td><td>Não</td><td>Sim, automática</td></tr>
+  <tr><td>Pix e cartão online</td><td>Não</td><td>Sim (Mercado Pago)</td></tr>
+  <tr><td>Cupom, cashback e fidelidade</td><td>Não</td><td>Sim</td></tr>
+  <tr><td>Pedido no painel e impressão</td><td>Não</td><td>Sim</td></tr>
+  <tr><td>Base de clientes com histórico</td><td>Não</td><td>Sim</td></tr>
+</table>
+
+<h2>Dá para usar os dois?</h2>
+<p>Dá, e é o que muita loja faz: o WhatsApp continua sendo o canal da conversa e o <strong>link do cardápio</strong> vai na saudação, na bio do Instagram e no QR Code da embalagem. O cliente conversa no WhatsApp e pede no cardápio. Veja <a href="/cardapio-digital-para-whatsapp.html">cardápio digital para WhatsApp</a> e <a href="/blog/tutoriais/como-configurar-whatsapp-business-para-delivery.html">como configurar o WhatsApp Business</a>.</p>
+
+<h2>Quando é hora de trocar</h2>
+<ul>
+  <li>Mais de 20 pedidos por dia</li>
+  <li>Pedido errado por adicional esquecido — veja <a href="/pedido-errado-no-delivery.html">como evitar pedido errado</a></li>
+  <li>Alguém da equipe só respondendo taxa e Pix</li>
+</ul>
+
+<h2>Quanto custa</h2>
+<p>Cardápio, painel, taxa por bairro e Pix online estão no <strong>plano Básico, R$97/mês</strong>, sem comissão por pedido. Quer o WhatsApp respondendo sozinho? O <a href="/robo-de-atendimento-whatsapp.html">robô de atendimento</a> vem no Completo, R$149/mês.</p>`,
+    faq: [
+      ['O catálogo do WhatsApp serve como cardápio de delivery?', 'Serve para mostrar produtos, mas não calcula taxa, não tem adicionais estruturados nem pagamento online. Para delivery com volume, o cardápio digital fecha o pedido sem conversa.'],
+      ['O cliente precisa sair do WhatsApp para usar o cardápio digital?', 'Ele toca no link e o cardápio abre no navegador, sem baixar nada. Ao terminar, o pedido chega no painel da loja.'],
+      ['Posso manter meu catálogo e ter o cardápio digital?', 'Pode. Muitas lojas mantêm o catálogo como vitrine e mandam o link do cardápio para fechar o pedido.'],
+      ['O cardápio digital calcula a taxa de entrega?', 'Sim. No Menuzia a taxa sai por bairro ou por faixa de km, já somada no total.'],
+      ['Tem comissão por pedido?', 'Não. O Menuzia cobra mensalidade fixa, a partir de R$97/mês.'],
+    ],
+  },
+
+  {
+    slug: 'o-que-um-cardapio-digital-deve-ter.html',
+    cat: 'Recursos essenciais',
+    plano: 'basico',
+    heroImg: 'tut-cardapio.webp',
+    heroAlt: 'Cardápio digital no celular com fotos, adicionais e botão de pedido',
+    title: 'O Que um Bom Cardápio Digital Deve Ter: 15 Recursos | Menuzia',
+    h1: 'O que um bom cardápio digital deve ter: os 15 recursos que fazem vender',
+    desc: 'O que um bom cardápio digital deve ter: fotos, adicionais, taxa por bairro, Pix, cupom, peça também, horário, agendamento e painel de pedidos. Checklist completo.',
+    keywords: 'o que um cardápio digital deve ter, o que um bom cardápio digital deve ter, funcionalidades cardápio digital, recursos de cardápio digital, cardápio digital completo, como deve ser um cardápio digital, cardápio digital que vende, itens de um cardápio digital',
+    lt: LT_ESCOLHA,
+    body: `<p>Cardápio digital não é um PDF com link. Um bom cardápio é uma ferramenta de venda: faz o cliente decidir rápido, monta o pedido sem erro e entrega tudo pronto para a cozinha. Esta é a lista do que ele <strong>precisa</strong> ter, separada pelo que importa para o cliente e para a loja.</p>
+
+<h2>Para o cliente pedir sem dúvida</h2>
+<ol>
+  <li><strong>Foto em todo item.</strong> Prato sem foto vende menos e gera pergunta no WhatsApp.</li>
+  <li><strong>Descrição com ingredientes.</strong> "Pão brioche, 180g, cheddar, bacon" responde antes de perguntarem.</li>
+  <li><strong>Complementos e adicionais em grupos:</strong> ponto da carne, molhos, extras, com mínimo e máximo.</li>
+  <li><strong>Tamanhos:</strong> P/M/G, pizza por fatias, marmita pequena e grande.</li>
+  <li><strong>Taxa de entrega automática</strong> por bairro ou por km, já no total.</li>
+  <li><strong>Horário de funcionamento</strong> visível, com aviso quando a loja está fechada.</li>
+  <li><strong>Pedido agendado</strong> para quem quer garantir o almoço ou a festa.</li>
+  <li><strong>Pix e cartão online</strong>, além de dinheiro com troco.</li>
+  <li><strong>Abrir rápido no celular</strong>, sem baixar aplicativo.</li>
+</ol>
+
+<h2>Para vender mais por pedido</h2>
+<ol start="10">
+  <li><strong>"Peça também" (order bump):</strong> a batata ou o refri oferecido na hora certa.</li>
+  <li><strong>Etiquetas de destaque:</strong> Mais pedidos, Novidade, Combo, Oferta limitada.</li>
+  <li><strong>Cupom, cashback e fidelidade</strong> para o cliente voltar — veja <a href="/cashback-para-delivery.html">cashback para delivery</a>.</li>
+</ol>
+
+<h2>Para a loja não se perder</h2>
+<ol start="13">
+  <li><strong>Painel de pedidos</strong> com impressão automática e <a href="/tela-de-cozinha-kds.html">tela de cozinha</a>.</li>
+  <li><strong>Base de clientes</strong> com telefone e histórico, que é sua — veja <a href="/crm-para-restaurante.html">CRM para restaurante</a>.</li>
+  <li><strong>Pixel da Meta e Google Analytics</strong> para medir os anúncios — veja <a href="/blog/marketing/como-fazer-anuncios-para-delivery.html">como fazer anúncios para delivery</a>.</li>
+</ol>
+
+<h2>O que não precisa (e encarece)</h2>
+<ul>
+  <li><strong>Aplicativo próprio na loja de apps:</strong> o cliente não instala. Link e QR Code convertem mais.</li>
+  <li><strong>Comissão por pedido:</strong> cardápio bom não precisa cobrar percentual sobre o seu sucesso.</li>
+  <li><strong>Módulo fiscal caro</strong> se você ainda não emite nota no balcão.</li>
+</ul>
+
+<h2>Como o Menuzia atende a lista</h2>
+<p>Os 15 itens estão no Menuzia. Para comparar plataformas, use o <a href="/melhor-cardapio-digital.html">checklist de escolha do melhor cardápio digital</a>. Se você vende hambúrguer, veja <a href="/cardapio-digital-para-hamburgueria.html">o cardápio digital para hamburgueria</a>.</p>
+
+<h2>Quanto custa</h2>
+<p>Tudo isso está no <strong>plano Básico, R$97/mês</strong>, sem comissão por pedido e sem fidelidade. Nossa equipe monta o cardápio com você.</p>`,
+    faq: [
+      ['O que não pode faltar em um cardápio digital?', 'Foto em todo item, adicionais organizados, taxa de entrega automática, pagamento online e um painel que receba o pedido pronto.'],
+      ['Cardápio digital precisa de foto em todos os itens?', 'Deveria. Item com foto gera menos pergunta e mais pedido. Comece pelos campeões de venda.'],
+      ['Qual a diferença entre cardápio digital e cardápio em PDF?', 'O PDF só mostra. O cardápio digital monta o pedido, soma taxa, recebe pagamento e manda para a cozinha. Veja a página sobre cardápio em PDF.'],
+      ['Cardápio digital precisa ter aplicativo?', 'Não. Ele abre no navegador do celular pelo link ou QR Code, sem instalar nada.'],
+      ['Quanto tempo leva para montar um cardápio digital?', 'No Menuzia, nossa equipe monta a partir das suas fotos e da sua lista de preços, inclusive de um PDF antigo.'],
+    ],
+  },
+
+  {
+    slug: 'cardapio-digital-para-hamburgueria.html',
+    cat: 'Hamburgueria',
+    plano: 'basico',
+    heroImg: 'blog-hamburgueria.webp',
+    heroAlt: 'Hambúrguer artesanal com cardápio digital de hamburgueria aberto no celular',
+    title: 'Melhor Cardápio Digital para Hamburgueria Sem Comissão | Menuzia',
+    h1: 'Qual o melhor cardápio digital para hamburgueria? O que olhar antes de escolher',
+    desc: 'Cardápio digital para hamburgueria sem comissão: ponto da carne, adicionais, combos, peça também com batata e refri, taxa por bairro e robô no WhatsApp.',
+    keywords: 'cardápio digital para hamburgueria, melhor cardápio digital para hamburgueria, qual o melhor cardápio digital, cardápio hamburgueria delivery, sistema para hamburgueria, cardápio online hamburgueria, cardápio digital hamburgueria artesanal, aplicativo de pedidos hamburgueria',
+    lt: LT_ESCOLHA,
+    body: `<p>Hamburgueria tem um cardápio que parece simples e não é: cada lanche tem ponto da carne, troca de pão, adicional de bacon, molho à parte e "sem cebola". O <strong>melhor cardápio digital para hamburgueria</strong> é o que transforma toda essa variação em pedido certo, sem ninguém anotar no WhatsApp.</p>
+
+<h2>O que uma hamburgueria precisa no cardápio</h2>
+<ul>
+  <li><strong>Grupos de complementos reaproveitáveis:</strong> "Ponto da carne", "Molhos", "Adicionais de lanche". Cadastra uma vez e usa em todos os burgers.</li>
+  <li><strong>Mínimo e máximo por grupo:</strong> o cliente escolhe obrigatoriamente o ponto e até 3 adicionais.</li>
+  <li><strong>Combos:</strong> burger + batata + refri como item próprio, com a etiqueta "Combo" e escolha de bebida.</li>
+  <li><strong>"Peça também":</strong> batata, onion rings e milk-shake oferecidos antes de fechar. É o jeito mais barato de subir o ticket.</li>
+  <li><strong>Etiquetas:</strong> "Mais pedidos" no carro-chefe e "Novidade" no burger do mês.</li>
+  <li><strong>Foto caprichada</strong> de cada lanche — hambúrguer se vende pelo olho.</li>
+</ul>
+<p>Passo a passo de cadastro em <a href="/blog/tutoriais/como-cadastrar-complementos-e-adicionais-no-cardapio.html">como cadastrar complementos e adicionais</a> e no guia <a href="/blog/guias/como-criar-cardapio-digital-para-hamburgueria.html">como criar cardápio digital para hamburgueria</a>.</p>
+
+<h2>O que pesa na operação da noite</h2>
+<ul>
+  <li><strong>Impressão automática e tela de cozinha:</strong> o pedido entra e a chapa já vê, com as observações em destaque. Veja <a href="/tela-de-cozinha-kds.html">tela de cozinha KDS</a>.</li>
+  <li><strong>Taxa por bairro:</strong> sem cálculo de cabeça no pico.</li>
+  <li><strong>Robô no WhatsApp:</strong> responde "tá aberto?" e "quanto é a entrega?" enquanto a equipe monta lanche. Veja <a href="/robo-de-atendimento-whatsapp.html">como configurar o robô</a>.</li>
+  <li><strong>Gestão de motoboy:</strong> quem saiu com o quê — veja <a href="/rota-de-motoboy-para-delivery.html">rota de motoboy</a>.</li>
+</ul>
+
+<h2>A conta da comissão em hamburgueria</h2>
+<p>Ticket médio de R$55 com 18% de comissão são R$9,90 por pedido. Com 600 pedidos no mês, R$5.940 ficam com o app. No cardápio próprio com mensalidade fixa, esse dinheiro paga carne, pão e o anúncio do mês. Veja <a href="/alternativa-ao-ifood.html">alternativa ao iFood</a>.</p>
+
+<h2>Checklist para escolher</h2>
+<ol>
+  <li>Cobra comissão por pedido?</li>
+  <li>Os adicionais têm mínimo, máximo e preço?</li>
+  <li>Tem "peça também" e combo?</li>
+  <li>Calcula taxa por bairro ou km?</li>
+  <li>Recebe Pix online?</li>
+  <li>A base de clientes é sua?</li>
+  <li>Alguém monta o cardápio com você?</li>
+</ol>
+<p>Lista completa em <a href="/o-que-um-cardapio-digital-deve-ter.html">o que um bom cardápio digital deve ter</a>.</p>
+
+<h2>Quanto custa</h2>
+<p>No Menuzia, cardápio, painel, KDS, cupons e Pix online estão no <strong>plano Básico, R$97/mês</strong>. Robô no WhatsApp, disparos e financeiro no <strong>Completo, R$149/mês</strong>. Sem comissão e sem fidelidade.</p>`,
+    faq: [
+      ['Qual o melhor cardápio digital para hamburgueria?', 'O que não cobra comissão, organiza ponto da carne e adicionais em grupos, oferece combos e "peça também", calcula a taxa por bairro e manda o pedido pronto para a cozinha.'],
+      ['Dá para cadastrar ponto da carne no cardápio digital?', 'Sim. Você cria um grupo de complementos "Ponto da carne" com escolha obrigatória e usa em todos os lanches.'],
+      ['Como montar combo no cardápio digital?', 'Cadastre o combo como item, com a etiqueta Combo e grupos de complementos para escolher bebida e acompanhamento.'],
+      ['Como aumentar o ticket médio da hamburgueria?', 'Use o "peça também" com batata e bebida, adicionais pagos bem fotografados e combos com preço melhor que os itens separados.'],
+      ['Preciso sair do iFood para usar cardápio próprio?', 'Não. Muitas hamburguerias mantêm o iFood para cliente novo e levam a recompra para o cardápio próprio, sem comissão.'],
+    ],
+  },
+
+  {
+    slug: 'cardapio-digital-vale-a-pena.html',
+    cat: 'Vale a pena?',
+    plano: 'basico',
+    heroImg: 'blog-precos.webp',
+    heroAlt: 'Dono de restaurante fazendo a conta se o cardápio digital vale a pena',
+    title: 'Cardápio Digital Vale a Pena? A Conta Honesta | Menuzia',
+    h1: 'Cardápio digital vale a pena? A conta honesta para restaurante e delivery',
+    desc: 'Cardápio digital vale a pena? Veja quando compensa, quando não compensa, quantos pedidos pagam a mensalidade e o que muda na operação.',
+    keywords: 'cardápio digital vale a pena, vale a pena ter cardápio digital, cardápio digital compensa, vantagens do cardápio digital, desvantagens do cardápio digital, por que ter cardápio digital, cardápio digital funciona, cardápio digital para pequeno restaurante',
+    lt: LT_ESCOLHA,
+    body: `<p>Resposta curta: <strong>vale a pena quando você já vende pelo WhatsApp ou paga comissão para aplicativo</strong>. Não vale quando o problema é falta de cliente e você não pretende divulgar o link. Abaixo, a conta e os casos.</p>
+
+<h2>Quando vale a pena</h2>
+<ul>
+  <li><strong>Você anota pedido no WhatsApp:</strong> o cardápio tira a digitação e o erro de anotação.</li>
+  <li><strong>Você paga comissão:</strong> cada pedido que migra para o próprio canal devolve a comissão para o caixa.</li>
+  <li><strong>Seu WhatsApp lota no pico:</strong> veja <a href="/whatsapp-do-delivery-lotado.html">WhatsApp do delivery lotado</a>.</li>
+  <li><strong>Você quer vender de novo para quem já comprou:</strong> a base de clientes fica com você.</li>
+</ul>
+
+<h2>Quando não vale (ainda)</h2>
+<ul>
+  <li>Você recebe dois ou três pedidos por semana e não vai divulgar o link.</li>
+  <li>Seu cardápio muda todo dia e ninguém vai atualizar.</li>
+  <li>O plano escolhido cobra comissão alta — aí troca um app por outro.</li>
+</ul>
+
+<h2>A conta</h2>
+<table>
+  <tr><th>Cenário</th><th>Resultado</th></tr>
+  <tr><td>Ticket médio R$45, mensalidade R$97</td><td>3 pedidos pagam o mês</td></tr>
+  <tr><td>200 pedidos/mês saindo do app com 18%</td><td>R$1.620 de comissão que volta</td></tr>
+  <tr><td>"Peça também" em 1 de cada 5 pedidos (+R$12)</td><td>+R$480/mês em 200 pedidos</td></tr>
+</table>
+<p>Os números são exemplos. Faça a conta com o seu ticket e o seu volume; o detalhamento por modelo de cobrança está em <a href="/cardapio-digital-preco.html">preço de cardápio digital</a>.</p>
+
+<h2>Vantagens que não aparecem na conta</h2>
+<ul>
+  <li>Cozinha recebe pedido legível, sem "letra de garçom".</li>
+  <li>Cliente vê foto e adiciona mais coisa sozinho.</li>
+  <li>Você sabe o que mais vende e quem sumiu.</li>
+</ul>
+
+<h2>Desvantagens reais</h2>
+<ul>
+  <li><strong>Precisa divulgar:</strong> o link não aparece sozinho. Bio, embalagem, QR Code na mesa e saudação do WhatsApp.</li>
+  <li><strong>Precisa manter atualizado:</strong> preço errado no cardápio é preço errado no pedido.</li>
+  <li><strong>Mensalidade existe</strong> mesmo no mês fraco.</li>
+</ul>
+
+<h2>Como começar sem risco</h2>
+<p>Escolha um plano sem fidelidade, comece pelos 20 itens que mais vendem e coloque o link na saudação do WhatsApp. Antes de assinar, confira <a href="/o-que-um-cardapio-digital-deve-ter.html">o que um bom cardápio digital deve ter</a> e o <a href="/melhor-cardapio-digital.html">checklist de escolha</a>.</p>
+
+<h2>Quanto custa no Menuzia</h2>
+<p><strong>Plano Básico, R$97/mês</strong>, sem comissão por pedido e sem fidelidade. Nossa equipe monta o cardápio.</p>`,
+    faq: [
+      ['Cardápio digital vale a pena para restaurante pequeno?', 'Vale se você já vende pelo WhatsApp ou paga comissão. Com ticket de R$45, três pedidos pagam a mensalidade do plano Básico do Menuzia.'],
+      ['Cardápio digital traz cliente novo?', 'Sozinho, não. Ele converte quem já chega até você. Cliente novo vem de divulgação, anúncio e indicação.'],
+      ['Quais as desvantagens do cardápio digital?', 'Precisa ser divulgado, mantido atualizado e tem mensalidade fixa mesmo em mês fraco.'],
+      ['É melhor que receber pedido pelo WhatsApp?', 'O WhatsApp continua sendo o canal da conversa; o cardápio monta o pedido sem erro e com taxa e pagamento já resolvidos.'],
+      ['Tem fidelidade no Menuzia?', 'Não. Você pode cancelar quando quiser.'],
+    ],
+  },
+
+  {
+    slug: 'como-organizar-pedidos-do-delivery.html',
+    cat: 'Organizar pedidos',
+    plano: 'basico',
+    heroImg: 'tut-painel.webp',
+    heroAlt: 'Painel de pedidos em kanban organizando pedidos de delivery, balcão e mesa',
+    title: 'Como Organizar Pedidos do Delivery em Uma Tela | Menuzia',
+    h1: 'Como organizar os pedidos do delivery: todos os canais em uma tela só',
+    desc: 'Pedido no WhatsApp, no balcão, na mesa e no cardápio, cada um num lugar? Veja como organizar os pedidos do delivery em um painel único, por etapa.',
+    keywords: 'como organizar pedidos do delivery, organizar pedidos delivery, painel de pedidos delivery, gestão de pedidos restaurante, controle de pedidos delivery, sistema para organizar pedidos, pedidos misturados delivery, kanban de pedidos',
+    lt: LT_ESCOLHA,
+    body: `<p>Comanda de papel no balcão, pedido no WhatsApp do celular, mesa pedindo no salão e cardápio online mandando notificação. Quando cada canal fica num lugar, o pedido some, atrasa ou sai duas vezes. Organizar pedidos é, antes de tudo, <strong>colocar tudo na mesma fila</strong>.</p>
+
+<h2>Sinais de bagunça</h2>
+<ul>
+  <li>"Esse pedido já saiu?" várias vezes por noite</li>
+  <li>Pedido do WhatsApp esquecido porque ninguém passou para a comanda</li>
+  <li>Cozinha produzindo na ordem errada</li>
+  <li>Motoboy esperando sem saber qual pedido levar</li>
+</ul>
+
+<h2>Passo 1: uma tela para todos os canais</h2>
+<p>No Menuzia, o <strong>Painel de Pedidos</strong> recebe tudo junto: cardápio online, PDV de balcão, mesas e pedidos pelo WhatsApp. Cada card mostra a origem (Delivery, Balcão, Mesa, WhatsApp, QR Code, Instagram), então você sabe de onde veio cada pedido sem abrir nada.</p>
+
+<h2>Passo 2: organize por etapa, não por ordem de chegada</h2>
+<p>O painel funciona em colunas, como um quadro kanban: cada pedido anda da coluna de recebidos até a de entregues. Mover o card é o que avisa a equipe e, se ligado, o cliente — veja <a href="/status-do-pedido-no-whatsapp.html">status do pedido no WhatsApp</a>.</p>
+
+<h2>Passo 3: cozinha vê só o que precisa</h2>
+<p>Impressão automática ou <a href="/tela-de-cozinha-kds.html">tela de cozinha (KDS)</a> com itens e observações em destaque. A chapa não precisa olhar o WhatsApp.</p>
+
+<h2>Passo 4: entrega com responsável</h2>
+<p>Cada pedido pronto vai para um motoboy, com rota e conferência no fim da noite. Veja <a href="/rota-de-motoboy-para-delivery.html">rota de motoboy para delivery</a>.</p>
+
+<h2>Passo 5: balcão e salão no mesmo sistema</h2>
+<p>Venda no balcão pelo <a href="/sistema-pdv-para-delivery.html">PDV</a> e mesas pelo <a href="/sistema-de-mesas-e-comandas.html">sistema de mesas e comandas</a>, tudo caindo no mesmo painel e no mesmo caixa.</p>
+
+<h2>Passo 6: tire o WhatsApp da fila manual</h2>
+<p>O maior vazamento é o pedido anotado na conversa. Mande o link do cardápio na saudação com o <a href="/robo-de-atendimento-whatsapp.html">robô de atendimento</a> ou deixe o <a href="/agente-de-ia-para-delivery.html">Agente de IA</a> anotar pela conversa: em ambos os casos o pedido entra no painel sem redigitação.</p>
+
+<h2>Rotina de fechamento</h2>
+<ul>
+  <li>Painel vazio na coluna "pronto" antes de fechar</li>
+  <li>Conferência de entregas por motoboy</li>
+  <li>Fechamento de caixa — veja <a href="/controle-de-caixa-para-restaurante.html">controle de caixa</a></li>
+</ul>
+
+<h2>Quanto custa</h2>
+<p>Painel de pedidos, PDV, mesas, KDS e impressão estão no <strong>plano Básico, R$97/mês</strong>, sem comissão por pedido.</p>`,
+    faq: [
+      ['Qual a melhor forma de organizar pedidos de delivery?', 'Juntar todos os canais em um painel único e organizar por etapa (novo, em preparo, pronto, saiu, entregue), com a cozinha recebendo pela impressora ou KDS.'],
+      ['O painel recebe pedido do balcão e da mesa também?', 'Sim. No Menuzia, cardápio online, PDV, mesas e WhatsApp entram no mesmo Painel de Pedidos, com a origem marcada em cada card.'],
+      ['Preciso de computador na cozinha?', 'Não necessariamente. Dá para usar impressora térmica ou qualquer tela com navegador como KDS.'],
+      ['Como evitar pedido esquecido do WhatsApp?', 'Fazer o pedido entrar no sistema: pelo link do cardápio ou pelo Agente de IA, sem anotação manual.'],
+      ['O Menuzia recebe pedidos do iFood no mesmo painel?', 'A integração com iFood e outros apps está em desenvolvimento. Hoje o painel reúne cardápio próprio, PDV, mesas e WhatsApp.'],
+    ],
+  },
+
+  {
+    slug: 'cliente-nao-finaliza-pedido.html',
+    cat: 'Conversão',
+    plano: 'basico',
+    heroImg: 'blog-hero.webp',
+    heroAlt: 'Cliente abandonando o pedido no cardápio digital pelo celular',
+    title: 'Cliente Abre o Cardápio e Não Finaliza o Pedido? | Menuzia',
+    h1: 'Cliente abre o cardápio e não finaliza o pedido? 9 causas e como corrigir',
+    desc: 'Muita visita e pouco pedido no cardápio digital? Veja as 9 causas mais comuns de abandono no delivery e o que mudar no cardápio para o cliente fechar.',
+    keywords: 'cliente não finaliza pedido, cardápio digital não vende, abandono de carrinho delivery, cliente desiste do pedido, como aumentar conversão cardápio digital, muitas visitas poucos pedidos, cardápio digital poucos pedidos',
+    lt: LT_ESCOLHA,
+    body: `<p>O link tem visita, o anúncio tem clique, mas o pedido não chega. Na maioria das vezes o cliente não desistiu da comida: ele <strong>tropeçou em alguma coisa no caminho</strong>. Estas são as causas mais comuns e a correção de cada uma.</p>
+
+<h2>1. Itens sem foto</h2>
+<p>Sem foto, o cliente não imagina o prato e volta para o app que ele conhece. Comece pelos dez mais vendidos.</p>
+
+<h2>2. Descrição vaga</h2>
+<p>"X-Tudo — R$32" não diz nada. Liste pão, carne, queijo e tamanho. Descrição boa evita a pergunta e a desistência.</p>
+
+<h2>3. Taxa de entrega só no final</h2>
+<p>Surpresa no total derruba pedido. Taxa por bairro clara, calculada sozinha, e frete grátis acima de um valor quando der.</p>
+
+<h2>4. Adicionais confusos</h2>
+<p>Vinte opções soltas cansam. Organize em grupos (ponto, molhos, extras) com mínimo e máximo. Veja <a href="/blog/tutoriais/como-cadastrar-complementos-e-adicionais-no-cardapio.html">como cadastrar complementos</a>.</p>
+
+<h2>5. Loja fechada sem aviso</h2>
+<p>O cliente monta tudo e descobre no fim que está fechado. Horário visível e pedido agendado salvam esse pedido.</p>
+
+<h2>6. Sem Pix online</h2>
+<p>Quem quer pagar na hora e não consegue, desiste. Pix com QR Code na finalização — veja <a href="/pagamento-online-para-delivery.html">pagamento online para delivery</a>.</p>
+
+<h2>7. Cardápio lento</h2>
+<p>Imagem pesada e página que demora a abrir no 4G perdem o cliente antes do primeiro item.</p>
+
+<h2>8. Preço diferente do Instagram</h2>
+<p>Promoção anunciada que não aparece no cardápio gera desconfiança. Use cupom ou etiqueta "Oferta limitada" e mantenha tudo igual.</p>
+
+<h2>9. Nenhum motivo para pedir agora</h2>
+<p>Cupom de primeira compra, cashback para o próximo pedido e destaque "Mais pedidos" dão o empurrão final. Veja <a href="/cashback-para-delivery.html">cashback para delivery</a>.</p>
+
+<h2>Como medir</h2>
+<p>Com o <strong>Pixel da Meta</strong> e o <strong>Google Analytics</strong> conectados ao cardápio, você vê quantos entraram, quantos adicionaram itens e quantos finalizaram, e descobre onde está o tropeço. Para trazer mais gente, veja <a href="/como-aumentar-vendas-no-delivery.html">como aumentar as vendas do delivery</a>.</p>
+
+<h2>Quanto custa</h2>
+<p>Fotos, grupos de adicionais, taxa por bairro, agendamento, Pix online, cupons, cashback e integração com Pixel e Analytics estão no <strong>plano Básico do Menuzia, R$97/mês</strong>, sem comissão.</p>`,
+    faq: [
+      ['Por que o cliente abre o cardápio e não pede?', 'As causas mais comuns são falta de foto, taxa de entrega que só aparece no fim, loja fechada sem aviso, adicionais confusos e falta de Pix online.'],
+      ['Como saber onde o cliente desiste?', 'Conectando o Pixel da Meta e o Google Analytics ao cardápio, para ver visitas, itens adicionados e pedidos finalizados.'],
+      ['O Menuzia recupera carrinho abandonado?', 'Não há mensagem automática de carrinho abandonado. O foco é tirar o atrito antes: foto, taxa clara, agendamento e Pix. Para quem já comprou e sumiu, há a campanha de Recuperação de clientes no plano Completo.'],
+      ['Frete grátis aumenta pedido?', 'Costuma aumentar, principalmente acima de um valor mínimo, que também sobe o ticket médio.'],
+      ['Cupom de primeira compra funciona?', 'Sim, desde que seja simples de usar e esteja visível. Ele dá o motivo para pedir agora.'],
+    ],
+  },
+
+  {
+    slug: 'como-aumentar-vendas-no-delivery.html',
+    cat: 'Vender mais',
+    plano: 'completo',
+    heroImg: 'tut-campanhas.webp',
+    heroAlt: 'Painel de campanhas para aumentar as vendas do delivery no WhatsApp',
+    title: 'Como Aumentar as Vendas do Delivery: 10 Ações | Menuzia',
+    h1: 'Como aumentar as vendas do delivery: 10 ações que dá para fazer este mês',
+    desc: 'Vendas do delivery caíram? 10 ações práticas: ticket médio, recompra, campanha no WhatsApp, cashback, anúncio local e cardápio que converte.',
+    keywords: 'como aumentar as vendas do delivery, aumentar vendas delivery, como vender mais no delivery, vendas do delivery caíram, delivery vendendo pouco, estratégias para vender mais delivery, como aumentar pedidos delivery, dicas para aumentar vendas restaurante',
+    lt: LT_ESCOLHA,
+    body: `<p>Venda de delivery cresce por três caminhos: <strong>mais clientes</strong>, <strong>mais pedidos por cliente</strong> e <strong>mais valor por pedido</strong>. O erro comum é gastar tudo no primeiro (anúncio) e esquecer os outros dois, que são mais baratos. Estas são 10 ações, da mais barata para a mais cara.</p>
+
+<h2>Mais valor por pedido</h2>
+<h3>1. "Peça também" na finalização</h3>
+<p>Batata, refri ou sobremesa oferecidos antes de fechar. Um acerto a cada cinco pedidos já mexe no faturamento do mês.</p>
+<h3>2. Combos com preço melhor</h3>
+<p>Combo bem montado sobe o ticket e simplifica a escolha.</p>
+<h3>3. Frete grátis acima de um valor</h3>
+<p>O cliente completa o pedido para não pagar a entrega.</p>
+
+<h2>Mais pedidos por cliente</h2>
+<h3>4. Cashback para o próximo pedido</h3>
+<p>Dinheiro de volta só vale na próxima compra — motivo concreto para voltar. Veja <a href="/cashback-para-delivery.html">cashback para delivery</a>.</p>
+<h3>5. Recuperação de clientes sumidos</h3>
+<p>Quem não pede há 30 dias recebe uma mensagem com um motivo para voltar. No Menuzia é a campanha recorrente <strong>Recuperação de clientes</strong>. Modelos em <a href="/mensagem-automatica-whatsapp-delivery.html">mensagem automática para delivery</a>.</p>
+<h3>6. Promoção no dia fraco</h3>
+<p>Terça e quarta vazias? Disparo para a base com uma oferta só daquele dia. Veja <a href="/disparo-whatsapp-para-delivery.html">disparo no WhatsApp</a>.</p>
+
+<h2>Menos pedido perdido</h2>
+<h3>7. Responder em segundos</h3>
+<p>Cliente sem resposta pede em outro lugar. Veja <a href="/whatsapp-do-delivery-lotado.html">WhatsApp do delivery lotado</a>.</p>
+<h3>8. Cardápio que fecha o pedido</h3>
+<p>Foto, taxa clara, Pix e horário visível. Veja <a href="/cliente-nao-finaliza-pedido.html">por que o cliente não finaliza o pedido</a>.</p>
+
+<h2>Mais clientes</h2>
+<h3>9. QR Code na embalagem e cupom de recompra</h3>
+<p>Quem veio pelo iFood recebe o convite para pedir direto da próxima vez. Veja <a href="/alternativa-ao-ifood.html">alternativa ao iFood</a>.</p>
+<h3>10. Anúncio local com Pixel</h3>
+<p>Raio de entrega, foto do carro-chefe e medição de pedido com Pixel da Meta. Veja <a href="/blog/marketing/como-fazer-anuncios-para-delivery.html">como fazer anúncios para delivery</a> e o guia de <a href="/blog/marketing/marketing-para-delivery.html">marketing para delivery</a>.</p>
+
+<h2>Por onde começar</h2>
+<p>Se a base de clientes já existe, comece pelas ações 4, 5 e 6: custam quase nada e falam com quem já comprou. Se o ticket está baixo, 1, 2 e 3. Anúncio fica para quando o cardápio já converte bem.</p>
+
+<h2>Quanto custa</h2>
+<p>Peça também, combos, cupons e cashback estão no <strong>plano Básico, R$97/mês</strong>. Campanhas no WhatsApp, robô e financeiro no <strong>Completo, R$149/mês</strong>. Sem comissão por pedido.</p>`,
+    faq: [
+      ['O que fazer quando as vendas do delivery caem?', 'Comece pela base: reative quem sumiu com campanha no WhatsApp, crie motivo de recompra com cashback e confira se o cardápio não está perdendo pedido por falta de foto, taxa ou Pix.'],
+      ['Qual a forma mais barata de vender mais no delivery?', 'Vender de novo para quem já comprou. Campanha para a própria base custa muito menos que anúncio para cliente novo.'],
+      ['Como aumentar o ticket médio do delivery?', 'Com "peça também", combos, adicionais pagos bem apresentados e frete grátis acima de um valor mínimo.'],
+      ['Promoção no iFood ou no canal próprio?', 'O app serve para ser encontrado; a promoção de recompra rende mais no canal próprio, onde não há comissão.'],
+      ['Em quanto tempo dá para ver resultado?', 'Campanha para a base costuma gerar pedido no mesmo dia. Mudanças de cardápio e cashback aparecem ao longo de algumas semanas.'],
     ],
   },
 ];
