@@ -770,6 +770,84 @@ const cities = [
     bairrosTop: ['Gleba Palhano', 'Centro', 'Jardim Higienópolis', 'Aurora', 'Vila Ipiranga', 'Antares', 'Shangri-lá', 'Cinco Conjuntos', 'Bela Suíça', 'Jardim Bandeirantes', 'Judith', 'Guanabara'],
     bairrosTodos: ['Gleba Palhano', 'Centro de Londrina', 'Jardim Higienópolis', 'Aurora', 'Vila Ipiranga', 'Antares', 'Shangri-lá', 'Cinco Conjuntos', 'Bela Suíça', 'Jardim Bandeirantes', 'Judith', 'Guanabara', 'Vila Nova', 'Jardim Novo Sabará', 'Columbia', 'Interlagos', 'Parque das Indústrias', 'Jardim Leonor', 'Jardim Presidente', 'Jardim Bancários', 'Vila Casoni', 'Igapó', 'Jardim Alvorada', 'Heimtal'],
   }),
+
+  // ============================================================
+  //  Interior do Espírito Santo (2026-11-18)
+  // ============================================================
+  ...mkBR({
+    slug: 'cardapio-digital-cachoeiro-de-itapemirim.html', city: 'Cachoeiro de Itapemirim', region: 'ES', geo: 'BR-ES', stateName: 'Espírito Santo', metro: 'Sul do Espírito Santo', metroFrase: 'todo o Sul do Espírito Santo', regiaoFrase: 'todo o Espírito Santo',
+    heroImg: 'local-viana.webp',
+    nota: 'Cachoeiro é o polo do Sul capixaba: o delivery atende a cidade e os distritos vizinhos, e taxa por bairro bem feita separa o pedido do Centro do que vai até Itaoca.',
+    bairrosTop: ['Centro', 'Gilberto Machado', 'Aquidaban', 'Independência', 'Amaral', 'Coronel Borges', 'Guandu', 'Ilha da Luz', 'Santo Antônio', 'Paraíso', 'Village da Luz', 'Basiléia'],
+    bairrosTodos: ['Centro de Cachoeiro', 'Gilberto Machado', 'Aquidaban', 'Independência', 'Amaral', 'Coronel Borges', 'Guandu', 'Ilha da Luz', 'Santo Antônio', 'Paraíso', 'Village da Luz', 'Basiléia', 'Baiminas', 'Nossa Senhora Aparecida', 'Novo Parque', 'Rubem Braga', 'Valão', 'Zumbi', 'Ferroviários', 'Arariguaba', 'Teixeira Leite', 'Recanto', 'Marbrasa', 'Itaoca'],
+  }),
+  ...mkBR({
+    slug: 'cardapio-digital-linhares.html', city: 'Linhares', region: 'ES', geo: 'BR-ES', stateName: 'Espírito Santo', metro: 'Norte do Espírito Santo', metroFrase: 'todo o Norte do Espírito Santo', regiaoFrase: 'todo o Espírito Santo',
+    heroImg: 'local-serra.webp',
+    nota: 'Linhares cresce puxada pela indústria e pelo agro, e o delivery acompanha: o cliente de Três Barras e do Interlagos pede toda semana, e essa recorrência vale mais na sua lista do que num aplicativo.',
+    bairrosTop: ['Centro', 'Três Barras', 'Interlagos', 'Shell', 'Araçá', 'Movelar', 'Aviso', 'Conceição', 'Juparanã', 'Novo Horizonte', 'Planalto', 'Nossa Senhora da Conceição'],
+    bairrosTodos: ['Centro de Linhares', 'Três Barras', 'Interlagos', 'Shell', 'Araçá', 'Movelar', 'Aviso', 'Conceição', 'Juparanã', 'Novo Horizonte', 'Planalto', 'Nossa Senhora da Conceição', 'Colina', 'Lagoa do Meio', 'Bebedouro', 'Canivete', 'Jardim Laguna', 'Linhares V', 'Palmital', 'Rio Quartel', 'BNH', 'Santa Cruz', 'Pontal do Ipiranga', 'Regência'],
+  }),
+  ...mkBR({
+    slug: 'cardapio-digital-colatina.html', city: 'Colatina', region: 'ES', geo: 'BR-ES', stateName: 'Espírito Santo', metro: 'Noroeste do Espírito Santo', metroFrase: 'todo o Noroeste do Espírito Santo', regiaoFrase: 'todo o Espírito Santo',
+    heroImg: 'local-cariacica.webp',
+    nota: 'Colatina é dividida pelo Rio Doce: definir taxa diferente para cada margem evita perder dinheiro na entrega que atravessa a ponte.',
+    bairrosTop: ['Centro', 'Esplanada', 'São Silvano', 'Marista', 'Santa Margarida', 'Vila Lenira', 'Colúmbia', 'Castelo Branco', 'Honório Fraga', 'Maria das Graças', 'Lacê', 'Santa Terezinha'],
+    bairrosTodos: ['Centro de Colatina', 'Esplanada', 'São Silvano', 'Marista', 'Santa Margarida', 'Vila Lenira', 'Colúmbia', 'Castelo Branco', 'Honório Fraga', 'Maria das Graças', 'Lacê', 'Santa Terezinha', 'Vila Amélia', 'Raul Giuberti', 'Moacir Brotas', 'São Vicente', 'Carlos Germano Naumann', 'Bela Vista', 'Barbados', 'Fazenda Vitali', 'São Judas Tadeu', 'Santo Antônio', 'Ayrton Senna', 'Operário'],
+  }),
+  ...mkBR({
+    slug: 'cardapio-digital-sao-mateus.html', city: 'São Mateus', region: 'ES', geo: 'BR-ES', stateName: 'Espírito Santo', metro: 'Norte do Espírito Santo', metroFrase: 'todo o Norte do Espírito Santo', regiaoFrase: 'todo o Espírito Santo',
+    heroImg: 'local-guarapari.webp',
+    nota: 'São Mateus tem cidade e praia (Guriri) no mesmo município: no verão o pedido explode no litoral, e quem guarda o contato do turista vende para ele de novo na próxima temporada.',
+    bairrosTop: ['Centro', 'Guriri', 'Sernamby', 'Boa Vista', 'Porto', 'Ideal', 'Vila Nova', 'Bom Sucesso', 'Cohab', 'Carapina', 'Aroeira', 'Santo Antônio'],
+    bairrosTodos: ['Centro de São Mateus', 'Guriri', 'Sernamby', 'Boa Vista', 'Porto', 'Ideal', 'Vila Nova', 'Bom Sucesso', 'Cohab', 'Carapina', 'Aroeira', 'Santo Antônio', 'Fátima', 'Pedra d’Água', 'Ribeirão', 'Bairro Litorâneo', 'Liberdade', 'Universitário', 'Morada do Lago', 'Village', 'Cacique', 'Nova São Mateus', 'Seac', 'Jaqueline'],
+  }),
+  ...mkBR({
+    slug: 'cardapio-digital-aracruz.html', city: 'Aracruz', region: 'ES', geo: 'BR-ES', stateName: 'Espírito Santo', metro: 'litoral norte capixaba', metroFrase: 'todo o litoral norte capixaba', regiaoFrase: 'todo o Espírito Santo',
+    heroImg: 'local-vila-velha-2.webp',
+    nota: 'Aracruz junta a sede, os distritos de praia (Barra do Sahy, Santa Cruz) e o polo industrial de Barra do Riacho — três públicos que cabem no mesmo link, cada um com sua taxa de entrega.',
+    bairrosTop: ['Centro', 'Vila Rica', 'De Carli', 'Jequitibá', 'Bela Vista', 'Coqueiral', 'Barra do Sahy', 'Santa Cruz', 'Barra do Riacho', 'São Marcos', 'Itaputera', 'Guaxindiba'],
+    bairrosTodos: ['Centro de Aracruz', 'Vila Rica', 'De Carli', 'Jequitibá', 'Bela Vista', 'Coqueiral', 'Barra do Sahy', 'Santa Cruz', 'Barra do Riacho', 'São Marcos', 'Itaputera', 'Guaxindiba', 'Mar Azul', 'Praia dos Padres', 'Planalto', 'Vila Nova', 'Polivalente', 'Fátima', 'Bairro Novo', 'Jacupemba', 'Guaraná', 'Santa Rosa', 'Sauê'],
+  }),
+
+  // ============================================================
+  //  Capitais e polos regionais (2026-11-18)
+  // ============================================================
+  ...mkBR({
+    slug: 'cardapio-digital-aracaju.html', city: 'Aracaju', region: 'SE', geo: 'BR-SE', stateName: 'Sergipe', metro: 'Grande Aracaju',
+    heroImg: 'local-vitoria.webp',
+    nota: 'Aracaju concentra o delivery na Orla de Atalaia e na zona sul, onde o ticket é mais alto — exatamente o pedido em que a comissão por percentual mais pesa.',
+    bairrosTop: ['Atalaia', 'Jardins', 'Grageru', 'Treze de Julho', 'Coroa do Meio', 'Farolândia', 'Luzia', 'Salgado Filho', 'Inácio Barbosa', 'Centro', 'Ponto Novo', 'São José'],
+    bairrosTodos: ['Atalaia', 'Jardins', 'Grageru', 'Treze de Julho', 'Coroa do Meio', 'Farolândia', 'Luzia', 'Salgado Filho', 'Inácio Barbosa', 'Centro de Aracaju', 'Ponto Novo', 'São José', 'Suíssa', 'Pereira Lobo', 'Siqueira Campos', 'Getúlio Vargas', 'América', 'Jabotiana', 'Aeroporto', 'Santa Maria', 'São Conrado', 'Bugio', 'Industrial', 'Zona de Expansão'],
+  }),
+  ...mkBR({
+    slug: 'cardapio-digital-palmas.html', city: 'Palmas', region: 'TO', geo: 'BR-TO', stateName: 'Tocantins', metro: 'região de Palmas', metroFrase: 'toda a região de Palmas',
+    heroImg: 'local-serra.webp',
+    nota: 'Palmas é planejada em quadras e tem avenidas largas: com taxa de entrega por região (Plano Diretor Sul, Norte, Taquaralto) o delivery cobra certo e não perde margem no trajeto longo.',
+    bairrosTop: ['Plano Diretor Sul', 'Plano Diretor Norte', 'Centro', 'Taquaralto', 'Aureny I', 'Aureny III', 'Jardim Aureny', 'Graciosa', 'Taquari', 'Morada do Sol', 'Lago Sul', 'Santa Fé'],
+    bairrosTodos: ['Plano Diretor Sul', 'Plano Diretor Norte', 'Centro de Palmas', 'Taquaralto', 'Aureny I', 'Aureny II', 'Aureny III', 'Aureny IV', 'Jardim Aureny', 'Graciosa', 'Taquari', 'Morada do Sol', 'Lago Sul', 'Santa Fé', 'Jardim Taquari', 'Bela Vista', 'Santa Bárbara', 'Irmã Dulce', 'Lago Norte', 'Jardim Janaína', 'Setor Sul', 'Polinésia', 'Água Fria', 'Luzimangues'],
+  }),
+  ...mkBR({
+    slug: 'cardapio-digital-porto-velho.html', city: 'Porto Velho', region: 'RO', geo: 'BR-RO', stateName: 'Rondônia', metro: 'região de Porto Velho', metroFrase: 'toda a região de Porto Velho',
+    heroImg: 'local-cariacica.webp',
+    nota: 'Porto Velho tem bairros distantes entre si e calor forte o ano todo: raio máximo de entrega e promoção no WhatsApp nos horários de pico fazem mais diferença que vitrine paga.',
+    bairrosTop: ['Centro', 'Olaria', 'Embratel', 'Nova Porto Velho', 'Agenor de Carvalho', 'São Cristóvão', 'Pedrinhas', 'Industrial', 'Liberdade', 'Caiari', 'Flodoaldo Pontes Pinto', 'Lagoa'],
+    bairrosTodos: ['Centro de Porto Velho', 'Olaria', 'Embratel', 'Nova Porto Velho', 'Agenor de Carvalho', 'São Cristóvão', 'Pedrinhas', 'Industrial', 'Liberdade', 'Caiari', 'Flodoaldo Pontes Pinto', 'Lagoa', 'Arigolândia', 'Tancredo Neves', 'Nacional', 'Cohab', 'Eldorado', 'Rio Madeira', 'Costa e Silva', 'Aponiã', 'Areal', 'Mato Grosso', 'Três Marias', 'JK'],
+  }),
+  ...mkBR({
+    slug: 'cardapio-digital-juiz-de-fora.html', city: 'Juiz de Fora', region: 'MG', geo: 'BR-MG', stateName: 'Minas Gerais', metro: 'Zona da Mata mineira', metroFrase: 'toda a Zona da Mata mineira',
+    heroImg: 'local-vila-velha.webp',
+    nota: 'Juiz de Fora tem público universitário grande e cidade de morro: taxa de entrega por bairro (São Pedro, Cascatinha, Benfica) evita cobrar igual por trajetos muito diferentes.',
+    bairrosTop: ['Centro', 'São Mateus', 'Cascatinha', 'Alto dos Passos', 'Granbery', 'Bom Pastor', 'São Pedro', 'Santa Luzia', 'Benfica', 'Santa Terezinha', 'Manoel Honório', 'Jardim Glória'],
+    bairrosTodos: ['Centro de Juiz de Fora', 'São Mateus', 'Cascatinha', 'Alto dos Passos', 'Granbery', 'Bom Pastor', 'São Pedro', 'Santa Luzia', 'Benfica', 'Santa Terezinha', 'Manoel Honório', 'Jardim Glória', 'Mundo Novo', 'Paineiras', 'Morro da Glória', 'Santa Helena', 'Vitorino Braga', 'Bairu', 'Costa Carvalho', 'Dom Bosco', 'Grama', 'Teixeiras', 'Ipiranga', 'Nova Era'],
+  }),
+  ...mkBR({
+    slug: 'cardapio-digital-feira-de-santana.html', city: 'Feira de Santana', region: 'BA', geo: 'BR-BA', stateName: 'Bahia', metro: 'região de Feira de Santana', metroFrase: 'toda a região de Feira de Santana',
+    heroImg: 'local-guarapari.webp',
+    nota: 'Feira de Santana é a segunda maior cidade da Bahia e entroncamento rodoviário: delivery com movimento o dia todo, em que custo fixo previsível pesa mais que percentual por pedido.',
+    bairrosTop: ['Centro', 'Santa Mônica', 'Capuchinhos', 'Kalilândia', 'Ponto Central', 'Brasília', 'SIM', 'Muchila', 'Tomba', 'Cidade Nova', 'Sobradinho', 'Queimadinha'],
+    bairrosTodos: ['Centro de Feira de Santana', 'Santa Mônica', 'Capuchinhos', 'Kalilândia', 'Ponto Central', 'Brasília', 'SIM', 'Muchila', 'Tomba', 'Cidade Nova', 'Sobradinho', 'Queimadinha', 'Jardim Cruzeiro', 'Caseb', 'Serraria Brasil', 'Mangabeira', 'Papagaio', 'Campo Limpo', 'Conceição', 'Gabriela', 'Parque Ipê', 'George Américo', 'Santo Antônio dos Prazeres', 'Calumbi'],
+  }),
 ];
 
 // ------------------------------------------------------------
@@ -1238,11 +1316,11 @@ ${cities.map((c, i) => `    { "@type": "ListItem", "position": ${i + 1}, "url": 
   // agrupado por UF (ES primeiro — praça de origem), depois capitais
   const ufOrder = [...new Set(cities.map(c => c.region))];
   const ufNome = {
-    ES: 'Espírito Santo — Grande Vitória', SP: 'São Paulo — capital, Grande SP e interior',
+    ES: 'Espírito Santo', SP: 'São Paulo — capital, Grande SP e interior',
     RJ: 'Rio de Janeiro', MG: 'Minas Gerais', DF: 'Distrito Federal', PR: 'Paraná',
     RS: 'Rio Grande do Sul', SC: 'Santa Catarina', BA: 'Bahia', CE: 'Ceará', PE: 'Pernambuco',
     GO: 'Goiás', AM: 'Amazonas', PA: 'Pará', MA: 'Maranhão', RN: 'Rio Grande do Norte',
-    PB: 'Paraíba', AL: 'Alagoas', PI: 'Piauí', MS: 'Mato Grosso do Sul', MT: 'Mato Grosso',
+    PB: 'Paraíba', AL: 'Alagoas', SE: 'Sergipe', TO: 'Tocantins', RO: 'Rondônia', PI: 'Piauí', MS: 'Mato Grosso do Sul', MT: 'Mato Grosso',
   };
   const cards = ufOrder.map(uf => `<h2 style="max-width:1180px;margin:36px auto 0;padding:0 24px;font-size:22px;color:#1d3e73;">${ufNome[uf] || uf}</h2>
 <div class="blog-grid">
