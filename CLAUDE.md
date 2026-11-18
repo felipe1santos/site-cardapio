@@ -8,7 +8,7 @@ Site **estático** (HTML/CSS puro, sem framework). Imagens em `.webp`. Deploy = 
 
 Prioridade do projeto agora é **ranquear na busca local do Google** ("cardápio digital em <cidade>"), uma página por cidade da Grande Vitória/ES, com densidade de keyword por **bairro**.
 
-**48 cidades feitas.** Grande Vitória/ES: Vila Velha, Serra, Vitória, Cariacica, Viana, Guarapari. Capitais: São Paulo, Rio, BH, Brasília, Curitiba, Porto Alegre, Salvador, Fortaleza, Recife, Goiânia, Manaus, Belém, São Luís, Natal, João Pessoa, Maceió, Teresina, Campo Grande, Cuiabá, Florianópolis. Grande SP: Guarulhos, Osasco, São Bernardo, Santo André, São Caetano, Diadema, Mauá, Barueri, Carapicuíba, Taboão da Serra, Mogi das Cruzes, Cotia. Interior/litoral SP: Campinas, Santos, São José dos Campos, Sorocaba, Ribeirão Preto. Outras: Niterói, Contagem, Uberlândia, Joinville, Londrina.
+**58 cidades feitas.** Grande Vitória/ES: Vila Velha, Serra, Vitória, Cariacica, Viana, Guarapari. Interior do ES: Cachoeiro de Itapemirim, Linhares, Colatina, São Mateus, Aracruz. Capitais: São Paulo, Rio, BH, Brasília, Curitiba, Porto Alegre, Salvador, Fortaleza, Recife, Goiânia, Manaus, Belém, São Luís, Natal, João Pessoa, Maceió, Teresina, Campo Grande, Cuiabá, Florianópolis. Grande SP: Guarulhos, Osasco, São Bernardo, Santo André, São Caetano, Diadema, Mauá, Barueri, Carapicuíba, Taboão da Serra, Mogi das Cruzes, Cotia. Interior/litoral SP: Campinas, Santos, São José dos Campos, Sorocaba, Ribeirão Preto. Outras: Niterói, Contagem, Uberlândia, Joinville, Londrina, Aracaju, Palmas, Porto Velho, Juiz de Fora, Feira de Santana.
 Slug: `cardapio-digital-<cidade>.html`. Hub: **`cidades.html`** (agrupado por UF, ES primeiro).
 
 ### Como criar/editar uma página de cidade
