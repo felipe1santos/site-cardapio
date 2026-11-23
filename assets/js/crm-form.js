@@ -3,6 +3,8 @@
  * grava o lead (com as respostas e a origem) no funil da oferta e abre o WhatsApp.
  * Uso: <script src=".../crm-form.js" data-offer="ID-DA-OFERTA" data-phone="5527999999999" defer></script>
  * data-phone: links wa.me desse número abrem o formulário. Qualquer elemento com data-crm-form também abre.
+ * data-checkout="URL" no botão clicado (botões de plano): no fim do formulário vai para essa URL (pagamento
+ * no app) em vez do WhatsApp. data-plano="Nome" entra nas respostas do lead.
  * As perguntas vêm do CRM (Configurações › Formulário e rastreio).
  */
 (function () {
@@ -117,9 +119,9 @@
   }
 
   var origem = null;
-  function open(fallbackHref) {
+  function open(fallbackHref, checkout, plano) {
     var fields = (cfg.fields || []).filter(function (f) { return f.enabled; });
-    if (!fields.length) return goWhatsapp(null, fallbackHref);
+    if (!fields.length) { if (checkout) { window.location.href = checkout; return; } return goWhatsapp(null, fallbackHref); }
     var vals = {};
     var step = 0;
     var sending = false;
@@ -184,7 +186,7 @@
       }
       html += '<div class="crmf-err" hidden></div><div class="crmf-nav">' +
         (step > 0 ? '<button type="button" class="crmf-back">← Voltar</button>' : '') +
-        (t === 'choice' && !last ? '' : '<button type="submit" class="crmf-next' + (last ? ' wa' : '') + '">' + (last ? esc(cfg.button_text || 'Falar no WhatsApp') : 'Continuar →') + '</button>') +
+        (t === 'choice' && !last ? '' : '<button type="submit" class="crmf-next' + (last ? ' wa' : '') + '">' + (last ? (checkout ? 'Ir para o pagamento →' : esc(cfg.button_text || 'Falar no WhatsApp')) : 'Continuar →') + '</button>') +
         '</div>' + (t !== 'choice' && t !== 'textarea' ? '<div class="crmf-hint">ou aperte Enter ↵</div>' : '') + '</form>';
       body.innerHTML = html;
 
@@ -230,15 +232,23 @@
       sending = true;
       bar.style.width = '100%';
       var btn = body.querySelector('.crmf-next');
-      if (btn) { btn.disabled = true; btn.textContent = 'Abrindo o WhatsApp…'; }
+      if (btn) { btn.disabled = true; btn.textContent = checkout ? 'Abrindo o pagamento…' : 'Abrindo o WhatsApp…'; }
       var data = { answers: [] };
       fields.forEach(function (f) {
         var v = (vals[f.key] || '').trim();
         if (CORE.indexOf(f.key) >= 0) data[f.key] = v;
         if (v) data.answers.push({ key: f.key, label: f.label, value: v }); // todas as respostas, na ordem
       });
+      if (plano) data.answers.push({ key: 'plano', label: 'Plano escolhido', value: plano + (checkout ? ' (foi para o pagamento)' : '') });
       if (window.gtag) try { window.gtag('event', 'generate_lead', { method: 'crm_form' }); } catch (x) { /* sem gtag */ }
       if (window.fbq) try { window.fbq('track', 'Lead'); } catch (x) { /* sem pixel */ }
+      if (checkout) {
+        if (window.fbq) try { window.fbq('track', 'InitiateCheckout'); } catch (x) { /* sem pixel */ }
+        var ir = function () { window.location.href = checkout; };
+        var t0 = setTimeout(ir, 4000); // CRM lento: não segura o cliente na frente do pagamento
+        return rpc('submit_lead_form', { p_offer: OFFER, p_data: data, p_source: source() })
+          .then(function () { clearTimeout(t0); ir(); }, function () { clearTimeout(t0); ir(); });
+      }
       rpc('submit_lead_form', { p_offer: OFFER, p_data: data, p_source: source() })
         .then(function (r) { goWhatsapp(r && r.whatsapp_url, fallbackHref); })
         .catch(function () { goWhatsapp(null, fallbackHref); }); // CRM fora do ar: não perde o contato
@@ -256,7 +266,8 @@
     var rc = a.getBoundingClientRect();
     origem = { x: rc.left + rc.width / 2, y: rc.top + rc.height / 2 };
     var href = a.getAttribute('href');
-    open(href && href !== '#' ? href : null);
+    var wa = href && /wa\.me|whatsapp\.com/.test(href) ? href : null;
+    open(wa, a.getAttribute('data-checkout'), a.getAttribute('data-plano'));
   }, true);
 
   window.crmOpenForm = function () { open(); };
